@@ -24,7 +24,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="flex justify-between items-center p-4 bg-secondary text-third">
+    <div className="flex justify-between items-center p-4 bg-magnolia text-third">
       <div>
         <Logo />
       </div>

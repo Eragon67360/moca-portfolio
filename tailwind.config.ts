@@ -17,6 +17,7 @@ const config: Config = {
         "primary": "#47366DF2",
         "secondary": "#FFFFFF",
         "third": "#000000",
+        "magnolia":"#E7E6EF",
       },
       fontFamily: {
         'impact': ['Impact', 'sans-serif']
