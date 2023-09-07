@@ -6,7 +6,7 @@ import home from "@/public/HOME.svg";
 import work from "@/public/WORK.svg";
 import contact from "@/public/CONTACT.svg";
 
-import Menu from "@/components/Menu";
+import Menu from "@/components/[locale]/Menu";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
 
