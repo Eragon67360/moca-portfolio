@@ -10,8 +10,15 @@ import { OrbitControls } from "@react-three/drei";
 export default function Home() {
   const fadeIn = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        duration: 3,  // 2 seconds duration
+        delay: 0.5      // 1 second delay
+      } 
+    }
   };
+
   return (
     <div className="flex flex-col h-screen radial-bg">
       <p className="font-impact font-normal text-5xl bg-transparent text-third w-[771px] ml-28 mt-64">
