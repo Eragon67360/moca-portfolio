@@ -20,11 +20,11 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col h-screen radial-bg">
-      <p className="h-1/6 select-none font-impact font-normal text-5xl bg-transparent text-third w-[771px] ml-28 mt-64">
+    <div className="flex h-screen radial-bg">
+      <p className="select-none font-impact font-normal text-8xl bg-transparent text-tekhelet w-1/2 ml-28 mt-64">
         Crafting Experiences, Shaping Futures: Your UX Design Partner
       </p>
-      <div className="h-5/6">
+      <div className="h-full w-1/2">
         <motion.div className="h-full" initial="hidden" animate="visible" variants={fadeIn}>
           <Canvas camera={{ fov: 20, position: [0, 2, 0] }}>
             <ambientLight intensity={5} />

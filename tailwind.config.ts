@@ -14,10 +14,13 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "primary": "#47366DF2",
+        "tekhelet": "#47366DF2",
         "secondary": "#FFFFFF",
         "third": "#000000",
         "magnolia":"#E7E6EF",
+        "mint": "#B7E1D9",
+        "payne" :"#49696E",
+        "purple": "#2D0320"
       },
       fontFamily: {
         'impact': ['Impact', 'sans-serif']

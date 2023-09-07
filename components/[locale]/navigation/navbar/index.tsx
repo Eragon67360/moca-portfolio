@@ -30,19 +30,19 @@ const Navbar = () => {
       </div>
       <div className="flex space-x-8 text-2xl font-bold">
         <div className="flex items-center space-x-10">
-          <Link href="/" className="hover:text-primary">
+          <Link href="/" className="hover:text-tekhelet">
             <Image src={home} height={20} alt="home link" />
           </Link>
-          <Link href="/work" className="hover:text-primary">
+          <Link href="/work" className="hover:text-tekhelet">
             <Image src={work} height={20} alt="work link" />
           </Link>
-          <Link href="/contact" className="hover:text-primary">
+          <Link href="/contact" className="hover:text-tekhelet">
             <Image src={contact} height={20} alt="contact link" />
           </Link>
         </div>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 rounded-full  bg-secondary hover:bg-gray-200 hover:text-primary"
+          className="p-2 rounded-full  bg-secondary hover:bg-gray-200 hover:text-tekhelet"
         >
           <CgMenuGridO size={30}/>
         </button>
