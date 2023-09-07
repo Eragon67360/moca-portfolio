@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col h-screen radial-bg">
-      <p className="font-impact font-normal text-5xl bg-transparent text-third w-[771px] ml-28 mt-64">
+      <p className="select-none font-impact font-normal text-5xl bg-transparent text-third w-[771px] ml-28 mt-64">
         Crafting Experiences, Shaping Futures: Your UX Design Partner
       </p>
       <div className="h-full">
