@@ -11,11 +11,11 @@ export function Model(props) {
   const { nodes, materials, animations } = useGLTF("/Laptop.glb");
   const { actions, names } = useAnimations(animations, group);
 
-  useLayoutEffect(() => {
-    names.forEach((animation) => {
-      actions?.[animation]?.play();
-    });
-  }, [actions, names]);
+  // useLayoutEffect(() => {
+  //   names.forEach((animation) => {
+  //     actions?.[animation]?.play();
+  //   });
+  // }, [actions, names]);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
