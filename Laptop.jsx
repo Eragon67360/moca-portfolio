@@ -4,46 +4,33 @@ Command: npx gltfjsx@6.2.13 public/Laptop.glb
 */
 
 import React, { useRef, useLayoutEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import * as THREE from "three";
 
 export function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/Laptop.glb");
-  const { actions, names } = useAnimations(animations, group);
+  const { actions, names, mixer } = useAnimations(animations, group);
+  const router = useRouter();
+  mixer.addEventListener("finished", (e) => router.push("/featuredwork"));
 
-  // useLayoutEffect(() => {
-  //   names.forEach((animation) => {
-  //     actions?.[animation]?.play();
-  //   });
-  // }, [actions, names]);
+  useLayoutEffect(() => {
+    names.forEach((animation) => {
+      if (actions?.[animation]) {
+        actions[animation].setLoop(THREE.LoopOnce);
+        actions[animation].clampWhenFinished = true;
+        actions[animation].play();
+      }
+    });
+  }, [names, actions, router]);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
         <group
-          name="Cube007"
-          position={[-0.022, -0.009, -0.016]}
-          scale={[0.167, 0.005, 0.152]}
-        >
-          <mesh
-            name="Cube005_1"
-            geometry={nodes.Cube005_1.geometry}
-            material={materials["Material.043"]}
-          />
-          <mesh
-            name="Cube005_2"
-            geometry={nodes.Cube005_2.geometry}
-            material={materials["Material.044"]}
-          />
-          <mesh
-            name="Cube005_3"
-            geometry={nodes.Cube005_3.geometry}
-            material={materials["Material.008"]}
-          />
-        </group>
-        <group
           name="Cube002"
-          position={[-0.022, -0.009, -0.016]}
-          rotation={[1.712, 0, 0]}
+          position={[-0.512, 0.003, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
           scale={[0.168, 0.005, 0.153]}
         >
           <mesh
@@ -64,8 +51,8 @@ export function Model(props) {
         </group>
         <group
           name="Cube004"
-          position={[-0.022, -0.009, -0.016]}
-          rotation={[1.712, 0, 0]}
+          position={[-0.52, 0, -0.006]}
+          rotation={[Math.PI / 2, 0, 0]}
           scale={[0.168, 0.005, 0.153]}
         >
           <mesh
@@ -84,38 +71,6 @@ export function Model(props) {
             material={materials["Material.042"]}
           />
         </group>
-        <group
-          name="Cube005"
-          position={[-0.022, -0.009, -0.016]}
-          rotation={[-Math.PI, 0, -Math.PI]}
-          scale={[0.011, 0.001, 0.009]}
-        >
-          <mesh
-            name="Cube006"
-            geometry={nodes.Cube006.geometry}
-            material={materials["Material.002"]}
-          />
-          <mesh
-            name="Cube006_1"
-            geometry={nodes.Cube006_1.geometry}
-            material={materials["Material.003"]}
-          />
-        </group>
-        <mesh
-          name="Cube"
-          geometry={nodes.Cube.geometry}
-          material={materials["Material.001"]}
-          position={[-0.022, -0.009, -0.016]}
-          rotation={[-Math.PI, 0, 0]}
-          scale={[-0.006, -0.003, -0.004]}
-        />
-        <mesh
-          name="Cube035"
-          geometry={nodes.Cube035.geometry}
-          material={materials["Material.036"]}
-          position={[-0.022, -0.009, -0.016]}
-          scale={[0.167, 0.005, 0.152]}
-        />
       </group>
     </group>
   );
