@@ -33,7 +33,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
 
   return (
     <motion.div
-      className="fixed top-0 right-0 w-1/3 h-full bg-primary text-white p-4"
+      className="fixed top-0 right-0 w-1/3 h-full bg-tekhelet text-white p-4"
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       variants={menuVariants}
