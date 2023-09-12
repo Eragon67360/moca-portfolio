@@ -20,7 +20,7 @@ export function Model(props) {
       if (actions?.[animation]) {
         actions[animation].setLoop(THREE.LoopOnce);
         actions[animation].clampWhenFinished = true;
-        actions[animation].play();
+        // actions[animation].play();
       }
     });
   }, [names, actions, router]);

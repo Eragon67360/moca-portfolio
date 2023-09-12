@@ -1,0 +1,21 @@
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px); /* adjust as needed */
+  }
+}
+
+.animate-move {
+  animation: moveUpDown 5s infinite;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}

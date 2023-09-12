@@ -25,9 +25,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
-@layer utilities {
-  .radial-bg {
-    background: var(--Radial, radial-gradient(150.62% 53.56% at 50% 100%, #47366D 0%, rgba(231, 230, 239, 0.51) 100%)), #E7E6EF;
-  }
-}
