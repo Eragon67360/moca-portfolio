@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/[locale]/navigation/navbar";
 import ProgressBar from "@/components/ProgressBar";
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Navbar />
           <div className="flex flex-col flex-grow overflow-hidden">
             {children}
+            <Analytics />
           </div>
         </div>
       </body>
