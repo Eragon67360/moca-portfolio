@@ -16,9 +16,9 @@ const config: Config = {
       colors: {
         "secondary": "#FFFFFF",
         "third": "#000000",
-        "magnolia":"#F2EBE3",
+        "linen":"#F2EBE3",
         "falured":"#742119",
-        "carulean":"#4281A4",
+        "blackbean":"#310F0D",
       },
       fontFamily: {
         'impact': ['Impact', 'sans-serif']

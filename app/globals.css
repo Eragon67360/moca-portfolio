@@ -28,6 +28,31 @@ body {
 
 @layer utilities {
   .radial-bg {
-    background: var(--Radial, radial-gradient(150.62% 53.56% at 50% 100%, #742119 0%, #F2EBE3 100%));
+    background: radial-gradient(
+      49.9% 49.9% at 49.9% 50.06%,
+      rgba(116, 33, 25, 0.8) 21.88%,
+      #F2EBE3 100%
+    );
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2ebe3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #742119;
 }
