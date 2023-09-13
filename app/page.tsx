@@ -10,13 +10,13 @@ import { Model } from "@/Laptop";
 export default function Home() {
   const router = useRouter();
   return (
-    <div className="flex w-screen h-screen bg-gradient-to-b from-purple to-tekhelet">
-      <p className="w-2/3 select-none font-impact font-normal text-8xl bg-transparent text-tekhelet ml-28 mt-64">
+    <div className="flex w-screen h-screen radial-bg">
+      <p className="w-2/3 select-none font-impact font-normal text-8xl bg-transparent text-falured ml-28 mt-64">
         Crafting Experiences, Shaping Futures: Your UX Design Partner
       </p>
-      <div className="h-96 w-1/3 mt-64 mr-28 bg-purple rounded-xl">
+      <div className="h-96 w-1/3 mt-64 mr-28 bg-purple rounded-xl border border-third ">
         <Link href={"/featuredwork"} className="">
-          <div className="w-full text-center pr-24 h-full flex items-center justify-center text-2xl">
+          <div className="w-full text-center pr-24 h-full flex items-center justify-center text-2xl text-third">
             Image Placeholder Click Me!
           </div>
         </Link>
