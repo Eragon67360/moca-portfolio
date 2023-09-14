@@ -5,16 +5,19 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import image_desktop from "@/public/desktop.jpg";
-import photo1 from "@/public/photo1.jpg"
-import photo2 from "@/public/photo2.jpg"
-import photo3 from "@/public/photo3.jpg"
+import photo1 from "@/public/photo1.jpg";
+import photo2 from "@/public/photo2.jpg";
+import photo3 from "@/public/photo3.jpg";
 import {
   motion,
   useScroll,
   useSpring,
+  AnimatePresence,
   useAnimation,
   useTransform,
   MotionValue,
+  Variants,
+  useInView,
 } from "framer-motion";
 
 function useParallax(value: MotionValue<number>, distance: number) {
@@ -54,24 +57,23 @@ export default function Home() {
   const [scrollY, setScrollY] = useState<number>(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [windowHeight, setWindowHeight] = useState<number>(0);
+  const { scrollYProgress } = useScroll();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
 
-  const controls = useAnimation();
-  const [scrolled, setScrolled] = useState(false);
-  const [isFixed, setIsFixed] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > (2*window.innerHeight)) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const cardVariants: Variants = {
+    offscreen: {
+      y: 300,
+    },
+    onscreen: {
+      y: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
 
   useEffect(() => {
     setWindowHeight(window.innerHeight);
@@ -80,11 +82,6 @@ export default function Home() {
   const scrollPercentage = windowHeight
     ? Math.min(scrollY / windowHeight, 1)
     : 0;
-
-  const middleTranslateY = Math.max(100 - scrollPercentage * 100, 0);
-  const middleOpacity = scrollPercentage <= 1 ? 1 : 2 - scrollPercentage;
-
-  const bottomOpacity = scrollPercentage > 1.5 ? scrollPercentage - 1.5 : 0;
 
   return (
     <div className="relative h-screen overflow-y-scroll bg-linen">
@@ -100,28 +97,123 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative z-10">
-        <motion.div
-          animate={controls}
-          className="relative pt-screen bg-red-300"
-        >
-          
-          <div className="h-screen flex justify-center items-center bg-blackbean">
-            <div className="text-center font-impact text-6xl text-white">
-              Featured work
+      <motion.div        
+        viewport={{ once: false, amount: 0.8 }}
+      >
+        <AnimatePresence>
+          <motion.div
+            className="relative z-10"
+            initial={{ opacity: 0 }}
+        animate={{
+          opacity: 1,
+          transition: {
+            duration: 2,
+          },
+        }}
+            viewport={{ once: false, amount: 0.8 }}
+          >
+            <div className="h-[40vh] flex justify-center items-center bg-blackbean">
+              <motion.div
+                initial={{ x: -200, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 2,
+                  },
+                }}
+                exit={{
+                  x: 200,
+                  opacity: 0,
+                  transition: {
+                    duration: 2,
+                  },
+                }}
+                viewport={{ once: false, amount: 0.8 }}
+                className="text-center font-impact text-6xl text-white"
+              >
+                Featured work
+              </motion.div>
             </div>
+          </motion.div>
+        </AnimatePresence>
+        <AnimatePresence>
+          <div className="relative z-10 h-screen flex justify-center items-center bg-blackbean">
+            <div className="text-center font-impact text-6xl text-white flex items-stretch space-x-32">
+              <motion.div
+                className="card-container"
+                initial={{ y: 300 }}
+                whileInView={{
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    bounce: 0.4,
+                    duration: 0.8,
+                  },
+                }}
+                viewport={{ once: false, amount: 0.8 }}
+              >
+                <div className="splash" />
+                <motion.div variants={cardVariants}>
+                  <Image
+                    className="card"
+                    src={photo2}
+                    width={400}
+                    alt="photo2"
+                  />
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="card-container"
+                initial={{ y: 300 }}
+                whileInView={{
+                  y: -150,
+                  transition: {
+                    type: "spring",
+                    bounce: 0.4,
+                    duration: 0.8,
+                  },
+                }}
+                viewport={{ once: false, amount: 0.8 }}
+              >
+                <div className="splash" />
+                <motion.div variants={cardVariants}>
+                  <Image
+                    className="card"
+                    src={photo1}
+                    width={400}
+                    alt="photo1"
+                  />
+                </motion.div>
+              </motion.div>
+              <motion.div
+                className="card-container"
+                initial={{ y: 300 }}
+                whileInView={{
+                  y: 150,
+                  transition: {
+                    type: "spring",
+                    bounce: 0.4,
+                    duration: 0.8,
+                  },
+                }}
+                viewport={{ once: false, amount: 0.8 }}
+              >
+                <div className="splash" />
+                <motion.div variants={cardVariants}>
+                  <Image
+                    className="card"
+                    src={photo3}
+                    width={400}
+                    alt="photo3"
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
+            <div></div>
           </div>
-        </motion.div>
-
-        <div className="h-screen flex justify-center items-center bg-blackbean">
-          <div className="text-center font-impact text-6xl text-white flex items-stretch space-x-10">
-            <Image src={photo1} width={400} alt="photo1"/>
-            <Image src={photo2} width={400} alt="photo2"/>
-            <Image src={photo3} width={400} alt="photo3"/>
-          </div>
-          <div></div>
-        </div>
-      </div>
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
