@@ -106,7 +106,7 @@ export default function Home() {
     : 0;
 
   return (
-    <div className="relative h-max bg-linen">
+    <div className="relative h-max overflow-clip bg-linen">
       <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg pb-14">
         <p className="p-40 text-center select-none font-impact font-normal text-8xl bg-transparent text-falured mt-32">
           Crafting Experiences, Shaping Futures: Your UX Design Partner
