@@ -106,8 +106,8 @@ export default function Home() {
     : 0;
 
   return (
-    <div className="relative h-[300vh] overflow-y-scroll bg-linen">
-      <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg">
+    <div className="relative h-max overflow-hidden bg-linen">
+      <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg pb-14">
         <p className="p-40 text-center select-none font-impact font-normal text-8xl bg-transparent text-falured mt-32">
           Crafting Experiences, Shaping Futures: Your UX Design Partner
         </p>
@@ -119,7 +119,7 @@ export default function Home() {
         />
       </div>
 
-      <motion.div viewport={{ once: false, amount: 0.8 }}>
+      <motion.div viewport={{ once: false, amount: 0.8 }} className="w-screen bg-blackbean">
         <AnimatePresence>
           <motion.div
             className="relative z-10"
@@ -160,7 +160,7 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
         <AnimatePresence>
-          <div className="relative z-10 h-screen flex flex-col justify-start items-center pt-24 bg-blackbean">
+          <div className=" relative z-10 h-[80vh] flex flex-col justify-start items-center pt-24 bg-blackbean">
             <div className="text-center font-impact text-6xl text-white flex items-stretch space-x-32">
               <motion.div
                 className="card-container"
