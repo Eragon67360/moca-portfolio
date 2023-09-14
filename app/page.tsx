@@ -8,6 +8,7 @@ import image_desktop from "@/public/desktop.jpg";
 import photo1 from "@/public/photo1.jpg";
 import photo2 from "@/public/photo2.jpg";
 import photo3 from "@/public/photo3.jpg";
+import {AudioPlayer} from "../components/audioplayer"
 
 import {
   motion,
@@ -57,7 +58,9 @@ function hexToRgb(hex: string): [number, number, number] {
 export default function Home() {
   const [windowHeight, setWindowHeight] = useState<number>(0);
   const [windowScroll, setWindowScroll] = useState<number>(0);
-  const { scrollYProgress } = useScroll();
+
+  const [currentTrack, setCurrentTrack] = useState(AudioPlayer[0]);
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
 
@@ -82,15 +85,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    console.log("middle");
     const handleScroll = () => {
       const middleOfScreen = windowHeight / 2;
       if (window.scrollY >= middleOfScreen) {
         setIsFixed(true);
-        console.log("middle");
       } else {
         setIsFixed(false);
-        console.log("not middle");
       }
     };
 
@@ -101,12 +101,39 @@ export default function Home() {
     };
   }, [windowHeight, windowScroll]);
 
-  const scrollPercentage = windowHeight
-    ? Math.min(scrollY / windowHeight, 1)
-    : 0;
+  const [isMuted, setIsMuted] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const toggleMute = () => {
+    const audioElem = audioRef.current;
+    if (audioElem) {
+      audioElem.volume = 0.2;
+      if (isMuted) {
+        audioElem.play();
+      } else {
+        audioElem.pause();
+      }
+      setIsMuted(!isMuted);
+    }
+  };
+
+  // Ensure autoplay works across different browsers
+  useEffect(() => {
+    const audioElem = audioRef.current;
+    if (audioElem) {
+      audioElem.play();
+      audioElem.volume = 0.2;
+    }
+  }, []);
 
   return (
     <div className="relative h-max overflow-clip bg-linen">
+      <audio ref={audioRef} id="background-music" loop autoPlay className="z-30">
+        <source src={currentTrack.src} type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <div className="floating-button" onClick={toggleMute}>
+        {isMuted ? "🔈" : "🔊"}
+      </div>
       <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg pb-14">
         <p className="p-40 text-center select-none font-impact font-normal text-8xl bg-transparent text-falured mt-32">
           Crafting Experiences, Shaping Futures: Your UX Design Partner
@@ -119,7 +146,10 @@ export default function Home() {
         />
       </div>
 
-      <motion.div viewport={{ once: false, amount: 0.8 }} className="w-screen bg-blackbean">
+      <motion.div
+        viewport={{ once: false, amount: 0.8 }}
+        className="w-screen bg-blackbean"
+      >
         <AnimatePresence>
           <motion.div
             className="relative z-10"
@@ -232,10 +262,11 @@ export default function Home() {
                 </motion.div>
               </motion.div>
             </div>
-            <Link href="/work" className="bg-linen mt-24 text-falured font-impact text-3xl uppercase px-8 py-4 border border-falured rounded-full">
-              <div >
-                All work
-              </div>
+            <Link
+              href="/work"
+              className="bg-linen mt-24 text-falured font-impact text-3xl uppercase px-8 py-4 border border-falured rounded-full"
+            >
+              <div>All work</div>
             </Link>
           </div>
         </AnimatePresence>
