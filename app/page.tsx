@@ -105,11 +105,9 @@ export default function Home() {
     ? Math.min(scrollY / windowHeight, 1)
     : 0;
 
-  return (   
-
+  return (
     <div className="relative h-[300vh] overflow-y-scroll bg-linen">
-
-       <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg">
+      <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg">
         <p className="p-40 text-center select-none font-impact font-normal text-8xl bg-transparent text-falured mt-32">
           Crafting Experiences, Shaping Futures: Your UX Design Partner
         </p>
@@ -162,7 +160,7 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
         <AnimatePresence>
-          <div className="relative z-10 h-screen flex justify-center items-start pt-24 bg-blackbean">
+          <div className="relative z-10 h-screen flex flex-col justify-start items-center pt-24 bg-blackbean">
             <div className="text-center font-impact text-6xl text-white flex items-stretch space-x-32">
               <motion.div
                 className="card-container"
@@ -171,8 +169,8 @@ export default function Home() {
                   y: 0,
                   transition: {
                     type: "spring",
-                    bounce: 0.4,
-                    duration: 0.8,
+                    bounce: 0.7,
+                    duration: 1.2,
                   },
                 }}
                 viewport={{ once: false, amount: 0.8 }}
@@ -194,8 +192,8 @@ export default function Home() {
                   y: -150,
                   transition: {
                     type: "spring",
-                    bounce: 0.4,
-                    duration: 0.8,
+                    bounce: 0.7,
+                    duration: 1.2,
                   },
                 }}
                 viewport={{ once: false, amount: 0.8 }}
@@ -217,8 +215,8 @@ export default function Home() {
                   y: 150,
                   transition: {
                     type: "spring",
-                    bounce: 0.4,
-                    duration: 0.8,
+                    bounce: 0.7,
+                    duration: 1.2,
                   },
                 }}
                 viewport={{ once: false, amount: 0.8 }}
@@ -234,7 +232,11 @@ export default function Home() {
                 </motion.div>
               </motion.div>
             </div>
-            <div></div>
+            <Link href="/work" className="bg-linen mt-24 text-falured font-impact text-3xl uppercase px-8 py-4 border border-falured rounded-full">
+              <div >
+                All work
+              </div>
+            </Link>
           </div>
         </AnimatePresence>
       </motion.div>
