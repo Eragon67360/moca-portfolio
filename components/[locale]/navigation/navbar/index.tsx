@@ -55,19 +55,19 @@ const Navbar = () => {
           </div>
           <div className="flex space-x-8 text-2xl font-bold">
             <div className="flex items-center space-x-10">
-              <Link href="/" className="hover:text-tekhelet">
+              <Link href="/" className="hover:text-blackbean">
                 <Image src={home} height={20} alt="home link" />
               </Link>
-              <Link href="/work" className="hover:text-tekhelet">
+              <Link href="/work" className="hover:text-blackbean">
                 <Image src={work} height={20} alt="work link" />
               </Link>
-              <Link href="/contact" className="hover:text-tekhelet">
+              <Link href="/contact" className="hover:text-blackbean">
                 <Image src={contact} height={20} alt="contact link" />
               </Link>
             </div>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-full hover:bg-gray-200 hover:text-tekhelet"
+              className="p-2 rounded-full hover:bg-gray-200 hover:text-blackbean"
             >
               <CgMenuGridO size={30} />
             </button>

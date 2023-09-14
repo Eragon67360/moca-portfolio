@@ -33,7 +33,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
 
   return (
     <motion.div
-      className="fixed top-0 right-0 w-1/3 h-full bg-tekhelet text-white p-4"
+      className="fixed z-20 top-0 right-0 w-1/3 h-full bg-blackbean text-white p-4"
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       variants={menuVariants}
@@ -48,13 +48,22 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
         <Link
           href="/"
           className="block hover:text-gray-300 hover:bg-primary/70 text-4xl"
+          onClick={onClose}
         >
           Home
         </Link>
-        <Link href="/work" className="block hover:text-gray-300 text-4xl">
+        <Link
+          href="/work"
+          className="block hover:text-gray-300 text-4xl"
+          onClick={onClose}
+        >
           Work
         </Link>
-        <Link href="/contact" className="block hover:text-gray-300 text-4xl">
+        <Link
+          href="/contact"
+          className="block hover:text-gray-300 text-4xl"
+          onClick={onClose}
+        >
           Contact
         </Link>
         <button
