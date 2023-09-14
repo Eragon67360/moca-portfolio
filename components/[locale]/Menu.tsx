@@ -32,49 +32,80 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
   };
 
   return (
-    <motion.div
-      className="fixed z-20 top-0 right-0 w-1/3 h-full bg-blackbean text-white p-4"
-      initial="closed"
-      animate={isOpen ? "open" : "closed"}
-      variants={menuVariants}
-    >
-      <button
-        className="absolute top-8 right-8 rounded-full bg-gray-700 hover:bg-gray-600"
-        onClick={onClose}
+    <>
+      <motion.div
+        className="flex fixed z-20 top-0 right-0 w-full h-full bg-none text-white"
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+        variants={menuVariants}
       >
-        <AiFillCloseCircle size={40} />
-      </button>
-      <div className="space-y-4 text-center mt-20">
-        <Link
-          href="/"
-          className="block hover:text-gray-300 hover:bg-primary/70 text-4xl"
-          onClick={onClose}
-        >
-          Home
-        </Link>
-        <Link
-          href="/work"
-          className="block hover:text-gray-300 text-4xl"
-          onClick={onClose}
-        >
-          Work
-        </Link>
-        <Link
-          href="/contact"
-          className="block hover:text-gray-300 text-4xl"
-          onClick={onClose}
-        >
-          Contact
-        </Link>
-        <button
-          onClick={toggleTheme}
-          className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
-        >
-          {theme === "light" ? "🌙" : "☀️"}{" "}
-          {/* icons representing the themes */}
-        </button>
-      </div>
-    </motion.div>
+        <div className="bg-black/50 w-2/3"></div>
+        <div className="flex flex-col justify-center items-center w-1/3 bg-white">
+          <button
+            className="absolute top-8 right-8 rounded-full bg-gray-700 hover:bg-gray-600"
+            onClick={onClose}
+          >
+            <AiFillCloseCircle size={40} />
+          </button>
+          <div className="space-y-4 text-center mt-20 text-black text-4xl ">
+            <div className="space-y-10">
+              <Link
+                href="/"
+                className="block hover:text-cinnabar"
+                onClick={onClose}
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                className="block hover:text-cinnabar"
+                onClick={onClose}
+              >
+                About
+              </Link>
+              <Link
+                href="/projects"
+                className="block hover:text-cinnabar "
+                onClick={onClose}
+              >
+                Projects
+              </Link>
+              <Link
+                href="/contact"
+                className="block hover:text-cinnabar"
+                onClick={onClose}
+              >
+                Contact
+              </Link>
+            </div>
+            <div className="flex flex-col pt-20 space-y-10">
+              <a className="font-impact font-bold ">Social Media</a>
+              <a
+                className="font-impact font-bold hover:bg-gradient-to-r hover:from-[#67C9D0] hover:via-black hover:to-[#EE1D52] hover:bg-clip-text hover:text-transparent "
+                href="https://www.tiktok.com/@cristinaandresrr?lang=en"
+                target="_blank"
+              >
+                Tiktok
+              </a>
+              <a
+                className="font-impact font-bold hover:bg-gradient-to-r hover:from-[#FEDA75] hover:via-[#D62976] hover:to-[#4F5BD5] hover:bg-clip-text hover:text-transparent "
+                href="https://instagram.com/thomas_msr_67?igshid=OGQ5ZDc2ODk2ZA=="
+                target="_blank"
+              >
+                Instagram
+              </a>
+            </div>
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
+            >
+              {theme === "light" ? "🌙" : "☀️"}{" "}
+              {/* icons representing the themes */}
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </>
   );
 };
 

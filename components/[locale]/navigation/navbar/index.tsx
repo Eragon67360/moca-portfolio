@@ -58,8 +58,11 @@ const Navbar = () => {
               <Link href="/" className="hover:text-blackbean">
                 <Image src={home} height={20} alt="home link" />
               </Link>
-              <Link href="/work" className="hover:text-blackbean">
+              <Link href="/projects" className="hover:text-blackbean">
                 <Image src={work} height={20} alt="work link" />
+              </Link>
+              <Link href="/about" className="text-3xl uppercase hover:text-blackbean">
+                About
               </Link>
               <Link href="/contact" className="hover:text-blackbean">
                 <Image src={contact} height={20} alt="contact link" />

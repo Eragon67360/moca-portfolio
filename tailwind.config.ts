@@ -19,6 +19,7 @@ const config: Config = {
         "linen":"#F2EBE3",
         "falured":"#742119",
         "blackbean":"#310F0D",
+        "cinnabar":"#DF482B",
       },
       fontFamily: {
         'impact': ['Impact', 'sans-serif']
