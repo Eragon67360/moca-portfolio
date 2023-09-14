@@ -8,6 +8,7 @@ import image_desktop from "@/public/desktop.jpg";
 import photo1 from "@/public/photo1.jpg";
 import photo2 from "@/public/photo2.jpg";
 import photo3 from "@/public/photo3.jpg";
+
 import {
   motion,
   useScroll,
@@ -54,9 +55,8 @@ function hexToRgb(hex: string): [number, number, number] {
 }
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState<number>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
   const [windowHeight, setWindowHeight] = useState<number>(0);
+  const [windowScroll, setWindowScroll] = useState<number>(0);
   const { scrollYProgress } = useScroll();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -74,18 +74,42 @@ export default function Home() {
       },
     },
   };
+  const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
+    setWindowScroll(window.scrollY);
     setWindowHeight(window.innerHeight);
   }, []);
+
+  useEffect(() => {
+    console.log("middle");
+    const handleScroll = () => {
+      const middleOfScreen = windowHeight / 2;
+      if (window.scrollY >= middleOfScreen) {
+        setIsFixed(true);
+        console.log("middle");
+      } else {
+        setIsFixed(false);
+        console.log("not middle");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [windowHeight, windowScroll]);
 
   const scrollPercentage = windowHeight
     ? Math.min(scrollY / windowHeight, 1)
     : 0;
 
-  return (
-    <div className="relative h-screen overflow-y-scroll bg-linen">
-      <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg">
+  return (   
+
+    <div className="relative h-[300vh] overflow-y-scroll bg-linen">
+
+       <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg">
         <p className="p-40 text-center select-none font-impact font-normal text-8xl bg-transparent text-falured mt-32">
           Crafting Experiences, Shaping Futures: Your UX Design Partner
         </p>
@@ -97,48 +121,48 @@ export default function Home() {
         />
       </div>
 
-      <motion.div        
-        viewport={{ once: false, amount: 0.8 }}
-      >
+      <motion.div viewport={{ once: false, amount: 0.8 }}>
         <AnimatePresence>
           <motion.div
             className="relative z-10"
             initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: {
-            duration: 2,
-          },
-        }}
+            animate={{
+              opacity: 1,
+              transition: {
+                duration: 2,
+              },
+            }}
             viewport={{ once: false, amount: 0.8 }}
           >
-            <div className="h-[40vh] flex justify-center items-center bg-blackbean">
-              <motion.div
-                initial={{ x: -200, opacity: 0 }}
-                whileInView={{
-                  x: 0,
-                  opacity: 1,
-                  transition: {
-                    duration: 2,
-                  },
-                }}
-                exit={{
-                  x: 200,
-                  opacity: 0,
-                  transition: {
-                    duration: 2,
-                  },
-                }}
-                viewport={{ once: false, amount: 0.8 }}
-                className="text-center font-impact text-6xl text-white"
-              >
-                Featured work
-              </motion.div>
+            <div className="h-[60vh] flex justify-center items-center bg-blackbean">
+              {isFixed && (
+                <motion.div
+                  initial={{ x: -200, opacity: 0 }}
+                  whileInView={{
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 2,
+                    },
+                  }}
+                  exit={{
+                    x: 200,
+                    opacity: 0,
+                    transition: {
+                      duration: 2,
+                    },
+                  }}
+                  viewport={{ once: false, amount: 0.8 }}
+                  className="fixed top-1/2 transform -translate-y-1/2 font-impact text-7xl"
+                >
+                  Featured work
+                </motion.div>
+              )}
             </div>
           </motion.div>
         </AnimatePresence>
         <AnimatePresence>
-          <div className="relative z-10 h-screen flex justify-center items-center bg-blackbean">
+          <div className="relative z-10 h-screen flex justify-center items-start pt-24 bg-blackbean">
             <div className="text-center font-impact text-6xl text-white flex items-stretch space-x-32">
               <motion.div
                 className="card-container"

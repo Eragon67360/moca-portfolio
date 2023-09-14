@@ -77,8 +77,18 @@ body {
   justify-content: center;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.89), 0 0 2px hsla(0, 0%, 100%, 0.075),
-    0 0 4px hsla(0, 0%, 100%, 0.075), 0 0 8px hsla(0, 0%, 100%, 0.075),
-    0 0 16px hsla(0, 0%, 100%, 0.075);
+  box-shadow: 0 0 1px hsla(0, 0%, 100%, 0.89), 0 0 2px hsla(0, 0%, 100%, 0.89),
+    0 0 4px hsla(0, 0%, 100%, 0.89), 0 0 8px hsla(0, 0%, 100%, 0.89),
+    0 0 16px hsla(0, 0%, 100%, 0.89);
   
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--red);
+  transform-origin: 0%;
 }
