@@ -56,10 +56,8 @@ export default function Home() {
 
   useEffect(() => {
     controlSection2.start({ opacity: 2.2 - y / 1000 });
-    console.log(isFixed);
     if (y > window.innerHeight) {
       setIsFixed(true);
-      console.log(isFixed);
     } else {
       setIsFixed(false);
     }
