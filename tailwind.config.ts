@@ -22,7 +22,8 @@ const config: Config = {
         "cinnabar":"#DF482B",
       },
       fontFamily: {
-        'impact': ['Impact', 'sans-serif']
+        'impact': ['Impact', 'sans-serif'],
+        'poppins':['Poppins', 'sans-serif'],
       },
     },
   },

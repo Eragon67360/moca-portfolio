@@ -8,7 +8,7 @@ import image_desktop from "@/public/desktop.jpg";
 import photo1 from "@/public/photo1.jpg";
 import photo2 from "@/public/photo2.jpg";
 import photo3 from "@/public/photo3.jpg";
-import {AudioPlayer} from "../components/audioplayer"
+import { AudioPlayer } from "../components/audioplayer";
 
 import {
   motion,
@@ -21,10 +21,6 @@ import {
   Variants,
   useInView,
 } from "framer-motion";
-
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
 
 function interpolateColor(
   startColor: string,
@@ -56,10 +52,11 @@ function hexToRgb(hex: string): [number, number, number] {
 }
 
 export default function Home() {
-  const [windowHeight, setWindowHeight] = useState<number>(0);
-  const [windowScroll, setWindowScroll] = useState<number>(0);
-
-  const [currentTrack, setCurrentTrack] = useState(AudioPlayer[0]);
+  const controlSection1 = useAnimation();
+  const controlImage = useAnimation();
+  const controlSection2 = useAnimation();
+  const [y, setY] = useState<number>(0);
+  const [isFixed, setIsFixed] = useState<boolean>(false);
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -77,29 +74,30 @@ export default function Home() {
       },
     },
   };
-  const [isFixed, setIsFixed] = useState(false);
+  const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    const scrollTop = (event.target as Element).scrollTop;
+    setY(scrollTop);
+  };
 
   useEffect(() => {
-    setWindowScroll(window.scrollY);
-    setWindowHeight(window.innerHeight);
-  }, []);
+    controlSection1.start({ opacity: 1 - y / 500, scale: 1 - y / 1000 });
+  }, [y, controlSection1]);
+  useEffect(() => {
+    controlImage.start({ opacity: 1 - y / 1000 });
+  }, [y, controlImage]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const middleOfScreen = windowHeight / 2;
-      if (window.scrollY >= middleOfScreen) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    };
+    controlSection2.start({ opacity: 2.2 - y / 1000 });
+    console.log(isFixed);
+    if (y > window.innerHeight) {
+      setIsFixed(true);
+      console.log(isFixed);
+    } else {
+      setIsFixed(false);
+    }
+  }, [y, controlSection2, isFixed]);
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [windowHeight, windowScroll]);
+  const [currentTrack, setCurrentTrack] = useState(AudioPlayer[0]);
 
   const [isMuted, setIsMuted] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -126,151 +124,157 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative h-max overflow-clip bg-linen">
-      <audio ref={audioRef} id="background-music" loop autoPlay className="z-30">
+    <>
+      <audio
+        ref={audioRef}
+        id="background-music"
+        loop
+        autoPlay
+        className="z-30"
+      >
         <source src={currentTrack.src} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
       <div className="floating-button" onClick={toggleMute}>
         {isMuted ? "🔈" : "🔊"}
       </div>
-      <div className="sticky inset-0 z-10 flex flex-col items-center justify-start radial-bg pb-14">
-        <p className="p-40 text-center select-none font-impact font-normal text-8xl bg-transparent text-falured mt-32">
-          Crafting Experiences, Shaping Futures: Your UX Design Partner
-        </p>
-        <Image
-          className="mt-10"
-          src={image_desktop}
-          width={800}
-          alt="desktop image"
-        />
-      </div>
-
-      <motion.div
-        viewport={{ once: false, amount: 0.8 }}
-        className="w-screen bg-blackbean"
+      <div
+        className="sticky h-screen overflow-x-hidden w-screen overflow-y-scroll radial-bg"
+        onScroll={handleScroll}
       >
         <AnimatePresence>
-          <motion.div
-            className="relative z-10"
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: {
-                duration: 2,
-              },
-            }}
-            viewport={{ once: false, amount: 0.8 }}
-          >
-            <div className="h-[60vh] flex justify-center items-center bg-blackbean">
-              {isFixed && (
-                <motion.div
-                  initial={{ x: -200, opacity: 0 }}
-                  whileInView={{
-                    x: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 2,
-                    },
-                  }}
-                  exit={{
-                    x: 200,
-                    opacity: 0,
-                    transition: {
-                      duration: 2,
-                    },
-                  }}
-                  viewport={{ once: false, amount: 0.8 }}
-                  className="fixed top-1/2 transform -translate-y-1/2 font-impact text-7xl"
-                >
-                  Featured work
-                </motion.div>
-              )}
-            </div>
-          </motion.div>
-        </AnimatePresence>
-        <AnimatePresence>
-          <div className=" relative z-10 h-[80vh] flex flex-col justify-start items-center pt-24 bg-blackbean">
-            <div className="text-center font-impact text-6xl text-white flex items-stretch space-x-32">
-              <motion.div
-                className="card-container"
-                initial={{ y: 300 }}
-                whileInView={{
-                  y: 0,
-                  transition: {
-                    type: "spring",
-                    bounce: 0.7,
-                    duration: 1.2,
-                  },
-                }}
-                viewport={{ once: false, amount: 0.8 }}
-              >
-                <div className="splash" />
-                <motion.div variants={cardVariants}>
-                  <Image
-                    className="card"
-                    src={photo2}
-                    width={400}
-                    alt="photo2"
-                  />
-                </motion.div>
-              </motion.div>
-              <motion.div
-                className="card-container"
-                initial={{ y: 300 }}
-                whileInView={{
-                  y: -150,
-                  transition: {
-                    type: "spring",
-                    bounce: 0.7,
-                    duration: 1.2,
-                  },
-                }}
-                viewport={{ once: false, amount: 0.8 }}
-              >
-                <div className="splash" />
-                <motion.div variants={cardVariants}>
-                  <Image
-                    className="card"
-                    src={photo1}
-                    width={400}
-                    alt="photo1"
-                  />
-                </motion.div>
-              </motion.div>
-              <motion.div
-                className="card-container"
-                initial={{ y: 300 }}
-                whileInView={{
-                  y: 150,
-                  transition: {
-                    type: "spring",
-                    bounce: 0.7,
-                    duration: 1.2,
-                  },
-                }}
-                viewport={{ once: false, amount: 0.8 }}
-              >
-                <div className="splash" />
-                <motion.div variants={cardVariants}>
-                  <Image
-                    className="card"
-                    src={photo3}
-                    width={400}
-                    alt="photo3"
-                  />
-                </motion.div>
-              </motion.div>
-            </div>
-            <Link
-              href="/work"
-              className="bg-linen mt-24 text-falured font-impact text-3xl uppercase px-8 py-4 border border-falured rounded-full"
+          <div className="h-[300vh] flex flex-col">
+            <motion.div
+              className="h-screen text-center font-bold text-9xl flex items-end pb-14 justify-center z-40 bg-transparent"
+              initial={{ opacity: 1 }}
+              animate={controlImage}
             >
-              <div>All work</div>
-            </Link>
+              <Image
+                className="mt-10"
+                src={image_desktop}
+                width={800}
+                alt="desktop image"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={controlSection1}
+              className="p-80 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] fixed h-screen w-screen z-10 text-center select-none font-poppins font-bold text-8xl bg-transparent text-falured"
+            >
+              Crafting Experiences, Shaping Futures: Your UX Design Partner
+            </motion.div>
+            {isFixed ? (
+              <motion.div className="fixed h-screen w-full bg-blackbean z-10 flex items-center justify-center">
+                <motion.p
+                  initial={{ opacity: 1 }}
+                  animate={controlSection2}
+                  className="text-center font-poppins space-y-24"
+                >
+                  <p className="text-4xl">Featured</p>
+                  <p className="text-7xl font-extrabold">Projects</p>
+                </motion.p>
+              </motion.div>
+            ) : (
+              <motion.div className="h-screen w-full bg-blackbean z-10 flex items-center justify-center">
+                <motion.p
+                  initial={{ opacity: 1 }}
+                  animate={controlSection2}
+                  className="text-center font-poppins space-y-24"
+                >
+                  <p className="text-4xl">Featured</p>
+                  <p className="text-7xl font-extrabold">Projects</p>
+                </motion.p>
+              </motion.div>
+            )}
+            {isFixed ? (
+              <div className="h-[200vh] w-full flex flex-col z-20 bg-transparent">
+                <div className="h-screen bg-transparent"></div>
+                <div className="h-screen bg-transparent text-center font-bold text-9xl flex flex-col items-center justify-center">
+                  <div className="space-x-32 flex">
+                    <motion.div
+                      className="card-container"
+                      initial={{ y: 300 }}
+                      whileInView={{
+                        y: 0,
+                        transition: {
+                          type: "spring",
+                          bounce: 0.7,
+                          duration: 1.2,
+                        },
+                      }}
+                      viewport={{ once: false, amount: 0.8 }}
+                    >
+                      <div className="splash" />
+                      <motion.div variants={cardVariants}>
+                        <Image
+                          className="card"
+                          src={photo2}
+                          width={400}
+                          alt="photo2"
+                        />
+                      </motion.div>
+                    </motion.div>
+                    <motion.div
+                      className="card-container"
+                      initial={{ y: 300 }}
+                      whileInView={{
+                        y: -150,
+                        transition: {
+                          type: "spring",
+                          bounce: 0.7,
+                          duration: 1.2,
+                        },
+                      }}
+                      viewport={{ once: false, amount: 0.8 }}
+                    >
+                      <div className="splash" />
+                      <motion.div variants={cardVariants}>
+                        <Image
+                          className="card"
+                          src={photo1}
+                          width={400}
+                          alt="photo1"
+                        />
+                      </motion.div>
+                    </motion.div>
+                    <motion.div
+                      className="card-container"
+                      initial={{ y: 300 }}
+                      whileInView={{
+                        y: 150,
+                        transition: {
+                          type: "spring",
+                          bounce: 0.7,
+                          duration: 1.2,
+                        },
+                      }}
+                      viewport={{ once: false, amount: 0.8 }}
+                    >
+                      <div className="splash" />
+                      <motion.div variants={cardVariants}>
+                        <Image
+                          className="card"
+                          src={photo3}
+                          width={400}
+                          alt="photo3"
+                        />
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                  <Link
+                    href="/projects"
+                    className="bg-linen mt-24 text-falured font-poppins text-3xl px-8 py-4 border border-falured rounded-full"
+                  >
+                    <div>See more</div>
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div className="relative" />
+            )}
           </div>
         </AnimatePresence>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 }

@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children, // will be a page or nested layout
+  children,
 }: {
   children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen overflow-y-hidden">
           <ProgressBar />
           <Navbar />
           <div className="flex flex-col flex-grow">
