@@ -22,44 +22,12 @@ import {
   useInView,
 } from "framer-motion";
 
-function interpolateColor(
-  startColor: string,
-  endColor: string,
-  factor: number
-): string {
-  const [r1, g1, b1] = hexToRgb(startColor);
-  const [r2, g2, b2] = hexToRgb(endColor);
-
-  const r = Math.round(r1 + factor * (r2 - r1));
-  const g = Math.round(g1 + factor * (g2 - g1));
-  const b = Math.round(b1 + factor * (b2 - b1));
-
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
-function hexToRgb(hex: string): [number, number, number] {
-  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, (_, r, g, b) => r + r + g + g + b + b);
-
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (!result) return [0, 0, 0];
-
-  return [
-    parseInt(result[1], 16),
-    parseInt(result[2], 16),
-    parseInt(result[3], 16),
-  ];
-}
-
 export default function Home() {
   const controlSection1 = useAnimation();
   const controlImage = useAnimation();
   const controlSection2 = useAnimation();
   const [y, setY] = useState<number>(0);
   const [isFixed, setIsFixed] = useState<boolean>(false);
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
 
   const cardVariants: Variants = {
     offscreen: {
@@ -210,6 +178,7 @@ export default function Home() {
                           className="card"
                           src={photo2}
                           width={400}
+                          height={800}
                           alt="photo2"
                         />
                       </motion.div>
