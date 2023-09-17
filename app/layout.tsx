@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="flex flex-col h-screen overflow-y-hidden">
           <ProgressBar />
           <Navbar />
-          <div className="flex flex-col flex-grow">
+          <div className="flex flex-col flex-grow overflow-y-scroll">
             {children}
             <Analytics />
           </div>
