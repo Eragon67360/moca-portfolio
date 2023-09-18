@@ -21,6 +21,7 @@
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.4",
     "next": "13.4.19",
+    "nodemailer": "^6.9.5",
     "nprogress": "^0.2.0",
     "postcss": "8.4.29",
     "react": "18.2.0",
@@ -33,6 +34,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.10",
     "@types/nprogress": "^0.2.0",
     "file-loader": "^6.2.0",
     "url-loader": "^4.1.1"
