@@ -14,9 +14,9 @@ const Dropdown: React.FC = () => {
     <div className="relative">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-falured text-white p-2 rounded-lg flex justify-between w-full"
+        className="bg-none text-black border border-falured p-2 rounded-full flex justify-between w-full"
       >
-        {selectedItem || 'What is your request about?'}
+        {selectedItem || 'Subject'}
         {!selectedItem && <span className={`ml-2 transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>}
       </button>
       

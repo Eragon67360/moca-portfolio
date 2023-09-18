@@ -19,6 +19,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "contact-background": "url('../public/bg_contact.jpg')",
       },
       colors: {
         secondary: "#FFFFFF",
@@ -30,7 +31,7 @@ const config: Config = {
       },
       fontFamily: {
         impact: ["Impact", "sans-serif"],
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },
