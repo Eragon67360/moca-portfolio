@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: [
@@ -8,11 +9,10 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      'md': '480px',
+      md: "480px",
       //Tablet
-      'lg': '1024px',
+      lg: "1024px",
       //PC
-      
     },
     extend: {
       backgroundImage: {
@@ -21,16 +21,16 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "secondary": "#FFFFFF",
-        "third": "#000000",
-        "linen":"#F2EBE3",
-        "falured":"#742119",
-        "blackbean":"#310F0D",
-        "cinnabar":"#DF482B",
+        secondary: "#FFFFFF",
+        third: "#000000",
+        linen: "#F2EBE3",
+        falured: "#742119",
+        blackbean: "#310F0D",
+        cinnabar: "#DF482B",
       },
       fontFamily: {
-        'impact': ['Impact', 'sans-serif'],
-        'poppins':['Poppins', 'sans-serif'],
+        impact: ["Impact", "sans-serif"],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
     },
   },
