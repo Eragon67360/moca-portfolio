@@ -41,7 +41,7 @@ export default async function handler(
       }
     });
   });
-
+ 
   const mail = await transporter.sendMail({
     from: user,
     to: "thomas-moser@orange.fr",
