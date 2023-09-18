@@ -22,6 +22,7 @@ export default function ContactForm() {
       firstname: String(event.target.firstname.value),
       email: String(event.target.email.value),
       phone: String(event.target.phone.value),
+      country: String(event.target.country.value),
       company: String(event.target.company.value),
       message: String(event.target.message.value),
     };
@@ -45,6 +46,7 @@ export default function ContactForm() {
       event.target.email.value = "";
       event.target.phone.value = "";
       event.target.company.value = "";
+      event.target.country.value = "";
       event.target.message.value = "";
     }
     if (!response.ok) {
