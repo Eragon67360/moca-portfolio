@@ -23,9 +23,9 @@ const Dropdown: React.FC = () => {
       {isOpen && (
         <div className="absolute mt-2 w-full rounded-md shadow-lg bg-white">
           <div className="py-1" role="menu" aria-orientation="vertical">
-            <a onClick={() => handleItemClick('Request a new design for your website')} href="#" className="block px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">Request a new design for your website</a>
-            <a onClick={() => handleItemClick('Request a brand new website')} href="#" className="block px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">Request a brand new website</a>
-            <a onClick={() => handleItemClick('...')} href="#" className="block px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">...</a>
+            <a onClick={() => handleItemClick('Request a new design for your website')} className="block px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">Request a new design for your website</a>
+            <a onClick={() => handleItemClick('Request a brand new website')} className="block px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">Request a brand new website</a>
+            <a onClick={() => handleItemClick('...')} className="block px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">...</a>
           </div>
         </div>
       )}
