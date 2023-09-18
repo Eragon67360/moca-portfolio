@@ -106,7 +106,7 @@ export default async function handler(
         <div class="email-container">
             <div class="header">
                 <!-- You can replace 'logo.png' with your logo's filename. Ensure you have the image hosted and use the absolute URL in 'src' -->
-                <img src="../public/logo_mail.png" alt="UXMOCA Logo">
+                <img src="https://i.ibb.co/7ndpLDT/logo-only.png" alt="UXMOCA Logo">
             </div>
             <div class="content">
                 <h2>Hello ${firstname} ${name},</h2>
