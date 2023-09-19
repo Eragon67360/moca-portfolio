@@ -27,13 +27,6 @@ export default function ContactForm() {
       message: String(event.target.message.value),
     };
 
-    console.log(data);
-    const user = process.env.MAIL_USER;
-    const password = process.env.MAIL_PASSWORD;
-
-    console.log(String(user));
-    console.log(String(password));
-
     const response = await fetch("/api/sendEmail", {
       method: "POST",
       headers: {
