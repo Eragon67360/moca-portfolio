@@ -27,7 +27,7 @@ export default async function handler(
     service: "gmail",
     host: "smtp.gmail.com",
     port: 587,
-    secure: false,
+    secure: true,
     auth: {
       user: user,
       pass: password,
