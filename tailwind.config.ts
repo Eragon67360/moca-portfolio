@@ -9,17 +9,23 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      md: "480px",
+      //Phone
+      sm:"480px",
+      //Phablet
+      md: "1024px",
       //Tablet
-      lg: "1024px",
+      lg: "1440px",
       //PC
+      xl:"1920px",
+      //Large screen
+      "2xl":"2560px"
     },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "contact-background": "url('../public/bg_contact.jpg')",
+        "contact-background": "url('../public/contact_background.png')",
       },
       colors: {
         secondary: "#FFFFFF",

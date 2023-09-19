@@ -64,27 +64,27 @@ export default function ContactForm() {
         transition={{ duration: 1 }}
         className="z-10"
       >
-        <div className="w-[454px] h-[713px] flex justify-evenly bg-secondary contact-shadow p-8 rounded-2xl">
-          <div className="bg-secondary w-full flex flex-col space-y-4">
+        <div className="w-[35.5vw] min-h-[665px] h-[71.6vh] flex justify-evenly bg-secondary contact-shadow px-[2.5vw] py-[3.84vh] rounded-2xl">
+          <div className="bg-secondary w-full flex flex-col space-y-[1.92vh]">
             <div className="flex flex-col">
               <div className="flex items-center space-x-2">
-                <h2 className="text-5xl font-sans font-extrabold text-falured">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-sans font-bold text-falured">
                   Get in touch!
                 </h2>
 
-                <Image src={logo} alt="logo" />
+                <Image src={logo} alt="logo"/>
               </div>
 
-              <p className="text-black text-end font-semibold">
+              <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                 Let&apos;s talk about everything{" "}
-                <span className="font-sans text-lg text-falured font-extrabold">
+                <span className="font-sans text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured font-extrabold">
                   {";)"}
                 </span>
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex space-x-4 justify-around">
+              <div className="flex space-x-[2.52vw] justify-around">
                 <div className="py-2 w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
@@ -104,7 +104,7 @@ export default function ContactForm() {
                   />
                 </div>
               </div>
-              <div className="flex space-x-4 justify-around ">
+              <div className="flex space-x-[2.52vw] justify-around ">
                 <div className="py-2 w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
@@ -125,7 +125,7 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              <div className="flex space-x-4 justify-around ">
+              <div className="flex space-x-[2.52vw] justify-around ">
                 <div className="py-2 w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
@@ -154,7 +154,7 @@ export default function ContactForm() {
               <div className="">
                 <div className="py-2">
                   <textarea
-                    className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-40"
+                    className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh]"
                     id="message"
                     placeholder="Message"
                   />
