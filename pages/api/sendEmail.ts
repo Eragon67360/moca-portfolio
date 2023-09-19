@@ -26,7 +26,7 @@ export default async function handler(
   const transporter = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
-    port: 587,
+    port: 465,
     secure: true,
     auth: {
       user: user,
@@ -47,12 +47,16 @@ export default async function handler(
     });
   });
 
-  const emailTemplatePath = path.join(process.cwd(), 'templates', 'emailTemplate.html');
+  const emailTemplatePath = path.join(
+    process.cwd(),
+    "templates",
+    "emailTemplate.html"
+  );
   var htmlcontent = fs.readFileSync(emailTemplatePath, "utf8");
-  htmlcontent = htmlcontent.replace('${firstname}', firstname);
-  htmlcontent = htmlcontent.replace('${name}', name);
-  htmlcontent = htmlcontent.replace('${message}', message);
-  htmlcontent = htmlcontent.replace('[[FirstName]]', firstname);
+  htmlcontent = htmlcontent.replace("${firstname}", firstname);
+  htmlcontent = htmlcontent.replace("${name}", name);
+  htmlcontent = htmlcontent.replace("${message}", message);
+  htmlcontent = htmlcontent.replace("[[FirstName]]", firstname);
 
   const mailToClient = await transporter.sendMail({
     from: user,
@@ -87,7 +91,8 @@ export default async function handler(
         resolve(info);
       }
     });
-
+  });
+  await new Promise((resolve, reject) => {
     transporter.sendMail(mailToClient, (err, info) => {
       if (err) {
         console.error(err);
