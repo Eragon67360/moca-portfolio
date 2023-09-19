@@ -58,15 +58,15 @@ export default async function handler(
   htmlcontent = htmlcontent.replace("${message}", message);
   htmlcontent = htmlcontent.replace("[[FirstName]]", firstname);
 
-  const mailToClient = await transporter.sendMail({
+  const mailToClient = {
     from: user,
     to: email,
     replyTo: email,
     subject: `[UXMOCA Team] We have received your contact request!`,
     html: htmlcontent,
-  });
+  };
 
-  const mailToUs = await transporter.sendMail({
+  const mailToUs = {
     from: user,
     to: "uxmoca@gmail.com",
     replyTo: email,
@@ -78,7 +78,7 @@ export default async function handler(
         <p>Email: ${email}</p>
         <p>Message: ${message}</p>
     `,
-  });
+  };
 
   await new Promise((resolve, reject) => {
     // send mail
