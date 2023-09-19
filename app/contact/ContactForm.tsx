@@ -28,6 +28,11 @@ export default function ContactForm() {
     };
 
     console.log(data);
+    const user = process.env.MAIL_USER;
+    const password = process.env.MAIL_PASSWORD;
+
+    console.log(String(user));
+    console.log(String(password));
 
     const response = await fetch("/api/sendEmail", {
       method: "POST",
@@ -36,6 +41,7 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data),
     });
+    
     if (response.ok) {
       console.log("Message sent successfully");
       toast.success("Email has been successfully sent!");
@@ -72,7 +78,7 @@ export default function ContactForm() {
                   Get in touch!
                 </h2>
 
-                <Image src={logo} alt="logo"/>
+                <Image src={logo} alt="logo" />
               </div>
 
               <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
