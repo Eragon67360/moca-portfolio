@@ -94,17 +94,17 @@ export default async function handler(
         }
       });
     });
-    // await new Promise((resolve, reject) => {
-    //   transporter.sendMail(mailToClient, (err, info) => {
-    //     if (err) {
-    //       console.error(err);
-    //       reject(err);
-    //     } else {
-    //       console.log(info);
-    //       resolve(info);
-    //     }
-    //   });
-    // });
+    await new Promise((resolve, reject) => {
+      transporter.sendMail(mailToClient, (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      });
+    });
     res.status(200).json({ status: "OK" });
   } catch (error) {
     console.error("Error sending email:", error);
