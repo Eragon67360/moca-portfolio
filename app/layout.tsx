@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/[locale]/navigation/navbar";
 import ProgressBar from "@/components/ProgressBar";
 import { Analytics } from "@vercel/analytics/react";
+import { ToastContainer } from "react-toastify";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export default function RootLayout({
           <div className="flex flex-col flex-grow overflow-y-scroll">
             {children}
             <Analytics />
+            <ToastContainer />
           </div>
         </div>
       </body>

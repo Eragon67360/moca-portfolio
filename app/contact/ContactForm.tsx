@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, ChangeEvent, FormEvent } from "react";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Dropdown from "@/components/Dropdown";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
@@ -34,7 +35,7 @@ export default function ContactForm() {
       },
       body: JSON.stringify(data),
     });
-    
+
     if (response.ok) {
       console.log("Message sent successfully");
       toast.success("Email has been successfully sent!");
@@ -63,6 +64,7 @@ export default function ContactForm() {
         transition={{ duration: 1 }}
         className="z-10"
       >
+        <ToastContainer/>
         <div className="w-[35.5vw] min-h-[665px] h-[71.6vh] flex justify-evenly bg-secondary contact-shadow px-[2.5vw] py-[3.84vh] rounded-2xl">
           <div className="bg-secondary w-full flex flex-col space-y-[1.92vh]">
             <div className="flex flex-col">
