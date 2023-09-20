@@ -65,7 +65,7 @@ export default function ContactForm() {
         className="z-10"
       >
         <ToastContainer/>
-        <div className="w-[35.5vw] min-h-[665px] h-[71.6vh] flex justify-evenly bg-secondary contact-shadow px-[2.5vw] py-[3.84vh] rounded-2xl">
+        <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary contact-shadow px-[2.5vw] py-[3.84vh] rounded-2xl">
           <div className="bg-secondary w-full flex flex-col space-y-[1.92vh]">
             <div className="flex flex-col">
               <div className="flex items-center space-x-2">

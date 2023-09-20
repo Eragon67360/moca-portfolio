@@ -28,7 +28,11 @@ body {
       #f2ebe3 100%
     );
   }
+  .font-adaptive16 {
+    font-size: calc(1vw + 1vh); /* adjust as needed */
+  }
 }
+
 
 /* width */
 ::-webkit-scrollbar {

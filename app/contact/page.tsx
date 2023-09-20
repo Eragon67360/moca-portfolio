@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
 import VisitCard from "@/components/VisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { FiLinkedin, FiInstagram } from "react-icons/fi";
+import { FaTiktok } from "react-icons/fa";
 
 function Contact(): React.JSX.Element {
   const controlSection1 = useAnimation();
@@ -20,70 +22,44 @@ function Contact(): React.JSX.Element {
 
   return (
     <>
-      <div
-        className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed"
-        onScroll={handleScroll}
-      >
+      <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
         <AnimatePresence>
           <div className="flex flex-col h-[145vh] space-y-20">
             <motion.div
-              initial={{ opacity: 1 }}
-              animate={controlSection1}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2 }}
               className="flex justify-center items-center mt-24 bg-none"
             >
-              <motion.p
-                initial={{ opacity: 1 }}
-                animate={controlSection1}
-                className="text-black font-sans text-[34px] font-bold text-center fixed z-0"
-              >
+              <p className="text-black font-sans text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
                 User-centric design is{" "}
                 <span className="uppercase text-falured">the future.</span>
                 <br />
                 Let&apos;s shape it{" "}
                 <span className="uppercase text-falured">together !</span>
-              </motion.p>
+              </p>
             </motion.div>
 
             <div className="flex">
-              <div className="w-1/2 flex flex-col justify-stretch space-y-16">
-                <div className="ml-52 fixed">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2, delay: 1 }}
+                className="w-1/2 flex flex-col ml-[18.35vw] mt-[22.81vh] fixed space-y-8"
+              >
+                <div className="">
                   <VisitCard />
                 </div>
-                <div className="flex flex-col text-black font-sans ml-52 space-y-3 fixed top-[500px]">
-                  <p className=" text-2xl  text-cinnabar">Opening Hours</p>
-                  <div className="flex space-x-10">
-                    <div>
-                      <p>
-                        Mon.
-                        <br />
-                        Tues.
-                        <br />
-                        Wed.
-                        <br />
-                        Thurs.
-                        <br />
-                        Fr.
-                        <br />
-                      </p>
-                    </div>
-                    <div>
-                      <p>
-                        9am - 5pm
-                        <br />
-                        9am - 5pm
-                        <br />
-                        9am - 5pm
-                        <br />
-                        9am - 5pm
-                        <br />
-                        9am - 4pm
-                        <br />
-                      </p>
-                    </div>
+                <div className="flex flex-col text-black font-sans space-y-3 left-[18.35vw] text-[1.88vw]">
+                  <p>You can also find us in...</p>
+                  <div className="flex w-[22.2vw] justify-evenly">
+                    <FiLinkedin />
+                    <FiInstagram />
+                    <FaTiktok />
                   </div>
                 </div>
-              </div>
-              <div className="w-1/2 items-center">
+              </motion.div>
+              <div className="flex w-full mr-[15.78vw] items-end justify-end">
                 <ContactForm />
               </div>
             </div>
