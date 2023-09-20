@@ -63,11 +63,11 @@ const ContactForm: React.FC = () => {
       // reset the form
       event.target.name.value = "";
       event.target.firstname.value = "";
-      event.target.email.value = "";
+      setEmailValue("");
       event.target.phone.value = "";
       event.target.company.value = "";
       event.target.country.value = "";
-      event.target.message.value = "";
+      setMessage("");
     }
     if (!response.ok) {
       console.log("Error sending message");
@@ -201,6 +201,6 @@ const ContactForm: React.FC = () => {
       </motion.div>
     </>
   );
-}
+};
 
 export default ContactForm;
