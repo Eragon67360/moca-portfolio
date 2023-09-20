@@ -1,0 +1,20 @@
+{
+    "Language": {
+        "en": "Inglés",
+        "de": "Alemán",
+        "fr": "Francés",
+        "es": "Español"
+    },
+    "Navigation": {
+        "home": "Inicio",
+        "competences": "Competencias",
+        "3dultrasonic": "Ultrasonidos 3D",
+        "contact": "Contacto"
+    },
+    "Home": {
+        "Banner": {
+            "banner_1": "Creamos <span> soluciones encantadoras </span> con la ayuda de la  <span>tecnología moderna</span>",
+            "banner_2": "La pequeña <colored> diferencia </colored> : nos complace crear una <colored> ventaja </colored> para usted"
+        }
+    }
+}

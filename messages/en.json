@@ -1,0 +1,20 @@
+{
+    "Language": {
+        "en": "English",
+        "de": "German",
+        "fr": "French",
+        "es": "Spanish"
+    },
+    "Navigation": {
+        "home": "Home",
+        "competences": "Competences",
+        "3dultrasonic": "3D Ultrasonic",
+        "contact": "Contact"
+    },
+    "Home": {
+        "Banner": {
+            "banner_1": "We create <span> charming solutions </span> with the help of  <span> modern technology</span>",
+            "banner_2": "The small <colored> difference </colored> - we are happy to create an <colored> advantage </colored> for you"
+        }
+    }
+}

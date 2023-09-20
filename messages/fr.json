@@ -1,0 +1,20 @@
+{
+    "Language": {
+        "en": "Anglais",
+        "de": "Allemand",
+        "fr": "Français",
+        "es": "Espagnol"
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "competences": "Compétences",
+        "3dultrasonic": "Échographie 3d",
+        "contact": "Contactez-nous"
+    },
+    "Home": {
+        "Banner": {
+            "banner_1": "Nous créons des<span> solutions innovantes </span>  à l'aide de <span> technologies modernes</span>",
+            "banner_2": "La petite <colored> différence </colored> - nous sommes heureux de vous créer un <colored> avantage </colored>"
+        }
+    }
+}

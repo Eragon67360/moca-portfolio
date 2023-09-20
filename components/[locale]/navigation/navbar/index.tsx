@@ -1,14 +1,13 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import home from "@/public/HOME.svg";
-import work from "@/public/WORK.svg";
-import contact from "@/public/CONTACT.svg";
 
 import Menu from "@/components/[locale]/Menu";
+import { Language } from "./Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
+import { TbWorld } from "react-icons/tb";
+import { Search } from "./Search";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -49,39 +48,57 @@ const Navbar = () => {
   return (
     <>
       <nav style={{ opacity: navbarOpacity }}>
-        <div className="flex justify-between items-center p-4 bg-linen  text-third">
-          <div>
-            <Logo />
-          </div>
-          <div className="flex space-x-8 text-2xl font-bold">
-            <div className="flex items-center space-x-10">
-              <Link href="/" className="hover:text-blackbean">
-                <Image src={home} height={20} alt="home link" />
-              </Link>
-              <Link href="/projects" className="hover:text-blackbean">
-                <Image src={work} height={20} alt="work link" />
-              </Link>
-              <Link href="/about" className="text-3xl uppercase hover:text-blackbean">
-                About
-              </Link>
-              <Link href="/contact" className="hover:text-blackbean">
-                <Image src={contact} height={20} alt="contact link" />
-              </Link>
+        <Menu
+          isOpen={menuOpen}
+          onClose={() => setMenuOpen(false)}
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
+        <div className="flex justify-between items-center px-10 py-4 bg-linen  text-third">
+          <div className="w-full flex">
+            <div className="flex space-x-8 text-2xl font-bold">
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="p-2 rounded-full hover:bg-gray-200 hover:text-blackbean"
+              >
+                <CgMenuGridO size={30} />
+              </button>
+              <div className="flex items-center space-x-10">
+                <Link
+                  href="/"
+                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/projects"
+                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                >
+                  Work
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-full hover:bg-gray-200 hover:text-blackbean"
-            >
-              <CgMenuGridO size={30} />
-            </button>
           </div>
 
-          <Menu
-            isOpen={menuOpen}
-            onClose={() => setMenuOpen(false)}
-            theme={theme}
-            toggleTheme={toggleTheme}
-          />
+          <div className="w-full flex justify-center">
+            <Logo />
+          </div>
+          <div className="flex space-x-4 w-full justify-end">
+            <Language/>
+            <Search />
+          </div>
         </div>
       </nav>
     </>

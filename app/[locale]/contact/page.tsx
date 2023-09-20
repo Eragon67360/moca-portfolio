@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
-import VisitCard from "@/components/VisitCard";
+import VisitCard from "@/components/[locale]/VisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
 import { FaTiktok } from "react-icons/fa";

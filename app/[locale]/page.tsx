@@ -8,7 +8,7 @@ import image_desktop from "@/public/desktop.jpg";
 import photo1 from "@/public/photo1.jpg";
 import photo2 from "@/public/photo2.jpg";
 import photo3 from "@/public/photo3.jpg";
-import { AudioPlayer } from "../components/audioplayer";
+import { AudioPlayer } from "../../components/[locale]/audioplayer";
 
 import {
   motion,

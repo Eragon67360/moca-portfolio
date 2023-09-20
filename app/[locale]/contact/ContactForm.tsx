@@ -2,7 +2,7 @@
 import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Dropdown from "@/components/Dropdown";
+import Dropdown from "@/components/[locale]/Dropdown";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
