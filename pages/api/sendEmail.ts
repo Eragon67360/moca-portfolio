@@ -9,7 +9,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const { name, firstname, email, phone, company, country, message } =
+    const { name, firstname, email, phone, company, country, subject, message } =
       req.body;
 
     const user = process.env.MAIL_USER;
@@ -22,6 +22,7 @@ export default async function handler(
       phone,
       company,
       country,
+      subject,
       message,
     };
 
@@ -58,7 +59,9 @@ export default async function handler(
     htmlcontent = htmlcontent.replace("${firstname}", firstname);
     htmlcontent = htmlcontent.replace("${name}", name);
     htmlcontent = htmlcontent.replace("${message}", message);
-    htmlcontent = htmlcontent.replace("[[FirstName]]", firstname);
+    htmlcontent = htmlcontent.replace("${subject}", subject);
+    htmlcontent = htmlcontent.replace("null", "No subject specified"); //if subject is missing
+    htmlcontent = htmlcontent.replace("undefined", "No subject specified"); //if subject is missing
 
     const mailToClient = {
       from: user,
@@ -78,6 +81,7 @@ export default async function handler(
         <p>Company: ${company}</p>
         <p>Country: ${company}</p>
         <p>Email: ${email}</p>
+        <p>Subject: ${subject}</p>
         <p>Message: ${message}</p>
     `,
     };

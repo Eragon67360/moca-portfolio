@@ -1,36 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Dropdown: React.FC = () => {
+interface DropdownProps {
+  onSelectionChange: (selected: string) => void;
+  selectedSubject: string | null;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({ onSelectionChange, selectedSubject  }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
-
-  const handleItemClick = (item: string) => {
-    setSelectedItem(item);
-    setIsOpen(false);
-  };
+  const [selected, setSelected] = useState<number | null>(null);
+  const buttonNames = ["UX Design", "Web Design", "App Design", "I'm not sure"];
 
   return (
     <>
-    <div className="relative">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="bg-none text-black border border-falured p-2 rounded-full flex justify-between w-full"
-      >
-        {selectedItem || 'Subject'}
-        {!selectedItem && <span className={`ml-2 transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>}
-      </button>
-      
-      {isOpen && (
-        <div className="absolute mt-2 w-full rounded-md shadow-lg bg-white">
-          <div className="py-1" role="menu" aria-orientation="vertical">
-            <button onClick={() => handleItemClick('Request a new design for your website')} className="block w-full px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">Request a new design for your website</button>
-            <button onClick={() => handleItemClick('Request a brand new website')} className="block w-full px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">Request a brand new website</button>
-            <button onClick={() => handleItemClick('...')} className="block w-full px-4 py-2 text-falured hover:bg-falured hover:text-white" role="menuitem">...</button>
+      <div className="relative">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-none text-black border border-falured p-2 rounded-full w-full"
+        >
+          What do you need?
+        </button>
+
+        {isOpen && (
+          <div className="mt-2 grid grid-cols-3 gap-2">
+            {buttonNames.map((name) => (
+              <button
+                type="button"
+                key={name}
+                onClick={() => onSelectionChange(name)}
+                className={`appearance-none border border-falured rounded-full w-full py-0.5 px-3  ${
+                  selectedSubject === name
+                    ? "bg-cinnabar text-white item-shadow"
+                    : "bg-white text-third"
+                }`}
+              >
+                {name}
+              </button>
+            ))}
           </div>
-        </div>
-      )}
-    </div></>
+        )}
+      </div>
+    </>
   );
-}
+};
 
 export default Dropdown;

@@ -1,18 +1,37 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Dropdown from "@/components/Dropdown";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 
-export default function ContactForm() {
+const ContactForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [emailValue, setEmailValue] = useState("");
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (message.trim() === "") {
+      setErrorMessage("Message field has to be filled.");
+    } else {
+      setErrorMessage(null);
+    }
+  }, [message]);
 
   const handleChange = (event: any) => {
     setEmailValue(event.target.value);
+  };
+
+  const handleChangeMessage = (event: any) => {
+    setMessage(event.target.value);
+  };
+
+  const handleSelectionChange = (subject: string) => {
+    setSelectedSubject(subject);
   };
   async function handleSubmit(event: any) {
     event.preventDefault();
@@ -25,6 +44,7 @@ export default function ContactForm() {
       phone: String(event.target.phone.value),
       country: String(event.target.country.value),
       company: String(event.target.company.value),
+      subject: selectedSubject,
       message: String(event.target.message.value),
     };
 
@@ -64,7 +84,6 @@ export default function ContactForm() {
         transition={{ duration: 1 }}
         className="z-10"
       >
-        <ToastContainer/>
         <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary contact-shadow px-[2.5vw] py-[3.84vh] rounded-2xl">
           <div className="bg-secondary w-full flex flex-col space-y-[1.92vh]">
             <div className="flex flex-col">
@@ -148,7 +167,10 @@ export default function ContactForm() {
 
               <div className="">
                 <div className="py-2">
-                  <Dropdown />
+                  <Dropdown
+                    onSelectionChange={handleSelectionChange}
+                    selectedSubject={selectedSubject}
+                  />
                 </div>
               </div>
 
@@ -157,18 +179,21 @@ export default function ContactForm() {
                   <textarea
                     className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh]"
                     id="message"
+                    value={message}
+                    onChange={handleChangeMessage}
                     placeholder="Message"
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-start space-x-2">
                 <button
-                  disabled={!emailValue || loading}
+                  disabled={!emailValue || loading || !message}
                   className="bg-white border border-falured uppercase hover:bg-opacity-80 disabled:border-gray-400 disabled:text-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-sans font-bold py-0.5 px-2 rounded-full"
                   type="submit"
                 >
                   Send
                 </button>
+                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               </div>
             </form>
           </div>
@@ -177,3 +202,5 @@ export default function ContactForm() {
     </>
   );
 }
+
+export default ContactForm;
