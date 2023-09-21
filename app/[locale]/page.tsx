@@ -115,7 +115,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 1 }}
               animate={controlSection1}
-              className="p-80 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] fixed h-screen w-screen z-10 text-center select-none font-sans font-bold text-8xl bg-transparent text-falured"
+              className="p-80 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)] fixed h-screen w-screen z-10 text-center select-none font-bold text-8xl bg-transparent text-falured"
             >
               Crafting Experiences, Shaping Futures: Your UX Design Partner
             </motion.div>
@@ -124,7 +124,7 @@ export default function Home() {
                 <motion.p
                   initial={{ opacity: 1 }}
                   animate={controlSection2}
-                  className="text-center font-sans space-y-24"
+                  className="text-center space-y-24"
                 >
                   <p className="text-4xl">Featured</p>
                   <p className="text-7xl font-extrabold">Projects</p>
@@ -135,7 +135,7 @@ export default function Home() {
                 <motion.p
                   initial={{ opacity: 1 }}
                   animate={controlSection2}
-                  className="text-center font-sans space-y-24"
+                  className="text-center space-y-24"
                 >
                   <p className="text-4xl">Featured</p>
                   <p className="text-7xl font-extrabold">Projects</p>
@@ -220,7 +220,7 @@ export default function Home() {
                   </div>
                   <Link
                     href="/projects"
-                    className="bg-linen mt-24 text-falured font-sans text-3xl px-8 py-4 border border-falured rounded-full"
+                    className="bg-linen mt-24 text-falured text-3xl px-8 py-4 border border-falured rounded-full"
                   >
                     <div>See more</div>
                   </Link>

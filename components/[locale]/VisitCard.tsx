@@ -9,8 +9,8 @@ const VisitCard = () => {
   const iconSize = `calc(1vw + 1vh)`;
   return (
     <>
-      <div className="h-[25vh] w-[22.2vw] rounded-xl bg-falured text-secondary flex flex-col justify-between font-sans contact-shadow ">
-        <div className="pt-4 flex justify-center text-[1.88vw] lg:text- font-sans">
+      <div className="h-[25vh] w-[22.2vw] rounded-xl bg-falured text-secondary flex flex-col justify-between contact-shadow ">
+        <div className="pt-4 flex justify-center text-[1.88vw]">
           Contact information
         </div>
 

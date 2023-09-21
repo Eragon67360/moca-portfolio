@@ -7,6 +7,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     screens: {
       //Phone
@@ -36,8 +37,6 @@ const config: Config = {
         cinnabar: "#DF482B",
       },
       fontFamily: {
-        impact: ["Impact", "sans-serif"],
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },

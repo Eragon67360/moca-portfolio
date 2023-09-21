@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const Data = () => {
   return (
-    <div className="font-sans flex flex-col text-secondary text-base">
+    <div className="flex flex-col text-secondary text-base">
       <div className="flex items-center p-6">
         <a href="mailto:contact@curefab.com">
           <TiMail size={40} />

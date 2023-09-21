@@ -1,15 +1,20 @@
 import "./globals.css";
 import "./styles.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Navbar from "@/components/[locale]/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "MOCA Portfolio",
@@ -36,7 +41,7 @@ export default async function RootLayout({
   }
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="flex flex-col h-screen overflow-y-hidden">
             <ProgressBar />

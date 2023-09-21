@@ -55,7 +55,7 @@ export const Items = ({
           </Link>
         </div>
 
-        <div className="flex flex-col pb-2 space-y-10 items-center font-sans">
+        <div className="flex flex-col pb-2 space-y-10 items-center">
           <p className="font-semibold text-4xl">Social Media</p>
           <div className="flex space-x-4 justify-between px-8 w-full">
             <a

@@ -32,7 +32,7 @@ function Contact(): React.JSX.Element {
               transition={{ duration: 2 }}
               className="flex justify-center items-center mt-24"
             >
-              <p className="text-black font-sans text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
+              <p className="text-black text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
                 User-centric design is{" "}
                 <span className="uppercase text-falured">the future.</span>
                 <br />
@@ -51,7 +51,7 @@ function Contact(): React.JSX.Element {
                 <div className="">
                   <VisitCard />
                 </div>
-                <div className="flex flex-col text-black font-sans space-y-3 left-[18.35vw] text-[1.88vw]">
+                <div className="flex flex-col text-black space-y-3 left-[18.35vw] text-[1.88vw]">
                   <p>You can also find us in...</p>
                   <div className="flex w-[22.2vw] justify-evenly">
                     <FiLinkedin />

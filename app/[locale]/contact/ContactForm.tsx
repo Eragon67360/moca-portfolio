@@ -88,7 +88,7 @@ const ContactForm: React.FC = () => {
           <div className="bg-secondary w-full flex flex-col space-y-[1.92vh]">
             <div className="flex flex-col">
               <div className="flex items-center space-x-2">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-sans font-bold text-falured">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured">
                   Get in touch!
                 </h2>
 
@@ -97,7 +97,7 @@ const ContactForm: React.FC = () => {
 
               <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
                 Let&apos;s talk about everything{" "}
-                <span className="font-sans text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured font-extrabold">
+                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured font-extrabold">
                   {";)"}
                 </span>
               </p>
@@ -188,7 +188,7 @@ const ContactForm: React.FC = () => {
               <div className="flex items-center justify-start space-x-2">
                 <button
                   disabled={!emailValue || loading || !message}
-                  className="bg-white border border-falured uppercase hover:bg-opacity-80 disabled:border-gray-400 disabled:text-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-sans font-bold py-0.5 px-2 rounded-full"
+                  className="bg-white border border-falured uppercase hover:bg-opacity-80 disabled:border-gray-400 disabled:text-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-bold py-0.5 px-2 rounded-full"
                   type="submit"
                 >
                   Send

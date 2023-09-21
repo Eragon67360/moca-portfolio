@@ -69,25 +69,25 @@ const Navbar = () => {
               <div className="flex items-center space-x-[1.3vw]">
                 <Link
                   href="/"
-                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] uppercase hover:text-cinnabar"
                 >
                   {t('home')}
                 </Link>
                 <Link
                   href="/projects"
-                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] uppercase hover:text-cinnabar"
                 >
                   {t('work')}
                 </Link>
                 <Link
                   href="/about"
-                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] uppercase hover:text-cinnabar"
                 >
                   {t('about')}
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] uppercase hover:text-cinnabar"
                 >
                   {t('contact')}
                 </Link>

@@ -5,7 +5,10 @@ interface DropdownProps {
   selectedSubject: string | null;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ onSelectionChange, selectedSubject  }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  onSelectionChange,
+  selectedSubject,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
   const buttonNames = ["UX Design", "Web Design", "App Design", "I'm not sure"];
@@ -16,25 +19,34 @@ const Dropdown: React.FC<DropdownProps> = ({ onSelectionChange, selectedSubject 
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-none text-black border border-falured p-2 rounded-full w-full"
+          className="bg-none text-black border border-falured p-2 rounded-full w-full text-left"
         >
           What do you need?
         </button>
 
         {isOpen && (
-          <div className="mt-2 grid grid-cols-3 gap-2">
+          <div className="mt-2 flex flex-wrap gap-3">
             {buttonNames.map((name) => (
               <button
                 type="button"
                 key={name}
                 onClick={() => onSelectionChange(name)}
-                className={`appearance-none hover:bg-cinnabar hover:text-white  border border-falured rounded-full w-full py-0.5 px-3  ${
-                  selectedSubject === name
-                    ? "bg-cinnabar text-white item-shadow"
-                    : "bg-white text-third"
-                }`}
+                className="border border-falured rounded-full transform transition duration-500 hover:scale-110"
+                // className={`appearance-none hover:bg-cinnabar hover:text-white transition-shadow hover:shadow-2xl hover:item-shadow border border-falured rounded-full w-full py-0.5 px-3  ${
+                //   selectedSubject === name
+                //     ? "bg-cinnabar text-white item-shadow"
+                //     : "bg-white text-third"
+                // }`}
               >
-                {name}
+                <div
+                  className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
+                    selectedSubject === name
+                      ? "bg-cinnabar text-white item-shadow"
+                      : "bg-white text-third"
+                  }`}
+                >
+                  {name}
+                </div>
               </button>
             ))}
           </div>
