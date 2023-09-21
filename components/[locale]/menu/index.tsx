@@ -7,11 +7,9 @@ import { Items } from "./Items";
 interface MenuProps {
   isOpen: boolean;
   onClose: () => void;
-  theme: string;
-  toggleTheme: () => void;
 }
 
-const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
+const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
   // Variants for the menu animation
   const menuVariants = {
     open: {
@@ -76,7 +74,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
           >
             <AiFillCloseCircle size={40} />
           </button>
-          <Items onClose={onClose} toggleTheme={toggleTheme} theme={theme} />
+          <Items onClose={onClose} />
         </motion.div>
         <motion.div
           initial="closed"

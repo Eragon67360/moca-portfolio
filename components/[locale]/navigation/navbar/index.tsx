@@ -11,7 +11,6 @@ import { useTranslations } from "next-intl";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [theme, setTheme] = useState<string>("light");
   const [scrollY, setScrollY] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
 
@@ -26,55 +25,25 @@ const Navbar = () => {
   ];
 
   const commonClasses =
-    "text-[1.2vw] uppercase hover:text-cinnabar transform transition duration-300 hover:scale-110";
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    setWindowHeight(window.innerHeight);
-  }, []);
+    "text-[1.2vw] uppercase hover:text-cinnabar dark:hover:text-cinnabar transform transition duration-300 hover:scale-110";
 
   const scrollPercentage = windowHeight
     ? Math.min(scrollY / windowHeight, 1)
     : 0;
   const navbarOpacity = 1 - scrollPercentage;
 
-  const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      // apply dark theme styles
-    } else {
-      setTheme("light");
-      // apply light theme styles
-    }
-  };
   return (
     <>
       <nav style={{ opacity: navbarOpacity }}>
-        <Menu
-          isOpen={menuOpen}
-          onClose={() => setMenuOpen(false)}
-          theme={theme}
-          toggleTheme={toggleTheme}
-        />
-        <div className="flex justify-between items-center px-10 py-4 bg-secondary border border-b-2 border-cinnabar rounded-b-lg  text-third">
+        <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+        <div className="flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar rounded-b-lg ">
           <div className="w-full flex">
             <div className="flex space-x-8 text-2xl font-bold">
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="p-2 rounded-full hover:bg-gray-200 hover:text-blackbean"
+                className="p-2 rounded-full transform transition duration-300 hover:scale-125"
               >
-                <CgMenuGridO size={30} />
+                <CgMenuGridO size={30} className="hover:text-cinnabar text-third dark:text-secondary"/>
               </button>
               <div className="flex items-center space-x-[1.3vw]">
                 {navLinks.map((link) => {
@@ -85,7 +54,7 @@ const Navbar = () => {
                       key={link.name}
                       href={link.href}
                       className={`${commonClasses} ${
-                        isActive ? "text-cinnabar" : "text-black"
+                        isActive ? "text-cinnabar" : "text-black dark:text-secondary"
                       }`}
                     >
                       {link.name}

@@ -8,15 +8,7 @@ import tiktok from "@/public/logos/tiktok.png";
 import ThemeSwitcher from "../ThemeSwitcher";
 import Providers from "@/app/[locale]/providers";
 
-export const Items = ({
-  onClose,
-  theme,
-  toggleTheme,
-}: {
-  onClose: () => void;
-  theme: string;
-  toggleTheme: () => void;
-}) => {
+export const Items = ({ onClose }: { onClose: () => void }) => {
   const t = useTranslations("Navigation");
 
   return (
