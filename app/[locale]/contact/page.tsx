@@ -6,7 +6,10 @@ import VisitCard from "@/components/[locale]/VisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
 import { FaTiktok } from "react-icons/fa";
-import image_background from '@/public/contact_background.png'
+import Image from "next/image";
+import instagram from "@/public/logos/instagram.png";
+import linkedin from "@/public/logos/linkedin.png";
+import tiktok from "@/public/logos/tiktok.png";
 
 function Contact(): React.JSX.Element {
   const controlSection1 = useAnimation();
@@ -54,9 +57,24 @@ function Contact(): React.JSX.Element {
                 <div className="flex flex-col text-black space-y-3 left-[18.35vw] text-[1.88vw]">
                   <p>You can also find us in...</p>
                   <div className="flex w-[22.2vw] justify-evenly">
-                    <FiLinkedin />
-                    <FiInstagram />
-                    <FaTiktok />
+                    <a
+                      href="https://www.linkedin.com/in/thomas-moser67"
+                      target="_blank"
+                    >
+                      <Image src={linkedin} alt="logo linkedin" width={60} />
+                    </a>
+                    <a
+                      href="https://instagram.com/thomas_msr_67?igshid=OGQ5ZDc2ODk2ZA=="
+                      target="_blank"
+                    >
+                      <Image src={instagram} alt="logo instagram" width={60} />
+                    </a>
+                    <a
+                      href="https://www.tiktok.com/@cristinaandresrr?lang=en"
+                      target="_blank"
+                    >
+                      <Image src={tiktok} alt="logo tiktok" width={60} />
+                    </a>
                   </div>
                 </div>
               </motion.div>

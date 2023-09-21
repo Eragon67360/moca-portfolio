@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 import Menu from "../../menu";
 import { Language } from "./Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
-import { TbWorld } from "react-icons/tb";
 import { Search } from "./Search";
 import { useTranslations } from "next-intl";
 
@@ -16,7 +15,18 @@ const Navbar = () => {
   const [scrollY, setScrollY] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
 
-  const t = useTranslations('Navigation');
+  const t = useTranslations("Navigation");
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/", name: t("home") },
+    { href: "/projects", name: t("work") },
+    { href: "/about", name: t("about") },
+    { href: "/contact", name: t("contact") },
+  ];
+
+  const commonClasses =
+    "text-[1.2vw] uppercase hover:text-cinnabar transform transition duration-300 hover:scale-110";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,30 +77,21 @@ const Navbar = () => {
                 <CgMenuGridO size={30} />
               </button>
               <div className="flex items-center space-x-[1.3vw]">
-                <Link
-                  href="/"
-                  className="text-[1.2vw] uppercase hover:text-cinnabar"
-                >
-                  {t('home')}
-                </Link>
-                <Link
-                  href="/projects"
-                  className="text-[1.2vw] uppercase hover:text-cinnabar"
-                >
-                  {t('work')}
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-[1.2vw] uppercase hover:text-cinnabar"
-                >
-                  {t('about')}
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-[1.2vw] uppercase hover:text-cinnabar"
-                >
-                  {t('contact')}
-                </Link>
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      className={`${commonClasses} ${
+                        isActive ? "text-cinnabar" : "text-black"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -99,7 +100,7 @@ const Navbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
-            <Language/>
+            <Language />
             <Search />
           </div>
         </div>
