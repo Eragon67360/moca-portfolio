@@ -16,13 +16,33 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
     open: {
       x: 0,
       transition: {
+        type: "ease",
+        stiffness: 260,
+        damping: 20,
+      },
+    },
+    closed: {
+      x: "-100%",
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    },
+  };
+
+  const backgroundVariants = {
+    open: {
+      opacity: 1,
+      x:0,
+      transition: {
         type: "spring",
         stiffness: 260,
         damping: 20,
       },
     },
     closed: {
-      x: "100%",
+      opacity: 0,
       transition: {
         type: "spring",
         stiffness: 260,
@@ -34,15 +54,19 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
   return (
     <>
       <motion.div
-        className="flex fixed z-20 top-0 right-0 w-full h-full bg-none text-white"
         initial="closed"
         animate={isOpen ? "open" : "closed"}
-        variants={menuVariants}
+        variants={backgroundVariants}
+        className={isOpen ? "flex fixed z-30 top-0 left-0 w-full h-full bg-black/50 text-white" : "hidden"}
       >
-        <div className="bg-black/50 w-2/3"></div>
-        <div className="flex flex-col justify-center items-center w-1/3 bg-white">
+        <motion.div
+          initial="closed"
+          animate={isOpen ? "open" : "closed"}
+          variants={menuVariants}
+          className="flex flex-col justify-center items-center w-1/3 bg-white"
+        >
           <button
-            className="absolute top-8 right-8 rounded-full bg-gray-700 hover:bg-gray-600"
+            className="absolute top-8 left-8 rounded-full bg-gray-700 hover:bg-gray-600"
             onClick={onClose}
           >
             <AiFillCloseCircle size={40} />
@@ -103,7 +127,13 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose, theme, toggleTheme }) => {
               {/* icons representing the themes */}
             </button>
           </div>
-        </div>
+        </motion.div>
+        <motion.div
+          initial="closed"
+          animate={isOpen ? "open" : "closed"}
+          variants={backgroundVariants}
+          className="bg-black/50 w-2/3"
+        ></motion.div>
       </motion.div>
     </>
   );
