@@ -6,6 +6,7 @@ import VisitCard from "@/components/[locale]/VisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { FiLinkedin, FiInstagram } from "react-icons/fi";
 import { FaTiktok } from "react-icons/fa";
+import image_background from '@/public/contact_background.png'
 
 function Contact(): React.JSX.Element {
   const controlSection1 = useAnimation();
@@ -24,12 +25,12 @@ function Contact(): React.JSX.Element {
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
         <AnimatePresence>
-          <div className="flex flex-col h-[145vh] space-y-20">
+          <div className="flex flex-col h-[150vh] space-y-20">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 2 }}
-              className="flex justify-center items-center mt-24 bg-none"
+              className="flex justify-center items-center mt-24"
             >
               <p className="text-black font-sans text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
                 User-centric design is{" "}
