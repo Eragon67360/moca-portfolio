@@ -7,8 +7,8 @@
     },
     "Navigation": {
         "home": "Home",
-        "competences": "Competences",
-        "3dultrasonic": "3D Ultrasonic",
+        "work": "Work",
+        "about": "About",
         "contact": "Contact"
     },
     "Home": {

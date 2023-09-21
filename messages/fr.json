@@ -7,9 +7,9 @@
     },
     "Navigation": {
         "home": "Accueil",
-        "competences": "Compétences",
-        "3dultrasonic": "Échographie 3d",
-        "contact": "Contactez-nous"
+        "work": "Projets",
+        "about": "À propos",
+        "contact": "Contact"
     },
     "Home": {
         "Banner": {

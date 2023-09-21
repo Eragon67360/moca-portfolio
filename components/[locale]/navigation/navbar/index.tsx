@@ -8,12 +8,15 @@ import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
 import { TbWorld } from "react-icons/tb";
 import { Search } from "./Search";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>("light");
   const [scrollY, setScrollY] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
+
+  const t = useTranslations('Navigation');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,30 +66,30 @@ const Navbar = () => {
               >
                 <CgMenuGridO size={30} />
               </button>
-              <div className="flex items-center space-x-10">
+              <div className="flex items-center space-x-[1.3vw]">
                 <Link
                   href="/"
-                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
                 >
-                  Home
+                  {t('home')}
                 </Link>
                 <Link
                   href="/projects"
-                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
                 >
-                  Work
+                  {t('work')}
                 </Link>
                 <Link
                   href="/about"
-                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
                 >
-                  About
+                  {t('about')}
                 </Link>
                 <Link
                   href="/contact"
-                  className="text-3xl font-sans uppercase hover:text-cinnabar"
+                  className="text-[1.2vw] font-sans uppercase hover:text-cinnabar"
                 >
-                  Contact
+                  {t('contact')}
                 </Link>
               </div>
             </div>
