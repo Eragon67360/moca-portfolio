@@ -9,7 +9,7 @@ function Expandable({ language }: { language: any }) {
 
   return (
     <div
-      className="relative inline-block ml-4"
+      className="relative inline-block ml-4 z-20"
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
     >
       <button className="p-2 rounded-full focus:outline-none">

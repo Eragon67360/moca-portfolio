@@ -10,17 +10,7 @@ import photo2 from "@/public/photo2.jpg";
 import photo3 from "@/public/photo3.jpg";
 import { AudioPlayer } from "../../components/[locale]/audioplayer";
 
-import {
-  motion,
-  useScroll,
-  useSpring,
-  AnimatePresence,
-  useAnimation,
-  useTransform,
-  MotionValue,
-  Variants,
-  useInView,
-} from "framer-motion";
+import { motion, AnimatePresence, useAnimation, Variants } from "framer-motion";
 
 export default function Home() {
   const controlSection1 = useAnimation();
