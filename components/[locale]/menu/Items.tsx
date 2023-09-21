@@ -5,7 +5,8 @@ import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
-import { link } from "fs";
+import ThemeSwitcher from "../ThemeSwitcher";
+import Providers from "@/app/[locale]/providers";
 
 export const Items = ({
   onClose,
@@ -86,13 +87,9 @@ export const Items = ({
           </div>
         </div>
         <div className="flex justify-center items-center ">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
-          >
-            {theme === "light" ? "🌙" : "☀️"}{" "}
-            {/* icons representing the themes */}
-          </button>
+          <Providers>
+            <ThemeSwitcher />
+          </Providers>
         </div>
       </div>
     </>

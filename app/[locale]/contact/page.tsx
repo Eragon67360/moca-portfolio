@@ -4,8 +4,6 @@ import React, { useRef, useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
 import VisitCard from "@/components/[locale]/VisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import { FiLinkedin, FiInstagram } from "react-icons/fi";
-import { FaTiktok } from "react-icons/fa";
 import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
@@ -35,7 +33,7 @@ function Contact(): React.JSX.Element {
               transition={{ duration: 2 }}
               className="flex justify-center items-center mt-24"
             >
-              <p className="text-black text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
+              <p className="text-black dark:text-secondary text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
                 User-centric design is{" "}
                 <span className="uppercase text-falured">the future.</span>
                 <br />

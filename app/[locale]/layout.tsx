@@ -8,7 +8,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,7 +39,7 @@ export default async function RootLayout({
     notFound();
   }
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="flex flex-col h-screen overflow-y-hidden">

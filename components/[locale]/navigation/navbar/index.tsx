@@ -67,7 +67,7 @@ const Navbar = () => {
           theme={theme}
           toggleTheme={toggleTheme}
         />
-        <div className="flex justify-between items-center px-10 py-4 bg-linen  text-third">
+        <div className="flex justify-between items-center px-10 py-4 bg-secondary border border-b-2 border-cinnabar rounded-b-lg  text-third">
           <div className="w-full flex">
             <div className="flex space-x-8 text-2xl font-bold">
               <button

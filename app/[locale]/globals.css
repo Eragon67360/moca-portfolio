@@ -2,29 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .radial-bg {
     background: radial-gradient(
       49.9% 49.9% at 49.9% 50.06%,
       rgba(116, 33, 25, 0.8) 21.88%,
-      #f2ebe3 100%
+      #fff 100%
     );
   }
   .font-adaptive16 {
