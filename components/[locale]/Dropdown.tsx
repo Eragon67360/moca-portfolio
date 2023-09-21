@@ -28,7 +28,7 @@ const Dropdown: React.FC<DropdownProps> = ({ onSelectionChange, selectedSubject 
                 type="button"
                 key={name}
                 onClick={() => onSelectionChange(name)}
-                className={`appearance-none border border-falured rounded-full w-full py-0.5 px-3  ${
+                className={`appearance-none hover:bg-cinnabar hover:text-white  border border-falured rounded-full w-full py-0.5 px-3  ${
                   selectedSubject === name
                     ? "bg-cinnabar text-white item-shadow"
                     : "bg-white text-third"
