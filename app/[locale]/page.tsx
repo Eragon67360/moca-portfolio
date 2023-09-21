@@ -86,6 +86,7 @@ export default function Home() {
         id="background-music"
         loop
         autoPlay
+        muted={isMuted}
         className="z-30"
       >
         <source src={currentTrack.src} type="audio/mp3" />
