@@ -84,20 +84,20 @@ const ContactForm: React.FC = () => {
         transition={{ duration: 1 }}
         className="z-10"
       >
-        <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary contact-shadow px-[2.5vw] py-[3.84vh] rounded-2xl">
-          <div className="bg-secondary w-full flex flex-col space-y-[1.92vh]">
-            <div className="flex flex-col">
+        <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary dark:bg-blackbean  shadow-lightBox dark:shadow-darkBox px-[2.5vw] py-[3.84vh] rounded-2xl">
+          <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
+            <div className="select-none flex flex-col">
               <div className="flex items-center space-x-2">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
                   Get in touch!
                 </h2>
 
                 <Image src={logo} alt="logo" />
               </div>
 
-              <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl">
+              <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary">
                 Let&apos;s talk about everything{" "}
-                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured font-extrabold">
+                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-extrabold">
                   {";)"}
                 </span>
               </p>
@@ -107,7 +107,7 @@ const ContactForm: React.FC = () => {
               <div className="flex space-x-[2.52vw] justify-around">
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="firstname"
                     name="given-name"
                     type="text"
@@ -116,7 +116,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     name="family-name"
                     id="name"
                     type="text"
@@ -127,7 +127,7 @@ const ContactForm: React.FC = () => {
               <div className="flex space-x-[2.52vw] justify-around ">
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="email"
                     type="email"
                     placeholder="E-Mail"
@@ -137,7 +137,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="phone"
                     type="phone"
                     placeholder="Phone"
@@ -148,7 +148,7 @@ const ContactForm: React.FC = () => {
               <div className="flex space-x-[2.52vw] justify-around ">
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="company"
                     type="text"
                     placeholder="Company"
@@ -156,7 +156,7 @@ const ContactForm: React.FC = () => {
                 </div>
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="country"
                     name="country"
                     type="text"
@@ -177,7 +177,7 @@ const ContactForm: React.FC = () => {
               <div className="">
                 <div className="py-2">
                   <textarea
-                    className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh]"
+                    className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh] dark:bg-secondary"
                     id="message"
                     value={message}
                     onChange={handleChangeMessage}
@@ -188,7 +188,7 @@ const ContactForm: React.FC = () => {
               <div className="flex items-center justify-start space-x-2">
                 <button
                   disabled={!emailValue || loading || !message}
-                  className="bg-white border border-falured uppercase hover:bg-opacity-80 disabled:border-gray-400 disabled:text-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-bold py-0.5 px-2 rounded-full"
+                  className="bg-white border border-falured uppercase disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-bold py-0.5 px-2 rounded-full"
                   type="submit"
                 >
                   Send

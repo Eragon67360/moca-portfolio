@@ -19,7 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-none text-black border border-falured p-2 rounded-full w-full text-left"
+          className="bg-secondary text-black border border-falured p-2 rounded-full w-full text-left"
         >
           What do you need?
         </button>
@@ -32,16 +32,11 @@ const Dropdown: React.FC<DropdownProps> = ({
                 key={name}
                 onClick={() => onSelectionChange(name)}
                 className="border border-falured rounded-full transform transition duration-500 hover:scale-110"
-                // className={`appearance-none hover:bg-cinnabar hover:text-white transition-shadow hover:shadow-2xl hover:item-shadow border border-falured rounded-full w-full py-0.5 px-3  ${
-                //   selectedSubject === name
-                //     ? "bg-cinnabar text-white item-shadow"
-                //     : "bg-white text-third"
-                // }`}
               >
                 <div
                   className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
                     selectedSubject === name
-                      ? "bg-cinnabar text-white item-shadow"
+                      ? "bg-cinnabar text-white shadow-itemLightBox dark:shadow-itemDarkBox"
                       : "bg-white text-third"
                   }`}
                 >

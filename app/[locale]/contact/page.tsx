@@ -35,10 +35,10 @@ function Contact(): React.JSX.Element {
             >
               <p className="text-black dark:text-secondary text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">
                 User-centric design is{" "}
-                <span className="uppercase text-falured">the future.</span>
+                <span className="uppercase text-cinnabar">the future.</span>
                 <br />
                 Let&apos;s shape it{" "}
-                <span className="uppercase text-falured">together !</span>
+                <span className="uppercase text-cinnabar">together !</span>
               </p>
             </motion.div>
 
@@ -52,7 +52,7 @@ function Contact(): React.JSX.Element {
                 <div className="">
                   <VisitCard />
                 </div>
-                <div className="flex flex-col text-black space-y-3 left-[18.35vw] text-[1.88vw]">
+                <div className="flex flex-col text-black dark:text-secondary space-y-3 left-[18.35vw] text-[1.88vw]">
                   <p>You can also find us in...</p>
                   <div className="flex w-[22.2vw] justify-evenly">
                     <a

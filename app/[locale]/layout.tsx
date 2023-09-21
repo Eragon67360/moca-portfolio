@@ -42,7 +42,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="flex flex-col h-screen overflow-y-hidden">
+          <div className="flex flex-col h-screen overflow-y-hidden bg-white dark:bg-blackbean">
             <ProgressBar />
             <Navbar />
             <div className="flex flex-col flex-grow overflow-y-scroll">

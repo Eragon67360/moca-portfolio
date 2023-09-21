@@ -7,19 +7,19 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     screens: {
       //Phone
-      sm:"480px",
+      sm: "480px",
       //Phablet
       md: "1024px",
       //Tablet
       lg: "1440px",
       //PC
-      xl:"1920px",
+      xl: "1920px",
       //Large screen
-      "2xl":"2560px"
+      "2xl": "2560px",
     },
     extend: {
       backgroundImage: {
@@ -36,7 +36,12 @@ const config: Config = {
         blackbean: "#310F0D",
         cinnabar: "#DF482B",
       },
-      fontFamily: {
+      fontFamily: {},
+      boxShadow: {
+        lightBox: '0px 0px 20px 0px rgba(0, 0, 0, 0.6)',
+        darkBox: "0px 0px 20px 0px rgba(255, 255, 255, 1)",
+        itemLightBox: '-2px 2px 6px rgba(0, 0, 0, 0.8);',
+        itemDarkBox:'-2px 2px 6px rgba(255, 255, 255, 1);',
       },
     },
   },
