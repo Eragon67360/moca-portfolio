@@ -7,7 +7,7 @@ import { Language } from "./Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
 import { Search } from "./Search";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -16,6 +16,8 @@ const Navbar = () => {
 
   const t = useTranslations("Navigation");
   const pathname = usePathname();
+
+  const locale = useLocale();
 
   const navLinks = [
     { href: "/", name: t("home") },
@@ -50,11 +52,12 @@ const Navbar = () => {
               </button>
               <div className="flex items-center space-x-[1.3vw]">
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive = pathname === ('/'+locale + link.href);
 
                   return (
                     <Link
                       key={link.name}
+                      locale={locale}
                       href={link.href}
                       className={`${commonClasses} ${
                         isActive
