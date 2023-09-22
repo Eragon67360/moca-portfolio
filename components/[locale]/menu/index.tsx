@@ -61,13 +61,6 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           variants={menuVariants}
-          onAnimationComplete={() => {
-            if (!isOpen) {
-              console.log("Component unmounted");
-            } else {
-              console.log("Component mounted");
-            }
-          }}
           className="flex flex-col py-4 px-8 w-1/3 bg-white dark:bg-blackbean"
         >
           <button
