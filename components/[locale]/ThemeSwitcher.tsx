@@ -13,7 +13,7 @@ const ThemeSwitcher = () => {
         onClick={() =>
           theme === "light" ? setTheme("dark") : setTheme("light")
         }
-        className="p-2 rounded-full bg-gray-700 hover:bg-gray-600"
+        className="p-2 rounded-full bg-falured hover:bg-falured/60"
       >
         {theme === "light" ? "🌙" : "☀️"}
       </button>

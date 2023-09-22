@@ -13,7 +13,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <>
-      <div className="flex flex-col space-y-4 my-24 h-full text-black text-2xl font-bold justify-between">
+      <div className="flex flex-col space-y-4 my-24 h-full text-black dark:text-secondary text-2xl font-bold justify-between">
         <div className="space-y-4 ">
           <Link
             href="/"
@@ -22,7 +22,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           >
             {t("home")}
           </Link>
-          <hr className="w-full h-0.5 mx-auto bg-gray-800 border-0 rounded" />
+          <hr className="w-full h-0.5 mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
           <Link
             href="/about"
             className="block hover:text-cinnabar"
@@ -30,7 +30,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           >
             {t("about")}
           </Link>
-          <hr className="w-full h-0.5 mx-auto bg-gray-800 border-0 rounded" />
+          <hr className="w-full h-0.5 mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
           <Link
             href="/projects"
             className="block hover:text-cinnabar "
@@ -38,7 +38,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           >
             {t("work")}
           </Link>
-          <hr className="w-full h-0.5 mx-auto bg-gray-800 border-0 rounded" />
+          <hr className="w-full h-0.5 mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
           <Link
             href="/contact"
             className="block hover:text-cinnabar"

@@ -40,10 +40,13 @@ const Navbar = () => {
           <div className="w-full flex">
             <div className="flex space-x-8 text-2xl font-bold">
               <button
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={() => setMenuOpen(true)}
                 className="p-2 rounded-full transform transition duration-300 hover:scale-125"
               >
-                <CgMenuGridO size={30} className="hover:text-cinnabar text-third dark:text-secondary"/>
+                <CgMenuGridO
+                  size={30}
+                  className="hover:text-cinnabar text-third dark:text-secondary"
+                />
               </button>
               <div className="flex items-center space-x-[1.3vw]">
                 {navLinks.map((link) => {
@@ -54,7 +57,9 @@ const Navbar = () => {
                       key={link.name}
                       href={link.href}
                       className={`${commonClasses} ${
-                        isActive ? "text-cinnabar" : "text-black dark:text-secondary"
+                        isActive
+                          ? "text-cinnabar"
+                          : "text-black dark:text-secondary"
                       }`}
                     >
                       {link.name}
