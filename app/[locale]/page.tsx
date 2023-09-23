@@ -11,6 +11,7 @@ import photo3 from "@/public/photo3.jpg";
 import { AudioPlayer } from "../../components/[locale]/audioplayer";
 
 import { motion, AnimatePresence, useAnimation, Variants } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Home() {
   const controlSection1 = useAnimation();
@@ -81,6 +82,7 @@ export default function Home() {
 
   return (
     <>
+    <SEO title="Home page" description="Landing page of the website"/>
       <audio
         ref={audioRef}
         id="background-music"

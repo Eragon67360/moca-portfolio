@@ -1,0 +1,16 @@
+{
+    "project1": {
+        "id": "project1",
+        "title": "Curefab",
+        "description": "Curefab website",
+        "author": "Cristina Andres & Thomas Moser",
+        "date": "October 2023"
+    },
+    "project2": {
+        "id": "project2",
+        "title": "Personal Portfolio",
+        "description": "Personal portfolio from Thomas Moser",
+        "author": "Thomas Moser",
+        "date": "2021"
+    }
+}

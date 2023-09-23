@@ -1,0 +1,6 @@
+{
+  "NestedObjectProperty": {
+      "Name": "Neste Object"
+  },
+  "NestedArrayProperty": [10,20,true,40]
+}

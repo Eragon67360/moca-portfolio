@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactForm";
 import VisitCard from "@/components/[locale]/VisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
@@ -8,6 +8,7 @@ import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
+import { Metadata } from "next";
 
 function Contact(): React.JSX.Element {
   const controlSection1 = useAnimation();

@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
+import SEO from "@/components/SEO";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -16,8 +17,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MOCA Portfolio",
-  description: "Portfolio for MOCA",
+  title: {
+    template: '%s | UXMOCA',
+    default: 'UXMOCA - Visual Website Designer',
+  },
+  description: "Our official UX MOCA website",
 };
 
 export default async function RootLayout({
