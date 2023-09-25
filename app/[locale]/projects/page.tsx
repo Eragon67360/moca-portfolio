@@ -14,31 +14,28 @@ export default function Projects() {
 
   return (
     <>
-      <div className="flex flex-col h-screen">
-        <h1 className="font-bold text-2xl text-center py-16">
-          Projets
-        </h1>
-        <Carousel
-          currentSlide={currentSlide}
-          setCurrentSlide={setCurrentSlide}
-        />
-        <h1 className="font-bold text-2xl text-center py-16">
-          {dataArray[currentSlide].title}
-        </h1>
-        <div className="flex space-x-8 justify-center">
-          <Link
-            href={dataArray[currentSlide].linkPage}
-            className="border p-2 dark:hover:bg-secondary dark:hover:text-third rounded-full hover:bg-falured hover:text-secondary"
-          >
-            Learn more
-          </Link>
-          <a
-            href={dataArray[currentSlide].linkOnline}
-            target="_blank"
-            className="border p-2 dark:hover:bg-secondary dark:hover:text-third rounded-full hover:bg-falured hover:text-secondary"
-          >
-            Link to Project
-          </a>
+      <div className="flex flex-col h-screen overflow-hidden">
+        <div className="flex flex-col h-[50vh] mx-32 items-start justify-end">
+          <h1 className="font-bold text-4xl">
+            {dataArray[currentSlide].title}
+          </h1>
+          <h2 className="font-bold text-3xl">
+            {dataArray[currentSlide].description}
+          </h2>
+        </div>
+
+        <div className="flex mx-12 h-[50vh]">
+          <Carousel
+            currentSlide={currentSlide}
+            setCurrentSlide={setCurrentSlide}
+          />
+          <Image
+            src={`/img/${dataArray[currentSlide].imageName}`}
+            alt="image presenter"
+            width={540}
+            height={300}
+            className=" w-1/2"
+          />
         </div>
       </div>
     </>
