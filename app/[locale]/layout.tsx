@@ -18,8 +18,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | UXMOCA',
-    default: 'UXMOCA - Visual Website Designer',
+    template: 'UXMOCA | %s ',
+    default: 'UXMOCA - UX Development',
   },
   description: "Our official UX MOCA website",
 };

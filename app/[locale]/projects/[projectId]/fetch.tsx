@@ -12,6 +12,7 @@ export default function DataFetcher({ id }: { id: string }) {
   //Handle the loading state
   if (!data) return <div>Loading...</div>;
   const dataParsed = JSON.parse(data);
+  console.log(dataParsed);
 
   return (
     <>

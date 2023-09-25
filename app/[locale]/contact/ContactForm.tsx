@@ -81,10 +81,10 @@ const ContactForm: React.FC = () => {
       <motion.div
         initial={{ y: 800 }}
         animate={{ y: 400 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, delay: 1 }}
         className="z-10"
       >
-        <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary dark:bg-blackbean  shadow-lightBox dark:shadow-darkBox px-[2.5vw] py-[3.84vh] rounded-2xl">
+        <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary dark:bg-blackbean  shadow-lightBox px-[2.5vw] py-[3.84vh] rounded-2xl">
           <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
             <div className="select-none flex flex-col">
               <div className="flex items-center space-x-2">

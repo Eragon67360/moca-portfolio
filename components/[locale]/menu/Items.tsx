@@ -50,7 +50,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
 
         <div className="flex flex-col pb-2 space-y-10 items-center">
           <p className="font-semibold text-4xl">Social Media</p>
-          <div className="flex space-x-4 justify-between px-8 w-full">
+          <div className="flex flex-wrap gap-4 justify-between px-8 w-full">
             <a
               className="space-y-3 items-center flex flex-col hover:bg-gradient-to-r hover:from-[#67C9D0] hover:via-black hover:to-[#EE1D52] hover:bg-clip-text hover:text-transparent"
               href="https://www.tiktok.com/@cristinaandresrr?lang=en"

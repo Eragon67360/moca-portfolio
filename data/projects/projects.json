@@ -1,0 +1,57 @@
+{
+    "curefab": {
+        "number": 1,
+        "id": "curefab",
+        "title": "Curefab website",
+        "imageName": "curefab.png",
+        "description": "Curefab website",
+        "author": "Cristina Andres & Thomas Moser",
+        "date": "October 2023",
+        "linkPage": "/projects/curefab",
+        "linkOnline": "https://curefab.com/"
+    },
+    "portfolio": {
+        "number": 2,
+        "id": "portfolio",
+        "title": "Personal portfolio",
+        "imageName": "moser_portfolio.png",
+        "description": "Personal portfolio from Thomas Moser",
+        "author": "Thomas Moser",
+        "date": "2021",
+        "linkPage": "/projects/portfolio",
+        "linkOnline": "https://thomas-moser-portfolio.vercel.app/"
+    },
+    "chatgpt": {
+        "number": 3,
+        "id": "chatgpt",
+        "title": "ChatGPT",
+        "imageName": "moser_chatgpt.png",
+        "description": "2nd version of ChatGPT",
+        "author": "Thomas Moser",
+        "date": "2021",
+        "linkPage": "/projects/chatgpt",
+        "linkOnline": "https://github.com/Eragon67360/chatgpt_v2"
+    },
+    "project4": {
+        "number": 4,
+        "id": "portfolio",
+        "title": "Project 4",
+        "imageName": "computer.png",
+        "description": "Content of project 4",
+        "author": "...",
+        "date": "2023",
+        "linkPage": "/projects/portfolio",
+        "linkOnline": ""
+    },
+    "project5": {
+        "number": 5,
+        "id": "5",
+        "title": "Project 5",
+        "imageName": "computer.png",
+        "description": "Content of project 5",
+        "author": "...",
+        "date": "2023",
+        "linkPage": "/projects/chatgpt",
+        "linkOnline": ""
+    }
+}

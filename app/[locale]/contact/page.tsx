@@ -27,11 +27,11 @@ function Contact(): React.JSX.Element {
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
         <AnimatePresence>
-          <div className="flex flex-col h-[150vh] space-y-20">
+          <div className="flex flex-col h-[130vh] space-y-20">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2 }}
+              initial={{ opacity: 0, scale:0.5 }}
+              animate={{ opacity: 1,scale:1 }}
+              transition={{ duration: 1 }}
               className="flex justify-center items-center mt-24"
             >
               <p className="text-black dark:text-secondary text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]">

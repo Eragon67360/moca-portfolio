@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const ProjectComponent = ({ project }: { project: any }) => {
   return (
-    <div className="h-[90vh] flex">
+    <div className="h-[90vh] flex border">
       <div className="flex flex-col pt-[32vh] space-y-7 w-1/2">
         <h1 className="text-[2.656vw] font-bold pl-32">{project.title}</h1>
         <p className="text-[2.656vw] font-bold pl-32">{project.description}</p>

@@ -27,7 +27,7 @@ const Navbar = () => {
   ];
 
   const commonClasses =
-    "text-[1.2vw] uppercase hover:text-cinnabar dark:hover:text-cinnabar transform transition duration-300 hover:scale-110";
+    "text-base lg:text-lg xl:text-xl uppercase hover:text-cinnabar dark:hover:text-cinnabar transform transition duration-300 hover:scale-110";
 
   const scrollPercentage = windowHeight
     ? Math.min(scrollY / windowHeight, 1)
