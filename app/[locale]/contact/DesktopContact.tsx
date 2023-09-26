@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import DesktopContactForm from "@/components/[locale]/pc/DesktopContactForm";
-import DesktopVisitCard from "@/components/[locale]/pc/DesktopVisitCard";
+import DesktopContactForm from "@/components/[locale]/desktop/DesktopContactForm";
+import DesktopVisitCard from "@/components/[locale]/desktop/DesktopVisitCard";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";

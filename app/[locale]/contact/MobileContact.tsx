@@ -1,6 +1,6 @@
 import React from "react";
-import MobileVisitCard from "@/components/[locale]/phone/MobileVisitCard";
-import MobileContactForm from "@/components/[locale]/phone/MobileContactForm";
+import MobileVisitCard from "@/components/[locale]/mobile/MobileVisitCard";
+import MobileContactForm from "@/components/[locale]/mobile/MobileContactForm";
 
 function MobileContact() {
   return (

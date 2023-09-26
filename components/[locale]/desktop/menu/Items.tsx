@@ -5,7 +5,7 @@ import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "@/components/[locale]/ThemeSwitcher";
 import Providers from "@/app/[locale]/providers";
 
 export const Items = ({ onClose }: { onClose: () => void }) => {
