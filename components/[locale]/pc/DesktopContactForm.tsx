@@ -7,7 +7,7 @@ import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 
-const ContactForm: React.FC = () => {
+const DesktopContactForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [emailValue, setEmailValue] = useState("");
   const [message, setMessage] = useState("");
@@ -203,4 +203,4 @@ const ContactForm: React.FC = () => {
   );
 };
 
-export default ContactForm;
+export default DesktopContactForm;
