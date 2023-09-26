@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Menu from "../../menu";
+import Menu from "@/components/[locale]/menu";
 import { Language } from "./Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
 import { Search } from "./Search";
 import { useLocale, useTranslations } from "next-intl";
 
-const Navbar = () => {
+const DesktopNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
   const [windowHeight, setWindowHeight] = useState<number>(0);
@@ -86,4 +86,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default DesktopNavbar;

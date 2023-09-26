@@ -2,13 +2,15 @@ import "./globals.css";
 import "./styles.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Navbar from "@/components/[locale]/navigation/navbar";
+import DesktopNavbar from "@/components/[locale]/pc/navigation/navbar";
+import MobileNavbar from "@/components/[locale]/phone/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import SEO from "@/components/SEO";
+import Resizer from "@/components/Resizer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,8 +20,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: 'UXMOCA | %s ',
-    default: 'UXMOCA - UX Development',
+    template: "UXMOCA | %s ",
+    default: "UXMOCA - UX Development",
   },
   description: "Our official UX MOCA website",
 };
@@ -48,7 +50,10 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="flex flex-col h-screen overflow-y-hidden bg-white dark:bg-blackbean">
             <ProgressBar />
-            <Navbar />
+            <Resizer
+              MobileComponent={<MobileNavbar />}
+              DesktopComponent={<DesktopNavbar />}
+            />
             <div className="flex flex-col flex-grow overflow-y-scroll">
               {children}
               <Analytics />
