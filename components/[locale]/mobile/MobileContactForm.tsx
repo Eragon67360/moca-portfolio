@@ -82,7 +82,7 @@ const MobileContactForm: React.FC = () => {
           <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
             <div className="select-none flex flex-col px-8">
               <div className="flex items-center space-x-2">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
+                <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-falured dark:text-secondary ">
                   Get in touch!
                 </h2>
 
