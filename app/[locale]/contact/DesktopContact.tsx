@@ -41,7 +41,7 @@ function DesktopContact() {
 
   return (
     <>
-      <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed border border-black">
+      <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
         <AnimatePresence>
           <div className="flex flex-col h-[200vh] space-y-20">
             <motion.div
@@ -59,7 +59,7 @@ function DesktopContact() {
                 }}
                 transition={{ duration: 2, delay: 2 }}
                 ref={elementRef}
-                className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh] border"
+                className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh]"
               >
                 User-centric design is{" "}
                 <span className="uppercase text-cinnabar">the future.</span>

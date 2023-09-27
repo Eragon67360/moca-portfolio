@@ -54,19 +54,34 @@ function TabletContact() {
                   href="https://www.linkedin.com/in/thomas-moser67"
                   target="_blank"
                 >
-                  <Image src={linkedin} alt="logo linkedin" width={45} />
+                  <Image
+                    src={linkedin}
+                    alt="logo linkedin"
+                    width={45}
+                    className="hover:opacity-90"
+                  />
                 </a>
                 <a
                   href="https://instagram.com/thomas_msr_67?igshid=OGQ5ZDc2ODk2ZA=="
                   target="_blank"
                 >
-                  <Image src={instagram} alt="logo instagram" width={45} />
+                  <Image
+                    src={instagram}
+                    alt="logo instagram"
+                    width={45}
+                    className="hover:opacity-90"
+                  />
                 </a>
                 <a
                   href="https://www.tiktok.com/@cristinaandresrr?lang=en"
                   target="_blank"
                 >
-                  <Image src={tiktok} alt="logo tiktok" width={45} />
+                  <Image
+                    src={tiktok}
+                    alt="logo tiktok"
+                    width={45}
+                    className="hover:opacity-90"
+                  />
                 </a>
               </div>
             </div>

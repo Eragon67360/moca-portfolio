@@ -50,13 +50,12 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
 
         <div className="flex flex-col pb-2 space-y-10 items-center">
           <p className="font-semibold text-4xl">Social Media</p>
-          <div className="flex flex-wrap gap-4 justify-between px-8 w-full">
+          <div className="flex flex-wrap gap-4 px-8 w-full justify-center">
             <a
               className="space-y-3 items-center flex flex-col hover:bg-gradient-to-r hover:from-[#67C9D0] hover:via-black hover:to-[#EE1D52] hover:bg-clip-text hover:text-transparent"
               href="https://www.tiktok.com/@cristinaandresrr?lang=en"
               target="_blank"
             >
-              <Image src={tiktok} alt="logo tiktok" width={50} />
               <p className="uppercase text-center">Tiktok</p>
             </a>
             <a
@@ -64,7 +63,6 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
               href="https://instagram.com/thomas_msr_67?igshid=OGQ5ZDc2ODk2ZA=="
               target="_blank"
             >
-              <Image src={instagram} alt="logo instagram" width={50} />
               <p className="uppercase text-center">Instagram</p>
             </a>
             <a
@@ -72,8 +70,6 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
               href="https://www.linkedin.com/in/thomas-moser67"
               target="_blank"
             >
-              <Image src={linkedin} alt="logo linkedin" width={50} />
-
               <p className="uppercase">Linkedin</p>
             </a>
           </div>

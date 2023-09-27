@@ -3,6 +3,7 @@ import "./styles.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import DesktopNavbar from "@/components/[locale]/desktop/navigation/navbar";
+import TabletNavbar from "@/components/[locale]/tablet/navigation/navbar";
 import MobileNavbar from "@/components/[locale]/mobile/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
 import { Analytics } from "@vercel/analytics/react";
@@ -53,6 +54,7 @@ export default async function RootLayout({
             <Resizer
               MobileComponent={<MobileNavbar />}
               DesktopComponent={<DesktopNavbar />}
+              TabletComponent={<TabletNavbar />}
             />
             <div className="flex flex-col flex-grow overflow-y-scroll">
               {children}
