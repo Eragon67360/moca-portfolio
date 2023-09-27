@@ -2,12 +2,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import DesktopContactForm from "@/components/[locale]/desktop/DesktopContactForm";
 import DesktopVisitCard from "@/components/[locale]/desktop/DesktopVisitCard";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
-import { Metadata } from "next";
+
 
 function DesktopContact() {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);

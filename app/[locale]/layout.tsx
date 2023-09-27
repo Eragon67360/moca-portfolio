@@ -10,7 +10,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import SEO from "@/components/SEO";
 import Resizer from "@/components/Resizer";
 
 const poppins = Poppins({
