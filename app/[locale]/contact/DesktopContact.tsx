@@ -61,7 +61,7 @@ function DesktopContact() {
                 ref={elementRef}
                 className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh] border"
               >
-                User-centric design is
+                User-centric design is{" "}
                 <span className="uppercase text-cinnabar">the future.</span>
                 <br />
                 Let&apos;s shape it{" "}

@@ -1,16 +1,27 @@
-'use client'
+"use client";
 import React from "react";
-import useIsMobile from "@/hooks/useIsMobile";
+import useDeviceType from "@/hooks/useDeviceType";
 
 interface ResizerProps {
-  MobileComponent: React.JSX.Element;
   DesktopComponent: React.JSX.Element;
+  MobileComponent: React.JSX.Element;
+  TabletComponent: React.JSX.Element;
 }
 
-const Resizer: React.FC<ResizerProps> = ({ MobileComponent, DesktopComponent }) => {
-  const isMobile = useIsMobile();
+const Resizer: React.FC<ResizerProps> = ({
+  DesktopComponent,
+  TabletComponent,
+  MobileComponent,
+}) => {
+  const deviceType = useDeviceType();
 
-  return <>{isMobile ? MobileComponent : DesktopComponent}</>;
-}
+  if (deviceType === "mobile") {
+    return MobileComponent;
+  } else if (deviceType === "tablet") {
+    return TabletComponent;
+  } else {
+    return DesktopComponent;
+  }
+};
 
 export default Resizer;
