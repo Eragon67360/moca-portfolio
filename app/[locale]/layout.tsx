@@ -26,24 +26,24 @@ export const metadata: Metadata = {
   description: "Our official UX MOCA website",
 };
 
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "de" }];
+}
+
 export default async function RootLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
   params: any;
 }) {
-  const locale = useLocale();
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
-  // Validate that the incoming `locale` parameter is a valid locale
-  if (params.locale !== locale) {
-    notFound();
-  }
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>

@@ -12,7 +12,10 @@ import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
 
 function TabletContact() {
-  const windowHeight = useWindowHeight();
+  let windowHeight = useWindowHeight();
+  if (windowHeight == 0) {
+    windowHeight = 800;
+  }
 
   const elementRef = useRef<HTMLDivElement | null>(null);
 
