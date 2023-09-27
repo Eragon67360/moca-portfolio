@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 
 import TabletContactForm from "@/components/[locale]/tablet/TabletContactForm";
 import TabletVisitCard from "@/components/[locale]/tablet/TabletVisitCard";
@@ -13,6 +13,8 @@ import tiktok from "@/public/logos/tiktok.png";
 
 function TabletContact() {
   const windowHeight = useWindowHeight();
+
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <>
@@ -44,6 +46,7 @@ function TabletContact() {
                 y: 0,
               }}
               transition={{ duration: 2, delay: 1 }}
+              ref={elementRef}
               className="flex flex-col space-y-8"
             >
               <TabletContactForm />
