@@ -55,7 +55,7 @@ function TabletContact() {
               <TabletContactForm />
               <TabletVisitCard />
               <div className="py-4 w-full flex flex-col text-center bg-secondary dark:bg-falured space-y-3 text-xl shadow-lightBox rounded-2xl">
-                <p>You can also find us in...{windowHeight}</p>
+                <p>You can also find us in...</p>
                 <div className="flex justify-center space-x-4">
                   <a
                     href="https://www.linkedin.com/in/thomas-moser67"
