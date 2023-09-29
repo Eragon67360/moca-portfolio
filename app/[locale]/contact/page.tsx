@@ -25,6 +25,7 @@ function Contact(): React.JSX.Element {
         MobileComponent={<MobileContact />}
         DesktopComponent={<DesktopContact />}
         TabletComponent={<TabletContact />}
+        PhabletComponent={<TabletContact />}
       />
     </>
   );

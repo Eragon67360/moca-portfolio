@@ -80,21 +80,23 @@ const MobileContactForm: React.FC = () => {
       <div> 
         <div className="w-full flex justify-evenly bg-secondary dark:bg-blackbean px-8 py-8 rounded-2xl">
           <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
-            <div className="select-none flex flex-col px-8">
-              <div className="flex items-center space-x-2">
-                <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-falured dark:text-secondary ">
-                  Get in touch!
-                </h2>
+          <div className="select-none flex flex-col items-center px-4">
+              <div>
+                <div className="flex items-center justify-start space-x-2">
+                  <h2 className="text-lg font-bold text-falured dark:text-secondary ">
+                    Get in touch!
+                  </h2>
 
-                <Image src={logo} alt="logo" />
+                  <Image src={logo} alt="logo" width={40} />
+                </div>
+
+                <p className="text-black text-end text-base dark:text-secondary w-full">
+                  Let&apos;s talk about everything{" "}
+                  <span className="text-base text-falured dark:text-secondary font-bold">
+                    {";)"}
+                  </span>
+                </p>
               </div>
-
-              <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary">
-                Let&apos;s talk about everything{" "}
-                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-bold">
-                  {";)"}
-                </span>
-              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4 mt-6">

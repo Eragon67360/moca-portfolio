@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
     screens: {
       //Phone
-      sm: "480px",
+      sm: "768px",
       //Phablet
       md: "1024px",
       //Tablet

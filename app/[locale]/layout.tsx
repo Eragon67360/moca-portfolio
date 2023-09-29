@@ -7,6 +7,8 @@ import TabletNavbar from "@/components/[locale]/tablet/navigation/navbar";
 import MobileNavbar from "@/components/[locale]/mobile/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
 import Footer from "@/components/[locale]/footer";
+import MobileFooter from "@/components/[locale]/mobile/footer";
+
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
@@ -56,17 +58,19 @@ export default async function RootLayout({
               MobileComponent={<MobileNavbar />}
               DesktopComponent={<DesktopNavbar />}
               TabletComponent={<TabletNavbar />}
+              PhabletComponent={<TabletNavbar />}
             />
             <div className="flex flex-col flex-grow overflow-y-scroll">
               {children}
               <Analytics />
               <ToastContainer />
             </div>
-            {/* <Resizer
+            <Resizer
               MobileComponent={<></>}
-              DesktopComponent={<Footer />}
+              DesktopComponent={<></>}
               TabletComponent={<></>}
-            /> */}
+              PhabletComponent={<></>}
+            />
           </div>
         </NextIntlClientProvider>
       </body>
