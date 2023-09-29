@@ -84,30 +84,32 @@ const DesktopContactForm: React.FC = () => {
         transition={{ duration: 1, delay: 1 }}
         className="z-10"
       >
-        <div className="w-[35.5vw] min-h-[665px] flex justify-evenly bg-secondary dark:bg-blackbean  shadow-lightBox px-[2.5vw] py-[3.84vh] rounded-2xl">
+        <div className="w-[35.5vw] min-h-[665px] min-w-[454px] flex justify-evenly bg-secondary dark:bg-blackbean  shadow-lightBox px-[2.5vw] py-[3.84vh] rounded-2xl">
           <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
-            <div className="select-none flex flex-col">
-              <div className="flex items-center space-x-2">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
-                  Get in touch!
-                </h2>
+          <div className="select-none flex flex-col items-center px-8">
+              <div>
+                <div className="flex items-center justify-start space-x-2">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
+                    Get in touch!
+                  </h2>
 
-                <Image src={logo} alt="logo" />
+                  <Image src={logo} alt="logo" />
+                </div>
+
+                <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary w-full">
+                  Let&apos;s talk about everything{" "}
+                  <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-bold">
+                    {";)"}
+                  </span>
+                </p>
               </div>
-
-              <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary">
-                Let&apos;s talk about everything{" "}
-                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-extrabold">
-                  {";)"}
-                </span>
-              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex space-x-[2.52vw] justify-around">
+              <div className="flex space-x-8 justify-around">
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="firstname"
                     name="given-name"
                     type="text"
@@ -116,7 +118,7 @@ const DesktopContactForm: React.FC = () => {
                 </div>
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     name="family-name"
                     id="name"
                     type="text"
@@ -124,10 +126,10 @@ const DesktopContactForm: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex space-x-[2.52vw] justify-around ">
+              <div className="flex space-x-8 justify-around ">
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="email"
                     type="email"
                     placeholder="E-Mail"
@@ -137,7 +139,7 @@ const DesktopContactForm: React.FC = () => {
                 </div>
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="phone"
                     type="phone"
                     placeholder="Phone"
@@ -145,10 +147,10 @@ const DesktopContactForm: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex space-x-[2.52vw] justify-around ">
+              <div className="flex space-x-8 justify-around ">
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="company"
                     type="text"
                     placeholder="Company"
@@ -156,7 +158,7 @@ const DesktopContactForm: React.FC = () => {
                 </div>
                 <div className="py-2 w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="country"
                     name="country"
                     type="text"

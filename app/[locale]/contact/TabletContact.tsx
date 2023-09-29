@@ -22,7 +22,7 @@ function TabletContact() {
   return (
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
-        <div className=" flex flex-col items-center space-y-8 py-10">
+        <div className=" flex flex-col items-center my-[67px]">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, scale: 0.2 }}
@@ -31,7 +31,7 @@ function TabletContact() {
                 scale: 1,
               }}
               transition={{ duration: 1 }}
-              className="text-4xl font-extrabold text-center"
+              className="text-4xl font-bold text-center"
             >
               User-centric design is{" "}
               <span className="uppercase text-falured dark:text-cinnabar">
@@ -50,7 +50,7 @@ function TabletContact() {
               }}
               transition={{ duration: 2, delay: 1 }}
               ref={elementRef}
-              className="flex flex-col space-y-8"
+              className="flex flex-col space-y-8 mt-[67px]"
             >
               <TabletContactForm />
               <TabletVisitCard />

@@ -35,8 +35,8 @@ const TabletNavbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
-            <Language />
             <Search />
+            <Language />
           </div>
         </div>
       </nav>

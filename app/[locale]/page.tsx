@@ -123,14 +123,14 @@ export default function Home() {
               Crafting Experiences, Shaping Futures: Your UX Design Partner
             </motion.div>
             {isFixed ? (
-              <motion.div className="fixed h-screen w-full bg-blackbean z-10 flex items-center justify-center">
+              <motion.div className="fixed h-screen w-full bg-cinnabar z-10 flex items-center justify-center text-secondary">
                 <motion.p
                   initial={{ opacity: 1 }}
                   animate={controlSection2}
                   className="text-center space-y-24"
                 >
                   <p className="text-4xl">Featured</p>
-                  <p className="text-7xl font-extrabold">Projects</p>
+                  <p className="text-7xl font-bold">Projects</p>
                 </motion.p>
               </motion.div>
             ) : (
@@ -141,7 +141,7 @@ export default function Home() {
                   className="text-center space-y-24"
                 >
                   <p className="text-4xl">Featured</p>
-                  <p className="text-7xl font-extrabold">Projects</p>
+                  <p className="text-7xl font-bold">Projects</p>
                 </motion.p>
               </motion.div>
             )}

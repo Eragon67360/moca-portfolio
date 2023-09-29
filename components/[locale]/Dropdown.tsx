@@ -19,7 +19,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-secondary text-black border border-falured py-0.5 px-3 rounded-full w-full text-left"
+          className="bg-secondary text-black border border-falured py-[6px] px-[18px] rounded-full w-full text-left"
         >
           What do you need?
         </button>

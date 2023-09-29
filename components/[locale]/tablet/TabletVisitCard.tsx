@@ -9,7 +9,7 @@ const TabletVisitCard = () => {
     <>
       <div
         
-        className="h-56 w-full bg-falured rounded-xl flex flex-col justify-start space-y-8 contact-shadow text-secondary shadow-lightBox dark:border-none dark:bg-transparent"
+        className="h-56 w-full bg-none rounded-xl flex flex-col justify-start space-y-8 text-secondary"
       >
         <div className="pt-4 pl-4 flex justify-start text-2xl ">
           Contact information

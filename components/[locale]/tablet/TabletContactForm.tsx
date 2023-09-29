@@ -77,26 +77,26 @@ const TabletContactForm: React.FC = () => {
 
   return (
     <>
-      <div
-        className="z-10"
-      >
+      <div className="z-10">
         <div className="flex justify-evenly bg-secondary dark:bg-blackbean px-8 py-8 shadow-lightBox rounded-2xl">
           <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
-            <div className="select-none flex flex-col">
-              <div className="flex items-center space-x-2">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
-                  Get in touch!
-                </h2>
+            <div className="select-none flex flex-col items-center px-8">
+              <div>
+                <div className="flex items-center justify-start space-x-2">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
+                    Get in touch!
+                  </h2>
 
-                <Image src={logo} alt="logo" />
+                  <Image src={logo} alt="logo" />
+                </div>
+
+                <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary w-full">
+                  Let&apos;s talk about everything{" "}
+                  <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-bold">
+                    {";)"}
+                  </span>
+                </p>
               </div>
-
-              <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary">
-                Let&apos;s talk about everything{" "}
-                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-extrabold">
-                  {";)"}
-                </span>
-              </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">

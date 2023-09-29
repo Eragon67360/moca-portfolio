@@ -12,18 +12,18 @@ const DesktopVisitCard = () => {
         initial={{ backgroundColor: "#742119", color: "#fff" }}
         animate={{ backgroundColor: "rgba(255, 0, 0, 0)", color: "#000" }}
         transition={{ duration: 1, delay: 1 }}
-        className="h-[188px] w-[284px] xl:h-[282px] xl:w-[426px]  rounded-xl flex flex-col justify-start space-y-8 contact-shadow"
+        className="h-[188px] w-[284px] px-5 py-4 rounded-xl flex flex-col justify-between space-y-8 contact-shadow"
       >
-        <div className="pt-4 pl-4 flex justify-start text-2xl dark:text-white ">
+        <div className="flex justify-center text-center text-2xl">
           Contact information
         </div>
 
-        <div className="flex flex-col py-4 text-xl space-y-4 dark:text-white">
-          <div className="flex space-x-4 pl-4 ">
-            <div className="flex items-center">
-              <FiMail style={{ fontSize: iconSize }} />
+        <div className="flex flex-col text-base space-y-2 dark:text-white">
+          <div className="flex space-x-4">
+            <div className="flex items-start">
+              <FiMail style={{ fontSize: 20 }} />
             </div>
-            <div className="flex items-center align-middle justify-center">
+            <div className="flex items-start align-middle justify-center">
               <a
                 href="mailto:uxmoca@gmail.com"
                 className="align-middle justify-center"
@@ -32,19 +32,19 @@ const DesktopVisitCard = () => {
               </a>
             </div>
           </div>
-          <div className="flex space-x-4 pl-4">
-            <div className="flex items-center">
-              <FiPhone style={{ fontSize: iconSize }} />
+          <div className="flex space-x-4">
+            <div className="flex items-start">
+              <FiPhone style={{ fontSize: 20 }} />
             </div>
-            <div className="flex items-center align-middle justify-center">
+            <div className="flex items-start align-middle justify-center">
               <a href="tel:+33647849308">+33 6 47 84 93 08</a>
             </div>
           </div>
-          <div className="flex space-x-4 pl-4">
-            <div className="flex items-center">
-              <IoLocationOutline style={{ fontSize: iconSize }} />
+          <div className="flex space-x-4">
+            <div className="flex items-start">
+              <IoLocationOutline style={{ fontSize: 20 }} />
             </div>
-            <div className="flex items-center align-middle justify-center">
+            <div className="flex items-start align-middle justify-center">
               <a
                 href="https://maps.app.goo.gl/66wU2miXSrtcs5mr7"
                 target="_blank"

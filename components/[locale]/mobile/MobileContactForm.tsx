@@ -91,7 +91,7 @@ const MobileContactForm: React.FC = () => {
 
               <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary">
                 Let&apos;s talk about everything{" "}
-                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-extrabold">
+                <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-bold">
                   {";)"}
                 </span>
               </p>

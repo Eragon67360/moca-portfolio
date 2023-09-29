@@ -6,6 +6,7 @@ import DesktopNavbar from "@/components/[locale]/desktop/navigation/navbar";
 import TabletNavbar from "@/components/[locale]/tablet/navigation/navbar";
 import MobileNavbar from "@/components/[locale]/mobile/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
+import Footer from "@/components/[locale]/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
@@ -15,7 +16,8 @@ import Resizer from "@/components/Resizer";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  weight: "400",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -60,6 +62,11 @@ export default async function RootLayout({
               <Analytics />
               <ToastContainer />
             </div>
+            {/* <Resizer
+              MobileComponent={<></>}
+              DesktopComponent={<Footer />}
+              TabletComponent={<></>}
+            /> */}
           </div>
         </NextIntlClientProvider>
       </body>

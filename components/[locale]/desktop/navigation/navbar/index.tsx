@@ -52,7 +52,7 @@ const DesktopNavbar = () => {
               </button>
               <div className="flex items-center space-x-[1.3vw]">
                 {navLinks.map((link) => {
-                  const isActive = pathname === ('/'+locale + link.href);
+                  const isActive = pathname === "/" + locale + link.href;
 
                   return (
                     <Link
@@ -77,8 +77,8 @@ const DesktopNavbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
-            <Language />
             <Search />
+            <Language />
           </div>
         </div>
       </nav>
