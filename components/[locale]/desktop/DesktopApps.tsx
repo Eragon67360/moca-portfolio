@@ -6,11 +6,12 @@ import { SiAdobeindesign } from "react-icons/si";
 import { GrCloudSoftware } from "react-icons/gr";
 import { GiWireframeGlobe } from "react-icons/gi";
 import { MdAlternateEmail } from "react-icons/md";
+import { AiOutlineCloudServer } from "react-icons/ai";
 
 const DesktopApps = () => {
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-x-12 gap-y-12 mt-9 text-secondary dark:text-third">
+      <div className="flex flex-wrap justify-center gap-x-12 gap-y-12 mt-9  text-blackbean">
         <div className="w-1/3 flex justify-center md:w-1/6">
           <div className="bg-linen rounded-xl flex flex-col text-center justify-center items-center p-4 space-y-2 ">
             <FiGlobe size={45} />
@@ -34,7 +35,7 @@ const DesktopApps = () => {
         </div>
         <div className="w-1/3 flex justify-center md:w-1/6">
           <div className="bg-linen rounded-xl flex flex-col text-center justify-center items-center p-4 space-y-2">
-            <GrCloudSoftware size={45} />
+            <AiOutlineCloudServer size={45} />
             <h1 className="text-2xl font-semibold">SAAS</h1>
             <h2>Catchy text blablabla</h2>
           </div>
