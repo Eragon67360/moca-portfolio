@@ -6,7 +6,7 @@ import { Language } from "./Language";
 import { Logo } from "./Logo";
 import { useLocale, useTranslations } from "next-intl";
 import ThemeSwitcher from "@/components/[locale]/ThemeSwitcher";
-
+import Providers from "@/app/[locale]/providers";
 const DesktopNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [scrollY, setScrollY] = useState<number>(0);
@@ -65,7 +65,9 @@ const DesktopNavbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
-            <ThemeSwitcher/>
+            <Providers>
+              <ThemeSwitcher />
+            </Providers>
             <Language />
           </div>
         </div>

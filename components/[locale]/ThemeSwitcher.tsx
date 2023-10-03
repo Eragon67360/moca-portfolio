@@ -1,5 +1,4 @@
 "use client";
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { BsSun, BsMoon } from "react-icons/bs";
 import {Tooltip} from "@nextui-org/react";
