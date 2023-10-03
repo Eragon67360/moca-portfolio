@@ -6,7 +6,6 @@ import Menu from "@/components/[locale]/desktop/menu";
 import { Language } from "./Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
-import { Search } from "./Search";
 import { useLocale, useTranslations } from "next-intl";
 
 const DesktopNavbar = () => {
@@ -77,7 +76,6 @@ const DesktopNavbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
-            <Search />
             <Language />
           </div>
         </div>

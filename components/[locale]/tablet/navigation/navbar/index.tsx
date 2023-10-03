@@ -7,7 +7,6 @@ import Menu from "@/components/[locale]/desktop/menu";
 import { Language } from "@/components/[locale]/desktop/navigation/navbar/Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
-import { Search } from "@/components/[locale]/desktop/navigation/navbar/Search";
 
 const TabletNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -35,7 +34,6 @@ const TabletNavbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
-            <Search />
             <Language />
           </div>
         </div>
