@@ -103,7 +103,7 @@ const MobileContactForm: React.FC = () => {
               <div className="flex space-x-2 justify-around">
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full px-3 text-third dark:bg-secondary text-xs py-1"
                     id="firstname"
                     name="given-name"
                     type="text"
@@ -112,7 +112,7 @@ const MobileContactForm: React.FC = () => {
                 </div>
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     name="family-name"
                     id="name"
                     type="text"
@@ -123,7 +123,7 @@ const MobileContactForm: React.FC = () => {
               <div className="flex space-x-2 justify-around ">
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="email"
                     type="email"
                     placeholder="E-Mail"
@@ -133,7 +133,7 @@ const MobileContactForm: React.FC = () => {
                 </div>
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="phone"
                     type="phone"
                     placeholder="Phone"
@@ -144,7 +144,7 @@ const MobileContactForm: React.FC = () => {
               <div className="flex space-x-2 justify-around ">
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="company"
                     type="text"
                     placeholder="Company"
@@ -152,7 +152,7 @@ const MobileContactForm: React.FC = () => {
                 </div>
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="country"
                     name="country"
                     type="text"
@@ -170,7 +170,7 @@ const MobileContactForm: React.FC = () => {
 
               <div>
                 <textarea
-                  className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh] dark:bg-secondary"
+                  className="placeholder-black appearance-none border border-falured rounded-xl w-full text-xs py-1 px-3 text-third h-[22vh] dark:bg-secondary"
                   id="message"
                   value={message}
                   onChange={handleChangeMessage}
