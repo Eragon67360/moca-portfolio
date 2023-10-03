@@ -9,34 +9,22 @@ import Link from "next/link";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import DesktopApps from "@/components/[locale]/desktop/DesktopApps";
 import UXSolutions from "@/components/[locale]/desktop/UXSolutions";
-import Pricings from "@/components/[locale]/desktop/Pricings";
+import Plans from "@/components/[locale]/desktop/Plans";
+import FeaturedProjects from "@/components/[locale]/desktop/FeaturedProjects";
 
 function DesktopHome() {
-  const letterVariants: Variants = {
-    initial: { opacity: 0, y: 20 },
-    animate: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: custom * 0.05,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
-  };
-
-  const placeholderText = [
-    { type: "heading1", text: "Crafting Experiences, Shaping Futures:" },
-    {
-      type: "heading2",
-      text: "Your UX Design Partner",
+  const sectionVariants: Variants = {
+    offscreen: {
+      y: 300,
+      opacity: 0,
     },
-  ];
-
-  const container = {
-    visible: {
+    onscreen: {
+      y: 0,
+      opacity: 1,
       transition: {
-        staggerChildren: 0.025,
+        type: "spring",
+        bounce: 0.4,
+        duration: 1.3,
       },
     },
   };
@@ -79,63 +67,36 @@ function DesktopHome() {
             <div className="h-full" />
           </Link>
         </div>
-
-        <UXSolutions />
-
-        <div
-          id="featuredprojects"
-          className="bg-lightblue flex flex-col items-center justify-center space-y-24"
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={sectionVariants}
         >
-          <div className="flex flex-col text-secondary text-center pt-16">
-            <h1 className="font-bold text-4xl">Featured</h1>
-            <h1 className="font-bold text-6xl mt-4">Projects</h1>
-            <div className="mt-12">
-              <button className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full">
-                See more
-              </button>
-            </div>
-          </div>
+          <UXSolutions />
+        </motion.div>
 
-          <div className="flex flex-wrap gap-8 justify-center">
-            <div className="bg-secondary flex flex-col w-[500px]">
-              <Image src={logo} alt="placeholder" width={200} />
-              <Image src={logo} alt="placeholder" width={200} />
-            </div>
-            <div className="bg-secondary flex flex-col w-[500px]">
-              <Image src={logo} alt="placeholder" width={200} />
-              <Image src={logo} alt="placeholder" width={200} />
-            </div>
-            <div className="bg-secondary flex flex-col w-[500px]">
-              <Image src={logo} alt="placeholder" width={200} />
-              <Image src={logo} alt="placeholder" width={200} />
-            </div>
-            <div className="bg-secondary flex flex-col w-[500px]">
-              <Image src={logo} alt="placeholder" width={200} />
-              <Image src={logo} alt="placeholder" width={200} />
-            </div>
-          </div>
-
-          <div className="h-24"></div>
-        </div>
-
-        <div className="pt-24 bg-secondary dark:bg-blackbean flex flex-col items-center">
-          <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-            Apps, websites & more
-          </div>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={sectionVariants}
+        >
+          <FeaturedProjects />
+        </motion.div>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={sectionVariants}
+        >
           <DesktopApps />
-          <div className="h-24" />
-        </div>
+        </motion.div>
 
-        <div
-          id="pricings"
-          className="pt-24 bg-linen flex flex-col items-center"
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={sectionVariants}
         >
-          <div className="text-5xl text-blackbean font-bold text-center">
-            Plans
-          </div>
-          <Pricings />
-          <div className="h-24" />
-        </div>
+          <Plans />
+        </motion.div>
       </div>
     </>
   );
