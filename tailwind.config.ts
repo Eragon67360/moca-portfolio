@@ -35,6 +35,7 @@ const config: Config = {
         third: "#000000",
         linen: "#F2EBE3",
         falured: "#742119",
+        lightblue: "#5C9CB1",
         blackbean: "#310F0D",
         cinnabar: "#DF482B",
       },

@@ -2,11 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Menu from "@/components/[locale]/desktop/menu";
 import { Language } from "./Language";
 import { Logo } from "./Logo";
-import { CgMenuGridO } from "react-icons/cg";
 import { useLocale, useTranslations } from "next-intl";
+import ThemeSwitcher from "@/components/[locale]/ThemeSwitcher";
 
 const DesktopNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -66,6 +65,7 @@ const DesktopNavbar = () => {
             <Logo />
           </div>
           <div className="flex space-x-4 w-full justify-end">
+            <ThemeSwitcher/>
             <Language />
           </div>
         </div>
