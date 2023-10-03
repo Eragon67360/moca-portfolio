@@ -27,6 +27,8 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "contact-background": "url('/contact_background.png')",
+        "bg-mobile-dark": "url('/bg_mobile_dark.png')",
+        "bg-mobile-light": "url('/bg_mobile_light.png')",
       },
       colors: {
         secondary: "#FFFFFF",
