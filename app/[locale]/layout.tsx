@@ -6,7 +6,7 @@ import DesktopNavbar from "@/components/[locale]/desktop/navigation/navbar";
 import TabletNavbar from "@/components/[locale]/tablet/navigation/navbar";
 import MobileNavbar from "@/components/[locale]/mobile/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
-import Footer from "@/components/[locale]/footer";
+import DesktopFooter from "@/components/[locale]/desktop/footer";
 import MobileFooter from "@/components/[locale]/mobile/footer";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -62,15 +62,15 @@ export default async function RootLayout({
             />
             <div className="flex flex-col flex-grow overflow-y-scroll">
               {children}
+              <Resizer
+                MobileComponent={<MobileFooter />}
+                DesktopComponent={<DesktopFooter />}
+                TabletComponent={<></>}
+                PhabletComponent={<></>}
+              />
               <Analytics />
               <ToastContainer />
             </div>
-            <Resizer
-              MobileComponent={<></>}
-              DesktopComponent={<></>}
-              TabletComponent={<></>}
-              PhabletComponent={<></>}
-            />
           </div>
         </NextIntlClientProvider>
       </body>
