@@ -15,7 +15,7 @@ const config: Config = {
       //Phablet
       md: "1024px",
       //Tablet
-      lg: "1440px",
+      lg: "1280px",
       //PC
       xl: "1920px",
       //Large screen

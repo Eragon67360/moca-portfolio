@@ -53,23 +53,13 @@ function DesktopContact() {
               transition={{ duration: 1 }}
               className="flex justify-center items-center mt-24"
             >
-              <motion.div
-                initial={{ x: 0, textAlign: "center", y: 0 }}
-                animate={{
-                  x: -screenWidth / 4,
-                  textAlign: "right",
-                  y: 100,
-                }}
-                transition={{ duration: 2, delay: 2 }}
-                ref={elementRef}
-                className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh] ml-2"
-              >
+              <div className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh] ml-2">
                 User-centric design is{" "}
                 <span className="uppercase text-cinnabar">the future.</span>
                 <br />
                 Let&apos;s shape it{" "}
                 <span className="uppercase text-cinnabar">together !</span>
-              </motion.div>
+              </div>
             </motion.div>
 
             <div className="flex">
