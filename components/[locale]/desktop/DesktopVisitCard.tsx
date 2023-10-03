@@ -14,7 +14,7 @@ const DesktopVisitCard = () => {
         transition={{ duration: 1, delay: 1 }}
         className="h-[188px] w-[284px] px-5 py-4 rounded-xl flex flex-col justify-between space-y-8 contact-shadow"
       >
-        <div className="flex justify-center text-center text-2xl">
+        <div className="flex justify-center text-center text-2xl dark:text-white">
           Contact information
         </div>
 

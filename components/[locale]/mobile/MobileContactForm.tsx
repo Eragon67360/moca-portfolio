@@ -77,13 +77,13 @@ const MobileContactForm: React.FC = () => {
 
   return (
     <>
-      <div> 
-        <div className="w-full flex justify-evenly bg-secondary dark:bg-blackbean px-8 py-8 rounded-2xl">
-          <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
-          <div className="select-none flex flex-col items-center px-4">
+      <div>
+        <div className="w-full flex justify-evenly bg-transparent px-8 py-8 rounded-2xl">
+          <div className="bg-transparent w-full flex flex-col space-y-[1.92vh]">
+            <div className="select-none flex flex-col items-center px-4">
               <div>
                 <div className="flex items-center justify-start space-x-2">
-                  <h2 className="text-lg font-bold text-falured dark:text-secondary ">
+                  <h2 className="text-3xl font-bold text-falured dark:text-secondary ">
                     Get in touch!
                   </h2>
 
@@ -99,9 +99,9 @@ const MobileContactForm: React.FC = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4 mt-6">
-              <div className="flex space-x-[2.52vw] justify-around">
-                <div className="py-2 w-full h-full">
+            <form onSubmit={handleSubmit} className="space-y-3 mt-6">
+              <div className="flex space-x-2 justify-around">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="firstname"
@@ -110,7 +110,7 @@ const MobileContactForm: React.FC = () => {
                     placeholder="First name"
                   />
                 </div>
-                <div className="py-2 w-full h-full">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     name="family-name"
@@ -120,8 +120,8 @@ const MobileContactForm: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex space-x-[2.52vw] justify-around ">
-                <div className="py-2 w-full h-full">
+              <div className="flex space-x-2 justify-around ">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="email"
@@ -131,7 +131,7 @@ const MobileContactForm: React.FC = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="py-2 w-full h-full">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="phone"
@@ -141,8 +141,8 @@ const MobileContactForm: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex space-x-[2.52vw] justify-around ">
-                <div className="py-2 w-full h-full">
+              <div className="flex space-x-2 justify-around ">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="company"
@@ -150,7 +150,7 @@ const MobileContactForm: React.FC = () => {
                     placeholder="Company"
                   />
                 </div>
-                <div className="py-2 w-full h-full">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="country"
@@ -161,25 +161,21 @@ const MobileContactForm: React.FC = () => {
                 </div>
               </div>
 
-              <div className="">
-                <div className="py-2">
-                  <Dropdown
-                    onSelectionChange={handleSelectionChange}
-                    selectedSubject={selectedSubject}
-                  />
-                </div>
+              <div>
+                <Dropdown
+                  onSelectionChange={handleSelectionChange}
+                  selectedSubject={selectedSubject}
+                />
               </div>
 
-              <div className="">
-                <div className="py-2">
-                  <textarea
-                    className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh] dark:bg-secondary"
-                    id="message"
-                    value={message}
-                    onChange={handleChangeMessage}
-                    placeholder="Message"
-                  />
-                </div>
+              <div>
+                <textarea
+                  className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh] dark:bg-secondary"
+                  id="message"
+                  value={message}
+                  onChange={handleChangeMessage}
+                  placeholder="Message"
+                />
               </div>
               <div className="flex items-center justify-start space-x-2">
                 <button
