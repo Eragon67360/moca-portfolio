@@ -7,10 +7,10 @@ import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import Link from "next/link";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import DesktopApps from "@/components/[locale]/desktop/DesktopApps";
-import UXSolutions from "@/components/[locale]/desktop/UXSolutions";
-import Plans from "@/components/[locale]/desktop/Plans";
-import FeaturedProjects from "@/components/[locale]/desktop/FeaturedProjects";
+import DesktopApps from "@/components/[locale]/desktop/home/DesktopApps";
+import UXSolutions from "@/components/[locale]/desktop/home/UXSolutions";
+import Plans from "@/components/[locale]/desktop/home/Plans";
+import FeaturedProjects from "@/components/[locale]/desktop/home/FeaturedProjects";
 
 function DesktopHome() {
   const sectionVariants: Variants = {
