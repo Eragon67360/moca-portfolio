@@ -36,19 +36,9 @@ const DesktopNavbar = () => {
   return (
     <>
       <nav style={{ opacity: navbarOpacity }}>
-        <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
         <div className="flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar rounded-b-lg ">
           <div className="w-full flex">
             <div className="flex space-x-8 text-2xl font-bold">
-              <button
-                onClick={() => setMenuOpen(true)}
-                className="p-2 rounded-full transform transition duration-300 hover:scale-125"
-              >
-                <CgMenuGridO
-                  size={30}
-                  className="hover:text-cinnabar text-third dark:text-secondary"
-                />
-              </button>
               <div className="flex items-center space-x-[1.3vw]">
                 {navLinks.map((link) => {
                   const isActive = pathname === "/" + locale + link.href;
