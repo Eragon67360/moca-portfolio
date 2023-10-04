@@ -20,18 +20,16 @@ const MobileFooter = () => {
 
         <div className="flex space-x-3 justify-between">
           <div className="flex space-x-3">
-            <div className="flex flex-col">
+            <div className="flex flex-col space-y-2">
               <p>Home</p>
               <p>Featured work</p>
               <p>About</p>
               <p>Contact</p>
             </div>
 
-            <div className="flex flex-col justify-between">
-              <div className="flex flex-col">
-                <p>Privacy Policy</p>
-                <p>Terms of Service</p>
-              </div>
+            <div className="flex flex-col space-y-2">
+              <p>Privacy Policy</p>
+              <p>Terms of Service</p>
             </div>
           </div>
           <Logos />
