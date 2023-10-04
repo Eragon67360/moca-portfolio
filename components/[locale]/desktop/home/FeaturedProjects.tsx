@@ -19,7 +19,7 @@ const FeaturedProjects = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-8 justify-center">
+        <div className="grid grid-cols-2 gap-8 justify-center">
           <div className="bg-secondary flex flex-col w-[500px]">
             <Image src={logo} alt="placeholder" width={200} />
             <Image src={logo} alt="placeholder" width={200} />

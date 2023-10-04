@@ -8,7 +8,7 @@ import { GiWireframeGlobe } from "react-icons/gi";
 import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineCloudServer } from "react-icons/ai";
 
-const DesktopApps = () => {
+const MobileApps = () => {
   const cardData = [
     {
       Icon: FiGlobe,
@@ -45,13 +45,13 @@ const DesktopApps = () => {
   return (
     <>
       <div className="pt-24 bg-secondary dark:bg-blackbean flex flex-col items-center">
-        <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+        <div className="text-4xl text-blackbean dark:text-secondary font-bold text-center">
           Apps, websites & more
         </div>
-        <div className="grid grid-cols-3 gap-8 mt-9 text-blackbean dark:text-secondary">
+        <div className="grid grid-cols-1 gap-8 justify-center mt-9 text-blackbean dark:text-secondary">
           {cardData.map((card, index) => (
             <div key={index} className="flex justify-center">
-              <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-[142px]">
+              <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center p-4 space-y-2 w-[256px] h-[142px]">
                 <card.Icon size={45} />
                 <h1 className="text-2xl font-semibold">{card.title}</h1>
                 <h2>{card.subtitle}</h2>
@@ -65,4 +65,4 @@ const DesktopApps = () => {
   );
 };
 
-export default DesktopApps;
+export default MobileApps;
