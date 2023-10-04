@@ -1,8 +1,8 @@
 "use client";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import AnimatedTextCharacter from "@/components/AnimatedText";
 import ArcText from "@/components/ArcText";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import Link from "next/link";

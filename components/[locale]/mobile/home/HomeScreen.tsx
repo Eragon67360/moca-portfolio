@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 
 import Image from "next/image";
 import phone_white from "@/public/phones/phone_white.png";
@@ -152,7 +152,7 @@ const HomeScreen = () => {
           variants={zIndexVariants}
           initial="front"
           animate={isFront ? "front" : "back"}
-          className="flex flex-col absolute top-22 left-0 z-20 w-full text-center justify-center items-center space-y-8"
+          className="flex flex-col absolute top-22 left-0 z-20 w-full text-center justify-center items-center space-y-8 select-none"
         >
           <motion.div className="relative">
             <motion.div
