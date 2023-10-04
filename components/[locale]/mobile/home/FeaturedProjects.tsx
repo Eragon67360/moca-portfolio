@@ -20,19 +20,19 @@ const FeaturedProjects = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-y-3  justify-evenly">
-          <div className="bg-secondary flex flex-col w-[366px]">
+          <div className="bg-secondary flex flex-col w-full p-8">
             <Image src={logo} alt="placeholder" width={100} />
             <Image src={logo} alt="placeholder" width={100} />
           </div>
-          <div className="bg-secondary flex flex-col w-[366px]">
+          <div className="bg-secondary flex flex-col w-full p-8">
             <Image src={logo} alt="placeholder" width={100} />
             <Image src={logo} alt="placeholder" width={100} />
           </div>
-          <div className="bg-secondary flex flex-col w-[366px]">
+          <div className="bg-secondary flex flex-col w-full p-8">
             <Image src={logo} alt="placeholder" width={100} />
             <Image src={logo} alt="placeholder" width={100} />
           </div>
-          <div className="bg-secondary flex flex-col w-[366px]">
+          <div className="bg-secondary flex flex-col w-full p-8">
             <Image src={logo} alt="placeholder" width={100} />
             <Image src={logo} alt="placeholder" width={100} />
           </div>

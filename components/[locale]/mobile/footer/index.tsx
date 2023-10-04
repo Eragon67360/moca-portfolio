@@ -8,7 +8,7 @@ const MobileFooter = () => {
     <>
       <div className="bg-linen dark:bg-blackbean flex flex-col p-8 pb-20 border-t-2 border-blackbean/50 dark:border-secondary/50 space-y-7">
         <div className="flex flex-col justify-between">
-          <div className="flex justify-between items-start">
+          <div className="flex justify-between items-start space-x-4">
             <div className="w-full">
               <Image src={logo} alt="logo" width={141} />
             </div>
