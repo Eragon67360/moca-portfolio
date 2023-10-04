@@ -48,9 +48,9 @@ const UXSolutions = () => {
 
           <Image src={logo} alt="tail" />
 
-          <div className="text-blackbean mt-12 flex flex-col rounded-2xl border-4 border-falured mx-80 p-8 space-y-5 bg-linen">
+          <div className="text-blackbean dark:text-white mt-12 w-1/2 flex flex-col rounded-2xl border-4 border-falured dark:border-cinnabar mx-80 p-8 space-y-8 bg-linen dark:bg-falured">
             <h1 className="text-4xl font-bold">
-              Design is not just what it looks like; design is how it works
+              Design is not just what it looks like;<br/> design is how it works
             </h1>
             <h2 className="text-2xl font-semibold">Steve Jobs</h2>
           </div>

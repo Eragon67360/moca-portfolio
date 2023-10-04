@@ -7,7 +7,7 @@ const FeaturedProjects = () => {
     <>
       <div
         id="featuredprojects"
-        className="bg-lightblue flex flex-col items-center justify-center space-y-24"
+        className="bg-lightblue dark:bg-darkblue flex flex-col items-center justify-center space-y-24"
       >
         <div className="flex flex-col text-secondary text-center pt-16">
           <h1 className="font-bold text-4xl">Featured</h1>

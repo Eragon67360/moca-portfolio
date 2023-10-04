@@ -1,11 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const AnimatedTextCharacter = ({ text, color }) => {
-// splitting text into letters
-  const letters = Array.from(text);
+const AnimatedTextCharacter = () => {
+  const text1 = "Crafting Experiences, Shaping Futures:"
+  const text2 = "Your UX Design Partner"
 
-// Variants for Container
+  const letters1 = Array.from(text1);
+  const letters2 = Array.from(text2);
+
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
@@ -14,7 +16,6 @@ const AnimatedTextCharacter = ({ text, color }) => {
     }),
   };
 
-// Variants for each letter
   const child = {
     visible: {
       opacity: 1,
@@ -39,18 +40,42 @@ const AnimatedTextCharacter = ({ text, color }) => {
   };
 
   return (
-    <motion.div
-      style={{ overflow: "hidden", display: "flex", paddingBottom:8, color:color}}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-    >
-      {letters.map((letter, index) => (
-        <motion.span variants={child} key={index}>
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
-      ))}
-    </motion.div>
+    <>
+      <motion.div
+        style={{
+          overflow: "hidden",
+          display: "flex",
+          paddingBottom: 8,
+        }}
+        className="text-blackbean dark:text-white"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {letters1.map((letter, index) => (
+          <motion.span variants={child} key={index}>
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))}
+      </motion.div>
+      <motion.div
+        style={{
+          overflow: "hidden",
+          display: "flex",
+          paddingBottom: 8,
+        }}
+        className="text-falured dark:text-white"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {letters2.map((letter, index) => (
+          <motion.span variants={child} key={index}>
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))}
+      </motion.div>
+    </>
   );
 };
 

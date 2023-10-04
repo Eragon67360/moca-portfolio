@@ -3,55 +3,71 @@ import { BsCalendarEvent } from "react-icons/bs";
 import { MdOutlineOpenInNew } from "react-icons/md";
 
 const Plans = () => {
+  const planData = [
+    {
+      title: "Standard",
+      price: "€500/m",
+      description: "Pause or cancel anytime",
+      buttonText: "Get started",
+      button: true,
+    },
+    {
+      title: "Pro",
+      price: "€800/m",
+      description: "Pause or cancel anytime",
+      buttonText: "Get started",
+      button: true,
+    },
+    {
+      title: "Personalized",
+      price: "€~/m",
+      description: "Pause or cancel anytime",
+      callText: "Book a call to have more informations",
+      button: false,
+    },
+  ];
+
   return (
     <>
-      <div id="pricings" className="pt-24 bg-linen flex flex-col items-center">
-        <div className="text-5xl text-blackbean font-bold text-center">
+      <div
+        id="pricings"
+        className="pt-24 bg-linen dark:bg-falured flex flex-col items-center"
+      >
+        <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
           Plans
         </div>
         <div className="mt-24 flex flex-wrap gap-8 text-blackbean dark:text-secondary">
-          <div className="bg-secondary dark:bg-blackbean flex flex-col p-12 rounded-2xl shadow-2xl">
-            <h1 className="font-bold text-2xl">Standard</h1>
-            <h2 className="font-bold text-5xl mt-8">€500/m</h2>
-            <h3 className="text-base">Pause or cancel anytime</h3>
-            <div className="flex justify-center mt-8">
-              <button className="w-full py-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean">
-                Get started
-              </button>
+          {planData.map((plan, index) => (
+            <div
+              key={index}
+              className="bg-secondary dark:bg-blackbean flex flex-col p-12 rounded-2xl shadow-2xl dark:shadow-secondary/40"
+            >
+              <h1 className="font-bold text-2xl">{plan.title}</h1>
+              <h2 className="font-bold text-5xl mt-8">{plan.price}</h2>
+              <h3 className="text-base">{plan.description}</h3>
+              {plan.button ? (
+                <div className="flex justify-center mt-8">
+                  <button className="w-full py-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
+                    {plan.buttonText}
+                  </button>
+                </div>
+              ) : (
+                <h3 className="flex justify-center mt-8">{plan.callText}</h3>
+              )}
             </div>
-          </div>
+          ))}
 
-          <div className="bg-secondary dark:bg-blackbean flex flex-col p-12 rounded-2xl shadow-2xl">
-            <h1 className="font-bold text-2xl">Pro</h1>
-            <h2 className="font-bold text-5xl mt-8">€800/m</h2>
-            <h3 className="text-base">Pause or cancel anytime</h3>
-            <div className="flex justify-center mt-8">
-              <button className="w-full py-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean">
-                Get started
-              </button>
-            </div>
-          </div>
-
-          <div className="bg-secondary dark:bg-blackbean flex flex-col p-12 rounded-2xl shadow-2xl">
-            <h1 className="font-bold text-2xl">Personalized</h1>
-            <h2 className="font-bold text-5xl mt-8">€~/m</h2>
-            <h3 className="text-base">Pause or cancel anytime</h3>
-            <h3 className="flex justify-center mt-8">
-              Book a call to have more informations
-            </h3>
-          </div>
-
-          <div className="flex flex-col p-12 rounded-2xl shadow-2xl justify-between">
-            <div className="flex flex-col space-y-4 ">
-              <div className="flex justify-center text-blackbean">
+          <div className="flex flex-col p-12 rounded-2xl shadow-2xl dark:shadow-secondary/40 justify-between">
+            <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
+              <div className="flex justify-center">
                 <BsCalendarEvent size={50} />
               </div>
 
-              <div className="text-blackbean text-center">Book a call</div>
+              <div className=" text-center">Book a call</div>
             </div>
 
             <div className="flex justify-center mt-8">
-              <button className="w-full py-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean flex space-x-4 border border-blackbean px-4">
+              <button className="w-full px-4 py-2 rounded-lg flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean">
                 <span className="font-semibold">Book now</span>
                 <MdOutlineOpenInNew size={24} />
               </button>

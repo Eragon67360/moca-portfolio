@@ -5,7 +5,7 @@ import Logos from "./Logos";
 const DesktopFooter = () => {
   return (
     <>
-      <div className="flex bg-linen dark:bg-blackbean justify-between p-12 border">
+      <div className="flex bg-linen dark:bg-blackbean justify-between p-12 border-t-2 dark:border-secondary/50 border-third/50">
         <div className="flex justify-center items-center space-x-4">
           <Image src={logo} alt="logo" />
           <p >UX MOCA is headquartered in Strasbourg, France.</p>
