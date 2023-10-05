@@ -9,7 +9,7 @@ import { Language } from "@/components/[locale]/desktop/navigation/navbar/Langua
 function MobileContact() {
   return (
     <>
-      <div className="flex flex-col space-y-10 bg-bg-mobile-light dark:bg-bg-mobile-dark bg-no-repeat bg-cover bg-center bg-fixed">
+      <div className="flex flex-col space-y-10 bg-bg-mobile-light dark:bg-bg-mobile-dark bg-no-repeat bg-cover bg-center bg-fixed overflow-y-hidden">
         <div className="flex justify-between pt-4 items-center px-4">
           <Image src={logo} alt="logo" width={140} />
           <Language />

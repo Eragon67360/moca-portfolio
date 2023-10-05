@@ -9,39 +9,6 @@ import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
 
 function DesktopContact() {
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
-
-  const elementRef = useRef<HTMLDivElement | null>(null);
-  const [elementSize, setElementSize] = useState<{
-    width: number;
-    height: number;
-  } | null>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-      if (elementRef.current) {
-        const width = elementRef.current.offsetWidth;
-        const height = elementRef.current.offsetHeight;
-        setElementSize({ width, height });
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (elementRef.current) {
-      const width = elementRef.current.offsetWidth;
-      const height = elementRef.current.offsetHeight;
-      setElementSize({ width, height });
-    }
-  }, []);
-
   return (
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">

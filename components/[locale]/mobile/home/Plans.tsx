@@ -1,3 +1,5 @@
+import { useLocale } from "next-intl";
+import Link from "next/link";
 import React from "react";
 import { BsCalendarEvent } from "react-icons/bs";
 import { MdOutlineOpenInNew } from "react-icons/md";
@@ -26,6 +28,7 @@ const Plans = () => {
       button: false,
     },
   ];
+  const locale = useLocale();
 
   return (
     <>
@@ -52,7 +55,9 @@ const Plans = () => {
                   </button>
                 </div>
               ) : (
-                <h3 className="flex justify-center mt-8 italic">{plan.callText}</h3>
+                <h3 className="flex justify-center mt-8 italic">
+                  {plan.callText}
+                </h3>
               )}
             </div>
           ))}
@@ -67,10 +72,13 @@ const Plans = () => {
             </div>
 
             <div className="flex justify-center mt-8">
-              <button className="justify-between items-center w-full px-2 py-2 rounded-lg flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean">
-                <span className="font-semibold text-clip text-left">Book now</span>
+              <Link
+                className="justify-between items-center w-full px-2 py-2 rounded-lg flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean"
+                href={`/${locale}/booking`}
+              >
+                <span className="font-semibold">Book now</span>
                 <MdOutlineOpenInNew size={24} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
