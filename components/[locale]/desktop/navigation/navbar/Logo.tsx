@@ -7,7 +7,7 @@ import { useLocale } from "next-intl";
 export const Logo = () => {
   const locale = useLocale();
   return (
-    <Link href={`/${locale}`}>
+    <Link href={`/${locale}/`}>
       <Image src={moca_logo} alt="moca Logo" style={{ width: "9vw" }} />
     </Link>
   );
