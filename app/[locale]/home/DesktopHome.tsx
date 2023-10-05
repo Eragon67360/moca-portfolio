@@ -13,13 +13,6 @@ import FeaturedProjects from "@/components/[locale]/desktop/home/FeaturedProject
 import { useTheme } from "next-themes";
 
 function DesktopHome() {
-  const { theme } = useTheme();
-
-  useEffect(() => {
-    console.log(theme);
-  });
-
-  const textColor = theme === "light" ? "black" : "white";
 
   const sectionVariants: Variants = {
     offscreen: {
