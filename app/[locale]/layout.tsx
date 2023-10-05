@@ -11,10 +11,8 @@ import MobileFooter from "@/components/[locale]/mobile/footer";
 
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
-import { NextIntlClientProvider, useLocale } from "next-intl";
-import { LocalizationProvider } from "@mui/x-date-pickers";
+import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-import Resizer from "@/components/Resizer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -67,12 +65,6 @@ export default async function RootLayout({
             <div className="phablet">
               <TabletNavbar />
             </div>
-            {/* <Resizer
-              MobileComponent={<MobileNavbar />}
-              DesktopComponent={<DesktopNavbar />}
-              TabletComponent={<TabletNavbar />}
-              PhabletComponent={<TabletNavbar />}
-            /> */}
             <div className="flex flex-col flex-grow overflow-y-scroll">
               {children}
               <div className="mobile">
@@ -83,12 +75,6 @@ export default async function RootLayout({
               </div>
               <div className="tablet"></div>
               <div className="phablet"></div>
-              {/* <Resizer
-                MobileComponent={<MobileFooter />}
-                DesktopComponent={<DesktopFooter />}
-                TabletComponent={<></>}
-                PhabletComponent={<></>}
-              /> */}
               <Analytics />
               <ToastContainer />
             </div>
