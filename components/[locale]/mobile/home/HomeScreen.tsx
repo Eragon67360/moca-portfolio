@@ -120,7 +120,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <div className="flex relative w-full justify-center items-center my-12">
+      <div className="flex relative w-full justify-center items-center my-12 overflow-x-hidden">
         <div className="relative w-[187px] h-[377px] z-10">
           <Image
             src={phone_base}
