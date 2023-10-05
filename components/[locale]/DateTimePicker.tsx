@@ -6,7 +6,7 @@ import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { useRouter } from "next/router";
+
 import { useLocale } from "next-intl";
 import fr from "date-fns/locale/fr";
 import de from "date-fns/locale/de";

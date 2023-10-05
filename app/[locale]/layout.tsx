@@ -29,10 +29,6 @@ export const metadata: Metadata = {
   description: "Our official UX MOCA website",
 };
 
-export function generateStaticParams() {
-  return [{ locale: "en" }, { locale: "de" }];
-}
-
 export default async function RootLayout({
   children,
   params: { locale },

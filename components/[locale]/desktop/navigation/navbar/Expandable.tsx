@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
-import Link from "next-intl/link";
+import { useLocale } from "next-intl";
 import { FiGlobe } from "react-icons/fi";
 import { usePathname, useRouter } from "next/navigation";
 
