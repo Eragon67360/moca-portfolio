@@ -4,7 +4,11 @@ import DesktopHome from "./home/DesktopHome";
 import MobileHome from "./home/MobileHome";
 import PhabletHome from "./home/PhabletHome";
 import TabletHome from "./home/TabletHome";
-import Resizer from "@/components/Resizer";
+import dynamic from "next/dynamic";
+
+const Resizer = dynamic(() => import("@/components/Resizer"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (

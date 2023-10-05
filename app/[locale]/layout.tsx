@@ -12,6 +12,7 @@ import MobileFooter from "@/components/[locale]/mobile/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider, useLocale } from "next-intl";
+import { LocalizationProvider } from "@mui/x-date-pickers";
 import { notFound } from "next/navigation";
 import Resizer from "@/components/Resizer";
 

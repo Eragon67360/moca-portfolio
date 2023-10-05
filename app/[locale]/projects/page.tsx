@@ -1,9 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ProjectComponent } from "./ProjectComponent";
 import Image from "next/image";
-import computer from "@/public/img/computer.png";
-import Link from "next/link";
 import Carousel from "@/components/[locale]/Carousel";
 import data from "@/data/projects/projects.json";
 

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Items } from "./Items";

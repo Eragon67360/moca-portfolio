@@ -7,34 +7,26 @@ import { Logo } from "./Logo";
 import { useLocale, useTranslations } from "next-intl";
 import ThemeSwitcher from "@/components/[locale]/ThemeSwitcher";
 import Providers from "@/app/[locale]/providers";
-const DesktopNavbar = () => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [scrollY, setScrollY] = useState<number>(0);
-  const [windowHeight, setWindowHeight] = useState<number>(0);
 
+const DesktopNavbar = () => {
   const t = useTranslations("Navigation");
   const pathname = usePathname();
 
   const locale = useLocale();
 
   const navLinks = [
-    { href: "/", name: t("home") },
-    { href: "/projects", name: t("work") },
-    { href: "/about", name: t("about") },
-    { href: "/contact", name: t("contact") },
+    { href: `/${locale}/`, name: t("home") },
+    { href: `/${locale}/projects`, name: t("work") },
+    { href: `/${locale}/about`, name: t("about") },
+    { href: `/${locale}/contact`, name: t("contact") },
   ];
 
   const commonClasses =
     "text-base lg:text-lg xl:text-xl uppercase hover:text-cinnabar dark:hover:text-cinnabar transform transition duration-300 hover:scale-110";
 
-  const scrollPercentage = windowHeight
-    ? Math.min(scrollY / windowHeight, 1)
-    : 0;
-  const navbarOpacity = 1 - scrollPercentage;
-
   return (
     <>
-      <nav style={{ opacity: navbarOpacity }}>
+      <nav>
         <div className="flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar rounded-b-lg ">
           <div className="w-full flex">
             <div className="flex space-x-8 text-2xl font-bold">
