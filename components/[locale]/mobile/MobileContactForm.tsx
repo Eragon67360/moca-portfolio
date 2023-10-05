@@ -87,7 +87,7 @@ const MobileContactForm: React.FC = () => {
                     Get in touch!
                   </h2>
 
-                  <Image src={logo} alt="logo" width={40} />
+                  <Image src={logo} alt="logo" width={40} style={{'height':'auto'}}/>
                 </div>
 
                 <p className="text-black text-end text-base dark:text-secondary w-full">

@@ -21,20 +21,20 @@ const FeaturedProjects = () => {
 
         <div className="grid grid-cols-2 gap-8 justify-center">
           <div className="bg-secondary flex flex-col w-[500px]">
-            <Image src={logo} alt="placeholder" width={200} />
-            <Image src={logo} alt="placeholder" width={200} />
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
           </div>
           <div className="bg-secondary flex flex-col w-[500px]">
-            <Image src={logo} alt="placeholder" width={200} />
-            <Image src={logo} alt="placeholder" width={200} />
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
           </div>
           <div className="bg-secondary flex flex-col w-[500px]">
-            <Image src={logo} alt="placeholder" width={200} />
-            <Image src={logo} alt="placeholder" width={200} />
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
           </div>
           <div className="bg-secondary flex flex-col w-[500px]">
-            <Image src={logo} alt="placeholder" width={200} />
-            <Image src={logo} alt="placeholder" width={200} />
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
+            <Image src={logo} alt="placeholder" width={200} style={{'height':'auto'}}/>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ function useDeviceType() {
     if (width > 480 && width <= 745) return 'phablet';
     if (width > 745 && width <= 1024) return 'tablet';
     return 'desktop';
-  };
+  }; 
 
   const [deviceType, setDeviceType] = useState('desktop');
 

@@ -56,7 +56,7 @@ function DesktopHome() {
 
             <div className="h-full" />
           </Link>
-          <Image className="z-10" src={logo} alt="logo" width={200} />
+          <Image className="z-10" src={logo} alt="logo" width={200} style={{'height':'auto'}} />
 
           <Link
             href={"#featuredprojects"}
