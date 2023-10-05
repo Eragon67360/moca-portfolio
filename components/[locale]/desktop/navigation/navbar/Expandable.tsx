@@ -40,7 +40,6 @@ function Expandable({ language }: { language: any }) {
   const updateLocale = (newLocale: any) => {
     if (pathname) {
       const updatedPathname = switchLocaleInPathname(pathname, newLocale);
-      console.log(updatedPathname);
       router.push(updatedPathname);
     }
   };

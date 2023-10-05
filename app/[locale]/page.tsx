@@ -13,12 +13,24 @@ const Resizer = dynamic(() => import("@/components/Resizer"), {
 export default function Home() {
   return (
     <>
-      <Resizer
+      {/* <Resizer
         MobileComponent={<MobileHome />}
         PhabletComponent={<PhabletHome />}
         TabletComponent={<TabletHome />}
         DesktopComponent={<DesktopHome />}
-      />
+      /> */}
+      <div className="mobile">
+        <MobileHome />
+      </div>
+      <div className="phablet">
+        <PhabletHome />
+      </div>
+      <div className="tablet">
+        <TabletHome />
+      </div>
+      <div className="desktop">
+        <DesktopHome />
+      </div>
     </>
   );
 }
