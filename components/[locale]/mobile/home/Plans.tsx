@@ -36,7 +36,7 @@ const Plans = () => {
         <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
           Plans
         </div>
-        <div className="mt-24 grid grid-cols-1 gap-8 text-blackbean dark:text-secondary mx-20">
+        <div className="mt-24 grid grid-cols-1 gap-8 text-blackbean dark:text-secondary w-full px-8">
           {planData.map((plan, index) => (
             <div
               key={index}
@@ -47,7 +47,7 @@ const Plans = () => {
               <h3 className="text-base">{plan.description}</h3>
               {plan.button ? (
                 <div className="flex justify-center mt-8">
-                  <button className="w-full py-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
+                  <button className="w-full p-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
                     {plan.buttonText}
                   </button>
                 </div>
@@ -67,8 +67,8 @@ const Plans = () => {
             </div>
 
             <div className="flex justify-center mt-8">
-              <button className="w-full px-4 py-2 rounded-lg flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean">
-                <span className="font-semibold">Book now</span>
+              <button className="justify-between items-center w-full px-2 py-2 rounded-lg flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean">
+                <span className="font-semibold text-clip text-left">Book now</span>
                 <MdOutlineOpenInNew size={24} />
               </button>
             </div>

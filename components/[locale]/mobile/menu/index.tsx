@@ -39,9 +39,6 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           variants={menuVariants}
-          onAnimationComplete={() => {
-           
-          }}
           className="flex flex-col py-4 px-8 w-full bg-white dark:bg-blackbean"
         >
           <div className="flex flex-col items-center">

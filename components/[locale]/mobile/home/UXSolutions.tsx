@@ -1,5 +1,7 @@
 import React from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { SlMagicWand } from "react-icons/sl";
+import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 
@@ -21,7 +23,7 @@ const UXSolutions = () => {
               </p>
             </div>
             <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
-              <AiOutlineFundProjectionScreen size={50} />
+              <SlMagicWand size={50} />
               <h1 className="font-semibold text-2xl">Redesign</h1>
               <p>
                 If you wan to give a more fresh look to your website or mobile
@@ -33,7 +35,7 @@ const UXSolutions = () => {
               </p>
             </div>
             <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
-              <AiOutlineFundProjectionScreen size={50} />
+              <BsArrowRepeat size={50} />
               <h1 className="font-semibold text-2xl">Follow-up</h1>
               <p>
                 Updates, improvements and changes of an already existing website
@@ -50,7 +52,8 @@ const UXSolutions = () => {
 
           <div className="text-blackbean dark:text-white mt-12 flex flex-col rounded-2xl border-4 border-falured dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured">
             <h1 className="text-2xl font-bold">
-              Design is not just what it looks like;<br/> design is how it works
+              Design is not just what it looks like;
+              <br /> design is how it works
             </h1>
             <h2 className="text-xl">Steve Jobs</h2>
           </div>

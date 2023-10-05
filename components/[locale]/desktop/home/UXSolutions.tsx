@@ -1,5 +1,7 @@
 import React from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { SlMagicWand } from "react-icons/sl";
+import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 
@@ -21,7 +23,7 @@ const UXSolutions = () => {
               </p>
             </div>
             <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
-              <AiOutlineFundProjectionScreen size={50} />
+              <SlMagicWand size={50} />
               <h1 className="font-semibold text-2xl">Redesign</h1>
               <p>
                 If you wan to give a more fresh look to your website or mobile
@@ -33,7 +35,7 @@ const UXSolutions = () => {
               </p>
             </div>
             <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
-              <AiOutlineFundProjectionScreen size={50} />
+              <BsArrowRepeat size={50} />
               <h1 className="font-semibold text-2xl">Follow-up</h1>
               <p>
                 Updates, improvements and changes of an already existing website

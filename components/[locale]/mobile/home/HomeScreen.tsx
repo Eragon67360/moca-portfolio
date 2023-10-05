@@ -214,6 +214,16 @@ const HomeScreen = () => {
             </motion.div>
           </motion.div>
         </motion.div>
+
+        
+      </div>
+      <div className="h-16 flex justify-evenly items">
+        <div className="bg-linen w-1/6"></div>
+        <div className="bg-cinnabar w-1/6"></div>
+        <div className="bg-linen w-1/6"> </div>
+        <div className="bg-cinnabar w-1/6"></div>
+        <div className="bg-linen w-1/6"></div>
+        <div className="bg-blackbean w-1/6"></div>
       </div>
     </>
   );

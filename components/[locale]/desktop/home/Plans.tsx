@@ -47,7 +47,7 @@ const Plans = () => {
               <h3 className="text-base">{plan.description}</h3>
               {plan.button ? (
                 <div className="flex justify-center mt-8">
-                  <button className="w-full py-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
+                  <button className="w-full p-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
                     {plan.buttonText}
                   </button>
                 </div>
