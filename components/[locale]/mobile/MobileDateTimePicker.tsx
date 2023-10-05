@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { StaticDateTimePicker } from "@mui/x-date-pickers";
+import { MobileDateTimePicker } from "@mui/x-date-pickers/MobileDateTimePicker";
 import { DayCalendarSkeleton } from "@mui/x-date-pickers/DayCalendarSkeleton";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -11,36 +11,28 @@ import { useLocale } from "next-intl";
 import fr from "date-fns/locale/fr";
 import de from "date-fns/locale/de";
 import enUS from "date-fns/locale/en-US";
-// Import other locales as needed...
+import es from "date-fns/locale/es";
 
 const localeMap: Record<string, Locale> = {
   fr: fr,
   de: de,
   en: enUS,
-  // ... add other locales as needed
+  es: es,
 };
 
-function DateTimePicker() {
+function MobileDateAndTimePicker() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
-
-  // // Calculate the minimum and maximum times for the selected day
-  // const minDateTime = new Date(selectedDate);
-  // minDateTime.setHours(8, 0, 0, 0); // Set time to 8:00 AM
-
-  // const maxDateTime = new Date(selectedDate);
-  // maxDateTime.setHours(16, 0, 0, 0); // Set time to 4:00 PM
 
   let minDateTime: Date;
   let maxDateTime: Date;
 
   if (selectedDate instanceof Date) {
     minDateTime = new Date(selectedDate);
-    minDateTime.setHours(8, 0, 0, 0); // Set time to 8:00 AM
+    minDateTime.setHours(8, 0, 0, 0);
 
     maxDateTime = new Date(selectedDate);
-    maxDateTime.setHours(16, 0, 0, 0); // Set time to 4:00 PM
+    maxDateTime.setHours(16, 0, 0, 0);
   } else {
-    // Handle the scenario when selectedDate is null, e.g., set default dates:
     const defaultDate = new Date();
     minDateTime = new Date(defaultDate);
     minDateTime.setHours(8, 0, 0, 0);
@@ -52,10 +44,47 @@ function DateTimePicker() {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
+  const color = "#DF482B";
+
+  const primary = {
+    main: "#DF482B",
+    light: "#42a5f5",
+    dark: "#1565c0",
+    contrastText: "#fff",
+  };
+
   const theme = createTheme({
     palette: {
-      primary: {
-        main: "#DF482B", // change to your desired color
+      primary: primary,
+    },
+    components: {
+      MuiIconButton: {
+        styleOverrides: {
+          sizeMedium: {
+            color,
+          },
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            color,
+          },
+        },
+      },
+      MuiInputAdornment: {
+        styleOverrides: {
+          root: {
+            color,
+          },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            color,
+          },
+        },
       },
     },
   });
@@ -68,10 +97,10 @@ function DateTimePicker() {
       <ThemeProvider theme={theme}>
         <LocalizationProvider
           dateAdapter={AdapterDateFns}
-          adapterLocale={dateFnsLocale }
+          adapterLocale={dateFnsLocale}
         >
           <div className="flex">
-            <StaticDateTimePicker
+            <MobileDateTimePicker
               value={selectedDate}
               onChange={(newValue) => setSelectedDate(newValue)}
               renderLoading={() => <DayCalendarSkeleton />}
@@ -89,4 +118,4 @@ function DateTimePicker() {
   );
 }
 
-export default DateTimePicker;
+export default MobileDateAndTimePicker;
