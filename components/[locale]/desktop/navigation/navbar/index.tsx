@@ -26,44 +26,46 @@ const DesktopNavbar = () => {
 
   return (
     <>
-      <nav>
-        <div className="flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar rounded-b-lg ">
-          <div className="w-full flex">
-            <div className="flex space-x-8 text-2xl font-bold">
-              <div className="flex items-center space-x-[1.3vw]">
-                {navLinks.map((link) => {
-                  const isActive = pathname === "/" + locale + link.href;
+      {pathname !== "/" && (
+        <nav>
+          <div className="flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar rounded-b-lg ">
+            <div className="w-full flex">
+              <div className="flex space-x-8 text-2xl font-bold">
+                <div className="flex items-center space-x-[1.3vw]">
+                  {navLinks.map((link) => {
+                    const isActive = pathname === "/" + locale + link.href;
 
-                  return (
-                    <Link
-                      key={link.name}
-                      locale={locale}
-                      href={link.href}
-                      className={`${commonClasses} ${
-                        isActive
-                          ? "text-cinnabar"
-                          : "text-black dark:text-secondary"
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  );
-                })}
+                    return (
+                      <Link
+                        key={link.name}
+                        locale={locale}
+                        href={link.href}
+                        className={`${commonClasses} ${
+                          isActive
+                            ? "text-cinnabar"
+                            : "text-black dark:text-secondary"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="w-full flex justify-center">
-            <Logo />
+            <div className="w-full flex justify-center">
+              <Logo />
+            </div>
+            <div className="flex space-x-4 w-full justify-end">
+              <Providers>
+                <ThemeSwitcher />
+              </Providers>
+              <Language />
+            </div>
           </div>
-          <div className="flex space-x-4 w-full justify-end">
-            <Providers>
-              <ThemeSwitcher />
-            </Providers>
-            <Language />
-          </div>
-        </div>
-      </nav>
+        </nav>
+      )}
     </>
   );
 };

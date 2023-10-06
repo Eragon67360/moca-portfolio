@@ -1,21 +1,23 @@
 import React from "react";
-import DesktopLanding from "./landing/DesktopLanding";
-import MobileLanding from "./landing/MobileLanding";
+import DesktopHome from "./DesktopHome";
+import MobileHome from "./MobileHome";
+import PhabletHome from "./PhabletHome";
+import TabletHome from "./TabletHome";
 
 export default function Home() {
   return (
     <>
       <div className="mobile">
-        <MobileLanding />
+        <MobileHome />
       </div>
       <div className="phablet">
-        <MobileLanding />
+        <PhabletHome />
       </div>
       <div className="tablet">
-        <DesktopLanding />
+        <TabletHome />
       </div>
       <div className="desktop">
-        <DesktopLanding />
+        <DesktopHome />
       </div>
     </>
   );

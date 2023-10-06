@@ -29,6 +29,8 @@ const config: Config = {
         "contact-background": "url('/contact_background.png')",
         "bg-mobile-dark": "url('/bg_mobile_dark.png')",
         "bg-mobile-light": "url('/bg_mobile_light.png')",
+        "landing-page":"url('/panda.jpg')",
+        "landing-page-mobile":"url('/panda_mobile.jpg')",
       },
       colors: {
         secondary: "#FFFFFF",
