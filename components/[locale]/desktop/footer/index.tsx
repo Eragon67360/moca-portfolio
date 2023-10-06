@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "@/public/logo.svg";
 import Logos from "./Logos";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const DesktopFooter = () => {
   const pathname = usePathname();
@@ -17,15 +18,15 @@ const DesktopFooter = () => {
           </div>
           <div className="flex space-x-3">
             <div className="flex flex-col space-y-2">
-              <p>Home</p>
-              <p>Featured work</p>
-              <p>About</p>
-              <p>Contact</p>
+              <Link href={'/home'} className="hover:text-cinnabar">Home</Link>
+              <p  className="hover:text-cinnabar">Featured work</p>
+              <Link href={'/about'}  className="hover:text-cinnabar">About</Link>
+              <Link href={'/contact'}  className="hover:text-cinnabar">Contact</Link>
             </div>
             <div className="flex flex-col justify-between">
               <div className="flex flex-col space-y-2">
-                <p>Privacy Policy</p>
-                <p>Terms of Service</p>
+                <Link href={'/privacy'} className="hover:text-cinnabar">Privacy Policy</Link>
+                <Link href={'/'} className="hover:text-cinnabar">Terms of Service</Link>
               </div>
               <Logos />
             </div>
