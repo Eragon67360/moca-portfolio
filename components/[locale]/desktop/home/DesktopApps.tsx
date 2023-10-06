@@ -60,8 +60,8 @@ const DesktopApps = () => {
               <div key={index} className="flex justify-center">
                 <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-[142px]">
                   <card.Icon size={45} />
-                  <h1 className="text-2xl font-semibold">{card.title}</h1>
-                  <h2>{card.subtitle}</h2>
+                  <h3 className="text-2xl font-semibold">{card.title}</h3>
+                  <p>{card.subtitle}</p>
                 </div>
               </div>
             ))}

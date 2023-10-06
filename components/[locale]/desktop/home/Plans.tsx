@@ -53,9 +53,9 @@ const Plans = () => {
                 key={index}
                 className="bg-secondary dark:bg-blackbean flex flex-col p-12 rounded-2xl shadow-2xl dark:shadow-secondary/40"
               >
-                <h1 className="font-bold text-2xl">{plan.title}</h1>
-                <h2 className="font-bold text-5xl mt-8">{plan.price}</h2>
-                <h3 className="text-base">{plan.description}</h3>
+                <h2 className="font-bold text-2xl">{plan.title}</h2>
+                <h3 className="font-bold text-5xl mt-8">{plan.price}</h3>
+                <p className="text-base">{plan.description}</p>
                 {plan.button ? (
                   <div className="flex justify-center mt-8">
                     <button className="w-full p-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">

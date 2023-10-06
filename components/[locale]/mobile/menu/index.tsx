@@ -10,7 +10,6 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
-  // Variants for the menu animation
   const menuVariants = {
     open: {
       y: 0,
@@ -43,7 +42,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
         >
           <div className="flex flex-col items-center">
             <Image src={logo} alt="logo" />
-            <h1 className="uppercase text-2xl font-bold">Moca</h1>
+            <h2 className="uppercase text-2xl font-bold">Moca</h2>
           </div>
           <Items onClose={onClose}  />
         </motion.div>

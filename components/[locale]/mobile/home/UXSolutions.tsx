@@ -16,7 +16,7 @@ const UXSolutions = () => {
           <div className="flex flex-col justify-evenly pt-9 space-y-8">
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <AiOutlineFundProjectionScreen size={50} />
-              <h1 className="font-semibold text-2xl">New Project</h1>
+              <h2 className="font-semibold text-2xl">New Project</h2>
               <p>
                 Complete new design from zero, just tell us what you need and we
                 will work hard to make it real.
@@ -24,7 +24,7 @@ const UXSolutions = () => {
             </div>
             <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
               <SlMagicWand size={50} />
-              <h1 className="font-semibold text-2xl">Redesign</h1>
+              <h2 className="font-semibold text-2xl">Redesign</h2>
               <p>
                 If you wan to give a more fresh look to your website or mobile
                 application this is what you need.
@@ -36,7 +36,7 @@ const UXSolutions = () => {
             </div>
             <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
               <BsArrowRepeat size={50} />
-              <h1 className="font-semibold text-2xl">Follow-up</h1>
+              <h2 className="font-semibold text-2xl">Follow-up</h2>
               <p>
                 Updates, improvements and changes of an already existing website
                 or mobile application.
@@ -51,11 +51,11 @@ const UXSolutions = () => {
           <Image src={logo} alt="tail" />
 
           <div className="text-blackbean dark:text-white mt-12 flex flex-col rounded-2xl border-4 border-falured dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured">
-            <h1 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold">
               Design is not just what it looks like;
               <br /> design is how it works
-            </h1>
-            <h2 className="text-xl">Steve Jobs</h2>
+            </h2>
+            <h3 className="text-xl">Steve Jobs</h3>
           </div>
         </div>
       </div>

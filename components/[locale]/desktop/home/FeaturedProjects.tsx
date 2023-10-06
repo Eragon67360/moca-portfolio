@@ -26,8 +26,8 @@ const FeaturedProjects = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col text-secondary text-center pt-16">
-            <h1 className="font-bold text-4xl">Featured</h1>
-            <h1 className="font-bold text-6xl mt-4">Projects</h1>
+            <h2 className="font-bold text-4xl">Featured</h2>
+            <h3 className="font-bold text-6xl mt-4">Projects</h3>
             <div className="mt-12">
               <button className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full">
                 See more
