@@ -14,7 +14,7 @@ function DesktopLanding() {
             width={42}
             className="absolute top-0 left-0 mt-4 ml-4"
           />
-          <div className="flex flex-col justify-center items-center h-full w-screen">
+          <div className="flex flex-col justify-center items-center h-full w-screen text-secondary">
             <div className="bg-transparent border border-secondary/30 hover:border-secondary/50 rounded-full px-2">
               <Link href={"/about"}>
                 <span className="text-secondary/70">Announcing our new team.</span> <span className="font-bold">Read more →</span>
