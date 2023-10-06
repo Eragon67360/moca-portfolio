@@ -37,7 +37,7 @@ const DesktopHomeScreen = () => {
             <AnimatedTextCharacter />
           </div>
 
-          <div className="relative w-1/3 mt-16 border">
+          <div className="relative w-1/3 mt-16">
             <AnimatePresence custom={currentIdx}>
               <motion.div
                 key={currentIdx}

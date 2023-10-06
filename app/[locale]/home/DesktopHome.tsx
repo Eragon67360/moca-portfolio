@@ -1,6 +1,5 @@
-'use client'
+"use client";
 import { motion, Variants } from "framer-motion";
-import AnimatedTextCharacter from "@/components/AnimatedText";
 import React from "react";
 import DesktopApps from "@/components/[locale]/desktop/home/DesktopApps";
 import UXSolutions from "@/components/[locale]/desktop/home/UXSolutions";
@@ -30,45 +29,12 @@ function DesktopHome() {
   return (
     <>
       <div className="flex flex-col">
-        
-        <DesktopHomeScreen/>
-
+        <DesktopHomeScreen />
         <Delimiter />
-
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          variants={sectionVariants}
-          viewport={{ once: true }}
-        >
-          <UXSolutions />
-        </motion.div>
-
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          variants={sectionVariants}
-          viewport={{ once: true }}
-        >
-          <FeaturedProjects />
-        </motion.div>
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          variants={sectionVariants}
-          viewport={{ once: true }}
-        >
-          <DesktopApps />
-        </motion.div>
-
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          variants={sectionVariants}
-          viewport={{ once: true }}
-        >
-          <Plans />
-        </motion.div>
+        <UXSolutions />
+        <FeaturedProjects />
+        <DesktopApps />
+        <Plans />
       </div>
     </>
   );

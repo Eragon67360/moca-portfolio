@@ -4,12 +4,20 @@ import { SlMagicWand } from "react-icons/sl";
 import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
+import { motion } from "framer-motion";
+import { sectionVariants } from "@/components/motionVariants";
 
 const UXSolutions = () => {
   return (
     <>
-      <div className="">
-        <div className="bg-white dark:bg-blackbean flex flex-col h-full pt-40 pb-40 justify-start items-center text-center select-none  space-y-12">
+      <div className="bg-white dark:bg-blackbean pt-40 pb-40 justify-start items-center text-center select-none ">
+        <motion.div
+          className="flex flex-col h-full items-center text-center select-none space-y-12"
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={sectionVariants}
+          viewport={{ once: true }}
+        >
           <p className="font-bold text-5xl text-blackbean dark:text-secondary">
             Our Tailored UX Solutions
           </p>
@@ -52,11 +60,12 @@ const UXSolutions = () => {
 
           <div className="text-blackbean dark:text-white mt-12 w-1/2 flex flex-col rounded-2xl border-4 border-falured dark:border-cinnabar mx-80 p-8 space-y-8 bg-linen dark:bg-falured">
             <h1 className="text-4xl font-bold">
-              Design is not just what it looks like;<br/> design is how it works
+              Design is not just what it looks like;
+              <br /> design is how it works
             </h1>
             <h2 className="text-2xl font-semibold">Steve Jobs</h2>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
