@@ -13,7 +13,6 @@ import FeaturedProjects from "@/components/[locale]/desktop/home/FeaturedProject
 import { useTheme } from "next-themes";
 
 function DesktopHome() {
-
   const sectionVariants: Variants = {
     offscreen: {
       y: 300,
@@ -36,36 +35,25 @@ function DesktopHome() {
         <div className="h-[87.5vh] bg-linen dark:bg-falured">
           <div className=" flex h-full justify-center items-center text-center select-none font-bold text-5xl text-blackbean space-y-6">
             <div className="flex flex-col font-bold text-5xl text-center  items-center">
-              <AnimatedTextCharacter/>
+              <AnimatedTextCharacter />
             </div>
           </div>
         </div>
-        <div className="h-[10vh] bg-cinnabar flex justify-evenly items-center ">
-          <Link
-            href="#pricings"
-            className="flex flex-col h-full w-full items-center"
-          >
-            <ArcText text={"Scroll to pricings  Scroll to pricings  "} />
 
-            <div className="h-full" />
-          </Link>
-          <Image className="z-10" src={logo} alt="logo" width={200} style={{'height':'auto'}} />
-
-          <Link
-            href={"#featuredprojects"}
-            passHref
-            className="flex flex-col h-full w-full items-center"
-          >
-            <ArcText text={"Scroll to featured projects  "} />
-
-            <div className="h-full" />
-          </Link>
+        <div className="h-32 flex justify-evenly items">
+          <div className="bg-linen dark:bg-blackbean w-1/20"></div>
+          <div className="bg-cinnabar w-1/6"></div>
+          <div className="bg-linen dark:bg-blackbean w-1/6"> </div>
+          <div className="bg-cinnabar w-1/6"></div>
+          <div className="bg-linen dark:bg-blackbean w-1/6"></div>
+          <div className="bg-blackbean dark:bg-linen w-1/6"></div>
         </div>
+
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
-          viewport={{ once: true}}
+          viewport={{ once: true }}
         >
           <UXSolutions />
         </motion.div>
@@ -74,7 +62,7 @@ function DesktopHome() {
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
-          viewport={{ once: true}}
+          viewport={{ once: true }}
         >
           <FeaturedProjects />
         </motion.div>
@@ -82,7 +70,7 @@ function DesktopHome() {
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
-          viewport={{ once: true}}
+          viewport={{ once: true }}
         >
           <DesktopApps />
         </motion.div>
@@ -91,7 +79,7 @@ function DesktopHome() {
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
-          viewport={{ once: true}}
+          viewport={{ once: true }}
         >
           <Plans />
         </motion.div>
