@@ -15,9 +15,8 @@ const DesktopNavbar = () => {
   const locale = useLocale();
 
   const navLinks = [
-    { href: `/${locale}/`, name: t("home") },
-    { href: `/${locale}/projects`, name: t("work") },
-    { href: `/${locale}/about`, name: t("about") },
+    { href: `/${locale}/home`, name: t("home") },
+    { href: `/${locale}/about`, name: t("team") },
     { href: `/${locale}/contact`, name: t("contact") },
   ];
 

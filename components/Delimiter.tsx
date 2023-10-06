@@ -1,6 +1,6 @@
 import React from "react";
 
-const colorPattern = ["bg-falured", "bg-linen dark:bg-blackbean"];
+const colorPattern = ["bg-cinnabar", "bg-linen dark:bg-blackbean"];
 
 const Delimiter = () => {
   return (

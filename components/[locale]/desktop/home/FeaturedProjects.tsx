@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/logo_only.svg";
 import photo1 from "@/public/home/photo1.jpg";
 import photo2 from "@/public/home/photo2.png";
 import photo3 from "@/public/home/photo3.png";

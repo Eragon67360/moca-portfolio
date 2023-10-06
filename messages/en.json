@@ -7,8 +7,7 @@
     },
     "Navigation": {
         "home": "Home",
-        "work": "Work",
-        "about": "About",
+        "team": "Team",
         "contact": "Contact"
     },
     "Home": {
