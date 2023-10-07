@@ -8,17 +8,15 @@ function MobileLanding() {
     <>
       <section className="h-screen w-full overflow-x-hidden bg-landing-page-mobile bg-no-repeat bg-cover bg-center bg-fixed flex select-none">
         <div className="w-full h-full bg-blackbean/70 flex flex-col items-center">
-          <Image
-            src={logo}
-            alt="logo"
-            width={42}
-            className="mt-8"
-          />
+          <Image src={logo} alt="logo" width={42} className="mt-8" />
 
           <div className="flex flex-col justify-center items-center h-full w-screen space-y-8 px-4 text-secondary">
             <div className="bg-transparent border border-secondary/30 hover:border-secondary/50 rounded-full text-center px-8">
               <Link href={"/about"}>
-                <span className="text-secondary/70">Announcing our new team.</span><br /> <span className="font-bold">Read more →</span>
+                <span className="text-secondary/70">
+                  Announcing our new team.
+                </span>
+                <br /> <span className="font-bold">Read more →</span>
               </Link>
             </div>
 
