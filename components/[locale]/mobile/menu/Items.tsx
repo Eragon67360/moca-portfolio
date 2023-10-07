@@ -24,15 +24,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
             className="block hover:text-cinnabar"
             onClick={onClose}
           >
-            {t("about")}
-          </Link>
-          <hr className="w-full h-[1px] mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
-          <Link
-            href="/projects"
-            className="block hover:text-cinnabar "
-            onClick={onClose}
-          >
-            {t("work")}
+            {t("team")}
           </Link>
           <hr className="w-full h-[1px] mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
           <Link
