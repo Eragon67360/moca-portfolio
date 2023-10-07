@@ -19,8 +19,7 @@ const DesktopFooter = () => {
           <div className="flex space-x-3">
             <div className="flex flex-col space-y-2">
               <Link href={'/home'} className="hover:text-cinnabar">Home</Link>
-              <p  className="hover:text-cinnabar">Featured work</p>
-              <Link href={'/about'}  className="hover:text-cinnabar">About</Link>
+              <Link href={'/about'}  className="hover:text-cinnabar">Team</Link>
               <Link href={'/contact'}  className="hover:text-cinnabar">Contact</Link>
             </div>
             <div className="flex flex-col justify-between">

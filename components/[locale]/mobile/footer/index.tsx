@@ -2,6 +2,7 @@ import React from "react";
 import Logos from "./Logos";
 import Image from "next/image";
 import logo from "@/public/logo.svg";
+import Link from "next/link";
 
 const MobileFooter = () => {
   return (
@@ -19,18 +20,25 @@ const MobileFooter = () => {
         </div>
 
         <div className="flex space-x-3 justify-between">
-          <div className="flex space-x-3">
-            <div className="flex flex-col space-y-2">
-              <p>Home</p>
-              <p>Featured work</p>
-              <p>About</p>
-              <p>Contact</p>
-            </div>
+          <div className="flex flex-col space-y-2">
+            <Link href={"/home"} className="hover:text-cinnabar">
+              Home
+            </Link>
+            <Link href={"/about"} className="hover:text-cinnabar">
+              Team
+            </Link>
+            <Link href={"/contact"} className="hover:text-cinnabar">
+              Contact
+            </Link>
+          </div>
 
-            <div className="flex flex-col space-y-2">
-              <p>Privacy Policy</p>
-              <p>Terms of Service</p>
-            </div>
+          <div className="flex flex-col space-y-2">
+            <Link href={"/privacy"} className="hover:text-cinnabar">
+              Privacy Policy
+            </Link>
+            <Link href={"/"} className="hover:text-cinnabar">
+              Terms of Service
+            </Link>
           </div>
           <Logos />
         </div>
