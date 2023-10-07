@@ -15,7 +15,7 @@ function MobileLanding() {
             className="mt-8"
           />
 
-          <div className="flex flex-col justify-center items-center h-full w-screen space-y-8 px-4">
+          <div className="flex flex-col justify-center items-center h-full w-screen space-y-8 px-4 text-secondary">
             <div className="bg-transparent border border-secondary/30 hover:border-secondary/50 rounded-full text-center px-8">
               <Link href={"/about"}>
                 <span className="text-secondary/70">Announcing our new team.</span><br /> <span className="font-bold">Read more →</span>
