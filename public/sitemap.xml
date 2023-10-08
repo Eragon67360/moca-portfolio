@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- For uxmoca.com -->
+    <url>
+        <loc>https://www.uxmoca.com/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.com/home/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.com/about/</loc>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.com/privacy/</loc>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.com/booking/</loc>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.com/contact/</loc>
+    </url>
+
+    <!-- For uxmoca.net -->
+    <url>
+        <loc>https://www.uxmoca.net/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.net/home/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.net/about/</loc>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.net/privacy/</loc>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.net/booking/</loc>
+    </url>
+    <url>
+        <loc>https://www.uxmoca.net/contact/</loc>
+    </url>
+
+</urlset>
