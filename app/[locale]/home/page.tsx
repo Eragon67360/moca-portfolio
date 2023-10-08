@@ -8,7 +8,7 @@ import TabletHome from "./TabletHome";
 export const generateMetadata = (): Metadata => {
   return {
     title: "Home",
-    description:'UX MOCA home page'
+    description:'Discover the world of UX design with UX MOCA. Explore our home page for insights, resources, pricings and more...'
   };
 };
 

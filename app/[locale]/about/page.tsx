@@ -4,7 +4,7 @@ import React from 'react'
 export const generateMetadata = (): Metadata => {
   return {
     title: 'About',
-    description:'This page presents the member of our team'
+    description:`Discover the talented team behind UX MOCA's website. Meet our skilled members and explore their expertise.`
   };
 };
 export default function About() {

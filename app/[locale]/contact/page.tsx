@@ -7,7 +7,7 @@ import TabletContact from "./TabletContact";
 export const generateMetadata = (): Metadata => {
   return {
     title: "Contact",
-    description:'How to contact UX MOCA team directly'
+    description:"Contact UX MOCA directly through our website's contact page. Connect with us easily and efficiently."
   };
 };
 

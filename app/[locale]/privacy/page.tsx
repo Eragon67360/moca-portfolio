@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const generateMetadata = (): Metadata => {
   return {
     title: "Privacy Policy",
-    description:'UX MOCA privacy policy page'
+    description:"Discover the comprehensive privacy policy of UX MOCA's website, ensuring your data protection. Safeguarding your privacy is our utmost priority."
   };
 };
 

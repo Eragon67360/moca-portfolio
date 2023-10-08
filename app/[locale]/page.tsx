@@ -5,7 +5,7 @@ import MobileLanding from "./landing/MobileLanding";
 
 export const generateMetadata = (): Metadata => {
   return {
-    description: "Our official UX MOCA website",
+    description: "Discover the ultimate user experience with UX MOCA. Explore our landing page and unlock the power of intuitive design.",
   };
 };
 

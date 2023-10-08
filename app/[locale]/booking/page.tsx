@@ -8,7 +8,7 @@ import TabletBooking from "./TabletBooking";
 export const generateMetadata = (): Metadata => {
   return {
     title:'Booking',
-    description: "Booking page to book a call with UX MOCA",
+    description: "Book a call with the UX MOCA team through our professional booking page. Efficiently schedule appointments for seamless communication.",
   };
 };
 
