@@ -1,8 +1,17 @@
 import React from "react";
+import { Metadata } from "next";
 import DesktopHome from "./DesktopHome";
 import MobileHome from "./MobileHome";
 import PhabletHome from "./PhabletHome";
 import TabletHome from "./TabletHome";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Home",
+    description:'UX MOCA home page'
+  };
+};
+
 
 export default function Home() {
   return (

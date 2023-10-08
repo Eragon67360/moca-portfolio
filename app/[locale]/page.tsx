@@ -1,6 +1,14 @@
 import React from "react";
+import { Metadata } from "next";
 import DesktopLanding from "./landing/DesktopLanding";
 import MobileLanding from "./landing/MobileLanding";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    description: "Our official UX MOCA website",
+  };
+};
+
 
 export default function Home() {
   return (

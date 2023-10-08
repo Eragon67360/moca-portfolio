@@ -50,21 +50,20 @@ export default async function RootLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="flex flex-col h-screen overflow-y-hidden bg-white dark:bg-blackbean">
             <ProgressBar />
-              <>
-                <div className="mobile">
-                  <MobileNavbar />
-                </div>
-                <div className="desktop">
-                  <DesktopNavbar />
-                </div>
-                <div className="tablet">
-                  <TabletNavbar />
-                </div>
-                <div className="phablet">
-                  <TabletNavbar />
-                </div>
-              </>
-            
+            <>
+              <div className="mobile">
+                <MobileNavbar />
+              </div>
+              <div className="desktop">
+                <DesktopNavbar />
+              </div>
+              <div className="tablet">
+                <TabletNavbar />
+              </div>
+              <div className="phablet">
+                <TabletNavbar />
+              </div>
+            </>
 
             <div className="flex flex-col flex-grow overflow-y-scroll">
               {children}

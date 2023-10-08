@@ -1,4 +1,12 @@
 import React from "react";
+import { Metadata } from "next";
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Privacy Policy",
+    description:'UX MOCA privacy policy page'
+  };
+};
 
 const page = () => {
   return (
