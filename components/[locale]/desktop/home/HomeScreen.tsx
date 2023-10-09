@@ -24,9 +24,9 @@ const DesktopHomeScreen = () => {
       : -1;
 
   const variants = {
-    initial: () => ({ opacity: 0, x: 1000 * direction, y: -200 }),
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: () => ({ opacity: 0, x: -1000 * direction, y: -200 }),
+    initial: () => ({ opacity: 0, x: 1000 * direction, y: -200, scale: 0.2 }),
+    enter: { opacity: 1, x: 0, y: 0, scale: 1 },
+    exit: () => ({ opacity: 0, x: -1000 * direction, y: -200, scale: 0.2 }),
   };
 
   return (
