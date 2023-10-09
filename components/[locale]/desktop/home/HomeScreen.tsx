@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import paw from "@/public/home/paw.png";
@@ -15,13 +16,11 @@ const DesktopHomeScreen = () => {
   const prevIdx = useRef(currentIdx);
 
   useEffect(() => {
-    // Set an interval that updates currentIdx every few seconds (e.g., 3 seconds)
     const interval = setInterval(() => {
       prevIdx.current = currentIdx;
       setCurrentIdx((prevIdx) => (prevIdx + 1) % images.length);
-    }, 3000); // 3000ms = 3 seconds
+    }, 3000);
 
-    // Clear the interval when the component is unmounted
     return () => {
       clearInterval(interval);
     };
@@ -40,7 +39,7 @@ const DesktopHomeScreen = () => {
 
   return (
     <>
-      <div className="h-[100vh] bg-linen dark:bg-falured pt-24">
+      <div className="h-[100vh] bg-linen dark:bg-falured pt-24 overflow-x-hidden">
         <div className="flex flex-col h-full items-center text-center select-none text-blackbean">
           <div className="flex flex-col font-bold text-5xl text-center items-center">
             <AnimatedTextCharacter />

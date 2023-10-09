@@ -1,5 +1,4 @@
-"use client";
-import { motion, Variants } from "framer-motion";
+'use client'
 import React from "react";
 import DesktopApps from "@/components/[locale]/desktop/home/DesktopApps";
 import UXSolutions from "@/components/[locale]/desktop/home/UXSolutions";
@@ -10,22 +9,6 @@ import Delimiter from "@/components/Delimiter";
 import DesktopHomeScreen from "@/components/[locale]/desktop/home/HomeScreen";
 
 function DesktopHome() {
-  const sectionVariants: Variants = {
-    offscreen: {
-      y: 300,
-      opacity: 0,
-    },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 1.3,
-      },
-    },
-  };
-
   return (
     <>
       <div className="flex flex-col">
