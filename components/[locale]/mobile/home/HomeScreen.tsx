@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 
 import Image from "next/image";
@@ -114,10 +114,12 @@ const HomeScreen = () => {
     if (isAutoSwitching) {
       const timer = setTimeout(() => {
         nextImage();
+        setIsTextAnimated(!isTextAnimated);
+        setIsFront(false);
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [currentImageIndex, isAutoSwitching, nextImage]);
+  }, [currentImageIndex, isAutoSwitching, isTextAnimated, nextImage]);
 
   return (
     <>
@@ -215,8 +217,6 @@ const HomeScreen = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-
-        
       </div>
       <div className="h-16 flex justify-evenly items">
         <div className="bg-linen dark:bg-blackbean w-1/6"></div>

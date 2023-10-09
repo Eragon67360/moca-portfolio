@@ -27,10 +27,6 @@ const DesktopHomeScreen = () => {
     };
   }, [currentIdx, images.length]);
 
-  const handleClick = () => {
-    prevIdx.current = currentIdx;
-    setCurrentIdx((prevIdx) => (prevIdx + 1) % images.length);
-  };
   const direction =
     currentIdx - prevIdx.current >= 1 || currentIdx - prevIdx.current < -1
       ? 1
@@ -59,7 +55,7 @@ const DesktopHomeScreen = () => {
                 exit="exit"
                 variants={variants}
                 custom={currentIdx}
-                className="w-full cursor-pointer absolute top-0"
+                className="w-full absolute top-0"
                 transition={{ duration: 2.5 }}
               >
                 <Image src={images[currentIdx]} alt="displayed" />
