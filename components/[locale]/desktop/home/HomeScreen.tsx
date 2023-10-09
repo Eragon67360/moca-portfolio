@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import paw from "@/public/home/paw.png";
 import photo1 from "@/public/home/photo1.jpg";
@@ -10,9 +10,22 @@ import AnimatedTextCharacter from "@/components/AnimatedText";
 import { motion, AnimatePresence } from "framer-motion";
 
 const DesktopHomeScreen = () => {
-  const images = [photo1, photo2, photo3, photo4];
+  const images = [photo4, photo4, photo4, photo4];
   const [currentIdx, setCurrentIdx] = useState(0);
   const prevIdx = useRef(currentIdx);
+
+  useEffect(() => {
+    // Set an interval that updates currentIdx every few seconds (e.g., 3 seconds)
+    const interval = setInterval(() => {
+      prevIdx.current = currentIdx;
+      setCurrentIdx((prevIdx) => (prevIdx + 1) % images.length);
+    }, 3000); // 3000ms = 3 seconds
+
+    // Clear the interval when the component is unmounted
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentIdx, images.length]);
 
   const handleClick = () => {
     prevIdx.current = currentIdx;
@@ -47,8 +60,7 @@ const DesktopHomeScreen = () => {
                 variants={variants}
                 custom={currentIdx}
                 className="w-full cursor-pointer absolute top-0"
-                onClick={handleClick}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 2.5 }}
               >
                 <Image src={images[currentIdx]} alt="displayed" />
               </motion.div>
