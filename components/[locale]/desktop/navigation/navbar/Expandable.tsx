@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { useLocale } from "next-intl";
 import { FiGlobe } from "react-icons/fi";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -32,7 +31,6 @@ const switchLocaleInPathname = (
 
 function Expandable({ language }: { language: any }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const locale = useLocale();
   const pathname = usePathname()?.toString();
   const router = useRouter();
 
@@ -55,7 +53,7 @@ function Expandable({ language }: { language: any }) {
       className="relative inline-block ml-4 z-20"
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
     >
-      <button className="p-2 rounded-full focus:outline-none">
+      <button name="language" className="p-2 rounded-full focus:outline-none">
         <FiGlobe
           className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
           size={24}

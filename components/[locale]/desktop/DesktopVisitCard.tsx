@@ -27,6 +27,7 @@ const DesktopVisitCard = () => {
               <a
                 href="mailto:uxmoca@gmail.com"
                 className="align-middle justify-center"
+                aria-label="Send an email"
               >
                 uxmoca@gmail.com
               </a>
@@ -37,7 +38,7 @@ const DesktopVisitCard = () => {
               <FiPhone style={{ fontSize: 20 }} />
             </div>
             <div className="flex items-start align-middle justify-center">
-              <a href="tel:+33647849308">+33 6 47 84 93 08</a>
+              <a aria-label="Call a specific number" href="tel:+33647849308">+33 6 47 84 93 08</a>
             </div>
           </div>
           <div className="flex space-x-4">
@@ -48,6 +49,7 @@ const DesktopVisitCard = () => {
               <a
                 href="https://maps.app.goo.gl/66wU2miXSrtcs5mr7"
                 target="_blank"
+                aria-label="Go to this location"
               >
                 Strasbourg, France
               </a>

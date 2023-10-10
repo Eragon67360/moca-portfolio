@@ -11,7 +11,7 @@ const ThemeSwitcher = () => {
     <>
       <div className="flex justify-center items-center">
         <Tooltip content="Switch theme">
-        <button
+        <button name="theme"
           onClick={() =>
             theme === "light" ? setTheme("dark") : setTheme("light")
           }
