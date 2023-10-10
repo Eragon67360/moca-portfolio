@@ -4,17 +4,26 @@ import { SlMagicWand } from "react-icons/sl";
 import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
+import { motion } from "framer-motion";
+import { sectionVariants } from "@/components/motionVariants";
 
 const UXSolutions = () => {
   return (
     <>
-      <div className="">
-        <div className="bg-white dark:bg-blackbean flex flex-col h-full pt-40 pb-40 justify-start items-center text-center select-none space-y-12 px-8">
-          <p className="font-bold text-4xl text-blackbean dark:text-secondary">
+      <div className="bg-white dark:bg-blackbean pt-40 pb-40 justify-start select-none ">
+        <motion.div
+          className="flex flex-col h-full select-none space-y-12"
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={sectionVariants}
+          viewport={{ once: true }}
+        >
+          <p className="font-bold text-5xl text-blackbean dark:text-secondary text-center">
             Our Tailored UX Solutions
           </p>
-          <div className="flex flex-col justify-evenly pt-9 space-y-8">
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
+
+          <div className="flex flex-col pt-14 mx-24 text-center space-y-8">
+            <div className="flex flex-col items-center space-y-4">
               <AiOutlineFundProjectionScreen size={50} />
               <h2 className="font-semibold text-2xl">New Project</h2>
               <p>
@@ -22,7 +31,8 @@ const UXSolutions = () => {
                 will work hard to make it real.
               </p>
             </div>
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
+
+            <div className="flex flex-col items-center space-y-4">
               <SlMagicWand size={50} />
               <h2 className="font-semibold text-2xl">Redesign</h2>
               <p>
@@ -34,7 +44,8 @@ const UXSolutions = () => {
                 but still follows your brand identity
               </p>
             </div>
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
+
+            <div className="flex flex-col items-center space-y-4">
               <BsArrowRepeat size={50} />
               <h2 className="font-semibold text-2xl">Follow-up</h2>
               <p>
@@ -48,16 +59,22 @@ const UXSolutions = () => {
             </div>
           </div>
 
-          <Image src={logo} alt="tail" />
+          <div className="flex justify-center w-full">
+            <Image
+              src={logo}
+              alt="tail"
+              width={70}
+            />
+          </div>
 
-          <div className="text-blackbean dark:text-white mt-12 flex flex-col rounded-2xl border-4 border-falured dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured">
-            <h2 className="text-2xl font-bold">
+          <div className="text-blackbean dark:text-white mt-12 mx-32 flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">
+            <h2 className="text-3xl font-bold">
               Design is not just what it looks like;
               <br /> design is how it works
             </h2>
-            <h3 className="text-xl">Steve Jobs</h3>
+            <h2 className="text-2xl font-semibold">Steve Jobs</h2>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );

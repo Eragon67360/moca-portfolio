@@ -20,7 +20,7 @@ export default function Home() {
         <MobileLanding />
       </div>
       <div className="tablet">
-        <DesktopLanding />
+        <MobileLanding />
       </div>
       <div className="desktop">
         <DesktopLanding />

@@ -22,7 +22,7 @@ const UXSolutions = () => {
             Our Tailored UX Solutions
           </p>
           <div className="flex justify-evenly pt-14 space-x-10 mx-24">
-            <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
+            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <AiOutlineFundProjectionScreen size={50} />
               <h2 className="font-semibold text-2xl">New Project</h2>
               <p>
@@ -30,7 +30,7 @@ const UXSolutions = () => {
                 will work hard to make it real.
               </p>
             </div>
-            <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
+            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <SlMagicWand size={50} />
               <h2 className="font-semibold text-2xl">Redesign</h2>
               <p>
@@ -42,7 +42,7 @@ const UXSolutions = () => {
                 but still follows your brand identity
               </p>
             </div>
-            <div className="flex flex-col text-centerjustify-start items-center space-y-4 px-8">
+            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <BsArrowRepeat size={50} />
               <h2 className="font-semibold text-2xl">Follow-up</h2>
               <p>

@@ -7,6 +7,7 @@ import TabletNavbar from "@/components/[locale]/tablet/navigation/navbar";
 import MobileNavbar from "@/components/[locale]/mobile/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
 import DesktopFooter from "@/components/[locale]/desktop/footer";
+import TabletFooter from "@/components/[locale]/tablet/footer";
 import MobileFooter from "@/components/[locale]/mobile/footer";
 
 import { Analytics } from "@vercel/analytics/react";
@@ -72,7 +73,9 @@ export default async function RootLayout({
               <div className="desktop">
                 <DesktopFooter />
               </div>
-              <div className="tablet"></div>
+              <div className="tablet">
+                <TabletFooter />
+              </div>
               <div className="phablet"></div>
               <Analytics />
               <ToastContainer />

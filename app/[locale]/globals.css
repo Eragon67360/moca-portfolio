@@ -56,7 +56,7 @@
   background: linear-gradient(to bottom, transparent 0%, white 70%);
 }
 
-.box {  
+.box {
   font-size: 5em;
   padding: 20px;
   color: white;
@@ -66,10 +66,32 @@
   content: "Design, Develop, Deliver";
   display: flex;
   transform: rotateX(180deg);
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, .0) 10%, rgba(255, 255, 255, .5));
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0.5)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.img-shadow {
+  position: relative;
+  display: inline-block;
+}
+
+.img-shadow::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 30px); /* Position it 20px below the image */
+  left: 10%; /* Adjust for shadow width */
+  right: 10%; /* Adjust for shadow width */
+  height: 10px; /* Height of the shadow, adjust as needed */
+  border-radius: 100%;
+  --tw-blur: blur(24px);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), transparent);
+  z-index: -1;
 }
 
 .text-stroke {
@@ -81,8 +103,11 @@
 }
 
 /* CSS */
-.mobile, .desktop, .tablet, .phablet {
-  display: none;  /* By default, all are hidden */
+.mobile,
+.desktop,
+.tablet,
+.phablet {
+  display: none; /* By default, all are hidden */
 }
 
 /* Mobile-first approach */
