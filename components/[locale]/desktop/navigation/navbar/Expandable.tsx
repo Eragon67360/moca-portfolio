@@ -53,7 +53,10 @@ function Expandable({ language }: { language: any }) {
       className="relative inline-block ml-4 z-20"
       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
     >
-      <button name="language" className="p-2 rounded-full focus:outline-none">
+      <button
+        aria-label="language"
+        className="p-2 rounded-full focus:outline-none"
+      >
         <FiGlobe
           className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
           size={24}
