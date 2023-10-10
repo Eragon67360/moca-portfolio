@@ -76,21 +76,43 @@
   color: transparent;
 }
 
-.img-shadow {
+.img-shadow-tablet {
   position: relative;
   display: inline-block;
 }
 
-.img-shadow::after {
+.img-shadow-tablet::after {
   content: "";
   position: absolute;
-  top: calc(100% + 30px); /* Position it 20px below the image */
+  top: calc(100% + 87px); /* Position it 20px below the image */
   left: 10%; /* Adjust for shadow width */
   right: 10%; /* Adjust for shadow width */
-  height: 10px; /* Height of the shadow, adjust as needed */
-  border-radius: 100%;
-  --tw-blur: blur(24px);
-  background: linear-gradient(rgba(0, 0, 0, 0.2), transparent);
+  width: 416px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 416px;
+  background: #000;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.img-shadow-mobile {
+  position: relative;
+  display: inline-block;
+}
+
+.img-shadow-mobile::after {
+  content: "";
+  position: absolute;
+  top: calc(100% + 87px); /* Position it 20px below the image */
+  left: 15%; /* Adjust for shadow width */
+  right: 15%; /* Adjust for shadow width */
+  width: 194px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 194px;
+  background: #000;
+  filter: blur(15px);
   z-index: -1;
 }
 

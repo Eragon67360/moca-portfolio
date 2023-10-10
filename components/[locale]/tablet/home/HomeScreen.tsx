@@ -1,72 +1,62 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Image from "next/image";
-import phone_white from "@/public/phones/phone_white.png";
-import phone_yellow from "@/public/phones/phone_yellow.png";
-import phone_blue from "@/public/phones/phone_blue.png";
-import phone_red from "@/public/phones/phone_red.png";
-import phone_base from "@/public/phones/phone_base.png";
+import tablet_base from "@/public/tablets/tablet_base_transparent.png";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 const colorPattern = ["bg-cinnabar", "bg-linen dark:bg-blackbean"];
 
 const TabletHomeScreen = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const images = [phone_white, phone_yellow, phone_blue, phone_red];
-
-  const fadeInOut = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  function nextImage() {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  }
+  const controls = useAnimation();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const images = [tablet_base, tablet_base, tablet_base];
+  const bg = ["cinnabar", "lightblue", "darkorange"];
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      nextImage();
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [nextImage]);
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+      console.log(activeIndex);
+    }, 2000);
+
+    return () => clearInterval(interval); // Clear the interval on unmounting
+  }, [activeIndex, images.length]);
+
+  useEffect(() => {
+    // Update the x position based on the active image index
+    controls.start({ x: -(activeIndex * 100) + "%" });
+  }, [activeIndex, controls]);
 
   return (
     <>
-      <div className="flex flex-col w-full justify-center items-center my-12 space-y-12">
+      <div className="flex flex-col w-full justify-center items-center my-12 space-y-24">
         <div className="text-3xl font-bold text-falured text-center px-32">
           Crafting Experiences Shaping Futures: Your UX Design Partner
         </div>
-        <div className="relative w-[187px] h-[377px] z-10 img-shadow ">
-          <Image
-            src={phone_base}
-            alt="Phone Placeholder"
-            className="absolute w-full h-full top-0 left-0"
-          />
-          <AnimatePresence>
-            <motion.div
-              key={currentImageIndex}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={fadeInOut}
-              transition={{ duration: 2 }}
-              className="absolute w-full h-full top-0 left-0 right-0 bottom-0 scale-x-[92%] scale-y-[96.4%]"
+
+        <motion.div className="flex rounded-2xl items-center justify-center">
+          {images.map((imageSrc, index) => (
+            <div
+              key={index}
+              className={`flex-shrink-0 mx-8 ${
+                index === 0 || index === images.length - 1
+                  ? "transform scale-75"
+                  : ""
+              }`}
             >
-              <Image
-                src={images[currentImageIndex]}
-                alt="Phone Content"
-                fill={true}
-                className="absolute w-full h-full top-0 left-0"
-              />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+              <motion.div animate={controls}>
+                <Image
+                  src={imageSrc}
+                  alt={`Carousel Image ${index}`}
+                  className={`w-full h-[376px] rounded-2xl object-cover bg-${bg[index]}`}
+                />
+              </motion.div>
+            </div>
+          ))}
+        </motion.div>
       </div>
-      <div className="h-16 flex justify-evenly items mt-12">
+      <div className="h-16 flex justify-evenly items mt-24">
         {Array(7)
           .fill(colorPattern)
           .flat()
