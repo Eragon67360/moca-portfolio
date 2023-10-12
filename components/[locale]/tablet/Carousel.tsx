@@ -7,7 +7,7 @@ function CarouselComponent({ items }: { items: any }) {
   const style = {};
   return (
     <>
-      <div className="relative left-12 flex justify-center items-center">
+      <div className="relative left-12 flex justify-center items-center z-10">
         <Carousel height={460} width={960} autoPlay={false}>
           <div key={1} style={style} className="">
             {items[0]}

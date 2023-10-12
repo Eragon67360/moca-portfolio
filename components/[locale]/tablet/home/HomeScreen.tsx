@@ -15,7 +15,7 @@ const TabletHomeScreen = () => {
         <div className="text-3xl font-bold text-falured text-center px-32">
           Crafting Experiences Shaping Futures: Your UX Design Partner
         </div>
-        <div className="flex h-full mx-auto items-center justify-center">
+        <div className="flex h-full pb-24 mx-auto items-center justify-center">
           <CarouselComponent
             key={0}
             items={[
