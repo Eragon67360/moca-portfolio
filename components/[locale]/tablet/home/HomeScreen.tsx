@@ -1,60 +1,57 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
 
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import CarouselComponent from "../Carousel";
 
 const colorPattern = ["bg-cinnabar", "bg-linen dark:bg-blackbean"];
 
 const TabletHomeScreen = () => {
-  const controls = useAnimation();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const images = [tablet_base, tablet_base, tablet_base];
-  const bg = ["cinnabar", "lightblue", "darkorange"];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-      console.log(activeIndex);
-    }, 2000);
-
-    return () => clearInterval(interval); // Clear the interval on unmounting
-  }, [activeIndex, images.length]);
-
-  useEffect(() => {
-    // Update the x position based on the active image index
-    controls.start({ x: -(activeIndex * 100) + "%" });
-  }, [activeIndex, controls]);
-
   return (
     <>
       <div className="flex flex-col w-full justify-center items-center my-12 space-y-24">
         <div className="text-3xl font-bold text-falured text-center px-32">
           Crafting Experiences Shaping Futures: Your UX Design Partner
         </div>
-
-        <motion.div className="flex rounded-2xl items-center justify-center">
-          {images.map((imageSrc, index) => (
-            <div
-              key={index}
-              className={`flex-shrink-0 mx-8 ${
-                index === 0 || index === images.length - 1
-                  ? "transform scale-75"
-                  : ""
-              }`}
-            >
-              <motion.div animate={controls}>
-                <Image
-                  src={imageSrc}
-                  alt={`Carousel Image ${index}`}
-                  className={`w-full h-[376px] rounded-2xl object-cover bg-${bg[index]}`}
-                />
-              </motion.div>
-            </div>
-          ))}
-        </motion.div>
+        <div className="flex h-full mx-auto items-center justify-center">
+          <CarouselComponent
+            key={0}
+            items={[
+              <Image
+                key={0}
+                src={tablet_base}
+                alt="Carousel image"
+                className="w-full h-full rounded-2xl object-cover bg-cinnabar border border-black"
+              />,
+              <Image
+                key={1}
+                src={tablet_base}
+                alt="Carousel image"
+                className="w-full h-full rounded-2xl object-cover bg-lightblue"
+              />,
+              <Image
+                key={2}
+                src={tablet_base}
+                alt="Carousel image"
+                className="w-full h-full rounded-2xl object-cover bg-darkorange"
+              />,
+              <Image
+                key={3}
+                src={tablet_base}
+                alt="Carousel image"
+                className="w-full h-full rounded-2xl object-cover bg-falured"
+              />,
+              <Image
+                key={4}
+                src={tablet_base}
+                alt="Carousel image"
+                className="w-full h-full rounded-2xl object-cover bg-linen"
+              />,
+            ]}
+          />
+        </div>
       </div>
       <div className="h-16 flex justify-evenly items mt-24">
         {Array(7)

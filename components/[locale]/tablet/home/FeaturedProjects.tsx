@@ -18,7 +18,6 @@ const FeaturedProjects = () => {
   return (
     <>
       <div id="featuredprojects" className="bg-lightblue dark:bg-darkblue">
-        
         <motion.div
           className="flex flex-col h-full items-center justify-center text-center select-none space-y-12"
           initial="offscreen"
@@ -30,9 +29,14 @@ const FeaturedProjects = () => {
             <h2 className="font-bold text-4xl">Featured</h2>
             <h3 className="font-bold text-6xl mt-4">Projects</h3>
             <div className="mt-12">
-              <button className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full">
+              <a
+                href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
+                aria-label="See projects"
+                target="_blank"
+                className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full"
+              >
                 See more
-              </button>
+              </a>
             </div>
           </div>
 
@@ -50,8 +54,8 @@ const FeaturedProjects = () => {
                   style={{
                     height: "auto",
                     position: "absolute",
-                    top: '50px',
-                    left: '30px',
+                    top: "50px",
+                    left: "30px",
                   }}
                 />
                 <Image
@@ -61,8 +65,8 @@ const FeaturedProjects = () => {
                   style={{
                     height: "auto",
                     position: "absolute",
-                    bottom: '50px',
-                    right: '30px',
+                    bottom: "50px",
+                    right: "30px",
                     zIndex: 1,
                   }}
                 />
