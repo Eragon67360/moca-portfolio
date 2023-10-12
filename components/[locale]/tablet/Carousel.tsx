@@ -1,22 +1,14 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Carousel } from "react-carousel3";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
 
 function CarouselComponent({ items }: { items: any }) {
   const images = [tablet_base, tablet_base, tablet_base];
 
-  const style = {
-  };
+  const style = {};
   return (
     <>
       <div className="relative left-12 flex justify-center items-center">
-        <Carousel
-          height={460}
-          width={960}
-          autoPlay={false}
-        >
+        <Carousel height={460} width={960} autoPlay={false}>
           <div key={1} style={style} className="">
             {items[0]}
           </div>
