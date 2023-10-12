@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 
 export const sectionVariants: Variants = {
     offscreen: {
-      y: 200,
+      y: 100,
       opacity: 0,
     },
     onscreen: {
