@@ -16,10 +16,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['100', '200','300', '400','500', '600','700', '800','900'],
+  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = {
@@ -45,13 +45,13 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning className={poppins.className}>
+    <html lang={locale} suppressHydrationWarning className={`${poppins.variable}`}>
       <link rel="icon" href="/app/favicon.ico"></link>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="flex flex-col h-screen bg-white dark:bg-blackbean">
+          <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
             <ProgressBar />
-            <div className="flex flex-col flex-grow">
+            <div className="flex flex-col flex-grow font-sans">
               <>
                 <div className="mobile">
                   <MobileNavbar />

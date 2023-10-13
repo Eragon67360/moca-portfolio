@@ -25,7 +25,7 @@ const MemberTemplate = ({
 }: Members) => {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex justify-center font-sans">
         <Image
           src={photo}
           alt="image"
@@ -71,7 +71,7 @@ function DesktopTeam() {
 
   return (
     <>
-      <div className="h-screen flex flex-col justify-center items-center mx-[16vw] xl:mx-[32vw]">
+      <div className="font-sans h-screen flex flex-col justify-center items-center mx-[16vw] xl:mx-[32vw]">
         <div className="flex flex-col rounded-3xl p-8 bg-linen w-full select-none">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           {members ? (

@@ -43,7 +43,17 @@ const config: Config = {
         cinnabar: "#DF482B",
         darkorange: "#F1A453",
       },
-      fontFamily: {},
+      fontFamily: {
+        sans: ["var(--font-poppins)", ...defaultTheme.fontFamily.sans],
+      },
+      typography: (theme: (arg0: string) => any[]) => ({
+        DEFAULT: {
+          css: {
+            fontFamily: `${theme('fontFamily.sans').join(', ')} !important`,
+            // ... add other global styles if needed
+          },
+        },
+      }),
       boxShadow: {
         lightBox: "0px 0px 20px 0px rgba(0, 0, 0, 0.6)",
         darkBox: "0px 0px 20px 0px rgba(255, 255, 255, 1)",
@@ -53,7 +63,7 @@ const config: Config = {
     },
   },
 
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 
 export default config;
