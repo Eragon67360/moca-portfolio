@@ -11,12 +11,6 @@ function MobileHome() {
   return (
     <>
       <div className="flex flex-col bg-linen dark:bg-blackbean">
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="text-2xl font-bold uppercase text-blackbean dark:text-secondary my-4">
-            Moca
-          </h1>
-          <Image src={logo} alt="logo" />
-        </div>
         <HomeScreen />
         <UXSolutions />
         <FeaturedProjects />
