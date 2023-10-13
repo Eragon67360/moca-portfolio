@@ -20,12 +20,12 @@ const ThemeSwitcher = () => {
             {theme === "light" ? (
               <BsMoon
                 className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
-                size={30}
+                size={24}
               />
             ) : (
               <BsSun
                 className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
-                size={30}
+                size={24}
               />
             )}
           </button>
