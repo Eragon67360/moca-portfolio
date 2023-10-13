@@ -23,7 +23,7 @@ const MemberTemplate = ({
 }: Members) => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center">
+      <div className="font-sans flex flex-col justify-center items-center">
         <Image
           src={photo}
           alt="image"
