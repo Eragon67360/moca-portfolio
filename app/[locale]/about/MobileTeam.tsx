@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Carousel } from "primereact/carousel";
 import { MemberService } from "./service/MemberService";
 import Image from "next/image";
-import { MembersDesktopSkeleton } from "./skeletons/MembersSkeleton";
-
+import { MembersMobileSkeleton } from "./skeletons/MembersSkeleton";
 
 interface Members {
   id: string;
@@ -24,20 +23,20 @@ const MemberTemplate = ({
 }: Members) => {
   return (
     <>
-      <div className="flex justify-center">
+      <div className="flex flex-col justify-center items-center">
         <Image
           src={photo}
           alt="image"
-          width={284}
-          height={284}
+          width={230}
+          height={230}
           className="rounded-xl"
         />
-        <div className="flex flex-col px-8 pt-9 justify-between">
+        <div className="flex flex-col pt-9 justify-between">
           <div className="flex flex-col">
             <h2 className="font-semibold text-2xl">{name}</h2>
             <h2 className="">{role}</h2>
           </div>
-          <div className="flex space-x-3">
+          <div className="flex space-x-3 pt-4">
             <a
               href={linkedin}
               target="_blank"
@@ -60,7 +59,7 @@ const MemberTemplate = ({
   );
 };
 
-function DesktopTeam() {
+function MobileTeam() {
   const [members, setMembers] = useState<Members[] | null>(null);
 
   useEffect(() => {
@@ -69,25 +68,27 @@ function DesktopTeam() {
 
   return (
     <>
-      <div className="h-screen flex flex-col justify-center items-center mx-40">
-        <div className="flex flex-col rounded-3xl p-8 bg-linen w-full select-none">
-          <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
-          {members ? (
-            <Carousel
-              value={members}
-              unstyled={false}
-              showIndicators={true}
-              numVisible={1}
-              numScroll={1}
-              itemTemplate={ MemberTemplate }
-            />
-          ) : (
-            <MembersDesktopSkeleton/>
-          )}
+      <div className="h-screen flex flex-col justify-center items-center mx-4">
+        <div className="w-full flex flex-col justify-center items-center rounded-3xl p-8 bg-linen select-none">
+          <p className="font-bold text-3xl text-center mb-4 ">Our team</p>
+          <div className="w-full h-full">
+            {members ? (
+              <Carousel
+                value={members}
+                unstyled={false}
+                showIndicators={true}
+                numVisible={1}
+                numScroll={1}
+                itemTemplate={MemberTemplate}
+              />
+            ) : (
+              <MembersMobileSkeleton />
+            )}
+          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default DesktopTeam;
+export default MobileTeam;

@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import React, { useState } from "react";
 import DesktopTeam from "./DesktopTeam";
+import TabletTeam from "./TabletTeam";
+import PhabletTeam from "./PhabletTeam";
+import MobileTeam from "./MobileTeam";
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -12,7 +15,18 @@ export const generateMetadata = (): Metadata => {
 export default function About() {
   return (
     <>
-      <DesktopTeam />
+      <div className="mobile">
+        <MobileTeam />
+      </div>
+      <div className="phablet">
+        <PhabletTeam />
+      </div>
+      <div className="tablet">
+        <TabletTeam />
+      </div>
+      <div className="desktop">
+        <DesktopTeam />
+      </div>
     </>
   );
 }

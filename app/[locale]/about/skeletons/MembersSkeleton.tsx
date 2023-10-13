@@ -2,7 +2,7 @@ import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const MembersSkeleton = () => {
+export const MembersDesktopSkeleton = () => {
   return (
     <div className="flex justify-center">
       <SkeletonTheme baseColor="#cccccc" highlightColor="#ffffff">
@@ -32,4 +32,35 @@ const MembersSkeleton = () => {
   );
 };
 
-export default MembersSkeleton;
+
+export const MembersMobileSkeleton = () => {
+  return (
+    <div className="flex flex-col justify-center">
+      <SkeletonTheme baseColor="#cccccc" highlightColor="#ffffff">
+        <div className="rounded-3xl w-[230px] h-[230px]">
+          <Skeleton className="w-[230px] h-[230px]" />
+        </div>
+        <div className="flex flex-col pt-9">
+          <div className="flex flex-col">
+            <div className="h-6 w-40  mb-2 rounded">
+              <Skeleton />
+            </div>
+            <div className="h-4 w-32 rounded">
+              <Skeleton />
+            </div>
+          </div>
+          <div className="flex space-x-3 pt-8">
+            <div className="h-6 w-24 rounded">
+              <Skeleton />
+            </div>
+            <div className="h-6 w-24 rounded">
+              <Skeleton />
+            </div>
+          </div>
+        </div>
+      </SkeletonTheme>
+    </div>
+  );
+};
+
+
