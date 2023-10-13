@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "primereact/carousel";
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primeicons/primeicons.css';
 import { MemberService } from "./service/MemberService";
 import Image from "next/image";
 import { MembersDesktopSkeleton } from "./skeletons/MembersSkeleton";
-
 
 interface Members {
   id: string;
@@ -31,6 +32,7 @@ const MemberTemplate = ({
           width={284}
           height={284}
           className="rounded-xl"
+          priority={true}
         />
         <div className="flex flex-col px-8 pt-9 justify-between">
           <div className="flex flex-col">
@@ -69,7 +71,7 @@ function DesktopTeam() {
 
   return (
     <>
-      <div className="h-screen flex flex-col justify-center items-center mx-40">
+      <div className="h-screen flex flex-col justify-center items-center mx-[16vw] xl:mx-[32vw]">
         <div className="flex flex-col rounded-3xl p-8 bg-linen w-full select-none">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           {members ? (
@@ -79,10 +81,12 @@ function DesktopTeam() {
               showIndicators={true}
               numVisible={1}
               numScroll={1}
-              itemTemplate={ MemberTemplate }
+              circular
+              autoplayInterval={3000}
+              itemTemplate={MemberTemplate}
             />
           ) : (
-            <MembersDesktopSkeleton/>
+            <MembersDesktopSkeleton />
           )}
         </div>
       </div>
