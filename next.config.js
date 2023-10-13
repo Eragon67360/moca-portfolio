@@ -6,6 +6,9 @@ const withNextIntl = require("next-intl/plugin")(
 );
 
 const nextConfig = withNextIntl({
+  experimental: {
+    serverActions: true,
+  },
   webpack(config, options) {
     const { isServer } = options;
     config.module.rules.push({
