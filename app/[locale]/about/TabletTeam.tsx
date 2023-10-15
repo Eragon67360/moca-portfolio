@@ -79,8 +79,6 @@ function TabletTeam() {
                 showIndicators={true}
                 numVisible={1}
                 numScroll={1}
-                circular
-                autoplayInterval={3000}
                 itemTemplate={MemberTemplate}
               />
             ) : (
