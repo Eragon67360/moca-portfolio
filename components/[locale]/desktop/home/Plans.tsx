@@ -67,7 +67,7 @@ const Plans = () => {
             {planData.map((plan, index) => (
               <div
                 key={index}
-                className="bg-secondary dark:bg-blackbean flex flex-col p-12 rounded-2xl shadow-2xl dark:shadow-secondary/40"
+                className="bg-secondary dark:bg-blackbean flex flex-col p-8 rounded-2xl shadow-cards"
               >
                 <div className="flex flex-col">
                   <div className="flex flex-col">
@@ -75,25 +75,25 @@ const Plans = () => {
                     <h3 className="mt-6">{plan.subtitle}</h3>
                   </div>
 
-                  <div className="flex flex-col">
-                    <h3 className="font-bold text-2xl mt-8">{plan.price}</h3>
-                    <p className="text-base">{plan.description}</p>
+                  <div className="flex flex-col mt-6">
+                    <h3 className="font-bold text-2xl">{plan.price}</h3>
+                    <p className="text-xs">{plan.description}</p>
 
-                    <div className="flex justify-center mt-8">
+                    <div className="flex justify-center mt-4">
                       <button className="w-full p-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
                         {plan.buttonText}
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <hr className="mt-6 border-1 border-linen" />
+                <div className="flex flex-col mt-6">
+                  <hr className=" border-1border-linen" />
                   <div className="flex flex-col mt-4">
                     <p>What&apos;s included:</p>
                     <br />
-                    <p>{plan.included}</p>
+                    <p className="mt-2">{plan.included}</p>
                     {plan.list && (
-                      <ul className="mt-4 ml-4">
+                      <ul className="mt-9 ml-4">
                         <li className="list-disc">{plan.list1}</li>
                         <li className="list-disc">{plan.list2}</li>
                         <li className="list-disc">{plan.list3}</li>
@@ -129,10 +129,10 @@ const Plans = () => {
               <div className="p-12 border rounded-2xl shadow-cards">
                 Send us an e-mail
               </div>
-              <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary">
+              <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-xs">
                 <p>*Graphics includes:</p>
                 <br />
-                <div className="flex ml-4 space-x-4">
+                <div className="flex ml-4 space-x-6">
                   <ul>
                     <li className="list-disc">Stationary Brochures</li>
                     <li className="list-disc">Social media graphics</li>
