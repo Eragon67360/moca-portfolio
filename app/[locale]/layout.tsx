@@ -9,6 +9,8 @@ import ProgressBar from "@/components/[locale]/ProgressBar";
 import DesktopFooter from "@/components/[locale]/desktop/footer";
 import TabletFooter from "@/components/[locale]/tablet/footer";
 import MobileFooter from "@/components/[locale]/mobile/footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
@@ -52,46 +54,54 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${poppins.variable}`}
     >
+      <GoogleAnalytics trackPageViews />
       <link rel="icon" href="/app/favicon.ico"></link>
       <body>
         <ClerkProvider>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
-              <ProgressBar />
-              <div className="flex flex-col flex-grow font-sans">
-                <>
-                  <div className="mobile">
-                    <MobileNavbar />
-                  </div>
-                  <div className="desktop">
-                    <DesktopNavbar />
-                  </div>
-                  <div className="tablet">
-                    <TabletNavbar />
-                  </div>
-                  <div className="phablet">
-                    <TabletNavbar />
-                  </div>
-                </>
-                {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider locale={locale} messages={messages}>
+              <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
+                <ProgressBar />
+                <div className="flex flex-col flex-grow font-sans">
+                  <>
+                    <div className="mobile">
+                      <MobileNavbar />
+                    </div>
+                    <div className="desktop">
+                      <DesktopNavbar />
+                    </div>
+                    <div className="tablet">
+                      <TabletNavbar />
+                    </div>
+                    <div className="phablet">
+                      <TabletNavbar />
+                    </div>
+                  </>
+                  {children}
 
-                <>
-                  <div className="mobile">
-                    <MobileFooter />
-                  </div>
-                  <div className="desktop">
-                    <DesktopFooter />
-                  </div>
-                  <div className="tablet">
-                    <TabletFooter />
-                  </div>
-                  <div className="phablet"></div>
-                </>
-                <Analytics />
-                <ToastContainer />
+                  <>
+                    <div className="mobile">
+                      <MobileFooter />
+                    </div>
+                    <div className="desktop">
+                      <DesktopFooter />
+                    </div>
+                    <div className="tablet">
+                      <TabletFooter />
+                    </div>
+                    <div className="phablet"></div>
+                  </>
+                  <Analytics />
+                  <ToastContainer />
+                </div>
               </div>
-            </div>
-          </NextIntlClientProvider>
+            </NextIntlClientProvider>
+          </ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
