@@ -54,7 +54,7 @@ const Plans = () => {
 
   return (
     <>
-      <div id="pricings" className="pt-24 bg-linen dark:bg-falured">
+      <div id="pricings" className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-linen dark:bg-falured">
         <motion.div
           className="flex flex-col items-center"
           initial="offscreen"
@@ -68,7 +68,7 @@ const Plans = () => {
             </div>
             <Image src={paw} alt="paw" width={56} className="transform rotate-[35deg]"/>
           </div>
-          <div className="mt-24 lg:mx-12 xl:mx-36 2xl:mx-96 justify-center grid grid-cols-4 gap-8 text-blackbean dark:text-secondary px-8">
+          <div className="mt-24 justify-center grid grid-cols-4 gap-8 text-blackbean dark:text-secondary">
             {planData.map((plan, index) => (
               <div
                 key={index}

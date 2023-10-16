@@ -5,6 +5,8 @@ import { SiAdobeindesign } from "react-icons/si";
 import { GiWireframeGlobe } from "react-icons/gi";
 import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineCloudServer } from "react-icons/ai";
+import { LiaSwatchbookSolid } from "react-icons/lia";
+import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 
@@ -13,38 +15,39 @@ const DesktopApps = () => {
     {
       Icon: FiGlobe,
       title: "Websites",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Elevate Your Online Presence",
     },
     {
       Icon: AiOutlineMobile,
       title: "Mobile Apps",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Apps That Shine Bright",
+    },
+    {
+      Icon: AiOutlineCloudServer,
+      title: "SAAS (Software as a Service)",
+      subtitle: "Empowering Your Business",
     },
     {
       Icon: SiAdobeindesign,
       title: "Design systems",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Designing for Tomorrow",
+    },
+
+    {
+      Icon: PiCompassTool,
+      title: "Graphics",
+      subtitle: "Graphics That Speak Volumes",
     },
     {
-      Icon: AiOutlineCloudServer,
-      title: "SAAS",
-      subtitle: "Catchy text blablabla",
-    },
-    {
-      Icon: GiWireframeGlobe,
-      title: "Wireframes",
-      subtitle: "Catchy text blablabla",
-    },
-    {
-      Icon: MdAlternateEmail,
-      title: "Email graphics",
-      subtitle: "Catchy text blablabla",
+      Icon: LiaSwatchbookSolid,
+      title: "Logos & Branding",
+      subtitle: "Unforgettable Logos, Stronger Brands",
     },
   ];
 
   return (
     <>
-      <div className="pt-24 bg-secondary dark:bg-blackbean flex flex-col items-center">
+      <div className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
         <motion.div
           className="flex flex-col"
           initial="offscreen"
@@ -58,7 +61,7 @@ const DesktopApps = () => {
           <div className="grid grid-cols-3 gap-8 mt-9 text-blackbean dark:text-secondary">
             {cardData.map((card, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-[142px]">
+                <div className="w-full h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
                   <card.Icon size={45} />
                   <h3 className="text-2xl font-semibold">{card.title}</h3>
                   <p>{card.subtitle}</p>
