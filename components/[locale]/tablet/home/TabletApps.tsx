@@ -3,9 +3,9 @@ import Image from "next/image";
 import { FiGlobe } from "react-icons/fi";
 import { AiOutlineMobile } from "react-icons/ai";
 import { SiAdobeindesign } from "react-icons/si";
-import { GiWireframeGlobe } from "react-icons/gi";
-import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineCloudServer } from "react-icons/ai";
+import { LiaSwatchbookSolid } from "react-icons/lia";
+import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import panda from "@/public/panda.png";
@@ -15,32 +15,33 @@ const TabletApps = () => {
     {
       Icon: FiGlobe,
       title: "Websites",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Elevate Your Online Presence",
     },
     {
       Icon: AiOutlineMobile,
       title: "Mobile Apps",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Apps That Shine Bright",
+    },
+    {
+      Icon: AiOutlineCloudServer,
+      title: "SAAS (Software as a Service)",
+      subtitle: "Empowering Your Business",
     },
     {
       Icon: SiAdobeindesign,
       title: "Design systems",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Designing for Tomorrow",
+    },
+
+    {
+      Icon: PiCompassTool,
+      title: "Graphics",
+      subtitle: "Graphics That Speak Volumes",
     },
     {
-      Icon: AiOutlineCloudServer,
-      title: "SAAS",
-      subtitle: "Catchy text blablabla",
-    },
-    {
-      Icon: GiWireframeGlobe,
-      title: "Wireframes",
-      subtitle: "Catchy text blablabla",
-    },
-    {
-      Icon: MdAlternateEmail,
-      title: "Email graphics",
-      subtitle: "Catchy text blablabla",
+      Icon: LiaSwatchbookSolid,
+      title: "Logos & Branding",
+      subtitle: "Unforgettable Logos, Stronger Brands",
     },
   ];
 

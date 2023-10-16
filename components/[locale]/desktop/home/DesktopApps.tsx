@@ -1,14 +1,14 @@
 import React from "react";
+import Image from "next/image";
 import { FiGlobe } from "react-icons/fi";
 import { AiOutlineMobile } from "react-icons/ai";
 import { SiAdobeindesign } from "react-icons/si";
-import { GiWireframeGlobe } from "react-icons/gi";
-import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineCloudServer } from "react-icons/ai";
 import { LiaSwatchbookSolid } from "react-icons/lia";
 import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
+import panda from "@/public/panda.png";
 
 const DesktopApps = () => {
   const cardData = [
@@ -47,6 +47,9 @@ const DesktopApps = () => {
 
   return (
     <>
+      <div className="relative border">
+        <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
+      </div>
       <div className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
         <motion.div
           className="flex flex-col"
