@@ -6,6 +6,8 @@ import { MdOutlineOpenInNew } from "react-icons/md";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
+import Image from "next/image";
+import paw from "@/public/home/paw.png";
 
 const Plans = () => {
   const planData = [
@@ -60,8 +62,11 @@ const Plans = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-            Plans
+          <div className="flex space-x-2 justify-center items-center">
+            <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+              Subscriptions plans
+            </div>
+            <Image src={paw} alt="paw" width={56} className="transform rotate-[35deg]"/>
           </div>
           <div className="mt-24 lg:mx-12 xl:mx-36 2xl:mx-96 justify-center grid grid-cols-4 gap-8 text-blackbean dark:text-secondary px-8">
             {planData.map((plan, index) => (

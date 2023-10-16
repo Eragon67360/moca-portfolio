@@ -38,7 +38,7 @@ const Plans = () => {
         className="pt-24 bg-linen dark:bg-falured flex flex-col items-center"
       >
         <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-          Plans
+        Subscriptions plans
         </div>
         <div className="mt-24 grid grid-cols-1 gap-8 text-blackbean dark:text-secondary w-full px-8">
           {planData.map((plan, index) => (
