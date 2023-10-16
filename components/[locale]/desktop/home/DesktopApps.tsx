@@ -47,33 +47,35 @@ const DesktopApps = () => {
 
   return (
     <>
-      <div className="relative border">
-        <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
-      </div>
-      <div className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
-        <motion.div
-          className="flex flex-col"
-          initial="offscreen"
-          whileInView="onscreen"
-          variants={sectionVariants}
-          viewport={{ once: true }}
-        >
-          <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-            Apps, websites & more
-          </div>
-          <div className="grid grid-cols-3 gap-8 mt-9 text-blackbean dark:text-secondary">
-            {cardData.map((card, index) => (
-              <div key={index} className="flex justify-center">
-                <div className="w-full h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
-                  <card.Icon size={45} />
-                  <h3 className="text-2xl font-semibold">{card.title}</h3>
-                  <p>{card.subtitle}</p>
+      <div className="overflow-x-hidden">
+        <div className="relative border">
+          <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
+        </div>
+        <div className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
+          <motion.div
+            className="flex flex-col"
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={sectionVariants}
+            viewport={{ once: true }}
+          >
+            <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+              Apps, websites & more
+            </div>
+            <div className="grid grid-cols-3 gap-8 mt-9 text-blackbean dark:text-secondary">
+              {cardData.map((card, index) => (
+                <div key={index} className="flex justify-center">
+                  <div className="w-full h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
+                    <card.Icon size={45} />
+                    <h3 className="text-2xl font-semibold">{card.title}</h3>
+                    <p>{card.subtitle}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          <div className="h-24" />
-        </motion.div>
+              ))}
+            </div>
+            <div className="h-24" />
+          </motion.div>
+        </div>
       </div>
     </>
   );

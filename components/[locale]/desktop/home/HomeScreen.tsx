@@ -39,7 +39,7 @@ const DesktopHomeScreen = () => {
 
   return (
     <>
-      <div className="h-[100vh] bg-linen dark:bg-falured pt-[190px] overflow-x-hidden">
+      <div className="h-[90vh] bg-linen dark:bg-falured pt-[190px] overflow-x-hidden">
         <div className="flex flex-col h-full items-center text-center select-none text-blackbean">
           <div className="flex flex-col font-bold text-5xl text-center items-center">
             <AnimatedTextCharacter />

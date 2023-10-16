@@ -28,7 +28,6 @@ const nextConfig = withNextIntl({
         },
       ],
     });
-
     return config;
   },
 });

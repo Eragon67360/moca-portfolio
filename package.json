@@ -55,6 +55,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/nodemailer": "^6.4.10",
     "@types/nprogress": "^0.2.0",
     "file-loader": "^6.2.0",

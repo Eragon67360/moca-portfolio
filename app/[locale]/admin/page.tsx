@@ -48,14 +48,14 @@ function Admin() {
             Admin Dashboard
           </h1>
           {activeSection === "bookings" && (
-            <div className="bg-white h-full p-4 rounded shadow mb-6">
+            <div className="bg-white h-full p-4 rounded-xl shadow mb-6">
               <h2 className="text-xl font-bold mb-4">Bookings</h2>
               {/* Your booking data and components go here */}
             </div>
           )}
 
           {activeSection === "analytics" && (
-            <div className="bg-white h-full p-4 rounded shadow">
+            <div className="bg-white h-full p-4 rounded-xl shadow">
               <h2 className="text-xl font-bold mb-4">Analytics</h2>
               {/* Your analytics data and components go here */}
             </div>
