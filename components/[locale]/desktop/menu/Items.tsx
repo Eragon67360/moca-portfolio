@@ -13,7 +13,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
       <div className="flex flex-col space-y-4 my-24 h-full text-black dark:text-secondary text-2xl font-bold justify-between">
         <div className="space-y-4 ">
           <Link
-            href="/"
+            href="/home"
             className="block hover:text-cinnabar"
             onClick={onClose}
           >

@@ -16,10 +16,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['100', '200','300', '400','500', '600','700', '800','900'],
-  variable: '--font-poppins',
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -45,7 +45,11 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${poppins.variable}`}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`${poppins.variable}`}
+    >
       <link rel="icon" href="/app/favicon.ico"></link>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
@@ -67,16 +71,19 @@ export default async function RootLayout({
                 </div>
               </>
               {children}
-              <div className="mobile">
-                <MobileFooter />
-              </div>
-              <div className="desktop">
-                <DesktopFooter />
-              </div>
-              <div className="tablet">
-                <TabletFooter />
-              </div>
-              <div className="phablet"></div>
+
+              <>
+                <div className="mobile">
+                  <MobileFooter />
+                </div>
+                <div className="desktop">
+                  <DesktopFooter />
+                </div>
+                <div className="tablet">
+                  <TabletFooter />
+                </div>
+                <div className="phablet"></div>
+              </>
               <Analytics />
               <ToastContainer />
             </div>

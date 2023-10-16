@@ -39,7 +39,7 @@ const DesktopHomeScreen = () => {
 
   return (
     <>
-      <div className="h-[100vh] bg-linen dark:bg-falured pt-24 overflow-x-hidden">
+      <div className="h-[100vh] bg-linen dark:bg-falured pt-[190px] overflow-x-hidden">
         <div className="flex flex-col h-full items-center text-center select-none text-blackbean">
           <div className="flex flex-col font-bold text-5xl text-center items-center">
             <AnimatedTextCharacter />
@@ -57,7 +57,7 @@ const DesktopHomeScreen = () => {
                 className="w-full absolute top-0"
                 transition={{ duration: 2.5 }}
               >
-                <Image src={images[currentIdx]} alt="displayed" />
+                <Image src={images[currentIdx]} alt="displayed" width={550}/>
               </motion.div>
             </AnimatePresence>
             <Image

@@ -36,17 +36,17 @@ const FeaturedProjects = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-y-3 justify-evenly w-full">
+        <div className="flex flex-col gap-y-3 justify-evenly w-full">
           {images.map((image, idx) => (
               <div
                 key={idx}
-                className="bg-secondary flex flex-col w-[352px] relative h-[352px]"
+                className="bg-secondary flex flex-col w-[300px] relative h-[300px]"
               >
                 {" "}
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={252}
+                  width={200}
                   style={{
                     height: "auto",
                     position: "absolute",
@@ -57,7 +57,7 @@ const FeaturedProjects = () => {
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={252}
+                  width={200}
                   style={{
                     height: "auto",
                     position: "absolute",

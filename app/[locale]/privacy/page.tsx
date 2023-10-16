@@ -11,7 +11,8 @@ export const generateMetadata = (): Metadata => {
 const page = () => {
   return (
     <>
-      <div className="flex flex-col py-8 px-96 text-center justify-center">
+    <div className="bg-linen dark:bg-falured w-screen">
+      <div className="flex flex-col mt-24 mb-8 mx-12 md:mx-24 lg:mx-32 xl:mx-96 p-24 text-start justify-center bg-secondary dark:bg-linen text-blackbean border border-blackbean rounded-2xl">
         <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
         <p className="text-lg mb-2">Last updated: October 06, 2023</p>
         <p className="mb-4">
@@ -543,7 +544,7 @@ const page = () => {
             </p>
           </li>
         </ul>
-      </div>
+      </div></div>
     </>
   );
 };

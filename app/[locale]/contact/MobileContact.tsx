@@ -2,9 +2,6 @@
 import React from "react";
 import MobileVisitCard from "@/components/[locale]/mobile/MobileVisitCard";
 import MobileContactForm from "@/components/[locale]/mobile/MobileContactForm";
-import Image from "next/image";
-import logo from "@/public/logo_black.png";
-import { Language } from "@/components/[locale]/desktop/navigation/navbar/Language";
 
 function MobileContact() {
   return (

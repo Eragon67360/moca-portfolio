@@ -30,7 +30,7 @@ const FeaturedProjects = () => {
             <h3 className="font-bold text-6xl mt-4">Projects</h3>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 justify-center">
+          <div className="flex flex-col gap-8 justify-center">
             {images.map((image, idx) => (
               <div
                 key={idx}

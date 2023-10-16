@@ -53,7 +53,7 @@ const DesktopNavbar = () => {
             }}
             transition={{ ease: "linear", duration: 0.6 }}
             exit={{ y: visible ? -100 : 0 }}
-            className="fixed top-0 left-0 w-full z-20 transition-all flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar rounded-b-lg "
+            className="fixed top-0 left-0 w-full z-20 transition-all flex justify-between items-center px-10 py-4 bg-transparent dark:bg-blackbean"
           >
             <div className="w-full flex">
               <div className="flex space-x-8 text-2xl font-bold">
