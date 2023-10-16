@@ -19,7 +19,6 @@ const Delimiter = () => {
       break;
     default:
       color = "#231F20";
-      console.log(resolvedTheme);
       break;
   }
   return (

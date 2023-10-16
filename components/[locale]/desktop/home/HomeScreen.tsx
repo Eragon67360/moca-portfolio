@@ -57,11 +57,12 @@ const DesktopHomeScreen = () => {
                 className="w-full absolute top-0"
                 transition={{ duration: 2.5 }}
               >
-                <Image src={images[currentIdx]} alt="displayed" width={550}/>
+                <Image src={images[currentIdx]} priority={true} alt="displayed" width={550}/>
               </motion.div>
             </AnimatePresence>
             <Image
               src={paw}
+              priority={true}
               alt="logo"
               className="absolute -top-8 -left-16 z-10 w-24 h-24"
             />

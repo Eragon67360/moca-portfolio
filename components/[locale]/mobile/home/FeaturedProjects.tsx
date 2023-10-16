@@ -46,6 +46,7 @@ const FeaturedProjects = () => {
                 <Image
                   src={image.src}
                   alt={image.alt}
+                  priority={true}
                   width={200}
                   style={{
                     height: "auto",
@@ -57,6 +58,7 @@ const FeaturedProjects = () => {
                 <Image
                   src={image.src}
                   alt={image.alt}
+                  priority={true}
                   width={200}
                   style={{
                     height: "auto",

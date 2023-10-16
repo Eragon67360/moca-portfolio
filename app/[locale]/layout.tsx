@@ -10,7 +10,7 @@ import DesktopFooter from "@/components/[locale]/desktop/footer";
 import TabletFooter from "@/components/[locale]/tablet/footer";
 import MobileFooter from "@/components/[locale]/mobile/footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { GoogleAnalytics } from "nextjs-google-analytics";
+import { GoogleAnalyticsComponent } from "../utils/gtag";
 
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
@@ -54,7 +54,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${poppins.variable}`}
     >
-      <GoogleAnalytics trackPageViews />
+      <GoogleAnalyticsComponent />
       <link rel="icon" href="/app/favicon.ico"></link>
       <body>
         <ClerkProvider>
