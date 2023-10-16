@@ -67,9 +67,9 @@ const Plans = () => {
             {planData.map((plan, index) => (
               <div
                 key={index}
-                className="bg-secondary dark:bg-blackbean flex flex-col p-8 rounded-2xl shadow-cards"
+                className="bg-secondary dark:bg-blackbean flex flex-col p-8 rounded-2xl shadow-cards h-full"
               >
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-between h-[57%]">
                   <div className="flex flex-col">
                     <h2 className="font-semibold text-2xl">{plan.title}</h2>
                     <h3 className="mt-6">{plan.subtitle}</h3>
@@ -79,16 +79,16 @@ const Plans = () => {
                     <h3 className="font-bold text-2xl">{plan.price}</h3>
                     <p className="text-xs">{plan.description}</p>
 
-                    <div className="flex justify-center mt-4">
-                      <button className="w-full p-2 rounded-lg bg-blackbean dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
+                    <div className="flex mt-4">
+                      <button className="uppercase font-bold p-2 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
                         {plan.buttonText}
                       </button>
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col mt-6">
+                <div className="flex flex-col mt-6 h-[43%]">
                   <hr className=" border-1border-linen" />
-                  <div className="flex flex-col mt-4">
+                  <div className="flex flex-col mt-4 text-xs">
                     <p>What&apos;s included:</p>
                     <br />
                     <p className="mt-2">{plan.included}</p>
@@ -126,7 +126,7 @@ const Plans = () => {
                 </div>
               </div>
 
-              <div className="p-12 border rounded-2xl shadow-cards">
+              <div className="px-12 py-8 border rounded-2xl shadow-cards">
                 Send us an e-mail
               </div>
               <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-xs">

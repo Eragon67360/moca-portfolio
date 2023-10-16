@@ -6,7 +6,7 @@ import logo from "@/public/logo_only.svg";
 function DesktopLanding() {
   return (
     <>
-      <section className="h-screen w-full overflow-x-hidden bg-landing-page bg-no-repeat bg-cover bg-center bg-fixed flex select-none">
+      <section className="h-screen w-full overflow-x-hidden flex select-none">
         <div className="w-full h-full bg-blackbean/80 flex flex-col">
           <Image
             src={logo}
