@@ -15,6 +15,8 @@ import { ToastContainer } from "react-toastify";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
+import { ClerkProvider } from "@clerk/nextjs";
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -52,43 +54,45 @@ export default async function RootLayout({
     >
       <link rel="icon" href="/app/favicon.ico"></link>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
-            <ProgressBar />
-            <div className="flex flex-col flex-grow font-sans">
-              <>
-                <div className="mobile">
-                  <MobileNavbar />
-                </div>
-                <div className="desktop">
-                  <DesktopNavbar />
-                </div>
-                <div className="tablet">
-                  <TabletNavbar />
-                </div>
-                <div className="phablet">
-                  <TabletNavbar />
-                </div>
-              </>
-              {children}
+        <ClerkProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
+              <ProgressBar />
+              <div className="flex flex-col flex-grow font-sans">
+                <>
+                  <div className="mobile">
+                    <MobileNavbar />
+                  </div>
+                  <div className="desktop">
+                    <DesktopNavbar />
+                  </div>
+                  <div className="tablet">
+                    <TabletNavbar />
+                  </div>
+                  <div className="phablet">
+                    <TabletNavbar />
+                  </div>
+                </>
+                {children}
 
-              <>
-                <div className="mobile">
-                  <MobileFooter />
-                </div>
-                <div className="desktop">
-                  <DesktopFooter />
-                </div>
-                <div className="tablet">
-                  <TabletFooter />
-                </div>
-                <div className="phablet"></div>
-              </>
-              <Analytics />
-              <ToastContainer />
+                <>
+                  <div className="mobile">
+                    <MobileFooter />
+                  </div>
+                  <div className="desktop">
+                    <DesktopFooter />
+                  </div>
+                  <div className="tablet">
+                    <TabletFooter />
+                  </div>
+                  <div className="phablet"></div>
+                </>
+                <Analytics />
+                <ToastContainer />
+              </div>
             </div>
-          </div>
-        </NextIntlClientProvider>
+          </NextIntlClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

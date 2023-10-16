@@ -26,7 +26,11 @@ const DesktopFooter = () => {
               <Link href={"/home"} className="hover:text-cinnabar">
                 Home
               </Link>
-              <a href="/Portfolio_cristina.pdf" target="_blank" className="hover:text-cinnabar">
+              <a
+                href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
+                target="_blank"
+                className="hover:text-cinnabar"
+              >
                 Featured work
               </a>
               <Link href={"/about"} className="hover:text-cinnabar">
