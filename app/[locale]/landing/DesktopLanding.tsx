@@ -7,7 +7,7 @@ function DesktopLanding() {
   return (
     <>
       <section className="h-screen w-full overflow-x-hidden flex select-none">
-        <div className="w-full h-full bg-blackbean/80 flex flex-col">
+        <div className="w-full h-full bg-blackbean flex flex-col">
           <Image
             src={logo}
             alt="logo"
