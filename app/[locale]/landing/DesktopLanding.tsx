@@ -7,10 +7,10 @@ function DesktopLanding() {
   return (
     <>
       <section className="h-screen w-full overflow-x-hidden flex select-none">
-        <div className="w-full h-full bg-blackbean flex flex-col justify-center items-center text-secondary">
+        <div className="w-full h-full bg-linen dark:bg-blackbean flex flex-col justify-center items-center">
           <h1 className="text-5xl font-bold p-2">Design, Develop, Deliver</h1>
           <Image src={logo} alt="logo" width={114} className="mt-2"/>
-          <h2 className="text-2xl font-extrabold dark:text-white mt-4">
+          <h2 className="text-2xl font-extrabold mt-4">
             Your Digital Journey Starts Here.
           </h2>
           <p className="mb-6 font-light text-xl w-1/3 text-center mt-3">
