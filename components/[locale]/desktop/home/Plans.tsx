@@ -85,7 +85,7 @@ const Plans = () => {
                     <p className="text-xs">{plan.description}</p>
 
                     <div className="flex mt-4">
-                      <button className="uppercase font-bold p-2 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
+                      <button className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
                         {plan.buttonText}
                       </button>
                     </div>
@@ -122,7 +122,7 @@ const Plans = () => {
 
                 <div className="flex justify-center mx-auto mt-8">
                   <Link
-                    className="px-4 py-2 rounded-lg flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean"
+                    className="px-4 py-2 rounded-full flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean"
                     href={`/${locale}/booking`}
                   >
                     <span className="font-semibold">Book now</span>
