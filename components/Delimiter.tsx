@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Arrow from "./SVG/arrow1";
 import { useTheme } from "next-themes";
 

@@ -9,6 +9,8 @@ import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import panda from "@/public/panda.png";
+import { useTheme } from "next-themes";
+import ArrowComponent from "@/components/SVG/arrow4";
 
 const DesktopApps = () => {
   const cardData = [
@@ -45,10 +47,26 @@ const DesktopApps = () => {
     },
   ];
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
       <div className="overflow-x-hidden">
-        <div className="relative border">
+        <div className="relative">
           <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
         </div>
         <div className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
@@ -75,6 +93,11 @@ const DesktopApps = () => {
             </div>
             <div className="h-24" />
           </motion.div>
+        </div>
+      </div>
+      <div className="relative">
+        <div className="absolute left-1/4 -top-16 z-10">
+          <ArrowComponent color={color} />
         </div>
       </div>
     </>

@@ -6,6 +6,8 @@ import photo3 from "@/public/home/photo3.png";
 import photo4 from "@/public/home/photo4.jpg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
+import { useTheme } from "next-themes";
+import ArrowComponent from "@/components/SVG/arrow3";
 
 const FeaturedProjects = () => {
   const images = [
@@ -14,6 +16,22 @@ const FeaturedProjects = () => {
     { src: photo3, alt: "placeholder3" },
     { src: photo3, alt: "placeholder4" },
   ];
+
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
 
   return (
     <>
@@ -79,6 +97,11 @@ const FeaturedProjects = () => {
 
           <div className="h-24"></div>
         </motion.div>
+      </div>
+      <div className="relative">
+        <div className="absolute left-1/2 -top-16 z-10">
+          <ArrowComponent color={color} />
+        </div>
       </div>
     </>
   );

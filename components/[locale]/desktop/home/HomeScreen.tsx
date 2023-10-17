@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import paw from "@/public/home/paw.png";
@@ -57,16 +56,16 @@ const DesktopHomeScreen = () => {
                 className="w-full absolute top-0"
                 transition={{ duration: 2.5 }}
               >
-                <Image src={images[currentIdx]} priority={true} alt="displayed" width={550}/>
+                <Image
+                  src={images[currentIdx]}
+                  priority={true}
+                  alt="displayed"
+                  width={550}
+                />
               </motion.div>
             </AnimatePresence>
-            <Image
-              src={paw}
-              priority={true}
-              alt="logo"
-              className="absolute -top-8 -left-16 z-10 w-24 h-24"
-            />
-            <span className="absolute top-4 -left-9 z-20 text-white text-xs transform -rotate-[18deg]">
+            <div className="absolute -top-10 -left-14 z-10 w-24 h-24 rounded-full bg-cinnabar" />
+            <span className="absolute -top-4 -left-11 z-20 text-white font-bold transform -rotate-[18deg]">
               Featured <br /> projects
             </span>
           </div>

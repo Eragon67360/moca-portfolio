@@ -6,8 +6,26 @@ import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
+import ArrowComponent from "@/components/SVG/arrow2";
+import { useTheme } from "next-themes";
 
 const UXSolutions = () => {
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
       <div className="bg-white dark:bg-blackbean pt-40 pb-40 justify-start items-center text-center select-none ">
@@ -66,6 +84,11 @@ const UXSolutions = () => {
             <h2 className="text-2xl font-semibold">Steve Jobs</h2>
           </div>
         </motion.div>
+      </div>
+      <div className="relative">
+        <div className="absolute right-1/3 -bottom-16">
+          <ArrowComponent color={color} />
+        </div>
       </div>
     </>
   );
