@@ -3,8 +3,13 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import logo from "@/public/apple-icon.png";
+import useSWR from "swr";
+import fetcher from "@/pages/lib/fetcher";
+import { motion } from "framer-motion";
+import { BsDot } from "react-icons/bs";
 
 function Admin() {
+  const { data: visitors } = useSWR("/api/ga", fetcher);
   const [activeSection, setActiveSection] = useState("bookings"); // Default to the "bookings" section
 
   return (
@@ -57,7 +62,18 @@ function Admin() {
           {activeSection === "analytics" && (
             <div className="bg-white h-full p-4 rounded-xl shadow">
               <h2 className="text-xl font-bold mb-4">Analytics</h2>
-              {/* Your analytics data and components go here */}
+
+              <motion.div className="flex items-center justify-between w-full gap-4 mt-5 ">
+                <div className="relative flex items-center px-4 py-1 text-xs bg-white rounded-full shadow dark:bg-darkSecondary sm:text-sm">
+                  <BsDot className="-ml-2 text-green-500 w-7 h-7 animate-ping" />
+                  <div className="flex items-center gap-1">
+                    {visitors?.totalVisitors ?? (
+                      <div className="w-10 h-3 bg-gray-300 rounded-full dark:bg-darkPrimary animate-pulse"></div>
+                    )}{" "}
+                    visitors in last {visitors?.days} days
+                  </div>
+                </div>
+              </motion.div>
             </div>
           )}
         </div>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.25.4",
+    "@google-analytics/data": "^4.0.1",
     "@mui/lab": "^5.0.0-alpha.147",
     "@mui/material": "^5.14.12",
     "@mui/x-date-pickers": "^6.16.0",
