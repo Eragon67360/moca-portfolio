@@ -26,7 +26,7 @@ const Delimiter = () => {
         <div className="absolute -top-8 left-[42%]">
           <Arrow color={color} />
         </div>
-        <div className="h-32 flex justify-evenly items">
+        <div className="h-32 flex justify-evenly">
           {Array(10)
             .fill(colorPattern)
             .flat()

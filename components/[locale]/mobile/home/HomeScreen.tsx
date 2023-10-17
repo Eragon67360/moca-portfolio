@@ -17,6 +17,7 @@ const HomeScreen = () => {
   const [isTextAnimated, setIsTextAnimated] = useState(false);
 
   const images = [phone_white, phone_yellow, phone_blue, phone_red];
+  const colorPattern = ["bg-cinnabar dark:bg-linen", "bg-linen dark:bg-falured"];
 
   const fadeInOut = {
     hidden: { opacity: 0 },
@@ -218,14 +219,15 @@ const HomeScreen = () => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="h-16 flex justify-evenly items">
-        <div className="bg-linen dark:bg-blackbean w-1/6"></div>
-        <div className="bg-cinnabar w-1/6"></div>
-        <div className="bg-linen dark:bg-blackbean w-1/6"> </div>
-        <div className="bg-cinnabar w-1/6"></div>
-        <div className="bg-linen dark:bg-blackbean w-1/6"></div>
-        <div className="bg-blackbean dark:bg-linen w-1/6"></div>
-      </div>
+      <div className="h-16 flex justify-evenly">
+          {Array(5)
+            .fill(colorPattern)
+            .flat()
+            .map((color, index) => (
+              <div key={index} className={`${color} w-[10%]`}></div>
+            ))}
+          <div className="bg-cinnabar dark:bg-linen w-[10%]"></div>
+        </div>
     </>
   );
 };
