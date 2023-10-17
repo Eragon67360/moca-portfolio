@@ -4,12 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import logo from "@/public/apple-icon.png";
 import useSWR from "swr";
-import fetcher from "@/pages/lib/fetcher";
+import fetcher from "@/components/lib/fetcher";
 import { motion } from "framer-motion";
 import { BsDot } from "react-icons/bs";
 
 function Admin() {
-  const { data: visitors } = useSWR("/api/ga", fetcher);
+  const isProduction = process.env.NODE_ENV === "production";
+
+  const { data: visitors } = useSWR("/api/ga", fetcher, {
+    revalidateOnMount: !isProduction,
+    revalidateOnFocus: !isProduction,
+  });
+  
   const [activeSection, setActiveSection] = useState("bookings"); // Default to the "bookings" section
 
   return (
