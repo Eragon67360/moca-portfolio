@@ -70,7 +70,7 @@ const DesktopApps = () => {
         <div className="relative">
           <Image src={panda} alt="panda" width={194} className="-scale-x-100 absolute top-8 -right-12" />
         </div>
-        <div className="mt-32 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
+        <div className="pt-32 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
           <motion.div
             className="flex flex-col"
             initial="offscreen"
