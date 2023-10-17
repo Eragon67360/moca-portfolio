@@ -9,7 +9,7 @@ export const Logo = () => {
   const locale = useLocale();
   return (
     <Link href={`/${locale}/home`}>
-      <Image src={moca_logo} alt="moca Logo" width={180} />
+      <Image src={moca_logo} alt="moca Logo" width={127} />
     </Link>
   );
 };

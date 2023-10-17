@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { CgMenuGridO } from "react-icons/cg";
 import { MdOutlineClose } from "react-icons/md";
 import { Language } from "@/components/[locale]/desktop/navigation/navbar/Language";
-import { Logo } from "@/components/[locale]/desktop/navigation/navbar/Logo";
+import { Logo } from "@/components/[locale]/mobile/navigation/navbar/Logo";
 
 const MobileNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -29,7 +29,7 @@ const MobileNavbar = () => {
           {isVisible && (
             <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
           )}
-          <div className="flex justify-between p-6">
+          <div className="flex justify-between p-6 items-center">
             <Logo/>
             <Language />
           </div>
