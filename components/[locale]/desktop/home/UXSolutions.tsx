@@ -7,7 +7,6 @@ import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import ArrowComponent from "@/components/SVG/arrow2";
-import TailComponent from "@/components/SVG/tail";
 import { useTheme } from "next-themes";
 import tail from '@/public/doodles/tail.png'
 

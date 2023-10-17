@@ -45,7 +45,7 @@ const DesktopNavbar = () => {
 
   return (
     <>
-      {pathname !== "/" && (
+      {pathname !== "/" && pathname !== '/admin' && (
         <nav>
           <motion.div
             animate={{

@@ -10,7 +10,7 @@ const DesktopFooter = () => {
   const pathname = usePathname();
   return (
     <>
-      {pathname !== "/" && (
+      {pathname !== "/" && pathname !== '/admin' && (
         <div className="flex bg-linen dark:bg-blackbean justify-between p-12 border-t-2 dark:border-secondary/50 border-third/50">
           <div className="flex justify-center space-x-12">
             <div className="justify-start items-start flex">
