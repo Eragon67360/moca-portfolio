@@ -9,13 +9,8 @@ import { motion } from "framer-motion";
 import { BsDot } from "react-icons/bs";
 
 function Admin() {
-  const isProduction = process.env.NODE_ENV === "production";
+  const { data: visitors } = useSWR("/api/ga", fetcher);
 
-  const { data: visitors } = useSWR("/api/ga", fetcher, {
-    revalidateOnMount: !isProduction,
-    revalidateOnFocus: !isProduction,
-  });
-  
   const [activeSection, setActiveSection] = useState("bookings"); // Default to the "bookings" section
 
   return (
