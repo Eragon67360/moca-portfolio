@@ -7,7 +7,9 @@ import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import ArrowComponent from "@/components/SVG/arrow2";
+import TailComponent from "@/components/SVG/tail";
 import { useTheme } from "next-themes";
+import tail from '@/public/doodles/tail.png'
 
 const UXSolutions = () => {
   const { resolvedTheme } = useTheme();
@@ -28,9 +30,9 @@ const UXSolutions = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-blackbean pt-40 pb-40 justify-start items-center text-center select-none ">
+      <div className="bg-white dark:bg-blackbean pt-32 pb-40 justify-start items-center text-center select-none ">
         <motion.div
-          className="flex flex-col h-full items-center text-center select-none space-y-12"
+          className="flex flex-col h-full items-center text-center select-none"
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
@@ -39,7 +41,8 @@ const UXSolutions = () => {
           <p className="font-bold text-5xl text-blackbean dark:text-secondary">
             Our Tailored UX Solutions
           </p>
-          <div className="flex justify-evenly pt-14 space-x-10 mx-24">
+
+          <div className="flex justify-evenly pt-14 space-x-8 mx-16 mt-14">
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <AiOutlineFundProjectionScreen size={50} />
               <h2 className="font-semibold text-2xl">New Project</h2>
@@ -74,14 +77,22 @@ const UXSolutions = () => {
             </div>
           </div>
 
-          <Image src={logo} alt="tail" />
+          <div className="relative w-full">
+            <div className="absolute -left-4 -top-20">
+             <Image src={tail} alt="tail" width={240}/>
+            </div>
+          </div>
 
-          <div className="text-blackbean dark:text-white mt-12 w-1/2 flex flex-col rounded-2xl border-4 border-falured dark:border-cinnabar mx-80 p-8 space-y-8 bg-linen dark:bg-falured">
-            <h2 className="text-4xl font-bold">
-              Design is not just what it looks like;
-              <br /> design is how it works
-            </h2>
-            <h2 className="text-2xl font-semibold">Steve Jobs</h2>
+          <Image src={logo} alt="logo" width={96} className="mt-16" />
+
+          <div className="w-full px-16 mt-10">
+            <div className="flex flex-col w-full rounded-2xl p-8 space-y-8 border-4 border-cinnabar bg-linen dark:bg-falured text-blackbean dark:text-white">
+              <h2 className="text-4xl font-bold">
+                Design is not just what it looks like;
+                <br /> design is how it works
+              </h2>
+              <h2 className="text-2xl font-semibold">Steve Jobs</h2>
+            </div>
           </div>
         </motion.div>
       </div>

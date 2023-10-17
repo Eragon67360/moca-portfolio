@@ -24,8 +24,8 @@ const TabletApps = () => {
     },
     {
       Icon: AiOutlineCloudServer,
-      title: "SAAS (Software as a Service)",
-      subtitle: "Empowering Your Business",
+      title: "SAAS",
+      subtitle: "Software as a Service - Empowering Your Business",
     },
     {
       Icon: SiAdobeindesign,

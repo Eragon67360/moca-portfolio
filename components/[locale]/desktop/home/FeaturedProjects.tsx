@@ -37,13 +37,13 @@ const FeaturedProjects = () => {
     <>
       <div id="featuredprojects" className="bg-lightblue dark:bg-darkblue">
         <motion.div
-          className="flex flex-col h-full items-center justify-center text-center select-none space-y-12"
+          className="flex flex-col h-full items-center justify-center text-center select-none"
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col text-secondary text-center pt-16">
+          <div className="flex flex-col text-secondary text-center pt-24">
             <h2 className="font-bold text-4xl">Featured</h2>
             <h3 className="font-bold text-6xl mt-4">Projects</h3>
             <div className="mt-12">
@@ -58,7 +58,7 @@ const FeaturedProjects = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 justify-center">
+          <div className="grid grid-cols-2 gap-8 justify-center mt-10">
             {images.map((image, idx) => (
               <div
                 key={idx}

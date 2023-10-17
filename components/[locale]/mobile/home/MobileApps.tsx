@@ -28,7 +28,7 @@ const MobileApps = () => {
     {
       Icon: AiOutlineCloudServer,
       title: "SAAS",
-      subtitle: "Catchy text blablabla",
+      subtitle: "Software as a Service - Empowering Your Business",
     },
     {
       Icon: GiWireframeGlobe,

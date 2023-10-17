@@ -8,9 +8,10 @@ import { LiaSwatchbookSolid } from "react-icons/lia";
 import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
-import panda from "@/public/panda.png";
+
 import { useTheme } from "next-themes";
 import ArrowComponent from "@/components/SVG/arrow4";
+import panda from '@/public/doodles/panda.svg'
 
 const DesktopApps = () => {
   const cardData = [
@@ -26,8 +27,8 @@ const DesktopApps = () => {
     },
     {
       Icon: AiOutlineCloudServer,
-      title: "SAAS (Software as a Service)",
-      subtitle: "Empowering Your Business",
+      title: "SAAS",
+      subtitle: "Software as a Service - Empowering Your Business",
     },
     {
       Icon: SiAdobeindesign,
@@ -67,9 +68,9 @@ const DesktopApps = () => {
     <>
       <div className="overflow-x-hidden">
         <div className="relative">
-          <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
+          <Image src={panda} alt="panda" width={194} className="-scale-x-100 absolute top-8 -right-12" />
         </div>
-        <div className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
+        <div className="mt-32 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
           <motion.div
             className="flex flex-col"
             initial="offscreen"
@@ -77,10 +78,10 @@ const DesktopApps = () => {
             variants={sectionVariants}
             viewport={{ once: true }}
           >
-            <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+            <div className="py-4 text-5xl text-blackbean dark:text-secondary font-bold text-center">
               Apps, websites & more
             </div>
-            <div className="grid grid-cols-3 gap-8 mt-9 text-blackbean dark:text-secondary">
+            <div className="grid grid-cols-3 gap-8 mt-14 text-blackbean dark:text-secondary">
               {cardData.map((card, index) => (
                 <div key={index} className="flex justify-center">
                   <div className="w-full h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
@@ -91,7 +92,7 @@ const DesktopApps = () => {
                 </div>
               ))}
             </div>
-            <div className="h-24" />
+            <div className="h-36" />
           </motion.div>
         </div>
       </div>

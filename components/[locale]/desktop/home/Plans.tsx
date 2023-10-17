@@ -54,7 +54,7 @@ const Plans = () => {
 
   return (
     <>
-      <div id="pricings" className="pt-24 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-linen dark:bg-falured">
+      <div id="pricings" className="pt-28 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-linen dark:bg-falured">
         <motion.div
           className="flex flex-col items-center"
           initial="offscreen"
@@ -92,7 +92,7 @@ const Plans = () => {
                   </div>
                 </div>
                 <div className="flex flex-col mt-6 h-[43%]">
-                  <hr className=" border-1border-linen" />
+                  <hr className=" border-2 border-linen" />
                   <div className="flex flex-col mt-4 text-xs">
                     <p>What&apos;s included:</p>
                     <br />
@@ -131,8 +131,9 @@ const Plans = () => {
                 </div>
               </div>
 
-              <div className="px-12 py-8 border rounded-2xl shadow-cards">
-                Send us an e-mail
+              <div className="flex flex-col px-4 py-8 border rounded-2xl shadow-cards ">
+                <p className="font-semibold text-2xl"> Branding</p>
+                <p className="text-sm">Get your Brand with your subscription for <span className="font-semibold text-sm">200€</span></p>
               </div>
               <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-xs">
                 <p>*Graphics includes:</p>
