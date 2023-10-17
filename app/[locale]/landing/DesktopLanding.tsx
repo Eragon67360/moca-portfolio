@@ -20,7 +20,7 @@ function DesktopLanding() {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4 }}
+            transition={{ delay: 2 }}
             className="text-5xl font-bold p-2 opacity-0"
           >
             Design, Develop, Deliver
@@ -30,7 +30,7 @@ function DesktopLanding() {
           <motion.div
             initial={{ scale: 4, opacity: 0 }}
             animate={controls}
-            transition={{ type: "linear", duration: 4 }}
+            transition={{ type: "linear", duration: 2 }}
           >
             <Image src={logo} alt="logo" width={114} className="mt-2" />
           </motion.div>
@@ -38,7 +38,7 @@ function DesktopLanding() {
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4.5 }}
+            transition={{ delay: 2.5 }}
             className="text-2xl font-extrabold mt-4"
           >
             Your Digital Journey Starts Here.
@@ -47,7 +47,7 @@ function DesktopLanding() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4.7 }}
+            transition={{ delay: 2.7 }}
             className="mb-6 font-light text-xl w-1/3 text-center mt-3"
           >
             <Typewriter
@@ -59,7 +59,7 @@ function DesktopLanding() {
               }}
               onInit={(typewriter) => {
                 typewriter
-                  .pauseFor(4900)
+                  .pauseFor(2900)
                   .typeString(
                     `Expert web design meets innovative development, tailored to showcase your brand's essence.`
                   )
