@@ -23,7 +23,7 @@ const Delimiter = () => {
   return (
     <>
       <div className="relative">
-        <div className="absolute -top-8 left-1/2">
+        <div className="absolute -top-8 left-[42%]">
           <Arrow color={color} />
         </div>
         <div className="h-32 flex justify-evenly items">

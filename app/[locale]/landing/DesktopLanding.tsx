@@ -21,7 +21,7 @@ function DesktopLanding() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
-            className="text-5xl font-bold p-2 opacity-0"
+            className="text-5xl font-bold p-2 opacity-0 text-center"
           >
             Design, Develop, Deliver
           </motion.h1>
@@ -39,7 +39,7 @@ function DesktopLanding() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.5 }}
-            className="text-2xl font-extrabold mt-4"
+            className="text-2xl font-extrabold mt-4 text-center"
           >
             Your Digital Journey Starts Here.
           </motion.h2>
@@ -48,7 +48,7 @@ function DesktopLanding() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.7 }}
-            className="mb-6 font-light text-xl w-1/3 text-center mt-3"
+            className="mb-6 font-light text-xl w-full px-16 text-center mt-3"
           >
             <Typewriter
               options={{
@@ -74,7 +74,7 @@ function DesktopLanding() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 4.9 }}
+            transition={{ delay: 2.9 }}
             className="flex mt-11"
           >
             <Link

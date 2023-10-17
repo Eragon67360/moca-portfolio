@@ -17,10 +17,10 @@ export default function Home() {
         <MobileLanding />
       </div>
       <div className="phablet">
-        <MobileLanding />
+        <DesktopLanding />
       </div>
       <div className="tablet">
-        <MobileLanding />
+        <DesktopLanding />
       </div>
       <div className="desktop">
         <DesktopLanding />

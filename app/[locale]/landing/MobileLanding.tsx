@@ -1,52 +1,90 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
+import { motion, useAnimation } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 function MobileLanding() {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({ scale: 1, opacity: 1 });
+  }, [controls]);
+
   return (
     <>
-      <section className="h-screen w-full overflow-x-hidden bg-landing-page-mobile bg-no-repeat bg-cover bg-center bg-fixed flex select-none">
-        <div className="w-full h-full bg-blackbean/70 flex flex-col items-center">
-          <Image src={logo} alt="logo" width={42} className="mt-8" />
+      <section className="h-screen w-full overflow-x-hidden flex select-none">
+        <div className="w-full h-full bg-linen dark:bg-blackbean flex flex-col justify-center items-center">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2 }}
+            className="text-3xl font-bold p-2 opacity-0 text-center"
+          >
+            Design, Develop, Deliver
+          </motion.h1>
 
-          <div className="flex flex-col justify-center items-center h-full w-screen space-y-8 px-4 text-secondary">
-            <div className="bg-transparent border border-secondary/30 hover:border-secondary/50 rounded-full text-center px-8">
-              <Link href={"/about"}>
-                <span className="text-secondary/70">
-                  Announcing our new team.
-                </span>
-                <br /> <span className="font-bold">Read more →</span>
-              </Link>
-            </div>
+          {/* Image animation */}
+          <motion.div
+            initial={{ scale: 4, opacity: 0 }}
+            animate={controls}
+            transition={{ type: "linear", duration: 2 }}
+          >
+            <Image src={logo} alt="logo" width={114} className="mt-2" />
+          </motion.div>
 
-            <h1 className="text-3xl font-extrabold text-center">
-              Design, Develop, Deliver
-            </h1>
-            <h2 className="text-lg font-extrabold dark:text-white">
-              Your Digital Journey Starts Here.
-            </h2>
-            <p className="mb-6 font-light text-xl text-center mt-4">
-              Expert web design meets innovative development, tailored to
-              showcase your brand&apos;s essence.
-            </p>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.5 }}
+            className="text-xl font-extrabold mt-4 text-center"
+          >
+            Your Digital Journey Starts Here.
+          </motion.h2>
 
-            <div className="flex space-x-4">
-              {" "}
-              <Link
-                href="/home"
-                className="bg-cinnabar hover:bg-cinnabar/60 items-center justify-center px-5 py-3 mr-3 text-base text-center text-white rounded-lg"
-              >
-                Get started
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-5 py-3 text-base text-center"
-              >
-                Contact us
-              </Link>
-            </div>
-          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.7 }}
+            className="mb-6 font-light text-xl w-full px-4 text-center mt-3"
+          >
+            <Typewriter
+              options={{
+                autoStart: true,
+                skipAddStyles: true,
+                loop: false,
+                delay: 50,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .pauseFor(2900)
+                  .typeString(
+                    `Expert web design meets innovative development, tailored to showcase your brand's essence.`
+                  )
+                  .callFunction(() => {
+                    console.log("String typed out!");
+                  })
+                  .start();
+              }}
+            />
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2.9 }}
+            className="flex mt-11"
+          >
+            <Link
+              href="/home"
+              className="bg-cinnabar hover:bg-cinnabar/60 items-center justify-center px-5 py-3 mr-3 text-base text-center text-white rounded-full uppercase font-bold"
+            >
+              Get started
+            </Link>
+          </motion.div>
         </div>
       </section>
     </>
