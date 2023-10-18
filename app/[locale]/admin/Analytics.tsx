@@ -6,10 +6,15 @@ import Dropdown from "./Dropdown";
 import { FiGlobe } from "react-icons/fi";
 import { MdOpenInNew } from "react-icons/md";
 
+import ActiveUsersChart from "./UserChart";
+
 export const Analytics = () => {
   const [selectedRange, setSelectedRange] = useState<string>("week");
 
-  const { data: visitors } = useSWR(`/api/ga?range=${selectedRange}`, fetcher);
+  const { data: visitors, isValidating } = useSWR(
+    `/api/ga?range=${selectedRange}`,
+    fetcher
+  );
 
   return (
     <>
@@ -60,6 +65,19 @@ export const Analytics = () => {
               )}{" "}
             </div>
           </div>
+        </div>
+
+        <div className="flex mt-8 h-full w-full border border-gray-500 rounded-xl">
+          {
+            // If still validating (fetching), show a loader
+            isValidating ? (
+              <div>Loading chart...</div>
+            ) : (
+              // If data is available, render the chart
+              visitors && <ActiveUsersChart data={visitors.formattedResults} />
+            )
+          }
+          {/* ... other JSX ... */}
         </div>
       </div>
     </>

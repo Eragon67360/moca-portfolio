@@ -11,6 +11,16 @@ const analyticsDataClient = new BetaAnalyticsDataClient({
   },
 });
 
+function formatDate(inputDate: string | null | undefined): string {
+  // Extract year, month, and day from the input string
+  const year = inputDate?.substring(0, 4);
+  const month = inputDate?.substring(4, 6);
+  const day = inputDate?.substring(6, 8);
+
+  // Convert to desired format (DD/MM)
+  return `${day}/${month}`;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -51,16 +61,8 @@ export default async function handler(
           endDate: endDate,
         },
       ],
-      dimensions: [
-        {
-          name: "year",
-        },
-      ],
-      metrics: [
-        {
-          name: "activeUsers",
-        },
-      ],
+      dimensions: [{ name: "date" }], // this specifies that we want data broken down by day
+      metrics: [{ name: "activeUsers" }], // the metric you're interested in
     });
 
     const [realresponse] = await analyticsDataClient.runReport({
@@ -68,7 +70,7 @@ export default async function handler(
       dateRanges: [
         {
           startDate: startDate,
-          endDate: 'today',
+          endDate: "today",
         },
       ],
       dimensions: [
@@ -93,12 +95,19 @@ export default async function handler(
       totalPageViews += parseInt(row.metricValues[0].value);
     });
 
+    const formattedResults = response.rows?.map((row) => {
+      const date = formatDate(row.dimensionValues?.[0].value);
+      const activeUsers = row.metricValues?.[0].value;
+      return { date, activeUsers };
+    });
+
     res.setHeader(
       "Cache-Control",
       "public, s-maxage=43200, stale-while-revalidate=21600"
     );
 
     return res.status(200).json({
+      formattedResults,
       totalVisitors,
       totalPageViews,
     });
