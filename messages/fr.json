@@ -11,9 +11,72 @@
         "contact": "Contact"
     },
     "Home": {
-        "Banner": {
-            "banner_1": "Nous créons des<span> solutions innovantes </span>  à l'aide de <span> technologies modernes</span>",
-            "banner_2": "La petite <colored> différence </colored> - nous sommes heureux de vous créer un <colored> avantage </colored>"
+        "HomeScreen": {
+            "banner_1": "Créant des Expériences Façonnant l'Avenir : ",
+            "banner_2": "Votre Partenaire en Design UX"
+        },
+        "UXSolutions": {
+            "title": "Nos Solutions UX Sur Mesure",
+            "new_title": "Nouveau Projet",
+            "new_content": "Un tout nouveau design, dites-nous simplement ce dont vous avez besoin et nous nous efforcerons de le réaliser.",
+            "redesign_title": "Refonte",
+            "redesign_content1": "Si vous voulez rafraîchir votre site web ou application mobile, c'est ce qu'il vous faut.",
+            "redesign_content2": "Nous nous assurons de vous fournir un site conforme aux nouvelles tendances tout en respectant votre identité de marque.",
+            "followup_title": "Suivi",
+            "followup_content1": "Mises à jour, améliorations et modifications d'un site ou application mobile existant.",
+            "followup_content2": "Demandez un changement spécifique ou abonnez-vous à nos plans pour garder votre site toujours à jour!"
+        },
+        "FeaturedProjects": {
+            "title": "À la Une",
+            "subtitle": "Projets",
+            "button": "En voir plus"
+        },
+        "Apps": {
+            "title": "Apps, sites web & plus",
+            "sub1": "Sites Web",
+            "sub2": "Apps Mobiles",
+            "sub3": "SAAS",
+            "sub4": "Systèmes de Design",
+            "sub5": "Graphismes",
+            "sub6": "Logos & Branding",
+            "content1": "Valorisez Votre Présence en Ligne",
+            "content2": "Des Apps Qui Brillent",
+            "content3": "Logiciel comme un Service - Dynamisez Votre Entreprise",
+            "content4": "Design pour le Futur",
+            "content5": "Des Graphismes Qui Parlent",
+            "content6": "Logos Inoubliables, Marques Plus Fortes"
+        },
+        "Subscriptions": {
+            "title": "Plans d'abonnement",
+            "std_title": "Standard",
+            "pro_title": "Pro",
+            "perso_title": "Personnalisé",
+            "std_description": "Suivi du site. Obtenez les mises à jour que vous souhaitez quand vous le voulez.",
+            "pro_description": "Suivi du site + tous les graphismes dont vous avez besoin.",
+            "perso_description": "Personnalisez votre plan selon vos besoins.",
+            "pause": "Mettez en pause ou annulez à tout moment",
+            "button": "Commencer",
+            "included": "Inclus dans le plan:",
+            "included_description1": "Une équipe dédiée à votre site à temps plein.",
+            "included_description2": "Un site toujours à jour et tous les graphismes dont vous avez besoin.",
+            "included_description3": "Vous décidez de ce dont vous avez besoin et nous le réalisons. Ce plan peut être moins cher ou plus coûteux selon vos exigences.",
+            "included_content1": "Une demande à la fois",
+            "included_content2": "Livraison en moyenne sous 3-5 jours",
+            "included_content3": "Paiements faciles par carte de crédit",
+            "included_content4": "Mettez en pause ou annulez à tout moment",
+            "book_call": "Réservez un appel",
+            "book_now": "Réserver maintenant",
+            "branding_title": "Image de Marque",
+            "branding_content": "Obtenez votre Marque avec votre abonnement pour <important>200€</important>",
+            "graphics_title": "*Le graphisme inclut:",
+            "graphics_content1": "Brochures stationnaires",
+            "graphics_content2": "Graphismes pour médias sociaux",
+            "graphics_content3": "Graphismes pour e-mails",
+            "graphics_content4": "Cartes de visite",
+            "graphics_content5": "Emballages",
+            "graphics_content6": "Bannières pour salons professionnels",
+            "graphics_content7": "Graphismes pour blogs",
+            "graphics_content8": "Publicités"
         }
     }
 }

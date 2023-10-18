@@ -11,9 +11,72 @@
         "contact": "Contact"
     },
     "Home": {
-        "Banner": {
-            "banner_1": "We create <span> charming solutions </span> with the help of  <span> modern technology</span>",
-            "banner_2": "The small <colored> difference </colored> - we are happy to create an <colored> advantage </colored> for you"
+        "HomeScreen": {
+            "banner_1": "Crafting Experiences Shaping Futures: ",
+            "banner_2": "Your UX Design Partner"
+        },
+        "UXSolutions": {
+            "title": "Our Tailored UX Solutions",
+            "new_title": "New Project",
+            "new_content": "Complete new design from zero, just tell us what you need and we will work hard to make it real.",
+            "redesign_title": "Redesign",
+            "redesign_content1": "If you wan to give a more fresh look to your website or mobile application this is what you need.",
+            "redesign_content2": "We will make sure to give you a website that suits new tendances but still follows your brand identity",
+            "followup_title": "Follow-up",
+            "followup_content1": "Updates, improvements and changes of an already existing website or mobile application.",
+            "followup_content2": "You can ask for a specific change or subscripte to our plans to get your website always updated!"
+        },
+        "FeaturedProjects": {
+            "title": "Featured",
+            "subtitle": "Projects",
+            "button": "See more"
+        },
+        "Apps": {
+            "title": "Apps, websites & more",
+            "sub1": "Websites",
+            "sub2": "Mobile Apps",
+            "sub3": "SAAS",
+            "sub4": "Design systems",
+            "sub5": "Graphics",
+            "sub6": "Logos & Branding",
+            "content1": "Elevate Your Online Presence",
+            "content2": "Apps That Shine Bright",
+            "content3": "Software as a Service - Empowering Your Business",
+            "content4": "Designing for Tomorrow",
+            "content5": "Graphics That Speak Volumes",
+            "content6": "Unforgettable Logos, Stronger Brands"
+        },
+        "Subscriptions": {
+            "title": "Subscriptions plans",
+            "std_title": "Standard",
+            "pro_title": "Pro",
+            "perso_title": "Personalized",
+            "std_description": "Website follow-up. Get any update you want when you need.",
+            "pro_description": "Website follow-up + Any Graphics you need.",
+            "perso_description": "Personalize your plan based on your needs.",
+            "pause": "Pause or cancel anytime",
+            "button": "Get started",
+            "included": "What's included:",
+            "included_description1": "You get a team to work on your website full-time.",
+            "included_description2": "Get a website always updated and any graphics* you need.",
+            "included_description3": "You decide what you need and we do it. This plan can be cheaper or more expensive depending on your demands.",
+            "included_content1": "One request at a time",
+            "included_content2": "Average 3-5 days delivery",
+            "included_content3": "Easy credit-card payments",
+            "included_content4": "Pause or cancel anytime",
+            "book_call": "Book a call",
+            "book_now": "Book now",
+            "branding_title": "Branding",
+            "branding_content": "Get your Brand with your subscription for <important>200€</important>",
+            "graphics_title": "*Graphics includes:",
+            "graphics_content1": "Stationary Brochures",
+            "graphics_content2": "Social media graphics",
+            "graphics_content3": "E-mail graphics",
+            "graphics_content4": "Business cards",
+            "graphics_content5": "Packaging",
+            "graphics_content6": "Trade show banners",
+            "graphics_content7": "Blog graphics",
+            "graphics_content8": "Ads"
         }
     }
 }

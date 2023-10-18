@@ -11,9 +11,72 @@
         "contact": "Kontakt"
     },
     "Home": {
-        "Banner": {
-            "banner_1": "Wir erstellen <span> charmante Lösungen </span> mithilfe von <span> moderner Technik</span>",
-            "banner_2": "Der kleine <colored> Unterschied </colored> - wir freuen uns, Ihnen einen <colored> Vorteil </colored> zu schaffen"
+        "HomeScreen": {
+            "banner_1": "Erlebnisse gestalten, Zukunft prägen: ",
+            "banner_2": "Ihr UX Design Partner"
+        },
+        "UXSolutions": {
+            "title": "Unsere maßgeschneiderten UX-Lösungen",
+            "new_title": "Neues Projekt",
+            "new_content": "Komplett neues Design von Grund auf, sagen Sie uns einfach, was Sie brauchen und wir setzen es um.",
+            "redesign_title": "Redesign",
+            "redesign_content1": "Wenn Sie Ihrer Webseite oder Mobil-App einen frischen Look geben möchten, ist dies genau das Richtige.",
+            "redesign_content2": "Wir sorgen dafür, dass Sie eine Webseite erhalten, die den neuen Trends entspricht und dennoch Ihrer Markenidentität treu bleibt.",
+            "followup_title": "Nachverfolgung",
+            "followup_content1": "Updates, Verbesserungen und Änderungen einer bereits bestehenden Webseite oder Mobil-App.",
+            "followup_content2": "Sie können nach einer spezifischen Änderung fragen oder unsere Pläne abonnieren, um Ihre Webseite immer aktuell zu halten!"
+        },
+        "FeaturedProjects": {
+            "title": "Hervorgehoben",
+            "subtitle": "Projekte",
+            "button": "Mehr sehen"
+        },
+        "Apps": {
+            "title": "Apps, Webseiten & mehr",
+            "sub1": "Webseiten",
+            "sub2": "Mobile Apps",
+            "sub3": "SAAS",
+            "sub4": "Design-Systeme",
+            "sub5": "Grafiken",
+            "sub6": "Logos & Branding",
+            "content1": "Steigern Sie Ihre Online-Präsenz",
+            "content2": "Apps, die herausstechen",
+            "content3": "Software as a Service - Stärken Sie Ihr Unternehmen",
+            "content4": "Design für die Zukunft",
+            "content5": "Grafiken, die Bände sprechen",
+            "content6": "Unvergessliche Logos, stärkere Marken"
+        },
+        "Subscriptions": {
+            "title": "Abonnement-Pläne",
+            "std_title": "Standard",
+            "pro_title": "Pro",
+            "perso_title": "Personalisiert",
+            "std_description": "Webseiten-Nachverfolgung. Erhalten Sie jedes Update, wann immer Sie es möchten.",
+            "pro_description": "Webseiten-Nachverfolgung + jegliche Grafiken, die Sie benötigen.",
+            "perso_description": "Passen Sie Ihren Plan nach Ihren Bedürfnissen an.",
+            "pause": "Jederzeit pausieren oder kündigen",
+            "button": "Jetzt starten",
+            "included": "Im Plan enthalten:",
+            "included_description1": "Sie erhalten ein Team, das in Vollzeit an Ihrer Webseite arbeitet.",
+            "included_description2": "Stets aktuelle Webseite und alle Grafiken, die Sie benötigen.",
+            "included_description3": "Sie entscheiden, was Sie brauchen und wir setzen es um. Dieser Plan kann je nach Ihren Anforderungen günstiger oder teurer sein.",
+            "included_content1": "Eine Anfrage zu einer Zeit",
+            "included_content2": "Durchschnittliche Lieferzeit 3-5 Tage",
+            "included_content3": "Einfache Kreditkartenzahlungen",
+            "included_content4": "Jederzeit pausieren oder kündigen",
+            "book_call": "Einen Anruf buchen",
+            "book_now": "Jetzt buchen",
+            "branding_title": "Branding",
+            "branding_content": "Erhalten Sie Ihre Marke mit Ihrem Abonnement für <important>200€</important>",
+            "graphics_title": "*Grafik beinhaltet:",
+            "graphics_content1": "Stationäre Broschüren",
+            "graphics_content2": "Soziale Medien Grafiken",
+            "graphics_content3": "E-Mail-Grafiken",
+            "graphics_content4": "Visitenkarten",
+            "graphics_content5": "Verpackungen",
+            "graphics_content6": "Messebanner",
+            "graphics_content7": "Blog-Grafiken",
+            "graphics_content8": "Anzeigen"
         }
     }
 }

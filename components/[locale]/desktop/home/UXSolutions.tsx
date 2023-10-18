@@ -8,10 +8,12 @@ import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import ArrowComponent from "@/components/SVG/arrow2";
 import { useTheme } from "next-themes";
-import tail from '@/public/doodles/tail.png'
+import tail from "@/public/doodles/tail.png";
+import { useTranslations } from "next-intl";
 
 const UXSolutions = () => {
   const { resolvedTheme } = useTheme();
+  const t = useTranslations("Home.UXSolutions");
 
   let color;
 
@@ -29,7 +31,7 @@ const UXSolutions = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-blackbean pt-32 pb-40 justify-start items-center text-center select-none ">
+      <div className="bg-white dark:bg-blackbean pt-32 pb-40 justify-start items-center text-center">
         <motion.div
           className="flex flex-col h-full items-center text-center select-none"
           initial="offscreen"
@@ -37,48 +39,37 @@ const UXSolutions = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <p className="font-bold text-5xl text-blackbean dark:text-secondary">
-            Our Tailored UX Solutions
+          <p className="font-bold text-5xl text-blackbean dark:text-secondary select-none">
+            {t("title")}
           </p>
 
-          <div className="flex justify-evenly pt-14 space-x-8 mx-16 mt-14">
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
+          <div className="flex justify-evenly border pt-14 space-x-8 mx-16 mt-14">
+            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
               <AiOutlineFundProjectionScreen size={50} />
-              <h2 className="font-semibold text-2xl">New Project</h2>
-              <p>
-                Complete new design from zero, just tell us what you need and we
-                will work hard to make it real.
-              </p>
+              <h2 className="font-semibold text-2xl">{t("new_title")}</h2>
+              <p>{t("new_content")}</p>
             </div>
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
+            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
               <SlMagicWand size={50} />
-              <h2 className="font-semibold text-2xl">Redesign</h2>
+              <h2 className="font-semibold text-2xl">{t("redesign_title")}</h2>
               <p>
-                If you wan to give a more fresh look to your website or mobile
-                application this is what you need.
-                <br />
-                <br />
-                We will make sure to give you a website that suits new tendances
-                but still follows your brand identity
+                {t("redesign_content1")} <br /> <br />
+                {t("redesign_content2")}
               </p>
             </div>
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
+            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
               <BsArrowRepeat size={50} />
-              <h2 className="font-semibold text-2xl">Follow-up</h2>
+              <h2 className="font-semibold text-2xl">{t("followup_title")}</h2>
               <p>
-                Updates, improvements and changes of an already existing website
-                or mobile application.
-                <br />
-                <br />
-                You can ask for an especific change or subscripte to our plans
-                to get your website always updated!
+                {t("followup_content1")} <br /> <br />
+                {t("followup_content2")}
               </p>
             </div>
           </div>
 
           <div className="relative w-full">
             <div className="absolute -left-4 -top-20">
-             <Image src={tail} alt="tail" width={240}/>
+              <Image src={tail} alt="tail" width={240} />
             </div>
           </div>
 

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import { useTheme } from "next-themes";
 import ArrowComponent from "@/components/SVG/arrow3";
+import { useTranslations } from "next-intl";
 
 const FeaturedProjects = () => {
   const images = [
@@ -18,6 +19,7 @@ const FeaturedProjects = () => {
   ];
 
   const { resolvedTheme } = useTheme();
+  const t = useTranslations("Home.FeaturedProjects");
 
   let color;
 
@@ -44,8 +46,8 @@ const FeaturedProjects = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col text-secondary text-center pt-24">
-            <h2 className="font-bold text-4xl">Featured</h2>
-            <h3 className="font-bold text-6xl mt-4">Projects</h3>
+            <h2 className="font-bold text-4xl">{t('title')}</h2>
+            <h3 className="font-bold text-6xl mt-4">{t('subtitle')}</h3>
             <div className="mt-12">
               <a
                 href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
@@ -53,7 +55,7 @@ const FeaturedProjects = () => {
                 target="_blank"
                 className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full"
               >
-                See more
+                {t('button')}
               </a>
             </div>
           </div>

@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const AnimatedTextCharacter = () => {
-  const text1 = "Crafting Experiences, Shaping Futures:"
-  const text2 = "Your UX Design Partner"
+  const t = useTranslations("Home");
+  const text1 = t("HomeScreen.banner_1");
+  const text2 = t("HomeScreen.banner_2");
 
   const letters1 = Array.from(text1);
   const letters2 = Array.from(text2);

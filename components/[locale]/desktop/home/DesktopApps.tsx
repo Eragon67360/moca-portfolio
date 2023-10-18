@@ -11,40 +11,42 @@ import { sectionVariants } from "@/components/motionVariants";
 
 import { useTheme } from "next-themes";
 import ArrowComponent from "@/components/SVG/arrow4";
-import panda from '@/public/doodles/panda.svg'
+import panda from "@/public/doodles/panda.svg";
+import { useTranslations } from "next-intl";
 
 const DesktopApps = () => {
+  const t = useTranslations("Home.Apps");
   const cardData = [
     {
       Icon: FiGlobe,
-      title: "Websites",
-      subtitle: "Elevate Your Online Presence",
+      title: t("sub1"),
+      subtitle: t("content1"),
     },
     {
       Icon: AiOutlineMobile,
-      title: "Mobile Apps",
-      subtitle: "Apps That Shine Bright",
+      title: t("sub2"),
+      subtitle: t("content2"),
     },
     {
       Icon: AiOutlineCloudServer,
-      title: "SAAS",
-      subtitle: "Software as a Service - Empowering Your Business",
+      title: t("sub3"),
+      subtitle: t("content3"),
     },
     {
       Icon: SiAdobeindesign,
-      title: "Design systems",
-      subtitle: "Designing for Tomorrow",
+      title: t("sub4"),
+      subtitle: t("content4"),
     },
 
     {
       Icon: PiCompassTool,
-      title: "Graphics",
-      subtitle: "Graphics That Speak Volumes",
+      title: t("sub5"),
+      subtitle: t("content5"),
     },
     {
       Icon: LiaSwatchbookSolid,
-      title: "Logos & Branding",
-      subtitle: "Unforgettable Logos, Stronger Brands",
+      title: t("sub6"),
+      subtitle: t("content6"),
     },
   ];
 
@@ -68,7 +70,12 @@ const DesktopApps = () => {
     <>
       <div className="overflow-x-hidden">
         <div className="relative">
-          <Image src={panda} alt="panda" width={194} className="-scale-x-100 absolute top-8 -right-12" />
+          <Image
+            src={panda}
+            alt="panda"
+            width={194}
+            className="-scale-x-100 absolute top-8 -right-12"
+          />
         </div>
         <div className="pt-32 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
           <motion.div
@@ -79,7 +86,7 @@ const DesktopApps = () => {
             viewport={{ once: true }}
           >
             <div className="py-4 text-5xl text-blackbean dark:text-secondary font-bold text-center">
-              Apps, websites & more
+              {t("title")}
             </div>
             <div className="grid grid-cols-3 gap-8 mt-14 text-blackbean dark:text-secondary">
               {cardData.map((card, index) => (

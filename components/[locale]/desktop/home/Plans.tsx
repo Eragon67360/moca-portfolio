@@ -8,44 +8,45 @@ import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import Image from "next/image";
 import paw from "@/public/home/paw.png";
+import { useTranslations } from "next-intl";
 
 const Plans = () => {
+  const t = useTranslations("Home.Subscriptions");
+
   const planData = [
     {
-      title: "Standard",
-      subtitle: "Website follow-up. Get any update you want when you need.",
+      title: t("std_title"),
+      subtitle: t("std_description"),
       price: "895€/m",
-      description: "Pause or cancel anytime",
-      buttonText: "Get started",
-      included: "You get a team to work on your website full-time.",
-      list1: "One request at a time",
-      list2: "Average 3-5 days delivery",
-      list3: "Easy credit-card payments",
-      list4: "Pause or cancel anytime",
+      description: t("pause"),
+      buttonText: t("button"),
+      included: t("included_description1"),
+      list1: t("included_content1"),
+      list2: t("included_content2"),
+      list3: t("included_content3"),
+      list4: t("included_content4"),
       list: true,
     },
     {
-      title: "Pro",
-      subtitle: "Website follow-up + Any Graphics you need.",
+      title: t("pro_title"),
+      subtitle: t("pro_description"),
       price: "1195€/m",
-      description: "Pause or cancel anytime",
-      buttonText: "Get started",
-      included: "Get a website always updated and any graphics* you need",
-      list1: "One request at a time",
-      list2: "Average 3-5 days delivery",
-      list3: "Easy credit-card payments",
-      list4: "Pause or cancel anytime",
+      description: t("pause"),
+      buttonText: t("button"),
+      included: t("included_description2"),
+      list1: t("included_content1"),
+      list2: t("included_content2"),
+      list3: t("included_content3"),
+      list4: t("included_content4"),
       list: true,
     },
     {
-      title: "Personalized",
-      subtitle: "Personalize your plan based on your needs.",
+      title: t("perso_title"),
+      subtitle: t("perso_description"),
       price: "~€/m",
-      description: "Pause or cancel anytime",
-      callText: "Book a call to have more informations",
-      buttonText: "Get started",
-      included:
-        "You decide what you need and we do it. This plan can be cheaper or more expensive depending on your demands.",
+      description: t("pause"),
+      buttonText: t("button"),
+      included: t("included_description3"),
       list: false,
     },
   ];
@@ -54,7 +55,10 @@ const Plans = () => {
 
   return (
     <>
-      <div id="pricings" className="pt-28 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-linen dark:bg-falured">
+      <div
+        id="pricings"
+        className="pt-28 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-linen dark:bg-falured"
+      >
         <motion.div
           className="flex flex-col items-center"
           initial="offscreen"
@@ -64,9 +68,14 @@ const Plans = () => {
         >
           <div className="flex space-x-2 justify-center items-center">
             <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-              Subscriptions plans
+              {t("title")}
             </div>
-            <Image src={paw} alt="paw" width={56} className="transform rotate-[35deg]"/>
+            <Image
+              src={paw}
+              alt="paw"
+              width={56}
+              className="transform rotate-[35deg]"
+            />
           </div>
           <div className="mt-24 justify-center grid grid-cols-4 gap-8 text-blackbean dark:text-secondary">
             {planData.map((plan, index) => (
@@ -94,7 +103,7 @@ const Plans = () => {
                 <div className="flex flex-col mt-6 h-[43%]">
                   <hr className=" border-2 border-linen" />
                   <div className="flex flex-col mt-4 text-xs">
-                    <p>What&apos;s included:</p>
+                    <p>{t("included")}</p>
                     <br />
                     <p className="mt-2">{plan.included}</p>
                     {plan.list && (
@@ -117,7 +126,7 @@ const Plans = () => {
                     <BsCalendarEvent size={50} />
                   </div>
 
-                  <div className=" text-center">Book a call</div>
+                  <div className=" text-center">{t("book_call")}</div>
                 </div>
 
                 <div className="flex justify-center mx-auto mt-8">
@@ -125,31 +134,35 @@ const Plans = () => {
                     className="px-4 py-2 rounded-full flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean"
                     href={`/${locale}/booking`}
                   >
-                    <span className="font-semibold">Book now</span>
+                    <span className="font-semibold">{t("book_now")}</span>
                     <MdOutlineOpenInNew size={24} />
                   </Link>
                 </div>
               </div>
 
               <div className="flex flex-col px-4 py-8 border rounded-2xl shadow-cards ">
-                <p className="font-semibold text-2xl"> Branding</p>
-                <p className="text-sm">Get your Brand with your subscription for <span className="font-semibold text-sm">200€</span></p>
+                <p className="font-semibold text-2xl"> {t("branding_title")}</p>
+                <p className="text-sm">
+                  {t.rich("branding_content", {
+                    important: (chunks) => <strong>{chunks}</strong>,
+                  })}
+                </p>
               </div>
               <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-xs">
-                <p>*Graphics includes:</p>
+                <p>{t("graphics_title")}</p>
                 <br />
                 <div className="flex ml-4 space-x-6">
                   <ul>
-                    <li className="list-disc">Stationary Brochures</li>
-                    <li className="list-disc">Social media graphics</li>
-                    <li className="list-disc">E-mail graphics</li>
-                    <li className="list-disc">Business cards</li>
+                    <li className="list-disc">{t("graphics_content1")}</li>
+                    <li className="list-disc">{t("graphics_content2")}</li>
+                    <li className="list-disc">{t("graphics_content3")}</li>
+                    <li className="list-disc">{t("graphics_content4")}</li>
                   </ul>
                   <ul>
-                    <li className="list-disc">Packaging</li>
-                    <li className="list-disc">Trade show banners</li>
-                    <li className="list-disc">Blog graphics</li>
-                    <li className="list-disc">Ads</li>
+                    <li className="list-disc">{t("graphics_content5")}</li>
+                    <li className="list-disc">{t("graphics_content6")}</li>
+                    <li className="list-disc">{t("graphics_content7")}</li>
+                    <li className="list-disc">{t("graphics_content8")}</li>
                   </ul>
                 </div>
               </div>
