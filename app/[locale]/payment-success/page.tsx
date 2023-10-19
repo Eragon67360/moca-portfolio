@@ -1,5 +1,3 @@
-// pages/payment-success.tsx
-
 import Link from "next/link";
 
 const PaymentSuccess: React.FC = () => {
