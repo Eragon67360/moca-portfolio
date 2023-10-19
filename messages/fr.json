@@ -12,7 +12,7 @@
     },
     "Home": {
         "HomeScreen": {
-            "banner_1": "Créant des Expériences Façonnant l'Avenir : ",
+            "banner_1": "Créer des Expériences Façonnant l'Avenir : ",
             "banner_2": "Votre Partenaire en Design UX"
         },
         "UXSolutions": {
@@ -58,7 +58,7 @@
             "button": "Commencer",
             "included": "Inclus dans le plan:",
             "included_description1": "Une équipe dédiée à votre site à temps plein.",
-            "included_description2": "Un site toujours à jour et tous les graphismes dont vous avez besoin.",
+            "included_description2": "Un site toujours à jour et tous les graphismes* dont vous avez besoin.",
             "included_description3": "Vous décidez de ce dont vous avez besoin et nous le réalisons. Ce plan peut être moins cher ou plus coûteux selon vos exigences.",
             "included_content1": "Une demande à la fois",
             "included_content2": "Livraison en moyenne sous 3-5 jours",

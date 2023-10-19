@@ -7,6 +7,7 @@ import { FiGlobe } from "react-icons/fi";
 import { MdOpenInNew } from "react-icons/md";
 
 import ActiveUsersChart from "./UserChart";
+import Link from "next/link";
 
 export const Analytics = () => {
   const [selectedRange, setSelectedRange] = useState<string>("week");
@@ -22,13 +23,13 @@ export const Analytics = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2 text-secondary">
             <FiGlobe />
-            <a
-              href="www.uxmoca.com"
+            <Link
+              href="/"
               target="_blank"
               className="flex items-center space-x-2"
             >
               <p>www.uxmoca.com</p> <MdOpenInNew />
-            </a>
+            </Link>
 
             <div className="border-r h-4 border-r-black/40">{""}</div>
 

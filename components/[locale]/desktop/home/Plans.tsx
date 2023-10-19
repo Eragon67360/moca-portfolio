@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { FormEvent } from "react";
 import Link from "next/link";
 import { BsCalendarEvent } from "react-icons/bs";
 import { MdOutlineOpenInNew } from "react-icons/md";
@@ -94,9 +94,13 @@ const Plans = () => {
                     <p className="text-xs">{plan.description}</p>
 
                     <div className="flex mt-4">
-                      <button className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary">
+                      <Link
+                        href={"/payment"}
+                        target="_blank"
+                        className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
+                      >
                         {plan.buttonText}
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

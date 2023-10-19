@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "pages/api/staticdata.js"
-, "components/AnimatedText.js", "app/[locale]/about/service/MemberService.ts", "hooks/useTheme.js"  ],
+, "components/AnimatedText.js", "app/[locale]/about/service/MemberService.ts", "hooks/useTheme.js", "app/[locale]/payment-success"  ],
   "exclude": ["node_modules"]
 }
