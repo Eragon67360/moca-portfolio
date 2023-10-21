@@ -45,7 +45,9 @@ const DesktopNavbar = () => {
 
   return (
     <>
-      {pathname !== `/${locale}` &&
+      {pathname !== "/" &&
+        pathname !== "/admin" &&
+        pathname !== `/${locale}` &&
         pathname !== `/${locale}/` &&
         pathname !== `/${locale}/admin` && (
           <nav>

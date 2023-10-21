@@ -20,7 +20,7 @@ function DesktopLanding() {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2 }}
+            transition={{ delay: 1.2, duration: 1.2 }}
             className="text-5xl font-bold p-2 opacity-0 text-center"
           >
             Design, Develop, Deliver
@@ -30,7 +30,7 @@ function DesktopLanding() {
           <motion.div
             initial={{ scale: 4, opacity: 0 }}
             animate={controls}
-            transition={{ type: "linear", duration: 2 }}
+            transition={{ type: "linear", duration: 1.8 }}
           >
             <Image src={logo} alt="logo" width={114} className="mt-2" />
           </motion.div>
@@ -55,7 +55,7 @@ function DesktopLanding() {
                 autoStart: true,
                 skipAddStyles: true,
                 loop: false,
-                delay:50,
+                delay: 50,
               }}
               onInit={(typewriter) => {
                 typewriter
@@ -74,7 +74,7 @@ function DesktopLanding() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2.9 }}
+            transition={{ delay: 1.0, duration: 1.2 }}
             className="flex mt-11"
           >
             <Link
