@@ -20,7 +20,7 @@ function DesktopLanding() {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 1.2 }}
+            transition={{ delay: 1.8, duration: 1.2 }}
             className="text-5xl font-bold p-2 opacity-0 text-center"
           >
             Design, Develop, Deliver
