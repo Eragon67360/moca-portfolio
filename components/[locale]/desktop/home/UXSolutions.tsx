@@ -43,7 +43,7 @@ const UXSolutions = () => {
             {t("title")}
           </p>
 
-          <div className="flex justify-evenly border pt-14 space-x-8 mx-16 mt-14">
+          <div className="flex justify-evenly pt-14 space-x-8 mx-16 mt-14">
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
               <AiOutlineFundProjectionScreen size={50} />
               <h2 className="font-semibold text-2xl">{t("new_title")}</h2>
