@@ -2,9 +2,11 @@ import React from "react";
 import { FiMail } from "react-icons/fi";
 import { FiPhone } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
+import { useTranslations } from "next-intl";
 
 const TabletVisitCard = () => {
   const iconSize = `calc(1vw + 1vh)`;
+  const t = useTranslations("Contact.VisitCard")
   return (
     <>
       <div
@@ -12,7 +14,7 @@ const TabletVisitCard = () => {
         className="h-56 w-full bg-none rounded-xl flex flex-col justify-start space-y-8 text-secondary"
       >
         <div className="pt-4 pl-4 flex justify-start text-2xl ">
-          Contact information
+        {t('information')}
         </div>
 
         <div className="flex flex-col py-4 text-xl space-y-3">

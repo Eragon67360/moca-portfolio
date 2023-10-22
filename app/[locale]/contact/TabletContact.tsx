@@ -10,6 +10,7 @@ import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
+import { useTranslations } from "next-intl";
 
 function TabletContact() {
   let windowHeight = useWindowHeight();
@@ -18,6 +19,7 @@ function TabletContact() {
   }
 
   const elementRef = useRef<HTMLDivElement | null>(null);
+  const t = useTranslations("Contact.MainPage");
 
   return (
     <>
@@ -33,14 +35,14 @@ function TabletContact() {
               transition={{ duration: 1 }}
               className="text-4xl font-bold text-center"
             >
-              User-centric design is{" "}
+              {t("title1")}{" "}
               <span className="uppercase text-falured dark:text-cinnabar">
-                the future.
+                {t("title2")}
               </span>
               <br />
-              Let&apos;s shape it{" "}
+              {t("title3")}{" "}
               <span className="uppercase text-falured dark:text-cinnabar">
-                together !
+                {t("title4")}
               </span>
             </motion.div>
             <motion.div
@@ -55,7 +57,7 @@ function TabletContact() {
               <TabletContactForm />
               <TabletVisitCard />
               <div className="py-4 w-full flex flex-col text-center bg-secondary dark:bg-falured space-y-3 text-xl shadow-lightBox rounded-2xl">
-                <p>You can also find us in...</p>
+                <p>{t("find")}</p>
                 <div className="flex justify-center space-x-4">
                   <a
                     href="https://www.linkedin.com/in/thomas-moser67"

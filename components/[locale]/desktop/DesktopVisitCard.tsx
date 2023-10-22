@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 
 import { useTranslations } from "next-intl";
 
-
 const DesktopVisitCard = () => {
   const iconSize = `calc(1vw + 1vh)`;
   const t = useTranslations("Contact.VisitCard")
