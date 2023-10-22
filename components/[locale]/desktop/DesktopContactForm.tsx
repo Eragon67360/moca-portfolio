@@ -61,7 +61,7 @@ const DesktopContactForm: React.FC = () => {
 
     if (response.ok) {
       console.log("Message sent successfully");
-      toast.success("Email has been successfully sent!");
+      toast.success(t('toastsuccess'));
       setLoading(false);
       // reset the form
       event.target.name.value = "";
@@ -74,7 +74,7 @@ const DesktopContactForm: React.FC = () => {
     }
     if (!response.ok) {
       console.log("Error sending message");
-      toast.error("Email has not been sent!");
+      toast.error(t('toasterror'));
       setLoading(false);
     }
   }

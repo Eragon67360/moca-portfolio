@@ -3,11 +3,13 @@ import React, { useState } from "react";
 interface DropdownProps {
   onSelectionChange: (selected: string) => void;
   selectedSubject: string | null;
+  text:string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
   onSelectionChange,
   selectedSubject,
+  text
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
@@ -21,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           onClick={() => setIsOpen(!isOpen)}
           className="bg-secondary text-black border border-falured px-[18px] rounded-full w-full text-left text-xs sm:text-sm md:text-base lg:text-lg py-1"
         >
-          What do you need?
+          {text}
         </button>
 
         {isOpen && (
