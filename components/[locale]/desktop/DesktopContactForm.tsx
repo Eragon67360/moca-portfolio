@@ -6,6 +6,7 @@ import Dropdown from "@/components/[locale]/Dropdown";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const DesktopContactForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -14,13 +15,15 @@ const DesktopContactForm: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
 
+  const t = useTranslations("Contact.ContactForm")
+
   useEffect(() => {
     if (message.trim() === "") {
-      setErrorMessage("Message field has to be filled.");
+      setErrorMessage(t("warning"));
     } else {
       setErrorMessage(null);
     }
-  }, [message]);
+  }, [message, t]);
 
   const handleChange = (event: any) => {
     setEmailValue(event.target.value);
@@ -89,15 +92,15 @@ const DesktopContactForm: React.FC = () => {
             <div className="select-none flex flex-col items-center px-8">
               <div>
                 <div className="flex items-center justify-start space-x-2">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-falured dark:text-secondary ">
-                    Get in touch!
+                  <h2 className="text-5xl font-bold text-falured dark:text-secondary ">
+                    {t('title')}
                   </h2>
 
                   <Image src={logo} alt="logo" />
                 </div>
 
                 <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary w-full">
-                  Let&apos;s talk about everything{" "}
+                {t('subtitle')}{" "}
                   <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-bold">
                     {";)"}
                   </span>
@@ -113,7 +116,7 @@ const DesktopContactForm: React.FC = () => {
                     id="firstname"
                     name="given-name"
                     type="text"
-                    placeholder="First name"
+                    placeholder={t('firstname')}
                   />
                 </div>
                 <div className="py-2 w-full h-full">
@@ -122,7 +125,7 @@ const DesktopContactForm: React.FC = () => {
                     name="family-name"
                     id="name"
                     type="text"
-                    placeholder="Last name"
+                    placeholder={t('lastname')}
                   />
                 </div>
               </div>
@@ -132,7 +135,7 @@ const DesktopContactForm: React.FC = () => {
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="email"
                     type="email"
-                    placeholder="E-Mail"
+                    placeholder={t('email')}
                     value={emailValue}
                     onChange={handleChange}
                   />
@@ -142,7 +145,7 @@ const DesktopContactForm: React.FC = () => {
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="phone"
                     type="phone"
-                    placeholder="Phone"
+                    placeholder={t('phone')}
                   />
                 </div>
               </div>
@@ -153,7 +156,7 @@ const DesktopContactForm: React.FC = () => {
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
                     id="company"
                     type="text"
-                    placeholder="Company"
+                    placeholder={t('company')}
                   />
                 </div>
                 <div className="py-2 w-full h-full">
@@ -162,7 +165,7 @@ const DesktopContactForm: React.FC = () => {
                     id="country"
                     name="country"
                     type="text"
-                    placeholder="Country"
+                    placeholder={t('country')}
                   />
                 </div>
               </div>
@@ -172,6 +175,7 @@ const DesktopContactForm: React.FC = () => {
                   <Dropdown
                     onSelectionChange={handleSelectionChange}
                     selectedSubject={selectedSubject}
+                    text={t('need')}
                   />
                 </div>
               </div>
@@ -183,7 +187,7 @@ const DesktopContactForm: React.FC = () => {
                     id="message"
                     value={message}
                     onChange={handleChangeMessage}
-                    placeholder="Message"
+                    placeholder={t('message')}
                   />
                 </div>
               </div>
@@ -193,7 +197,7 @@ const DesktopContactForm: React.FC = () => {
                   className="bg-white border border-falured uppercase disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-bold py-0.5 px-2 rounded-full"
                   type="submit"
                 >
-                  Send
+                  {t('send')}
                 </button>
                 {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               </div>

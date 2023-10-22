@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import DesktopContactForm from "@/components/[locale]/desktop/DesktopContactForm";
 import DesktopVisitCard from "@/components/[locale]/desktop/DesktopVisitCard";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,8 +7,11 @@ import Image from "next/image";
 import instagram from "@/public/logos/instagram.png";
 import linkedin from "@/public/logos/linkedin.png";
 import tiktok from "@/public/logos/tiktok.png";
+import { useTranslations } from "next-intl";
 
 function DesktopContact() {
+
+  const t = useTranslations("Contact.MainPage")
   return (
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
@@ -21,11 +24,11 @@ function DesktopContact() {
               className="flex justify-center items-center mt-24"
             >
               <div className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh] ml-2">
-                User-centric design is{" "}
-                <span className="uppercase text-cinnabar">the future.</span>
+                {t('title1')}{" "}
+                <span className="uppercase text-cinnabar">{t('title2')}</span>
                 <br />
-                Let&apos;s shape it{" "}
-                <span className="uppercase text-cinnabar">together !</span>
+                {t('title3')}{" "}
+                <span className="uppercase text-cinnabar">{t('title4')}</span>
               </div>
             </motion.div>
 
@@ -36,7 +39,7 @@ function DesktopContact() {
                 </div>
                 <div className="h-[25vh] w-[22.2vw] flex space-y-3 left-[18.35vw] text-xl justify-start">
                   <div className="flex flex-col space-y-3">
-                    <p className="text-left">You can also find us in...</p>
+                    <p className="text-left">{t('find')}</p>
                     <div className="flex w-full justify-center space-x-8">
                       <a
                         href="https://www.linkedin.com/in/thomas-moser67"

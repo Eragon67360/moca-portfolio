@@ -4,8 +4,12 @@ import { FiPhone } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
+import { useTranslations } from "next-intl";
+
+
 const DesktopVisitCard = () => {
   const iconSize = `calc(1vw + 1vh)`;
+  const t = useTranslations("Contact.VisitCard")
   return (
     <>
       <motion.div
@@ -15,7 +19,7 @@ const DesktopVisitCard = () => {
         className="h-[188px] w-[284px] px-5 py-4 rounded-xl flex flex-col justify-between space-y-8 contact-shadow"
       >
         <div className="flex justify-center text-center text-2xl dark:text-white">
-          Contact information
+        {t('information')}
         </div>
 
         <div className="flex flex-col text-base space-y-2 dark:text-white">

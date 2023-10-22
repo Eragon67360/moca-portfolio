@@ -78,5 +78,33 @@
             "graphics_content7": "Blog-Grafiken",
             "graphics_content8": "Anzeigen"
         }
+    },
+    "Contact": {
+        "MainPage": {
+            "title1": "Benutzerzentriertes Design ist",
+            "title2": "die Zukunft.",
+            "title3": "Gestalten wir sie",
+            "title4": "gemeinsam!",
+            "find": "Sie finden uns auch in..."
+        },
+        "VisitCard": {
+            "information": "Kontaktinformation"
+        },
+        "ContactForm": {
+            "title": "Kontaktieren Sie uns!",
+            "subtitle": "Lassen Sie uns über alles sprechen",
+            "firstname": "Vorname",
+            "lastname": "Nachname",
+            "email": "E-Mail",
+            "phone": "Telefon",
+            "company": "Firma",
+            "country": "Land",            
+            "need": "Was benötigen Sie?",
+            "message": "Nachricht",
+            "send": "Senden",
+            "warning": "Das Nachrichtenfeld muss ausgefüllt werden.",
+            "toastsuccess": "E-Mail wurde erfolgreich gesendet!",
+            "toasterror": "E-Mail wurde nicht gesendet!"
+        }
     }
 }

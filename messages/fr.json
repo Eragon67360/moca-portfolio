@@ -78,5 +78,33 @@
             "graphics_content7": "Graphismes pour blogs",
             "graphics_content8": "Publicités"
         }
+    },
+    "Contact": {
+        "MainPage": {
+            "title1": "La conception centrée sur l'utilisateur est",
+            "title2": "l'avenir.",
+            "title3": "Modelons-le",
+            "title4": "ensemble!",
+            "find": "Vous pouvez également nous trouver à..."
+        },
+        "VisitCard": {
+            "information": "Contacts"
+        },
+        "ContactForm": {
+            "title": "Contactez-nous!",
+            "subtitle": "Parlons de tout",
+            "firstname": "Prénom",
+            "lastname": "Nom",
+            "email": "E-Mail",
+            "phone": "Téléphone",
+            "company": "Entreprise",
+            "country": "Pays",
+            "need": "De quoi avez-vous besoin?",
+            "message": "Message",
+            "send": "Envoyer",
+            "warning": "Le champ du message doit être rempli.",
+            "toastsuccess": "L'email a été envoyé avec succès!",
+            "toasterror": "L'email n'a pas été envoyé!"
+        }
     }
 }

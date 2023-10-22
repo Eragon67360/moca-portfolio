@@ -78,5 +78,33 @@
             "graphics_content7": "Blog graphics",
             "graphics_content8": "Ads"
         }
+    },
+    "Contact": {
+        "MainPage": {
+            "title1": "User-centric design is",
+            "title2": "the future.",
+            "title3": "Let's shape it",
+            "title4": "together !",
+            "find": "You can also find us in..."
+        },
+        "VisitCard": {
+            "information": "Contact information"
+        },
+        "ContactForm": {
+            "title": "Get in touch!",
+            "subtitle": "Let's talk about everything",
+            "firstname": "First name",
+            "lastname": "Last name",
+            "email": "E-Mail",
+            "phone": "Phone",
+            "company": "Company",
+            "country": "Country",            
+            "need": "What do you need?",
+            "message": "Message",
+            "send": "Send",
+            "warning": "Message field has to be filled.",
+            "toastsuccess":"Email has been successfully sent!",
+            "toasterror":"Email has not been sent!"
+        }
     }
 }
