@@ -4,46 +4,41 @@ import { SlMagicWand } from "react-icons/sl";
 import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
+import { useTranslations } from "next-intl";
 
 const UXSolutions = () => {
+
+  const t = useTranslations("Home.UXSolutions");
+
   return (
     <>
       <div className="">
         <div className="bg-white dark:bg-blackbean flex flex-col h-full pt-40 pb-40 justify-start items-center text-center select-none space-y-12 px-8">
           <p className="font-bold text-4xl text-blackbean dark:text-secondary">
-            Our Tailored UX Solutions
+          {t("title")}
           </p>
           <div className="flex flex-col justify-evenly pt-9 space-y-8">
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <AiOutlineFundProjectionScreen size={50} />
-              <h2 className="font-semibold text-2xl">New Project</h2>
+              <h2 className="font-semibold text-2xl">{t("new_title")}</h2>
               <p>
-                Complete new design from zero, just tell us what you need and we
-                will work hard to make it real.
+              {t("new_content")}
               </p>
             </div>
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <SlMagicWand size={50} />
-              <h2 className="font-semibold text-2xl">Redesign</h2>
+              <h2 className="font-semibold text-2xl">{t("redesign_title")}</h2>
               <p>
-                If you wan to give a more fresh look to your website or mobile
-                application this is what you need.
-                <br />
-                <br />
-                We will make sure to give you a website that suits new tendances
-                but still follows your brand identity
+              {t("redesign_content1")} <br /> <br />
+                {t("redesign_content2")}
               </p>
             </div>
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <BsArrowRepeat size={50} />
-              <h2 className="font-semibold text-2xl">Follow-up</h2>
+              <h2 className="font-semibold text-2xl">{t("followup_title")}</h2>
               <p>
-                Updates, improvements and changes of an already existing website
-                or mobile application.
-                <br />
-                <br />
-                You can ask for an especific change or subscripte to our plans
-                to get your website always updated!
+              {t("followup_content1")} <br /> <br />
+                {t("followup_content2")}
               </p>
             </div>
           </div>

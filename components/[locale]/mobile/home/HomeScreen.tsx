@@ -9,12 +9,17 @@ import phone_red from "@/public/phones/phone_red.png";
 import phone_base from "@/public/phones/phone_base.png";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const HomeScreen = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoSwitching, setIsAutoSwitching] = useState(false);
   const [isFront, setIsFront] = useState(true);
   const [isTextAnimated, setIsTextAnimated] = useState(false);
+
+  const t = useTranslations("Home");
+  const text1 = t("HomeScreen.banner_1");
+  const text2 = t("HomeScreen.banner_2");
 
   const images = [phone_white, phone_yellow, phone_blue, phone_red];
   const colorPattern = ["bg-cinnabar dark:bg-linen", "bg-linen dark:bg-falured"];
@@ -165,7 +170,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants}
             >
-              Crafting Experiences Shaping Futures: Your UX Design Partner
+              {text1} {text2}
             </motion.div>
 
             <motion.div
@@ -174,7 +179,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariantsStroke}
             >
-              Crafting Experiences Shaping Futures: Your UX Design Partner
+              {text1} {text2}
             </motion.div>
           </motion.div>
 
@@ -185,7 +190,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants2}
             >
-              Crafting Experiences Shaping Futures: Your UX Design Partner
+               {text1} {text2}
             </motion.div>
 
             <motion.div
@@ -194,7 +199,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants2Stroke}
             >
-              Crafting Experiences Shaping Futures: Your UX Design Partner
+               {text1} {text2}
             </motion.div>
           </motion.div>
 
@@ -205,7 +210,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants}
             >
-              Crafting Experiences Shaping Futures: Your UX Design Partner
+               {text1} {text2}
             </motion.div>
 
             <motion.div
@@ -214,7 +219,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariantsStroke}
             >
-              Crafting Experiences Shaping Futures: Your UX Design Partner
+               {text1} {text2}
             </motion.div>
           </motion.div>
         </motion.div>
