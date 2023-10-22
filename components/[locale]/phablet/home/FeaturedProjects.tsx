@@ -6,6 +6,7 @@ import photo3 from "@/public/home/photo3.png";
 import photo4 from "@/public/home/photo4.jpg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
+import { useTranslations } from "next-intl";
 
 const FeaturedProjects = () => {
   const images = [
@@ -14,6 +15,8 @@ const FeaturedProjects = () => {
     { src: photo3, alt: "placeholder3" },
     { src: photo3, alt: "placeholder4" },
   ];
+
+  const t = useTranslations("Home.FeaturedProjects");
 
   return (
     <>
@@ -26,8 +29,19 @@ const FeaturedProjects = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col text-secondary text-center pt-16">
-            <h2 className="font-bold text-4xl">Featured</h2>
-            <h3 className="font-bold text-6xl mt-4">Projects</h3>
+            <h2 className="font-bold text-4xl">{t("title")}</h2>
+            <h3 className="font-bold text-6xl mt-4">{t("subtitle")}</h3>
+          </div>
+
+          <div className="mt-12">
+            <a
+              href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
+              aria-label="See projects"
+              target="_blank"
+              className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full"
+            >
+              {t("button")}
+            </a>
           </div>
 
           <div className="flex flex-col gap-8 justify-center">
@@ -64,16 +78,6 @@ const FeaturedProjects = () => {
                 />
               </div>
             ))}
-          </div>
-          <div className="mt-12">
-            <a
-              href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
-              aria-label="See projects"
-              target="_blank"
-              className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full"
-            >
-              See more
-            </a>
           </div>
 
           <div className="h-24"></div>

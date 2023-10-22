@@ -3,44 +3,47 @@ import Image from "next/image";
 import { FiGlobe } from "react-icons/fi";
 import { AiOutlineMobile } from "react-icons/ai";
 import { SiAdobeindesign } from "react-icons/si";
-import { GiWireframeGlobe } from "react-icons/gi";
-import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineCloudServer } from "react-icons/ai";
+import { LiaSwatchbookSolid } from "react-icons/lia";
+import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import panda from "@/public/panda.png";
+import { useTranslations } from "next-intl";
 
 const PhabletApps = () => {
+  const t = useTranslations("Home.Apps");
   const cardData = [
     {
       Icon: FiGlobe,
-      title: "Websites",
-      subtitle: "Catchy text blablabla",
+      title: t("sub1"),
+      subtitle: t("content1"),
     },
     {
       Icon: AiOutlineMobile,
-      title: "Mobile Apps",
-      subtitle: "Catchy text blablabla",
-    },
-    {
-      Icon: SiAdobeindesign,
-      title: "Design systems",
-      subtitle: "Catchy text blablabla",
+      title: t("sub2"),
+      subtitle: t("content2"),
     },
     {
       Icon: AiOutlineCloudServer,
-      title: "SAAS",
-      subtitle: "Software as a Service - Empowering Your Business",
+      title: t("sub3"),
+      subtitle: t("content3"),
     },
     {
-      Icon: GiWireframeGlobe,
-      title: "Wireframes",
-      subtitle: "Catchy text blablabla",
+      Icon: SiAdobeindesign,
+      title: t("sub4"),
+      subtitle: t("content4"),
+    },
+
+    {
+      Icon: PiCompassTool,
+      title: t("sub5"),
+      subtitle: t("content5"),
     },
     {
-      Icon: MdAlternateEmail,
-      title: "Email graphics",
-      subtitle: "Catchy text blablabla",
+      Icon: LiaSwatchbookSolid,
+      title: t("sub6"),
+      subtitle: t("content6"),
     },
   ];
 
@@ -58,13 +61,13 @@ const PhabletApps = () => {
           viewport={{ once: true }}
         >
           <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-            Apps, websites & more
+          {t("title")}
           </div>
           <div className="grid grid-cols-2 gap-8 mt-24 text-blackbean dark:text-secondary">
             {cardData.map((card, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-[142px]">
-                  <card.Icon size={45} />
+                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-full p-4">
+                  <card.Icon size={40} />
                   <h3 className="text-2xl font-semibold">{card.title}</h3>
                   <p>{card.subtitle}</p>
                 </div>

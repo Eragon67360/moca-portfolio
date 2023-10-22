@@ -15,6 +15,24 @@ const UXSolutions = () => {
   const { resolvedTheme } = useTheme();
   const t = useTranslations("Home.UXSolutions");
 
+  const features = [
+    {
+      icon: <AiOutlineFundProjectionScreen size={50} />,
+      title: t("new_title"),
+      content: [t("new_content")],
+    },
+    {
+      icon: <SlMagicWand size={50} />,
+      title: t("redesign_title"),
+      content: [t("redesign_content1"), t("redesign_content2")],
+    },
+    {
+      icon: <BsArrowRepeat size={50} />,
+      title: t("followup_title"),
+      content: [t("followup_content1"), t("followup_content2")],
+    },
+  ];
+
   let color;
 
   switch (resolvedTheme) {
@@ -44,27 +62,28 @@ const UXSolutions = () => {
           </p>
 
           <div className="flex justify-evenly pt-14 space-x-8 mx-16 mt-14">
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
-              <AiOutlineFundProjectionScreen size={50} />
-              <h2 className="font-semibold text-2xl">{t("new_title")}</h2>
-              <p>{t("new_content")}</p>
-            </div>
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
-              <SlMagicWand size={50} />
-              <h2 className="font-semibold text-2xl">{t("redesign_title")}</h2>
-              <p>
-                {t("redesign_content1")} <br /> <br />
-                {t("redesign_content2")}
-              </p>
-            </div>
-            <div className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3">
-              <BsArrowRepeat size={50} />
-              <h2 className="font-semibold text-2xl">{t("followup_title")}</h2>
-              <p>
-                {t("followup_content1")} <br /> <br />
-                {t("followup_content2")}
-              </p>
-            </div>
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3"
+              >
+                {feature.icon}
+                <h2 className="font-semibold text-2xl">{feature.title}</h2>
+                <p>
+                  {feature.content.map((text, idx) => (
+                    <React.Fragment key={idx}>
+                      {text}{" "}
+                      {idx < feature.content.length - 1 && (
+                        <>
+                          <br />
+                          <br />
+                        </>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="relative w-full">

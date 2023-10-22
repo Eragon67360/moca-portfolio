@@ -1,19 +1,22 @@
 "use client";
 import React from "react";
-
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
-
 import CarouselComponent from "../Carousel";
+import { useTranslations } from "next-intl";
+
 
 const colorPattern = ["bg-cinnabar", "bg-linen dark:bg-blackbean"];
 
 const TabletHomeScreen = () => {
+  const t = useTranslations("Home");
+  const text1 = t("HomeScreen.banner_1");
+  const text2 = t("HomeScreen.banner_2");
   return (
     <>
       <div className="flex flex-col w-full justify-center items-center my-12 space-y-24">
         <div className="text-3xl font-bold text-falured text-center px-32">
-          Crafting Experiences Shaping Futures: Your UX Design Partner
+        {text1} {text2}
         </div>
         <div className="flex h-full pb-24 mx-auto items-center justify-center">
           <CarouselComponent

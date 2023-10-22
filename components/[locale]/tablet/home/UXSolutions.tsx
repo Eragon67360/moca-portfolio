@@ -6,8 +6,29 @@ import Image from "next/image";
 import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
+import { useTranslations } from "next-intl";
 
 const UXSolutions = () => {
+  const t = useTranslations("Home.UXSolutions");
+
+  const features = [
+    {
+      icon: <AiOutlineFundProjectionScreen size={50} />,
+      title: t("new_title"),
+      content: [t("new_content")],
+    },
+    {
+      icon: <SlMagicWand size={50} />,
+      title: t("redesign_title"),
+      content: [t("redesign_content1"), t("redesign_content2")],
+    },
+    {
+      icon: <BsArrowRepeat size={50} />,
+      title: t("followup_title"),
+      content: [t("followup_content1"), t("followup_content2")],
+    },
+  ];
+
   return (
     <>
       <div className="bg-white dark:bg-blackbean pt-40 pb-40 justify-start select-none ">
@@ -19,52 +40,36 @@ const UXSolutions = () => {
           viewport={{ once: true }}
         >
           <p className="font-bold text-5xl text-blackbean dark:text-secondary text-center">
-            Our Tailored UX Solutions
+            {t("title")}
           </p>
 
           <div className="flex flex-col pt-14 mx-24 text-center space-y-8">
-            <div className="flex flex-col items-center space-y-4">
-              <AiOutlineFundProjectionScreen size={50} />
-              <h2 className="font-semibold text-2xl">New Project</h2>
-              <p>
-                Complete new design from zero, just tell us what you need and we
-                will work hard to make it real.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center space-y-4">
-              <SlMagicWand size={50} />
-              <h2 className="font-semibold text-2xl">Redesign</h2>
-              <p>
-                If you wan to give a more fresh look to your website or mobile
-                application this is what you need.
-                <br />
-                <br />
-                We will make sure to give you a website that suits new tendances
-                but still follows your brand identity
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center space-y-4">
-              <BsArrowRepeat size={50} />
-              <h2 className="font-semibold text-2xl">Follow-up</h2>
-              <p>
-                Updates, improvements and changes of an already existing website
-                or mobile application.
-                <br />
-                <br />
-                You can ask for an especific change or subscripte to our plans
-                to get your website always updated!
-              </p>
-            </div>
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-full"
+              >
+                {feature.icon}
+                <h2 className="font-semibold text-2xl">{feature.title}</h2>
+                <p>
+                  {feature.content.map((text, idx) => (
+                    <React.Fragment key={idx}>
+                      {text}{" "}
+                      {idx < feature.content.length - 1 && (
+                        <>
+                          <br />
+                          <br />
+                        </>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="flex justify-center w-full">
-            <Image
-              src={logo}
-              alt="tail"
-              width={70}
-            />
+            <Image src={logo} alt="tail" width={70} />
           </div>
 
           <div className="text-blackbean dark:text-white mt-12 mx-32 flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">

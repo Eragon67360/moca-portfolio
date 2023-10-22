@@ -85,8 +85,8 @@ const Plans = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col mt-6 h-[43%]">
-                <hr className=" border-2 border-linen" />
+              <div className="flex flex-col mt-6 h-full">
+                <hr className=" border-2 border-linen mt-4" />
                 <div className="flex flex-col mt-4 text-xs">
                   <p>{t("included")}</p>
                   <br />
