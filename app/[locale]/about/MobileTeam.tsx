@@ -40,7 +40,7 @@ const MemberTemplate = ({
             <a
               href={linkedin}
               target="_blank"
-              className="rounded-full font-bold border border-cinnabar text-cinnabar hover:text-secondary hover:bg-cinnabar uppercase px-3 py-1 cursor-pointer"
+              className="rounded-full font-bold border border-cinnabar text-cinnabar dark:border-secondary dark:text-secondary hover:text-secondary hover:bg-cinnabar dark:hover:text-secondary/75 dark:hover:bg-transparent dark:hover:border-secondary/75 uppercase px-3 py-1 cursor-pointer"
             >
               Linkedin
             </a>
@@ -48,7 +48,7 @@ const MemberTemplate = ({
             <a
               href={portfolio}
               target="_blank"
-              className="rounded-full font-bold border border-cinnabar text-cinnabar hover:text-secondary hover:bg-cinnabar uppercase px-3 py-1 cursor-pointer"
+              className="rounded-full font-bold border border-cinnabar text-cinnabar dark:border-secondary dark:text-secondary hover:text-secondary hover:bg-cinnabar dark:hover:text-secondary/75 dark:hover:bg-transparent dark:hover:border-secondary/75 uppercase px-3 py-1 cursor-pointer"
             >
               Portfolio
             </a>
@@ -69,7 +69,7 @@ function MobileTeam() {
   return (
     <>
       <div className="h-screen flex flex-col justify-center items-center mx-4">
-        <div className="w-full flex flex-col justify-center items-center rounded-3xl p-2 bg-linen select-none">
+        <div className="w-full flex flex-col justify-center items-center rounded-3xl p-2 bg-linen dark:bg-falured select-none">
           <p className="font-bold text-3xl text-center mb-4 ">Our team</p>
           <div className="w-full h-full">
             {members ? (

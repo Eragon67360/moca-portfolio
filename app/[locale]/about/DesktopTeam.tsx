@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "primereact/carousel";
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primeicons/primeicons.css';
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primeicons/primeicons.css";
 import { MemberService } from "./service/MemberService";
 import Image from "next/image";
 import { MembersDesktopSkeleton } from "./skeletons/MembersSkeleton";
@@ -43,7 +43,7 @@ const MemberTemplate = ({
             <a
               href={linkedin}
               target="_blank"
-              className="rounded-full font-bold border border-cinnabar text-cinnabar hover:text-secondary hover:bg-cinnabar uppercase px-3 py-1 cursor-pointer"
+              className="rounded-full font-bold border border-cinnabar text-cinnabar dark:border-secondary dark:text-secondary hover:text-secondary hover:bg-cinnabar dark:hover:text-secondary/75 dark:hover:bg-transparent dark:hover:border-secondary/75 uppercase px-3 py-1 cursor-pointer"
             >
               Linkedin
             </a>
@@ -51,7 +51,7 @@ const MemberTemplate = ({
             <a
               href={portfolio}
               target="_blank"
-              className="rounded-full font-bold border border-cinnabar text-cinnabar hover:text-secondary hover:bg-cinnabar uppercase px-3 py-1 cursor-pointer"
+              className="rounded-full font-bold border border-cinnabar text-cinnabar dark:border-secondary dark:text-secondary hover:text-secondary hover:bg-cinnabar dark:hover:text-secondary/75 dark:hover:bg-transparent dark:hover:border-secondary/75 uppercase px-3 py-1 cursor-pointer"
             >
               Portfolio
             </a>
@@ -72,7 +72,7 @@ function DesktopTeam() {
   return (
     <>
       <div className="font-sans h-[85vh] flex flex-col justify-center items-center mx-[16vw] xl:mx-[32vw]">
-        <div className="flex flex-col rounded-3xl p-8 bg-linen w-full select-none">
+        <div className="flex flex-col rounded-3xl p-8 bg-linen dark:bg-falured w-full select-none">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           {members ? (
             <Carousel
