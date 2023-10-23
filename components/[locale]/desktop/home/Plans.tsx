@@ -20,6 +20,7 @@ const Plans = () => {
       price: "895€/m",
       description: t("pause"),
       buttonText: t("button"),
+      book: t("book_call"),
       included: t("included_description1"),
       list1: t("included_content1"),
       list2: t("included_content2"),
@@ -33,6 +34,7 @@ const Plans = () => {
       price: "1195€/m",
       description: t("pause"),
       buttonText: t("button"),
+      book: t("book_call"),
       included: t("included_description2"),
       list1: t("included_content1"),
       list2: t("included_content2"),
@@ -46,6 +48,7 @@ const Plans = () => {
       price: "~€/m",
       description: t("pause"),
       buttonText: t("button"),
+      book: t("book_call"),
       included: t("included_description3"),
       list: false,
     },
@@ -102,6 +105,12 @@ const Plans = () => {
                         {plan.buttonText}
                       </Link>
                     </div>
+                    <Link
+                      href={`/${locale}/booking`}
+                      className="mt-2 ml-4 text-sm"
+                    >
+                      {plan.book}
+                    </Link>
                   </div>
                 </div>
                 <div className="flex flex-col mt-6 h-[43%]">
@@ -144,15 +153,7 @@ const Plans = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col px-4 py-8 border rounded-2xl shadow-cards ">
-                <p className="font-semibold text-2xl"> {t("branding_title")}</p>
-                <p className="text-sm">
-                  {t.rich("branding_content", {
-                    important: (chunks) => <strong>{chunks}</strong>,
-                  })}
-                </p>
-              </div>
-              <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-xs">
+              <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-base">
                 <p>{t("graphics_title")}</p>
                 <br />
                 <div className="flex ml-4 space-x-6">
