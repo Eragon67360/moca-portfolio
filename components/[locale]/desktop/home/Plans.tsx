@@ -12,6 +12,7 @@ import { useTranslations } from "next-intl";
 
 const Plans = () => {
   const t = useTranslations("Home.Subscriptions");
+  const locale = useLocale();
 
   const planData = [
     {
@@ -27,7 +28,7 @@ const Plans = () => {
       list3: t("included_content3"),
       list4: t("included_content4"),
       list: true,
-      route: "/payment?plan=standard&price=895",
+      route: `/${locale}/payment?plan=standard&price=895`,
     },
     {
       title: t("pro_title"),
@@ -42,7 +43,7 @@ const Plans = () => {
       list3: t("included_content3"),
       list4: t("included_content4"),
       list: true,
-      route: "/payment?plan=pro&price=1195",
+      route: `/${locale}/payment?plan=pro&price=1195`,
     },
     {
       title: t("perso_title"),
@@ -53,11 +54,9 @@ const Plans = () => {
       book: t("book_call"),
       included: t("included_description3"),
       list: false,
-      route: "/booking",
+      route: `/${locale}/booking`,
     },
   ];
-
-  const locale = useLocale();
 
   return (
     <>

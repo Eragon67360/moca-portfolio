@@ -3,6 +3,7 @@
 
 import { CheckoutSubscriptionBody } from "@/pages/api/checkout";
 import { loadStripe } from "@stripe/stripe-js";
+import { useTranslations } from "next-intl";
 import Stripe from "stripe";
 interface SubscriptionCardProps {
   price: string;
@@ -36,19 +37,20 @@ const StandardSubscriptionCard = ({ price }: SubscriptionCardProps) => {
     const sessionId = data.id!;
     stripe?.redirectToCheckout({ sessionId });
   };
-  // render a simple card
+  const t = useTranslations("PaymentCard");
+
   return (
     <>
       <div className="border border-gray-200 rounded-md p-8 flex flex-col gap-2 items-start">
-        <h2 className="text-xl font-bold text-gray-700">
-          Monthly Subscription
-        </h2>
-        <p className="text-gray-400">{price}€ per month</p>
+        <h2 className="text-xl font-bold text-gray-700">{t("title")}</h2>
+        <p className="text-gray-400">
+          {price}€ {t("month")}
+        </p>
         <button
           onClick={() => handleClick()}
           className="border border-cinnabar text-cinnabar rounded-md px-4 py-2 w-full hover:bg-cinnabar hover:text-secondary transition-colors"
         >
-          Subscribe
+          {t("subscribe")}
         </button>
       </div>
     </>

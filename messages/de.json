@@ -98,7 +98,7 @@
             "email": "E-Mail",
             "phone": "Telefon",
             "company": "Firma",
-            "country": "Land",            
+            "country": "Land",
             "need": "Was benötigen Sie?",
             "message": "Nachricht",
             "send": "Senden",
@@ -106,5 +106,40 @@
             "toastsuccess": "E-Mail wurde erfolgreich gesendet!",
             "toasterror": "E-Mail wurde nicht gesendet!"
         }
+    },
+    "PaymentCard": {
+        "title": "Monatsabonnement",
+        "month": "pro Monat",
+        "subscribe": "Abonnieren"
+    },
+    "Payment": {
+        "title": "Was ist enthalten:",
+        "sec1": "Sie erhalten ein Team, das Vollzeit an Ihrer Webseite arbeitet.",
+        "exp1": "Statt sich auf einen einzelnen Freelancer zu verlassen oder alles selbst zu versuchen, bietet Ihnen unser Abonnement ein spezialisiertes Team. Das bedeutet, dass Sie einen Pool von Experten zur Verfügung haben, der sicherstellt, dass jeder Aspekt Ihrer Website - von Design bis Entwicklung - in Expertenhänden liegt.",
+        "sec2": "Ein Auftrag nach dem anderen.",
+        "exp2": "Um die Qualität unserer Dienstleistungen aufrechtzuerhalten und jeder Aufgabe volle Aufmerksamkeit zu schenken, bearbeiten wir jeweils einen Auftrag. Dies stellt sicher, dass jeder Antrag die volle Aufmerksamkeit erhält, die er verdient, was zu besseren Ergebnissen und weniger Fehlern führt.",
+        "sec3": "Durchschnittliche Lieferung in 3-5 Tagen.",
+        "exp3": "Wir verstehen, wie wichtig pünktliche Lieferungen sind. Deshalb versprechen wir im Durchschnitt eine Bearbeitungszeit von 3-5 Tagen. So können Sie Ihre Kampagnen und Aktualisierungen planen, im Vertrauen darauf, dass Ihre Anfragen rechtzeitig abgeschlossen werden.",
+        "sec4": "Einfache Kreditkartenzahlungen.",
+        "exp4": "Die Zahlung ist unkompliziert und problemlos. Wir akzeptieren alle gängigen Kreditkarten und gewährleisten so einen reibungslosen Transaktionsprozess. Unsere sichere Zahlungsplattform stellt zudem sicher, dass Ihre finanziellen Informationen sicher und geschützt sind.",
+        "sec5": "Jederzeit pausieren oder kündigen.",
+        "exp5": "Wir glauben an Flexibilität und schätzen Ihr Vertrauen. Wenn Sie aus irgendeinem Grund Ihr Abonnement pausieren oder kündigen möchten, haben wir den Prozess vereinfacht. Es gibt keine versteckten Gebühren oder langfristigen Verträge, was Ihnen die volle Kontrolle über Ihr Abonnement gibt.",
+        "graph_title": "Grafiken beinhalten:",
+        "graph1": "Stationäre Broschüren:",
+        "graph_exp1": "Unentbehrlich für jedes Unternehmen, unsere Broschüren sind so gestaltet, dass sie Ihre Markenethik und -angebote prägnant widerspiegeln.",
+        "graph2": "Sozialmedia-Grafiken:",
+        "graph_exp2": "Im Zeitalter der sozialen Medien können auffällige Grafiken Ihre Online-Präsenz der Marke stärken. Unsere Designs sind für alle großen Plattformen optimiert.",
+        "graph3": "E-Mail-Grafiken:",
+        "graph_exp3": "Werten Sie Ihre E-Mail-Kampagnen mit maßgeschneiderten Grafiken auf, was zu höheren Engagement-Raten führt.",
+        "graph4": "Visitenkarten:",
+        "graph_exp4": "Hinterlassen Sie einen bleibenden Eindruck mit einzigartig gestalteten Visitenkarten, die mit Ihrer Marke in Resonanz stehen.",
+        "graph5": "Verpackung:",
+        "graph_exp5": "Produktverpackungen, die herausstechen und sich an die Ästhetik Ihrer Marke anpassen.",
+        "graph6": "Messebanner:",
+        "graph_exp6": "Setzen Sie bei Geschäftsveranstaltungen ein Zeichen mit Bannern, die Aufmerksamkeit erregen und Ihre Botschaft effektiv vermitteln.",
+        "graph7": "Bloggrafiken:",
+        "graph_exp7": "Ergänzen Sie Ihren Blog-Inhalt mit Visuals, die Ihre Leser engagieren und informieren.",
+        "graph8": "Anzeigen:",
+        "graph_exp8": "Fesselnde Anzeigendesigns, die mit Ihrer Zielgruppe in Resonanz stehen und das Engagement fördern."
     }
 }

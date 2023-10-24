@@ -98,13 +98,48 @@
             "email": "E-Mail",
             "phone": "Phone",
             "company": "Company",
-            "country": "Country",            
+            "country": "Country",
             "need": "What do you need?",
             "message": "Message",
             "send": "Send",
             "warning": "Message field has to be filled.",
-            "toastsuccess":"Email has been successfully sent!",
-            "toasterror":"Email has not been sent!"
+            "toastsuccess": "Email has been successfully sent!",
+            "toasterror": "Email has not been sent!"
         }
+    },
+    "PaymentCard": {
+        "title": "Monthly Subscription",
+        "month": "per month",
+        "subscribe": "Subscribe"
+    },
+    "Payment": {
+        "title": "What's included:",
+        "sec1": "You get a team to work on your website full-time.",
+        "exp1": "Instead of relying on a single freelancer or trying to do everything yourself, our subscription provides you with a dedicated team. This means you have a pool of expertise at your disposal, ensuring that each aspect of your website—from design to development—is in expert hands.",
+        "sec2": "One request at a time.",
+        "exp2": "To maintain the quality of our services and provide focused attention to each task, we handle one request at a time. This ensures that every request gets the full attention it deserves, leading to better outcomes and fewer mistakes.",
+        "sec3": "Average 3-5 days delivery.",
+        "exp3": "We understand the importance of timely deliveries. That's why, on average, we promise a turnaround time of 3-5 days. This means you can plan your campaigns and updates with the confidence that your requests will be completed on time.",
+        "sec4": "Easy credit-card payments.",
+        "exp4": "Payment is straightforward and hassle-free. We accept all major credit cards, ensuring a seamless transaction process. Our secure payment gateway also ensures that your financial information is safe and protected.",
+        "sec5": "Pause or cancel anytime.",
+        "exp5": "We believe in flexibility and value your trust. If, for any reason, you need to pause your subscription or wish to cancel, we've made the process straightforward. There are no hidden fees or long-term contracts, giving you complete control over your subscription.",
+        "graph_title": "Graphics includes:",
+        "graph1": "Stationary Brochures:",
+        "graph_exp1": "Essential for any business, our brochures are designed to reflect your brand's ethos and offerings succinctly.",
+        "graph2": "Social media graphics:",
+        "graph_exp2": "In the social media age, eye-catching graphics can boost your brand's online presence. Our designs are optimized for all major platforms.",
+        "graph3": "E-mail graphics:",
+        "graph_exp3": "Enhance your email campaigns with customized graphics, ensuring higher engagement rates.",
+        "graph4": "Business cards:",
+        "graph_exp4": "Leave a lasting impression with uniquely designed business cards that resonate with your brand.",
+        "graph5": "Packaging:",
+        "graph_exp5": "Product packaging that stands out and aligns with your brand's aesthetics.",
+        "graph6": "Trade show banners:",
+        "graph_exp6": "Make a statement at business events with banners that capture attention and convey your message effectively.",
+        "graph7": "Blog graphics:",
+        "graph_exp7": "Complement your blog content with visuals that engage and inform your readers.",
+        "graph8": "Ads:",
+        "graph_exp8": "Captivating ad designs that resonate with your target audience and drive engagement."
     }
 }

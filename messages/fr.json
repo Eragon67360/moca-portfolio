@@ -106,5 +106,40 @@
             "toastsuccess": "L'email a été envoyé avec succès!",
             "toasterror": "L'email n'a pas été envoyé!"
         }
+    },
+    "PaymentCard": {
+        "title": "Abonnement Mensuel",
+        "month": "par mois",
+        "subscribe": "S'abonner"
+    },
+    "Payment": {
+        "title": "Ce qui est inclus :",
+        "sec1": "Vous obtenez une équipe pour travailler sur votre site web à temps plein.",
+        "exp1": "Au lieu de compter sur un seul freelance ou d'essayer de tout faire vous-même, notre abonnement vous fournit une équipe dédiée. Cela signifie que vous avez un pool d'expertise à votre disposition, garantissant que chaque aspect de votre site web, de la conception au développement, est entre de bonnes mains.",
+        "sec2": "Une demande à la fois.",
+        "exp2": "Pour maintenir la qualité de nos services et fournir une attention ciblée à chaque tâche, nous traitons une demande à la fois. Cela garantit que chaque demande reçoit toute l'attention qu'elle mérite, conduisant à de meilleurs résultats et moins d'erreurs.",
+        "sec3": "Livraison moyenne en 3-5 jours.",
+        "exp3": "Nous comprenons l'importance des livraisons en temps voulu. C'est pourquoi, en moyenne, nous promettons un délai de 3-5 jours. Cela signifie que vous pouvez planifier vos campagnes et mises à jour en sachant que vos demandes seront terminées à temps.",
+        "sec4": "Paiements faciles par carte de crédit.",
+        "exp4": "Le paiement est simple et sans tracas. Nous acceptons toutes les principales cartes de crédit, garantissant un processus de transaction fluide. Notre passerelle de paiement sécurisée garantit également que vos informations financières sont sûres et protégées.",
+        "sec5": "Mettez en pause ou annulez à tout moment.",
+        "exp5": "Nous croyons en la flexibilité et apprécions votre confiance. Si, pour une raison quelconque, vous devez mettre en pause votre abonnement ou souhaitez annuler, nous avons simplifié le processus. Il n'y a pas de frais cachés ni de contrats à long terme, vous donnant un contrôle total sur votre abonnement.",
+        "graph_title": "La graphique comprend :",
+        "graph1": "Brochures Stationnaires :",
+        "graph_exp1": "Essentielles pour toute entreprise, nos brochures sont conçues pour refléter l'éthique et les offres de votre marque de manière succincte.",
+        "graph2": "Graphiques pour les médias sociaux :",
+        "graph_exp2": "À l'ère des médias sociaux, des graphiques accrocheurs peuvent renforcer la présence en ligne de votre marque. Nos conceptions sont optimisées pour toutes les principales plateformes.",
+        "graph3": "Graphiques pour e-mails :",
+        "graph_exp3": "Améliorez vos campagnes d'email avec des graphiques personnalisés, garantissant des taux d'engagement plus élevés.",
+        "graph4": "Cartes de visite :",
+        "graph_exp4": "Laissez une impression durable avec des cartes de visite uniques qui résonnent avec votre marque.",
+        "graph5": "Emballage :",
+        "graph_exp5": "Un emballage de produit qui se démarque et s'aligne sur l'esthétique de votre marque.",
+        "graph6": "Bannières pour salons professionnels :",
+        "graph_exp6": "Faites une déclaration lors des événements d'entreprise avec des bannières qui attirent l'attention et véhiculent efficacement votre message.",
+        "graph7": "Graphiques pour blogs :",
+        "graph_exp7": "Complétez votre contenu de blog avec des visuels qui engagent et informent vos lecteurs.",
+        "graph8": "Publicités :",
+        "graph_exp8": "Des conceptions d'annonces captivantes qui résonnent avec votre public cible et stimulent l'engagement."
     }
 }
