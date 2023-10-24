@@ -47,7 +47,7 @@
             "content6": "Logos Inoubliables, Marques Plus Fortes"
         },
         "Subscriptions": {
-            "title": "Plans d'abonnement",
+            "title": "Abonnements",
             "std_title": "Standard",
             "pro_title": "Pro",
             "perso_title": "Personnalisé",
@@ -113,6 +113,7 @@
         "subscribe": "S'abonner"
     },
     "Payment": {
+        "read_more":"En savoir plus",
         "title": "Ce qui est inclus :",
         "sec1": "Vous obtenez une équipe pour travailler sur votre site web à temps plein.",
         "exp1": "Au lieu de compter sur un seul freelance ou d'essayer de tout faire vous-même, notre abonnement vous fournit une équipe dédiée. Cela signifie que vous avez un pool d'expertise à votre disposition, garantissant que chaque aspect de votre site web, de la conception au développement, est entre de bonnes mains.",

@@ -113,6 +113,7 @@
         "subscribe": "Subscribe"
     },
     "Payment": {
+        "read_more":"Read more",
         "title": "What's included:",
         "sec1": "You get a team to work on your website full-time.",
         "exp1": "Instead of relying on a single freelancer or trying to do everything yourself, our subscription provides you with a dedicated team. This means you have a pool of expertise at your disposal, ensuring that each aspect of your website—from design to development—is in expert hands.",

@@ -113,6 +113,7 @@
         "subscribe": "Abonnieren"
     },
     "Payment": {
+        "read_more":"Mehr erfahren",
         "title": "Was ist enthalten:",
         "sec1": "Sie erhalten ein Team, das Vollzeit an Ihrer Webseite arbeitet.",
         "exp1": "Statt sich auf einen einzelnen Freelancer zu verlassen oder alles selbst zu versuchen, bietet Ihnen unser Abonnement ein spezialisiertes Team. Das bedeutet, dass Sie einen Pool von Experten zur Verfügung haben, der sicherstellt, dass jeder Aspekt Ihrer Website - von Design bis Entwicklung - in Expertenhänden liegt.",

@@ -17,7 +17,7 @@ const Dropdown: React.FC<DropdownProps> = ({ plan }) => {
           onClick={() => setIsOpen(!isOpen)}
           className="inline-flex justify-center w-full px-4 py-2 bg-white text-sm font-medium text-black hover:text-black/50 "
         >
-          Read more
+          {t('read_more')}
           <svg
             className={`${
               isOpen ? "transform rotate-180" : ""
