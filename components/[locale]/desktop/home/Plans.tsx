@@ -27,6 +27,7 @@ const Plans = () => {
       list3: t("included_content3"),
       list4: t("included_content4"),
       list: true,
+      route: "/payment?plan=standard&price=895",
     },
     {
       title: t("pro_title"),
@@ -41,6 +42,7 @@ const Plans = () => {
       list3: t("included_content3"),
       list4: t("included_content4"),
       list: true,
+      route: "/payment?plan=pro&price=1195",
     },
     {
       title: t("perso_title"),
@@ -51,6 +53,7 @@ const Plans = () => {
       book: t("book_call"),
       included: t("included_description3"),
       list: false,
+      route: "/booking",
     },
   ];
 
@@ -98,7 +101,7 @@ const Plans = () => {
 
                     <div className="flex mt-4">
                       <Link
-                        href={"/payment"}
+                        href={plan.route}
                         target="_blank"
                         className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
                       >

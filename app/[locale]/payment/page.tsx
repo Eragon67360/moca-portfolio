@@ -1,46 +1,27 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import { Appearance } from "@stripe/stripe-js";
-import PaymentForm from "@/components/[locale]/desktop/home/PaymentForm";
-import axios from "axios";
+import React from "react";
+import { useSearchParams } from "next/navigation";
+import StandardSubscriptionCard from "@/components/[locale]/desktop/payment/StandardSubscriptionCard";
+import ProSubscriptionCard from "@/components/[locale]/desktop/payment/ProSubscriptionCard";
 
 const Payment = () => {
-  const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-  );
-
-  const [clientSecret, setClientSecret] = useState("");
-
-  useEffect(() => {
-    async function fetchClientSecret() {
-      const { data } = await axios.post("/api/checkout", {
-        data: { amount: 1 },
-      });
-      setClientSecret(data.client_secret);
-    }
-
-    fetchClientSecret();
-  }, []);
-
-  const theme:"stripe" | "night" | "flat" | undefined = "stripe"
-
-  const appearance = {
-    theme: theme,
-  };
+  const params = useSearchParams();
+  const plan = params?.get("plan");
+  const price = params?.get("price") || "0";
 
   return (
     <>
-      <div className="mt-24 mx-auto h-full flex w-1/4">
-        {clientSecret && (
-          <Elements
-            stripe={stripePromise}
-            options={{ clientSecret, appearance }}
-          >
-            <PaymentForm />
-          </Elements>
-        )}
+      <div className="mt-24 mx-auto h-full flex w-1/3">
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+          <div>
+            <h1 className="text-center text-4xl font-bold my-10">
+              Pricing for {plan} plan
+            </h1>
+
+            {plan === "standard" && <StandardSubscriptionCard price={price} />}
+            {plan === "pro" && <ProSubscriptionCard price={price}  />}
+          </div>
+        </main>
       </div>
     </>
   );

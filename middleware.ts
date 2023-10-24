@@ -18,7 +18,7 @@ export default authMiddleware({
   },
  
   // Ensure that locale specific sign-in pages are public
-  publicRoutes: ["/", "/:locale/sign-in",'/home','/about','/contact','/booking','/privacy'],
+  publicRoutes: ["/", "/:locale/sign-in",'/home','/about','/contact','/booking','/privacy', '/payment'],
 });
 
 

@@ -1,38 +1,61 @@
-// pages/api/checkout.ts
+import { stripe } from "@/lib/stripe";
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  typescript: true,
-  apiVersion: "2023-10-16",
-});
+export interface CheckoutSubscriptionBody {
+  plan: string;
+  planDescription: string;
+  amount: number;
+  interval: "month" | "year";
+  customerId?: string;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const amount = "10";
-  const id_configuration = process.env.ID_CONFIGURATION;
+  if (req.method !== "POST") {
+    return res.status(405).end(); // Method Not Allowed
+  }
+
+  const body: CheckoutSubscriptionBody = req.body;
+  const origin = req.headers["origin"] || "http://localhost:3000";
+
+  // if user is logged in, redirect to thank you page, otherwise redirect to signup page.
+  const success_url = !body.customerId
+    ? `${origin}/signup?session_id={CHECKOUT_SESSION_ID}`
+    : `${origin}/thankyou?session_id={CHECKOUT_SESSION_ID}`;
+
   try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: Number(amount) * 100,
-      currency: "eur",
-      automatic_payment_methods: {
-        enabled: true,
-      },
-      payment_method_configuration: id_configuration,
+    const session = await stripe?.checkout.sessions.create({
+      customer: body.customerId,
+      mode: "subscription", // mode should be subscription
+      line_items: [
+        {
+          price_data: {
+            currency: "eur",
+            recurring: {
+              interval: body.interval,
+            },
+            unit_amount: body.amount,
+            product_data: {
+              name: body.plan,
+              description: body.planDescription,
+            },
+          },
+          quantity: 1,
+        },
+      ],
+      success_url: success_url,
+      cancel_url: `${origin}/cancel?session_id={CHECKOUT_SESSION_ID}`,
     });
-
-    res.setHeader(
-      "Cache-Control",
-      "public, s-maxage=43200, stale-while-revalidate=21600"
-    );
-
-    return res.status(200).json({
-      client_secret: paymentIntent.client_secret,
-    });
-  } catch (error: any) {
-    console.error("Error in ga API route:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    return res.status(200).json(session);
+  } catch (error) {
+    if (error instanceof Stripe.errors.StripeError) {
+      const { message } = error;
+      return res.status(error.statusCode || 500).json({ message });
+    } else {
+      return res.status(500).json({ message: "Internal Server Error" });
+    }
   }
 }
