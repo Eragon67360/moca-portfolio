@@ -6,7 +6,7 @@ import "primeicons/primeicons.css";
 import { MemberService } from "./service/MemberService";
 import Image from "next/image";
 import { MembersDesktopSkeleton } from "./skeletons/MembersSkeleton";
-
+import Logos from "./logos";
 interface Members {
   id: string;
   name: string;
@@ -17,6 +17,7 @@ interface Members {
 }
 
 const MemberTemplate = ({
+  id,
   name,
   role,
   photo,
@@ -34,11 +35,19 @@ const MemberTemplate = ({
           className="rounded-xl"
           priority={true}
         />
-        <div className="flex flex-col px-8 pt-9 justify-between">
+        <div className="flex flex-col px-8 justify-between">
           <div className="flex flex-col">
             <h2 className="font-semibold text-2xl">{name}</h2>
             <h2 className="">{role}</h2>
           </div>
+
+          <div className="border border-cinnabar rounded-2xl flex flex-col space-y-3 justify-center items-center  py-3">
+            <p className="text-center">Softwares</p>
+            <Logos activity="soft" id={id} />
+            <p className="text-center">Leisure Activity</p>
+            <Logos activity="act" id={id} />
+          </div>
+
           <div className="flex space-x-3">
             <a
               href={linkedin}
@@ -71,8 +80,8 @@ function DesktopTeam() {
 
   return (
     <>
-      <div className="font-sans h-[85vh] flex flex-col justify-center items-center mx-[16vw] xl:mx-[32vw]">
-        <div className="flex flex-col rounded-3xl p-8 bg-linen dark:bg-falured w-full select-none">
+      <div className="font-sans h-screen w-full flex flex-col justify-center items-center">
+        <div className="flex flex-col rounded-3xl p-8 bg-linen dark:bg-falured select-none h-[488px] w-[808px] my-[140px]">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           {members ? (
             <Carousel
