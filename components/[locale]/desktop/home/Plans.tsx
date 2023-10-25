@@ -162,7 +162,7 @@ const Plans = () => {
             ))}
 
             <div className="flex flex-col justify-between space-y-4">
-              <div className="p-12 border rounded-2xl shadow-cards">
+              <div className="p-8 border rounded-2xl shadow-cards">
                 <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
                   <div className="flex justify-center">
                     <BsCalendarEvent size={50} />
@@ -171,29 +171,34 @@ const Plans = () => {
                   <div className=" text-center">{t("book_call")}</div>
                 </div>
 
-                <div className="flex justify-center mx-auto mt-8">
+                <div className="flex justify-center mt-8">
                   <Link
-                    className="px-4 py-2 rounded-full flex space-x-4 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean"
+                    className="px-4 py-2 rounded-full flex space-x-2 border border-blackbean bg-blackbean hover:bg-linen text-secondary hover:text-blackbean dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean justify-center items-center"
                     href={`/${locale}/booking`}
                   >
-                    <span className="font-semibold">{t("book_now")}</span>
-                    <MdOutlineOpenInNew size={24} />
+                    <span className="font-semibold md:text-xs lg:text-base">
+                      {t("book_now")}
+                    </span>
+                    <MdOutlineOpenInNew size={20} />
                   </Link>
                 </div>
               </div>
 
-              <div className="p-12 border rounded-2xl shadow-cards">
+              <div className="p-12 border rounded-2xl shadow-cards ">
                 <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
-
-                  <div className="text-center">Learn more about our subscription plans</div>
+                  <div className="text-center">
+                    Learn more about our subscription plans
+                  </div>
                 </div>
 
-                <div className="flex justify-center mx-auto mt-8">
+                <div className="flex justify-center mx-auto mt-8 items-center">
                   <Link
                     className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-secondary hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
                     href={`/${locale}/subscriptions`}
                   >
-                    <span className="font-semibold">Learn more</span>
+                    <span className="font-semibold text-center md:text-xs lg:text-base">
+                      Learn more
+                    </span>
                   </Link>
                 </div>
               </div>
