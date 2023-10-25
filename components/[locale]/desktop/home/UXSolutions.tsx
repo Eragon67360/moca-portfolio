@@ -61,11 +61,11 @@ const UXSolutions = () => {
             {t("title")}
           </p>
 
-          <div className="flex justify-evenly pt-14 space-x-8 mx-16 mt-14">
+          <div className="flex justify-center pt-14 space-x-8 mt-14">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-1/3"
+                className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-[362px]"
               >
                 {feature.icon}
                 <h2 className="font-semibold text-2xl">{feature.title}</h2>
@@ -94,8 +94,8 @@ const UXSolutions = () => {
 
           <Image src={logo} alt="logo" width={96} className="mt-16" />
 
-          <div className="w-full px-16 mt-10">
-            <div className="flex flex-col w-full rounded-2xl p-8 space-y-8 border-4 border-cinnabar bg-linen dark:bg-falured text-blackbean dark:text-white">
+          <div className="w-full flex px-16 mt-10 justify-center">
+            <div className="flex flex-col w-[1152px] rounded-2xl p-8 space-y-8 border-4 border-cinnabar bg-linen dark:bg-falured text-blackbean dark:text-white">
               <h2 className="text-4xl font-bold">
                 Design is not just what it looks like;
                 <br /> design is how it works

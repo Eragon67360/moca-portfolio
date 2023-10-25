@@ -91,7 +91,7 @@ const DesktopApps = () => {
             <div className="grid grid-cols-3 gap-8 mt-14 text-blackbean dark:text-secondary justify-center mx-auto">
               {cardData.map((card, index) => (
                 <div key={index} className="flex justify-center">
-                  <div className="w-[357px] h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
+                  <div className="w-[357px] h-[200px] space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
                     <card.Icon size={45} />
                     <h3 className="text-2xl font-semibold">{card.title}</h3>
                     <p>{card.subtitle}</p>
