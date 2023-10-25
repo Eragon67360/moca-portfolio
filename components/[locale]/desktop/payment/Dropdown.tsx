@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 const Dropdown: React.FC = () => {
-  const [isOpenGeneral, setIsOpenGeneral] = useState(false);
+  const [isOpenGeneral, setIsOpenGeneral] = useState(true);
   const [isOpenTeam, setIsOpenTeam] = useState(false);
   const [isOpenRequest, setIsOpenRequest] = useState(false);
   const [isOpenDelivery, setIsOpenDelivery] = useState(false);
@@ -13,9 +13,9 @@ const Dropdown: React.FC = () => {
   const [isOpenPause, setIsOpenPause] = useState(false);
   const [isOpenPolicy, setIsOpenPolicy] = useState(false);
 
-  const [isOpenPro, setIsOpenPro] = useState(false);
+  const [isOpenPro, setIsOpenPro] = useState(true);
   const [isOpenGraphics, setIsOpenGraphics] = useState(false);
-  const [isOpenPerso, setIsOpenPerso] = useState(false);
+  const [isOpenPerso, setIsOpenPerso] = useState(true);
   const [isOpenAdvantages, setIsOpenAdvantages] = useState(false);
 
   const t = useTranslations("Payment");
