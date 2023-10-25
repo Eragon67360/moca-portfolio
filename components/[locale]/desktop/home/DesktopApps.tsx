@@ -77,7 +77,7 @@ const DesktopApps = () => {
             className="-scale-x-100 absolute top-8 -right-12"
           />
         </div>
-        <div className="pt-32 px-12 lg:px-12 xl:px-36 2xl:px-96 bg-secondary dark:bg-blackbean flex flex-col">
+        <div className="pt-32 bg-secondary dark:bg-blackbean flex flex-col">
           <motion.div
             className="flex flex-col"
             initial="offscreen"
@@ -88,10 +88,10 @@ const DesktopApps = () => {
             <div className="py-4 text-5xl text-blackbean dark:text-secondary font-bold text-center">
               {t("title")}
             </div>
-            <div className="grid grid-cols-3 gap-8 mt-14 text-blackbean dark:text-secondary">
+            <div className="grid grid-cols-3 gap-8 mt-14 text-blackbean dark:text-secondary justify-center mx-auto">
               {cardData.map((card, index) => (
                 <div key={index} className="flex justify-center">
-                  <div className="w-full h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
+                  <div className="w-[357px] h-full space-y-2 py-10  bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center ">
                     <card.Icon size={45} />
                     <h3 className="text-2xl font-semibold">{card.title}</h3>
                     <p>{card.subtitle}</p>

@@ -297,7 +297,7 @@ const FeaturedProjects = () => {
         </motion.div>
       </div>
       <div className="relative">
-        <div className="absolute left-1/2 -top-16 z-10">
+        <div className="absolute left-[49.3%] -top-16 z-10">
           <ArrowComponent color={color} />
         </div>
       </div>
