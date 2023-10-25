@@ -13,6 +13,7 @@ const basePublicRoutes = [
   "/payment",
   "/signup",
   "/cancel",
+  "/subscriptions",
 ];
 
 const generatePublicRoutes = (baseRoutes: any, localeList: any) => {

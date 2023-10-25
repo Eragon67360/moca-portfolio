@@ -10,9 +10,37 @@ import Image from "next/image";
 import paw from "@/public/home/paw.png";
 import { useTranslations } from "next-intl";
 
+import { CheckoutSubscriptionBody } from "@/pages/api/checkout";
+import { loadStripe } from "@stripe/stripe-js";
+import Stripe from "stripe";
+
 const Plans = () => {
   const t = useTranslations("Home.Subscriptions");
   const locale = useLocale();
+
+  const handleClick = async (_amount: number | undefined) => {
+    const STRIPE_PK = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!;
+    const stripe = await loadStripe(STRIPE_PK);
+
+    const body: CheckoutSubscriptionBody = {
+      interval: "month",
+      amount: _amount || 0,
+      plan: "Standard",
+      planDescription: "Subscribe for 895€ per month",
+    };
+
+    const result = await fetch("/api/checkout", {
+      method: "post",
+      body: JSON.stringify(body, null),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    const data = (await result.json()) as Stripe.Checkout.Session;
+    const sessionId = data.id!;
+    stripe?.redirectToCheckout({ sessionId });
+  };
 
   const planData = [
     {
@@ -28,7 +56,7 @@ const Plans = () => {
       list3: t("included_content3"),
       list4: t("included_content4"),
       list: true,
-      route: `/${locale}/payment?plan=standard&price=895`,
+      amount: 89500,
     },
     {
       title: t("pro_title"),
@@ -43,7 +71,7 @@ const Plans = () => {
       list3: t("included_content3"),
       list4: t("included_content4"),
       list: true,
-      route: `/${locale}/payment?plan=pro&price=1195`,
+      amount: 119500,
     },
     {
       title: t("perso_title"),
@@ -99,13 +127,12 @@ const Plans = () => {
                     <p className="text-xs">{plan.description}</p>
 
                     <div className="flex mt-4">
-                      <Link
-                        href={plan.route}
-                        target="_blank"
+                      <button
+                        onClick={() => handleClick(plan.amount)}
                         className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
                       >
                         {plan.buttonText}
-                      </Link>
+                      </button>
                     </div>
                     <Link
                       href={`/${locale}/booking`}
@@ -155,22 +182,19 @@ const Plans = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col p-6 border rounded-2xl bg-falured text-secondary text-base">
-                <p>{t("graphics_title")}</p>
-                <br />
-                <div className="flex ml-4 space-x-6">
-                  <ul>
-                    <li className="list-disc">{t("graphics_content1")}</li>
-                    <li className="list-disc">{t("graphics_content2")}</li>
-                    <li className="list-disc">{t("graphics_content3")}</li>
-                    <li className="list-disc">{t("graphics_content4")}</li>
-                  </ul>
-                  <ul>
-                    <li className="list-disc">{t("graphics_content5")}</li>
-                    <li className="list-disc">{t("graphics_content6")}</li>
-                    <li className="list-disc">{t("graphics_content7")}</li>
-                    <li className="list-disc">{t("graphics_content8")}</li>
-                  </ul>
+              <div className="p-12 border rounded-2xl shadow-cards">
+                <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
+
+                  <div className="text-center">Learn more about our subscription plans</div>
+                </div>
+
+                <div className="flex justify-center mx-auto mt-8">
+                  <Link
+                    className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-secondary hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
+                    href={`/${locale}/subscriptions`}
+                  >
+                    <span className="font-semibold">Learn more</span>
+                  </Link>
                 </div>
               </div>
             </div>
