@@ -1,12 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "primereact/carousel";
-import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/themes/arya-orange/theme.css";
+import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+
 import { MemberService } from "./service/MemberService";
 import Image from "next/image";
 import { MembersDesktopSkeleton } from "./skeletons/MembersSkeleton";
 import Logos from "./logos";
+
 interface Members {
   id: string;
   name: string;
@@ -86,11 +89,14 @@ function DesktopTeam() {
           {members ? (
             <Carousel
               value={members}
-              unstyled={false}
-              showIndicators={true}
               numVisible={1}
               numScroll={1}
               itemTemplate={MemberTemplate}
+              indicatorsContentClassName="p-carousel-indicator p-highlight"
+              pt={{
+                indicatorButton: { className: "normalIndicator mt-4 rounded-lg" },
+              }}
+              className="h-full z-10"
             />
           ) : (
             <MembersDesktopSkeleton />
