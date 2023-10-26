@@ -38,7 +38,7 @@ const FeaturedProjects = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-y-3 justify-evenly w-full">
+        <div className="flex flex-col gap-y-3 items-center w-full">
           {images.map((image, idx) => (
             <div
               key={idx}
