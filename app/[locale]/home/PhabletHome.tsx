@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import PhabletApps from "@/components/[locale]/phablet/home/TabletApps";
+import PhabletApps from "@/components/[locale]/phablet/home/PhabletApps";
 import UXSolutions from "@/components/[locale]/phablet/home/UXSolutions";
 import Plans from "@/components/[locale]/phablet/home/Plans";
 import FeaturedProjects from "@/components/[locale]/phablet/home/FeaturedProjects";

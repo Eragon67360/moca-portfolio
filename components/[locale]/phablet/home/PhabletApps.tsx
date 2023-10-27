@@ -8,8 +8,12 @@ import { LiaSwatchbookSolid } from "react-icons/lia";
 import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
-import panda from "@/public/panda.png";
 import { useTranslations } from "next-intl";
+import panda from "@/public/doodles/panda.svg";
+import herb from "@/public/doodles/herb.svg";
+import herb2 from "@/public/doodles/herb2.svg";
+import ArrowComponent from "@/components/SVG/arrow3";
+import { useTheme } from "next-themes";
 
 const PhabletApps = () => {
   const t = useTranslations("Home.Apps");
@@ -47,12 +51,49 @@ const PhabletApps = () => {
     },
   ];
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
-      <div className="relative border">
-        <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
+      <div className="relative flex">
+        <div className="absolute -top-16 left-1/2 transform translate-x-[-50%] scale-75">
+          <ArrowComponent color={color} />
+        </div>
+
+        <Image
+          src={herb}
+          alt="herb"
+          className="absolute -bottom-28 right-32"
+          width={20}
+        />
+        <Image
+          src={herb2}
+          alt="herb"
+          className="absolute -bottom-28 right-32 transform translate-x-1"
+          width={16}
+        />
+        <Image
+          src={panda}
+          alt="panda"
+          width={165}
+          className="-scale-x-100 absolute -top-8 -right-11"
+        />
       </div>
-      <div className="pt-24 bg-secondary dark:bg-blackbean flex flex-col items-center">
+      <div className="pt-[78px] bg-secondary dark:bg-blackbean flex flex-col items-center">
         <motion.div
           className="flex flex-col"
           initial="offscreen"
@@ -60,21 +101,21 @@ const PhabletApps = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-          {t("title")}
+          <div className="text-[34px] text-blackbean dark:text-secondary font-bold text-center z-10">
+            {t("title")}
           </div>
-          <div className="grid grid-cols-2 gap-8 mt-24 text-blackbean dark:text-secondary">
+          <div className="grid grid-cols-2 gap-4 mt-[73px] text-blackbean dark:text-secondary">
             {cardData.map((card, index) => (
               <div key={index} className="flex justify-center">
                 <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-full p-4">
                   <card.Icon size={40} />
-                  <h3 className="text-2xl font-semibold">{card.title}</h3>
-                  <p>{card.subtitle}</p>
+                  <h3 className="text-xl font-semibold">{card.title}</h3>
+                  <p className="text-sm">{card.subtitle}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="h-24" />
+          <div className="h-[75px]" />
         </motion.div>
       </div>
     </>

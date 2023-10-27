@@ -1,22 +1,39 @@
 "use client";
 import React from "react";
-
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
-
 import CarouselComponent from "../Carousel";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 
-const colorPattern = ["bg-cinnabar", "bg-linen dark:bg-blackbean"];
+import Arrow from "@/components/SVG/little_arrow_1";
+
+const colorPattern = ["bg-cinnabar dark:bg-falured", "bg-linen"];
 
 const PhabletHomeScreen = () => {
   const t = useTranslations("Home");
   const text1 = t("HomeScreen.banner_1");
   const text2 = t("HomeScreen.banner_2");
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
-      <div className="flex flex-col w-full justify-center items-center my-12 space-y-24">
+      <div className="flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
         <div className="text-3xl font-bold text-falured text-center px-32">
           {text1} {text2}
         </div>
@@ -63,15 +80,19 @@ const PhabletHomeScreen = () => {
           />
         </div>
       </div>
-      <div className="h-16 flex justify-evenly items mt-24">
-        {Array(7)
-          .fill(colorPattern)
-          .flat()
-          .map((color, index) => (
-            <div key={index} className={`${color} w-[6.25%]`}></div>
-          ))}
-        <div className={`bg-cinnabar w-[6.25%]`}></div>
-        <div className={`bg-blackbean dark:bg-linen w-[6.25%]`}></div>
+      <div className="relative">
+        <div className="absolute top-8 left-1/2 transform translate-x-[-50%] scale-[.8]">
+          <Arrow color={color} />
+        </div>
+        <div className="h-40 flex justify-evenly items pt-24 bg-linen dark:bg-falured">
+          {Array(8)
+            .fill(colorPattern)
+            .flat()
+            .map((color, index) => (
+              <div key={index} className={`${color} w-[6.25%]`}></div>
+            ))}
+          <div className={`bg-cinnabar dark:bg-falured w-[6.25%]`}></div>
+        </div>
       </div>
     </>
   );

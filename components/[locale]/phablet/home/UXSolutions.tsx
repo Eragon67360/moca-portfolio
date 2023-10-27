@@ -7,6 +7,7 @@ import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import { useTranslations } from "next-intl";
+import tail from "@/public/doodles/tail.png";
 
 const UXSolutions = () => {
   const t = useTranslations("Home.UXSolutions");
@@ -31,26 +32,26 @@ const UXSolutions = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-blackbean pt-40 pb-40 justify-start select-none ">
+      <div className="bg-white dark:bg-blackbean pt-24 pb-[55px] justify-start select-none">
         <motion.div
-          className="flex flex-col h-full select-none space-y-12"
+          className="flex flex-col h-full select-none"
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <p className="font-bold text-5xl text-blackbean dark:text-secondary text-center">
+          <p className="font-bold text-3xl text-blackbean dark:text-secondary text-center">
             {t("title")}
           </p>
 
-          <div className="flex flex-col justify-center items-center space-y-8 pt-14 mt-14 px-8">
+          <div className="flex flex-col justify-center items-center space-y-8 mt-10 px-28">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex flex-col text-center justify-start items-center space-y-4 px-8 w-full"
+                className="flex flex-col text-center justify-start items-center space-y-4 w-full"
               >
                 {feature.icon}
-                <h2 className="font-semibold text-2xl">{feature.title}</h2>
+                <h2 className="font-semibold text-xl">{feature.title}</h2>
                 <p>
                   {feature.content.map((text, idx) => (
                     <React.Fragment key={idx}>
@@ -67,17 +68,18 @@ const UXSolutions = () => {
               </div>
             ))}
           </div>
-
-          <div className="flex justify-center w-full">
-            <Image src={logo} alt="tail" width={70} />
+          <div className="relative w-full">
+            <Image src={tail} alt="tail" width={140} className="absolute" />
           </div>
 
-          <div className="text-blackbean dark:text-white mt-12 mx-32 flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">
-            <h2 className="text-3xl font-bold">
-              Design is not just what it looks like;
-              <br /> design is how it works
-            </h2>
-            <h2 className="text-2xl font-semibold">Steve Jobs</h2>
+          <div className="w-full px-28 mt-[86px]">
+            <div className="text-blackbean dark:text-white flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">
+              <h2 className="text-2xl font-semibold">
+                Design is not just what it looks like;
+                <br /> design is how it works
+              </h2>
+              <h2 className="text-xl font-semibold">Steve Jobs</h2>
+            </div>
           </div>
         </motion.div>
       </div>
