@@ -4,6 +4,7 @@ import { SlMagicWand } from "react-icons/sl";
 import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
 import logo from "@/public/logo_only.svg";
+import tail from "@/public/doodles/tail.png";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import { useTranslations } from "next-intl";
@@ -68,8 +69,8 @@ const UXSolutions = () => {
             ))}
           </div>
 
-          <div className="flex justify-center w-full">
-            <Image src={logo} alt="tail" width={70} />
+          <div className="w-full relative">
+            <Image src={tail} alt="tail" width={210} className="absolute -top-24 -left-6"/>
           </div>
 
           <div className="text-blackbean dark:text-white mt-12 mx-32 flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">

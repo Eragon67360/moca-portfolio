@@ -1,16 +1,18 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { BsCalendarEvent } from "react-icons/bs";
-import { MdOutlineOpenInNew } from "react-icons/md";
+import Stripe from "stripe";
+import { useTheme } from "next-themes";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import { useTranslations } from "next-intl";
-
 import { CheckoutSubscriptionBody } from "@/pages/api/checkout";
 import { loadStripe } from "@stripe/stripe-js";
-import Stripe from "stripe";
+
+import ArrowComponent from "@/components/SVG/arrow4";
+import paw from "@/public/home/paw.png";
 
 const Plans = () => {
   const t = useTranslations("Home.Subscriptions");
@@ -84,8 +86,29 @@ const Plans = () => {
     },
   ];
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
+      <div className="relative">
+        <div className="absolute -top-8 left-24">
+          <ArrowComponent color={color} />
+        </div>
+      </div>
       <div id="pricings" className="pt-24 bg-linen dark:bg-falured">
         <motion.div
           className="flex flex-col items-center"
@@ -94,8 +117,16 @@ const Plans = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
-            {t("title")}
+          <div className="flex space-x-2 justify-center items-center">
+            <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+              {t("title")}
+            </div>
+            <Image
+              src={paw}
+              alt="paw"
+              width={56}
+              className="transform rotate-[35deg]"
+            />
           </div>
           <div className="mt-24 grid grid-cols-2 gap-8 text-blackbean dark:text-secondary mx-auto">
             {planData.map((plan, index) => (

@@ -8,8 +8,12 @@ import { LiaSwatchbookSolid } from "react-icons/lia";
 import { PiCompassTool } from "react-icons/pi";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
-import panda from "@/public/panda.png";
 import { useTranslations } from "next-intl";
+import panda from "@/public/doodles/panda.svg";
+import herb from "@/public/doodles/herb.svg";
+import herb2 from "@/public/doodles/herb2.svg";
+import ArrowComponent from "@/components/SVG/arrow3";
+import { useTheme } from "next-themes";
 
 const TabletApps = () => {
   const t = useTranslations("Home.Apps");
@@ -47,12 +51,49 @@ const TabletApps = () => {
     },
   ];
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
-      <div className="relative border">
-        <Image src={panda} alt="panda" className="absolute top-0 -right-72" />
+      <div className="relative flex">
+        <div className="absolute -top-16 left-1/2 transform translate-x-[-50%]">
+          <ArrowComponent color={color} />
+        </div>
+
+        <Image
+          src={herb}
+          alt="herb"
+          className="absolute -bottom-20 right-40"
+          width={25}
+        />
+        <Image
+          src={herb2}
+          alt="herb"
+          className="absolute -bottom-20 right-40 transform translate-x-2"
+          width={25}
+        />
+        <Image
+          src={panda}
+          alt="panda"
+          width={194}
+          className="-scale-x-100 absolute -top-24 -right-10"
+        />
       </div>
-      <div className="pt-24 bg-secondary dark:bg-blackbean flex flex-col items-center">
+      <div className="pt-[134px] bg-secondary dark:bg-blackbean flex flex-col items-center">
         <motion.div
           className="flex flex-col"
           initial="offscreen"
@@ -66,7 +107,7 @@ const TabletApps = () => {
           <div className="grid grid-cols-2 gap-8 mt-24 text-blackbean dark:text-secondary">
             {cardData.map((card, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-full p-4">
+                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[352px] h-full py-9">
                   <card.Icon size={45} />
                   <h3 className="text-2xl font-semibold">{card.title}</h3>
                   <p>{card.subtitle}</p>
