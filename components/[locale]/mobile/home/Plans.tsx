@@ -249,14 +249,15 @@ const Plans = () => {
               </div>
 
               <div className="flex justify-center mt-8">
-                <Link
+                <a
                   className="px-4 py-2 rounded-full space-x-2 border border-cinnabar bg-transparent hover:bg-cinnabar text-third hover:text-secondary dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean justify-center items-center"
-                  href={`/${locale}/booking`}
+                  href={"https://calendly.com/uxmoca/30min?month=2023-11"}
+                  target="_blank"
                 >
                   <span className="font-bold md:text-xs lg:text-base">
                     {t("book_now")}
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
 
