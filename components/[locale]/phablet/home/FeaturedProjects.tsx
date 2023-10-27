@@ -111,13 +111,13 @@ const FeaturedProjects = () => {
       </div>
       <div id="featuredprojects" className="bg-lightblue dark:bg-darkblue">
         <motion.div
-          className="flex flex-col h-full items-center justify-center text-center select-none space-y-12"
+          className="flex flex-col h-full items-center justify-center text-center select-none"
           initial="offscreen"
           whileInView="onscreen"
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col text-secondary text-center pt-16">
+          <div className="flex flex-col text-secondary text-center pt-14">
             <h2 className="font-semibold text-2xl">{t("title")}</h2>
             <h3 className="font-bold text-[34px] mt-4">{t("subtitle")}</h3>
           </div>
