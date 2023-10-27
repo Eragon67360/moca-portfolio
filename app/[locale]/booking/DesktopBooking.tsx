@@ -6,7 +6,7 @@ import logo from "@/public/logo_only.svg";
 const DesktopBooking = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center">
+      <div className="h-screen flex flex-col items-center pt-24">
         <div className="py-8 bg-cinnabar dark:bg-blackbean w-full flex flex-col justify-center items-center text-secondary space-y-4">
           <Image src={logo} alt="Logo" width={80} style={{ height: "auto" }} />
           <h1 className="font-semibold text-xl">Book time with us</h1>
