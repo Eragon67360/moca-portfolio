@@ -49,7 +49,7 @@ const config: Config = {
       typography: (theme: (arg0: string) => any[]) => ({
         DEFAULT: {
           css: {
-            fontFamily: `${theme('fontFamily.sans').join(', ')} !important`,
+            fontFamily: `${theme("fontFamily.sans").join(", ")} !important`,
             // ... add other global styles if needed
           },
         },
@@ -63,7 +63,7 @@ const config: Config = {
     },
   },
 
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 export default config;

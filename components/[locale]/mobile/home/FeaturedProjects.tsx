@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import portfolio1 from "@/public/featured/portfolio_th_1.png";
@@ -11,6 +13,9 @@ import ares1 from "@/public/featured/ares_1.jpg";
 import ares2 from "@/public/featured/ares_2.jpg";
 import ares3 from "@/public/featured/ares_3.svg";
 import ares4 from "@/public/featured/ares_4.svg";
+
+import ArrowComponent from "@/components/SVG/arrow2";
+import { useTheme } from "next-themes";
 
 import { useTranslations } from "next-intl";
 const FeaturedProjects = () => {
@@ -77,11 +82,31 @@ const FeaturedProjects = () => {
       left4: "20px",
     },
   ];
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
 
   const t = useTranslations("Home.FeaturedProjects");
 
   return (
     <>
+      <div className="relative">
+        <div className="absolute -top-12 left-2/3 transform scale-[.7]">
+          <ArrowComponent color={color} />
+        </div>
+      </div>
       <div
         id="featuredprojects"
         className="bg-lightblue dark:bg-darkblue flex flex-col items-center justify-center space-y-24 px-8"

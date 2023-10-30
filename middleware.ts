@@ -14,6 +14,7 @@ const basePublicRoutes = [
   "/signup",
   "/cancel",
   "/subscriptions",
+  "/survey",
 ];
 
 const generatePublicRoutes = (baseRoutes: any, localeList: any) => {

@@ -3,17 +3,18 @@ import React, { useState } from "react";
 interface DropdownProps {
   onSelectionChange: (selected: string) => void;
   selectedSubject: string | null;
-  text:string;
+  text: string;
+  content: string[];
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
   onSelectionChange,
   selectedSubject,
-  text
+  text,
+  content,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
-  const buttonNames = ["UX Design", "Web Design", "App Design", "I'm not sure"];
 
   return (
     <>
@@ -28,7 +29,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
         {isOpen && (
           <div className="mt-2 flex flex-wrap gap-3">
-            {buttonNames.map((name) => (
+            {content.map((name) => (
               <button
                 type="button"
                 key={name}

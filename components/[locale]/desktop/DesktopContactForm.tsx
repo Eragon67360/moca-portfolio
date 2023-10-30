@@ -78,6 +78,7 @@ const DesktopContactForm: React.FC = () => {
       setLoading(false);
     }
   }
+  const buttonNames = ["UX Design", "Web Design", "App Design", "I'm not sure"];
 
   return (
     <>
@@ -176,6 +177,7 @@ const DesktopContactForm: React.FC = () => {
                     onSelectionChange={handleSelectionChange}
                     selectedSubject={selectedSubject}
                     text={t("need")}
+                    content={buttonNames}
                   />
                 </div>
               </div>
