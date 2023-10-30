@@ -78,6 +78,8 @@ const TabletContactForm: React.FC = () => {
     }
   }
 
+  const buttonNames = ["UX Design", "Web Design", "App Design", "I'm not sure"];
+
   return (
     <>
       <div className="z-10">
@@ -170,6 +172,7 @@ const TabletContactForm: React.FC = () => {
                     onSelectionChange={handleSelectionChange}
                     selectedSubject={selectedSubject}
                     text={t("need")}
+                    content={buttonNames}
                   />
                 </div>
               </div>

@@ -78,6 +78,8 @@ const MobileContactForm: React.FC = () => {
     }
   }
 
+  const buttonNames = ["UX Design", "Web Design", "App Design", "I'm not sure"];
+
   return (
     <>
       <div>
@@ -87,7 +89,7 @@ const MobileContactForm: React.FC = () => {
               <div>
                 <div className="flex items-center justify-start space-x-2">
                   <h2 className="text-3xl font-bold text-falured dark:text-secondary ">
-                  {t('title')}
+                    {t("title")}
                   </h2>
 
                   <Image
@@ -99,7 +101,7 @@ const MobileContactForm: React.FC = () => {
                 </div>
 
                 <p className="text-black text-end text-base dark:text-secondary w-full">
-                {t('subtitle')}{" "}
+                  {t("subtitle")}{" "}
                   <span className="text-base text-falured dark:text-secondary font-bold">
                     {";)"}
                   </span>
@@ -115,7 +117,7 @@ const MobileContactForm: React.FC = () => {
                     id="firstname"
                     name="given-name"
                     type="text"
-                    placeholder={t('firstname')}
+                    placeholder={t("firstname")}
                   />
                 </div>
                 <div className="w-full h-full">
@@ -124,7 +126,7 @@ const MobileContactForm: React.FC = () => {
                     name="family-name"
                     id="name"
                     type="text"
-                    placeholder={t('lastname')}
+                    placeholder={t("lastname")}
                   />
                 </div>
               </div>
@@ -134,7 +136,7 @@ const MobileContactForm: React.FC = () => {
                     className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="email"
                     type="email"
-                    placeholder={t('email')}
+                    placeholder={t("email")}
                     value={emailValue}
                     onChange={handleChange}
                   />
@@ -144,7 +146,7 @@ const MobileContactForm: React.FC = () => {
                     className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="phone"
                     type="phone"
-                    placeholder={t('phone')}
+                    placeholder={t("phone")}
                   />
                 </div>
               </div>
@@ -155,7 +157,7 @@ const MobileContactForm: React.FC = () => {
                     className="placeholder-black appearance-none border border-falured rounded-full w-full text-xs py-1 px-3 text-third dark:bg-secondary"
                     id="company"
                     type="text"
-                    placeholder={t('company')}
+                    placeholder={t("company")}
                   />
                 </div>
                 <div className="w-full h-full">
@@ -164,7 +166,7 @@ const MobileContactForm: React.FC = () => {
                     id="country"
                     name="country"
                     type="text"
-                    placeholder={t('country')}
+                    placeholder={t("country")}
                   />
                 </div>
               </div>
@@ -173,7 +175,8 @@ const MobileContactForm: React.FC = () => {
                 <Dropdown
                   onSelectionChange={handleSelectionChange}
                   selectedSubject={selectedSubject}
-                  text={t('need')}
+                  text={t("need")}
+                  content={buttonNames}
                 />
               </div>
 
@@ -183,7 +186,7 @@ const MobileContactForm: React.FC = () => {
                   id="message"
                   value={message}
                   onChange={handleChangeMessage}
-                  placeholder={t('message')}
+                  placeholder={t("message")}
                 />
               </div>
               <div className="flex items-center justify-start space-x-2">
@@ -192,7 +195,7 @@ const MobileContactForm: React.FC = () => {
                   className="bg-white border border-falured uppercase disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-bold py-0.5 px-2 rounded-full"
                   type="submit"
                 >
-                  {t('send')}
+                  {t("send")}
                 </button>
                 {errorMessage && <p className="text-red-500">{errorMessage}</p>}
               </div>
