@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FiGlobe } from "react-icons/fi";
 import { AiOutlineMobile } from "react-icons/ai";
@@ -7,6 +8,12 @@ import { PiCompassTool } from "react-icons/pi";
 import { GrCloudSoftware } from "react-icons/gr";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import panda from "@/public/doodles/panda.svg";
+import herb from "@/public/doodles/herb.svg";
+import herb2 from "@/public/doodles/herb2.svg";
+import ArrowComponent from "@/components/SVG/arrow3";
+import { useTheme } from "next-themes";
 
 const MobileApps = () => {
   const t = useTranslations("Home.Apps");
@@ -45,10 +52,50 @@ const MobileApps = () => {
     },
   ];
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   return (
     <>
-      <div className="pt-24 bg-secondary dark:bg-blackbean flex flex-col items-center">
-        <div className="text-4xl text-blackbean dark:text-secondary font-bold text-center">
+      <div className="relative flex">
+        <div className="absolute -top-16 left-1/2 transform translate-x-[-50%] scale-[.6]">
+          <ArrowComponent color={color} />
+        </div>
+
+        <Image
+          src={herb}
+          alt="herb"
+          className="absolute -bottom-36 right-24"
+          width={20}
+        />
+        <Image
+          src={herb2}
+          alt="herb"
+          className="absolute -bottom-36 right-24 transform translate-x-1"
+          width={16}
+        />
+        <Image
+          src={panda}
+          alt="panda"
+          width={165}
+          className="-scale-x-100 absolute -top-0 -right-20"
+        />
+      </div>
+      <div className="pt-[52px] bg-secondary dark:bg-blackbean flex flex-col items-center">
+        <div className="text-[34px] px-[70px] text-blackbean dark:text-secondary font-bold text-center">
           {t("title")}
         </div>
         <div className="grid grid-cols-1 gap-8 justify-center mt-9 text-blackbean dark:text-secondary">

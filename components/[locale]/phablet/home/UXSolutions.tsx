@@ -3,7 +3,6 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { SlMagicWand } from "react-icons/sl";
 import { BsArrowRepeat } from "react-icons/bs";
 import Image from "next/image";
-import logo from "@/public/logo_only.svg";
 import { motion } from "framer-motion";
 import { sectionVariants } from "@/components/motionVariants";
 import { useTranslations } from "next-intl";

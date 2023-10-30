@@ -102,6 +102,11 @@ const Plans = () => {
 
   return (
     <>
+      <div className="relative">
+        <div className="absolute -top-8 left-24 transform scale-[.9]">
+          <ArrowComponent color={color} />
+        </div>
+      </div>
       <div
         id="pricings"
         className="pt-24 bg-linen dark:bg-falured flex flex-col items-center"
@@ -119,11 +124,6 @@ const Plans = () => {
               />
             </span>
           </p>
-        </div>
-        <div className="relative w-full">
-          <div className="absolute left-[12%] -top-8 z-10">
-            <ArrowComponent color={color} />
-          </div>
         </div>
         <div className="mt-8 flex flex-col space-y-4 text-blackbean dark:text-secondary items-center">
           {planData.map((plan, index) => (

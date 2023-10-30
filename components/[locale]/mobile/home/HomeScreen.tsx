@@ -10,6 +10,9 @@ import phone_base from "@/public/phones/phone_base.png";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
+
+import Arrow from "@/components/SVG/little_arrow_1";
 
 const HomeScreen = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -21,8 +24,27 @@ const HomeScreen = () => {
   const text1 = t("HomeScreen.banner_1");
   const text2 = t("HomeScreen.banner_2");
 
+  const { resolvedTheme } = useTheme();
+
+  let color;
+
+  switch (resolvedTheme) {
+    case "light":
+      color = "#231F20";
+      break;
+    case "dark":
+      color = "#fff";
+      break;
+    default:
+      color = "#231F20";
+      break;
+  }
+
   const images = [phone_white, phone_yellow, phone_blue, phone_red];
-  const colorPattern = ["bg-cinnabar dark:bg-linen", "bg-linen dark:bg-falured"];
+  const colorPattern = [
+    "bg-cinnabar dark:bg-linen",
+    "bg-linen dark:bg-falured",
+  ];
 
   const fadeInOut = {
     hidden: { opacity: 0 },
@@ -190,7 +212,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants2}
             >
-               {text1} {text2}
+              {text1} {text2}
             </motion.div>
 
             <motion.div
@@ -199,7 +221,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants2Stroke}
             >
-               {text1} {text2}
+              {text1} {text2}
             </motion.div>
           </motion.div>
 
@@ -210,7 +232,7 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariants}
             >
-               {text1} {text2}
+              {text1} {text2}
             </motion.div>
 
             <motion.div
@@ -219,12 +241,16 @@ const HomeScreen = () => {
               animate={isTextAnimated ? "animated" : "initial"}
               variants={textVariantsStroke}
             >
-               {text1} {text2}
+              {text1} {text2}
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
-      <div className="h-16 flex justify-evenly">
+      <div className="relative">
+        <div className="absolute -top-20 left-1/2 transform translate-x-[-50%] scale-[.5]">
+          <Arrow color={color} />
+        </div>
+        <div className="h-16 flex justify-evenly">
           {Array(5)
             .fill(colorPattern)
             .flat()
@@ -233,6 +259,7 @@ const HomeScreen = () => {
             ))}
           <div className="bg-cinnabar dark:bg-linen w-[10%]"></div>
         </div>
+      </div>
     </>
   );
 };
