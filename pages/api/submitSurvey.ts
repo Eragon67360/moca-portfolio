@@ -28,7 +28,7 @@ export default async function submitFormHandler(
   try {
     const form = new IncomingForm();
     let emailContent = "";
-    let emailContentToClient:string[] | undefined = [""];
+    let emailContentToClient: string[] | undefined = [""];
     let attachments: any[] = [];
 
     form.parse(req, async (err, fields, files) => {
@@ -66,9 +66,8 @@ export default async function submitFormHandler(
       Demo Education: ${fields.demographicsEducation}
       Demo family status: ${fields.demographicsFamilyStatus}
       Overall look: ${fields.overall_look}
-      Link: ${fields.link}
-      Page1: ${fields.page1}
-      Page2: ${fields.page2}
+      Links: ${fields.links}
+      Pages: ${fields.pages}
       Language?: ${fields.language}
       Languages: ${fields.languages}
       Features: ${fields.features}
@@ -80,8 +79,7 @@ export default async function submitFormHandler(
 
       Attachements: ${attachments.length}
     `;
-    emailContentToClient = fields.email;
-
+      emailContentToClient = fields.email;
     });
 
     const user = process.env.MAIL_USER;
@@ -124,7 +122,7 @@ export default async function submitFormHandler(
       from: user,
       to: emailContentToClient,
       subject: "Successful survey",
-      text: "You survey has been successfully sent to UX MOCA, thanks for your participation!",
+      text: "Your survey has been successfully sent to UX MOCA, thanks for your participation!",
     };
 
     await new Promise((resolve, reject) => {

@@ -44,6 +44,9 @@ const DesktopSurvey = () => {
 
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
+  const [selectedLinks, setLinks] = useState([""]);
+  const [selectedPages, setPages] = useState([""]);
+
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const fileInputDesignRef = useRef<HTMLInputElement | null>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
@@ -59,6 +62,44 @@ const DesktopSurvey = () => {
 
   const handleSelectionChangeLogo = (value: string) => {
     setSelectedLogo(value);
+  };
+
+  function handleInputChangeLink(
+    event: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) {
+    const newLinks = [...selectedLinks];
+    newLinks[index] = event.target.value;
+    setLinks(newLinks);
+  }
+
+  function handleInputChangePage(
+    event: React.ChangeEvent<HTMLInputElement>,
+    indexPages: number
+  ) {
+    const newPages = [...selectedPages];
+    newPages[indexPages] = event.target.value;
+    setPages(newPages);
+  }
+
+  function addLink() {
+    setLinks([...selectedLinks, ""]);
+  }
+
+  const removeLink = (indexToRemove: number) => {
+    setLinks((prevLink: any[]) =>
+      prevLink.filter((_: any, index: number) => index !== indexToRemove)
+    );
+  };
+
+  function addPage() {
+    setPages([...selectedPages, ""]);
+  }
+
+  const removePage = (indexToRemove: number) => {
+    setPages((prevPage: any[]) =>
+      prevPage.filter((_: any, index: number) => index !== indexToRemove)
+    );
   };
 
   const handleSelectionChangeSubject = (subject: string) => {
@@ -120,9 +161,8 @@ const DesktopSurvey = () => {
     demographicsEducation: string | null;
     demographicsFamilyStatus: string | null;
     overall_look: string;
-    link: string;
-    page1: string;
-    page2: string;
+    links: string;
+    pages: string;
     language: string | null;
     languages: string | null;
     features: string;
@@ -136,6 +176,8 @@ const DesktopSurvey = () => {
     event.preventDefault();
     setLoading(true);
     const features: string = selectedFeatures.join(", ");
+    const links: string = selectedLinks.join(" , ");
+    const pages: string = selectedPages.join(" | ");
 
     const data: FormData = {
       fullname: String(event.target.fullname.value),
@@ -150,9 +192,8 @@ const DesktopSurvey = () => {
       demographicsEducation: selectedDemographicsEducation,
       demographicsFamilyStatus: selectedDemographicsFamilyStatus,
       overall_look: String(event.target.description.value),
-      link: String(event.target.link.value),
-      page1: String(event.target.page1.value),
-      page2: String(event.target.page2.value),
+      links: links,
+      pages: pages,
       language: selectedLanguage,
       languages: selectedLanguages,
       features: features,
@@ -557,15 +598,54 @@ const DesktopSurvey = () => {
 
             <p>You can provide examples of other websites you like.</p>
 
-            <input
-              className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
-              id="link"
-              placeholder="Link:"
-              type="text"
-            />
+            {selectedLinks.map((link, index) => (
+              <div key={index} className="flex space-x-3">
+                <input
+                  key={index}
+                  value={link}
+                  onChange={(e) => handleInputChangeLink(e, index)}
+                  className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                  id={`link-${index}`}
+                  placeholder={`Link ${index + 1}:`}
+                  type="text"
+                />
+                <button type="button" onClick={() => removeLink(index)}>
+                  {""}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="11"
+                    height="14"
+                    viewBox="0 0 11 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.20241 13.2417H3.36151C2.72484 13.2417 2.11424 12.9887 1.66405 12.5385C1.21385 12.0884 0.960938 11.4778 0.960938 10.8411V5.07972C0.960938 4.95239 1.01152 4.83027 1.10156 4.74023C1.1916 4.65019 1.31372 4.59961 1.44105 4.59961C1.56839 4.59961 1.6905 4.65019 1.78054 4.74023C1.87058 4.83027 1.92116 4.95239 1.92116 5.07972V10.8411C1.92116 11.2231 2.07291 11.5894 2.34303 11.8596C2.61315 12.1297 2.9795 12.2814 3.36151 12.2814H7.20241C7.58442 12.2814 7.95077 12.1297 8.22089 11.8596C8.49101 11.5894 8.64276 11.2231 8.64276 10.8411V5.07972C8.64276 4.95239 8.69334 4.83027 8.78338 4.74023C8.87342 4.65019 8.99553 4.59961 9.12287 4.59961C9.2502 4.59961 9.37232 4.65019 9.46236 4.74023C9.5524 4.83027 9.60298 4.95239 9.60298 5.07972V10.8411C9.60298 11.4778 9.35007 12.0884 8.89987 12.5385C8.44968 12.9887 7.83909 13.2417 7.20241 13.2417Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M10.0824 3.63796H0.480114C0.35278 3.63796 0.230661 3.58738 0.140622 3.49734C0.0505833 3.4073 0 3.28518 0 3.15785C0 3.03051 0.0505833 2.9084 0.140622 2.81836C0.230661 2.72832 0.35278 2.67773 0.480114 2.67773H10.0824C10.2097 2.67773 10.3318 2.72832 10.4219 2.81836C10.5119 2.9084 10.5625 3.03051 10.5625 3.15785C10.5625 3.28518 10.5119 3.4073 10.4219 3.49734C10.3318 3.58738 10.2097 3.63796 10.0824 3.63796Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M7.20188 3.63849H3.36097C3.23364 3.63849 3.11152 3.58791 3.02148 3.49787C2.93144 3.40783 2.88086 3.28571 2.88086 3.15838V2.19815C2.88086 1.81615 3.03261 1.44979 3.30273 1.17968C3.57284 0.909562 3.9392 0.757813 4.3212 0.757812H6.24165C6.62366 0.757813 6.99001 0.909562 7.26013 1.17968C7.53025 1.44979 7.682 1.81615 7.682 2.19815V3.15838C7.682 3.28571 7.63141 3.40783 7.54137 3.49787C7.45134 3.58791 7.32922 3.63849 7.20188 3.63849ZM3.84109 2.67827H6.72177V2.19815C6.72177 2.07082 6.67119 1.9487 6.58115 1.85866C6.49111 1.76862 6.36899 1.71804 6.24165 1.71804H4.3212C4.19387 1.71804 4.07175 1.76862 3.98171 1.85866C3.89167 1.9487 3.84109 2.07082 3.84109 2.19815V2.67827Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M4.32191 10.3601C4.19458 10.3601 4.07246 10.3095 3.98242 10.2195C3.89238 10.1294 3.8418 10.0073 3.8418 9.87997V6.51918C3.8418 6.39184 3.89238 6.26972 3.98242 6.17968C4.07246 6.08965 4.19458 6.03906 4.32191 6.03906C4.44924 6.03906 4.57136 6.08965 4.6614 6.17968C4.75144 6.26972 4.80202 6.39184 4.80202 6.51918V9.87997C4.80202 10.0073 4.75144 10.1294 4.6614 10.2195C4.57136 10.3095 4.44924 10.3601 4.32191 10.3601Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M6.24183 10.3601C6.1145 10.3601 5.99238 10.3095 5.90234 10.2195C5.8123 10.1294 5.76172 10.0073 5.76172 9.87997V6.51918C5.76172 6.39184 5.8123 6.26972 5.90234 6.17968C5.99238 6.08965 6.1145 6.03906 6.24183 6.03906C6.36917 6.03906 6.49129 6.08965 6.58132 6.17968C6.67136 6.26972 6.72195 6.39184 6.72195 6.51918V9.87997C6.72195 10.0073 6.67136 10.1294 6.58132 10.2195C6.49129 10.3095 6.36917 10.3601 6.24183 10.3601Z"
+                      fill="#DF482B"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ))}
             <div>
               <button
                 type="button"
+                onClick={addLink}
                 className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
               >
                 Add link
@@ -577,22 +657,55 @@ const DesktopSurvey = () => {
               website (e.g., Home, About Us, Services, Contact).
             </p>
 
-            <input
-              className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-1/2 py-[6px] px-[18px] text-third dark:bg-secondary"
-              id="page1"
-              placeholder="Page:"
-              type="text"
-            />
-            <input
-              className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-1/2 py-[6px] px-[18px] text-third dark:bg-secondary"
-              id="page2"
-              placeholder="Page:"
-              type="text"
-            />
+            {selectedPages.map((page, index) => (
+              <div key={index} className="flex space-x-3">
+                <input
+                  key={index}
+                  value={page}
+                  onChange={(e) => handleInputChangePage(e, index)}
+                  className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                  id={`page-${index}`}
+                  placeholder={`Page ${index + 1}:`}
+                  type="text"
+                />
+                <button type="button" onClick={() => removePage(index)}>
+                  {""}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="11"
+                    height="14"
+                    viewBox="0 0 11 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M7.20241 13.2417H3.36151C2.72484 13.2417 2.11424 12.9887 1.66405 12.5385C1.21385 12.0884 0.960938 11.4778 0.960938 10.8411V5.07972C0.960938 4.95239 1.01152 4.83027 1.10156 4.74023C1.1916 4.65019 1.31372 4.59961 1.44105 4.59961C1.56839 4.59961 1.6905 4.65019 1.78054 4.74023C1.87058 4.83027 1.92116 4.95239 1.92116 5.07972V10.8411C1.92116 11.2231 2.07291 11.5894 2.34303 11.8596C2.61315 12.1297 2.9795 12.2814 3.36151 12.2814H7.20241C7.58442 12.2814 7.95077 12.1297 8.22089 11.8596C8.49101 11.5894 8.64276 11.2231 8.64276 10.8411V5.07972C8.64276 4.95239 8.69334 4.83027 8.78338 4.74023C8.87342 4.65019 8.99553 4.59961 9.12287 4.59961C9.2502 4.59961 9.37232 4.65019 9.46236 4.74023C9.5524 4.83027 9.60298 4.95239 9.60298 5.07972V10.8411C9.60298 11.4778 9.35007 12.0884 8.89987 12.5385C8.44968 12.9887 7.83909 13.2417 7.20241 13.2417Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M10.0824 3.63796H0.480114C0.35278 3.63796 0.230661 3.58738 0.140622 3.49734C0.0505833 3.4073 0 3.28518 0 3.15785C0 3.03051 0.0505833 2.9084 0.140622 2.81836C0.230661 2.72832 0.35278 2.67773 0.480114 2.67773H10.0824C10.2097 2.67773 10.3318 2.72832 10.4219 2.81836C10.5119 2.9084 10.5625 3.03051 10.5625 3.15785C10.5625 3.28518 10.5119 3.4073 10.4219 3.49734C10.3318 3.58738 10.2097 3.63796 10.0824 3.63796Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M7.20188 3.63849H3.36097C3.23364 3.63849 3.11152 3.58791 3.02148 3.49787C2.93144 3.40783 2.88086 3.28571 2.88086 3.15838V2.19815C2.88086 1.81615 3.03261 1.44979 3.30273 1.17968C3.57284 0.909562 3.9392 0.757813 4.3212 0.757812H6.24165C6.62366 0.757813 6.99001 0.909562 7.26013 1.17968C7.53025 1.44979 7.682 1.81615 7.682 2.19815V3.15838C7.682 3.28571 7.63141 3.40783 7.54137 3.49787C7.45134 3.58791 7.32922 3.63849 7.20188 3.63849ZM3.84109 2.67827H6.72177V2.19815C6.72177 2.07082 6.67119 1.9487 6.58115 1.85866C6.49111 1.76862 6.36899 1.71804 6.24165 1.71804H4.3212C4.19387 1.71804 4.07175 1.76862 3.98171 1.85866C3.89167 1.9487 3.84109 2.07082 3.84109 2.19815V2.67827Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M4.32191 10.3601C4.19458 10.3601 4.07246 10.3095 3.98242 10.2195C3.89238 10.1294 3.8418 10.0073 3.8418 9.87997V6.51918C3.8418 6.39184 3.89238 6.26972 3.98242 6.17968C4.07246 6.08965 4.19458 6.03906 4.32191 6.03906C4.44924 6.03906 4.57136 6.08965 4.6614 6.17968C4.75144 6.26972 4.80202 6.39184 4.80202 6.51918V9.87997C4.80202 10.0073 4.75144 10.1294 4.6614 10.2195C4.57136 10.3095 4.44924 10.3601 4.32191 10.3601Z"
+                      fill="#DF482B"
+                    />
+                    <path
+                      d="M6.24183 10.3601C6.1145 10.3601 5.99238 10.3095 5.90234 10.2195C5.8123 10.1294 5.76172 10.0073 5.76172 9.87997V6.51918C5.76172 6.39184 5.8123 6.26972 5.90234 6.17968C5.99238 6.08965 6.1145 6.03906 6.24183 6.03906C6.36917 6.03906 6.49129 6.08965 6.58132 6.17968C6.67136 6.26972 6.72195 6.39184 6.72195 6.51918V9.87997C6.72195 10.0073 6.67136 10.1294 6.58132 10.2195C6.49129 10.3095 6.36917 10.3601 6.24183 10.3601Z"
+                      fill="#DF482B"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ))}
 
             <div>
               <button
                 type="button"
+                onClick={addPage}
                 className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
               >
                 Add page
