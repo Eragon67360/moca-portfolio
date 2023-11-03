@@ -56,6 +56,27 @@ export default async function submitFormHandler(
       Full Name: ${fields.fullname}
       Email: ${fields.email}
       Company: ${fields.company}
+      Website type: ${fields.websiteType}
+      If other: ${fields.other_website}
+      Sales amount: ${fields.sales}
+      Demographics?: ${fields.demographics}
+      Demo age: ${fields.demographicsAge}
+      Demo gender: ${fields.demographicsGender}
+      Demo Education: ${fields.demographicsEducation}
+      Demo family status: ${fields.demographicsFamilyStatus}
+      Overall look: ${fields.overall_look}
+      Link: ${fields.link}
+      Page1: ${fields.page1}
+      Page2: ${fields.page2}
+      Language?: ${fields.language}
+      Languages: ${fields.languages}
+      Features: ${fields.features}
+      Other feature?: ${fields.other_feature}
+      Logo: ${fields.logo}
+      Date: ${fields.date}
+      Comments: ${fields.comments}
+
+
       Attachements: ${attachments.length}
     `;
     });

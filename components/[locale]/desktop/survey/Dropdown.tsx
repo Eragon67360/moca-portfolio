@@ -45,6 +45,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   return (
     <div className="relative" ref={dropdownRef}>
       <button
+      type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary flex items-center"
       >

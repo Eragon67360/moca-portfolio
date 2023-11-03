@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Dropdown from "@/components/[locale]/desktop/survey/Dropdown";
 
@@ -10,6 +10,9 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const DesktopSurvey = () => {
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef(null);
+
   const [isOpenSpecifications, setIsOpenSpecifications] = useState(false);
   const [isOpenLanguages, setIsOpenLanguages] = useState(false);
 
@@ -30,17 +33,26 @@ const DesktopSurvey = () => {
     selectedDemographicsFamilyStatus,
     setSelectedDemographicsFamilyStatus,
   ] = useState<string | null>(null);
+
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
+
+  const [selectedLanguages, setSelectedLanguages] = useState<string | null>(
+    null
+  );
+
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const fileInputDesignRef = useRef<HTMLInputElement | null>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [uploadedFilesDesign, setUploadedFilesDesign] = useState<File[]>([]);
 
-  const [selectedValue, setSelectedValue] = useState<string | null>(null);
+  const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
 
   const [startDate, setStartDate] = useState<Date>(new Date());
 
-  const handleSelectionChangeYN = (value: string) => {
-    setSelectedValue(value);
+  const handleSelectionChangeLogo = (value: string) => {
+    setSelectedLogo(value);
   };
 
   const handleSelectionChangeSubject = (subject: string) => {
@@ -71,6 +83,14 @@ const DesktopSurvey = () => {
     setSelectedDemographicsFamilyStatus(demo_familystatus);
   };
 
+  const handleSelectionChangeLanguages = (languages: string) => {
+    setSelectedLanguages(languages);
+  };
+
+  const handleSelectionChangeLanguage = (language: string) => {
+    setSelectedLanguage(language);
+  };
+
   const handleMultiSelectionChange = (name: string) => {
     if (selectedFeatures.includes(name)) {
       setSelectedFeatures((prevFeatures: any[]) =>
@@ -94,10 +114,22 @@ const DesktopSurvey = () => {
     demographicsEducation: string | null;
     demographicsFamilyStatus: string | null;
     overall_look: string;
+    link: string;
+    page1: string;
+    page2: string;
+    language: string | null;
+    languages: string | null;
+    features: string;
+    other_feature: string;
+    logo: string | null;
+    date: string | null;
+    comments: string;
   };
 
   async function handleSubmit(event: any): Promise<void> {
     event.preventDefault();
+    setLoading(true);
+    const features: string = selectedFeatures.join(", ");
 
     const data: FormData = {
       fullname: String(event.target.fullname.value),
@@ -112,19 +144,32 @@ const DesktopSurvey = () => {
       demographicsEducation: selectedDemographicsEducation,
       demographicsFamilyStatus: selectedDemographicsFamilyStatus,
       overall_look: String(event.target.description.value),
+      link: String(event.target.link.value),
+      page1: String(event.target.page1.value),
+      page2: String(event.target.page2.value),
+      language: selectedLanguage,
+      languages: selectedLanguages,
+      features: features,
+      other_feature: String(event.target.other_features.value),
+      logo: selectedLogo,
+      date: startDate.toDateString(),
+      comments: String(event.target.comments.value),
     };
 
     const formDataObj = new FormData();
 
     Object.entries(data).forEach(([key, value]) => {
       if (value !== null) {
-        // Check if value is not null
         formDataObj.append(key, value);
       }
     });
 
     uploadedFiles.forEach((file: string | Blob, index: any) => {
       formDataObj.append(`file${index}`, file);
+    });
+
+    uploadedFilesDesign.forEach((file: string | Blob, index: any) => {
+      formDataObj.append(`fileDesign${index}`, file);
     });
 
     const formDataAsObject = Object.fromEntries(formDataObj.entries());
@@ -138,22 +183,22 @@ const DesktopSurvey = () => {
     if (response.ok) {
       console.log("Message sent successfully");
       toast.success("Message sent successfully");
-      // reset the form
-      // event.target.name.value = "";
-      // event.target.firstname.value = "";
-      // event.target.phone.value = "";
-      // event.target.company.value = "";
-      // event.target.country.value = "";
+      setLoading(false);
     }
     if (!response.ok) {
       console.log(response.statusText);
       toast.error("Error sending message");
+      setLoading(false);
+    }
+
+    const form = formRef.current as HTMLFormElement | null;
+    if (form) {
+      form.reset();
     }
   }
 
   const addFiles = () => {
     if (fileInputRef.current) {
-      console.log("bite");
       fileInputRef.current.click();
     }
   };
@@ -166,6 +211,26 @@ const DesktopSurvey = () => {
 
   const removeFile = (indexToRemove: number) => {
     setUploadedFiles((prevFiles: any[]) =>
+      prevFiles.filter((_: any, index: number) => index !== indexToRemove)
+    );
+  };
+
+  const addFilesDesign = () => {
+    if (fileInputDesignRef.current) {
+      fileInputDesignRef.current.click();
+    }
+  };
+
+  const onFileChangeDesign = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setUploadedFilesDesign(Array.from(event.target.files));
+    }
+  };
+
+  const removeFileDesign = (indexToRemove: number) => {
+    setUploadedFilesDesign((prevFiles: any[]) =>
       prevFiles.filter((_: any, index: number) => index !== indexToRemove)
     );
   };
@@ -209,7 +274,12 @@ const DesktopSurvey = () => {
             Website Survey
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+          <form
+            onSubmit={handleSubmit}
+            ref={formRef}
+            id="form"
+            className="flex flex-col space-y-4"
+          >
             <div className="w-full h-[32px]">
               <input
                 className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
@@ -292,6 +362,7 @@ const DesktopSurvey = () => {
             </p>
             <div className="flex space-x-3">
               <button
+                type="button"
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
                   isOpenSpecifications === true
                     ? "bg-cinnabar text-white"
@@ -305,6 +376,7 @@ const DesktopSurvey = () => {
                 Yes
               </button>
               <button
+                type="button"
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
                   isOpenSpecifications === false
                     ? "bg-cinnabar text-white"
@@ -344,7 +416,9 @@ const DesktopSurvey = () => {
                     />
                   </div>
                   <div className="flex items-center  text-cinnabar">
-                    <button onClick={addFiles}>+ Add files</button>
+                    <button type="button" onClick={addFiles}>
+                      + Add files
+                    </button>
                     <input
                       type="file"
                       className="hidden"
@@ -362,7 +436,10 @@ const DesktopSurvey = () => {
                           className="text-cinnabar text-xs flex items-center space-x-2"
                         >
                           <span>{file.name}</span>
-                          <button onClick={() => removeFile(index)}>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(index)}
+                          >
                             {""}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -412,25 +489,30 @@ const DesktopSurvey = () => {
               rows={5}
             />
             <div className="flex items-center  text-cinnabar">
-              <button onClick={addFiles}>+ Add files</button>
+              <button type="button" onClick={addFilesDesign}>
+                + Add files
+              </button>
               <input
                 type="file"
                 className="hidden"
-                ref={fileInputRef}
-                onChange={onFileChange}
+                ref={fileInputDesignRef}
+                onChange={onFileChangeDesign}
                 accept=".pdf, image/png, image/jpeg, image/svg+xml"
                 multiple
               />
             </div>
-            {uploadedFiles.length > 0 && (
+            {uploadedFilesDesign.length > 0 && (
               <ul className="mt-4">
-                {uploadedFiles.map((file, index) => (
+                {uploadedFilesDesign.map((file, index) => (
                   <li
                     key={index}
                     className="text-cinnabar text-xs flex items-center space-x-2"
                   >
                     <span>{file.name}</span>
-                    <button onClick={() => removeFile(index)}>
+                    <button
+                      type="button"
+                      onClick={() => removeFileDesign(index)}
+                    >
                       {""}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -490,13 +572,13 @@ const DesktopSurvey = () => {
 
             <input
               className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-1/2 py-[6px] px-[18px] text-third dark:bg-secondary"
-              id="pages"
+              id="page1"
               placeholder="Page:"
               type="text"
             />
             <input
               className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-1/2 py-[6px] px-[18px] text-third dark:bg-secondary"
-              id="pages"
+              id="page2"
               placeholder="Page:"
               type="text"
             />
@@ -514,22 +596,30 @@ const DesktopSurvey = () => {
 
             <div className="flex space-x-3">
               <button
+                type="button"
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
                   isOpenLanguages === true
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
                 }`}
-                onClick={() => setIsOpenLanguages(true)}
+                onClick={() => {
+                  setIsOpenLanguages(true);
+                  handleSelectionChangeLanguages("Yes");
+                }}
               >
                 Yes
               </button>
               <button
+                type="button"
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
                   isOpenLanguages === false
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
                 }`}
-                onClick={() => setIsOpenLanguages(false)}
+                onClick={() => {
+                  setIsOpenLanguages(false);
+                  handleSelectionChangeLanguages("No");
+                }}
               >
                 No
               </button>
@@ -542,12 +632,12 @@ const DesktopSurvey = () => {
                     <button
                       type="button"
                       key={name}
-                      onClick={() => handleSelectionChangeSales(name)}
+                      onClick={() => handleSelectionChangeLanguage(name)}
                       className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
                     >
                       <div
                         className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
-                          selectedSubject === name
+                          selectedLanguage === name
                             ? "bg-cinnabar text-white"
                             : "bg-white text-third"
                         }`}
@@ -595,9 +685,9 @@ const DesktopSurvey = () => {
             <div className="flex space-x-3">
               <button
                 type="button"
-                onClick={() => handleSelectionChangeYN("Yes")}
+                onClick={() => handleSelectionChangeLogo("Yes")}
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
-                  selectedValue === "Yes"
+                  selectedLogo === "Yes"
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
                 }`}
@@ -607,9 +697,9 @@ const DesktopSurvey = () => {
 
               <button
                 type="button"
-                onClick={() => handleSelectionChangeYN("No")}
+                onClick={() => handleSelectionChangeLogo("No")}
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
-                  selectedValue === "No"
+                  selectedLogo === "No"
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
                 }`}
@@ -633,6 +723,7 @@ const DesktopSurvey = () => {
 
             <p>Add any additional comments:</p>
             <textarea
+              id="comments"
               name="additional_comments"
               rows={5}
               className="h-14 px-3 py-3 border border-cinnabar rounded-2xl"
@@ -650,8 +741,8 @@ const DesktopSurvey = () => {
             </p>
             <div className="flex items-center justify-start space-x-2">
               <button
-                disabled={false}
-                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
+                disabled={loading}
+                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary"
                 type="submit"
               >
                 Send
