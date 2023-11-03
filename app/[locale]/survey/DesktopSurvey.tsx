@@ -2,18 +2,37 @@
 import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Dropdown from "@/components/[locale]/desktop/survey/Dropdown";
-import DatePicker from "react-datepicker";
 
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const DesktopSurvey = () => {
   const [isOpenSpecifications, setIsOpenSpecifications] = useState(false);
   const [isOpenLanguages, setIsOpenLanguages] = useState(false);
 
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
+  const [selectedSales, setSelectedSales] = useState<string | null>(null);
+  const [selectedDemographics, setSelectedDemographics] = useState<
+    string | null
+  >(null);
+  const [selectedDemographicsAge, setSelectedDemographicsAge] = useState<
+    string | null
+  >(null);
+  const [selectedDemographicsGender, setSelectedDemographicsGender] = useState<
+    string | null
+  >(null);
+  const [selectedDemographicsEducation, setSelectedDemographicsEducation] =
+    useState<string | null>(null);
+  const [
+    selectedDemographicsFamilyStatus,
+    setSelectedDemographicsFamilyStatus,
+  ] = useState<string | null>(null);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const [selectedValue, setSelectedValue] = useState<string | null>(null);
@@ -24,8 +43,32 @@ const DesktopSurvey = () => {
     setSelectedValue(value);
   };
 
-  const handleSelectionChange = (subject: string) => {
+  const handleSelectionChangeSubject = (subject: string) => {
     setSelectedSubject(subject);
+  };
+
+  const handleSelectionChangeSales = (sales: string) => {
+    setSelectedSales(sales);
+  };
+
+  const handleSelectionChangeDemographicsYN = (demo: string) => {
+    setSelectedDemographics(demo);
+  };
+  const handleSelectionChangeDemographicsAge = (demo_age: string) => {
+    setSelectedDemographicsAge(demo_age);
+  };
+  const handleSelectionChangeDemographicsGender = (demo_gender: string) => {
+    setSelectedDemographicsGender(demo_gender);
+  };
+  const handleSelectionChangeDemographicsEducation = (
+    demo_education: string
+  ) => {
+    setSelectedDemographicsEducation(demo_education);
+  };
+  const handleSelectionChangeDemographicsFamilyStatus = (
+    demo_familystatus: string
+  ) => {
+    setSelectedDemographicsFamilyStatus(demo_familystatus);
   };
 
   const handleMultiSelectionChange = (name: string) => {
@@ -38,63 +81,86 @@ const DesktopSurvey = () => {
     }
   };
 
-  async function handleSubmit(
-    event: FormEvent<HTMLFormElement>
-  ): Promise<void> {
+  type FormData = {
+    fullname: string;
+    email: string;
+    company: string;
+    websiteType: string | null;
+    other_website: string;
+    sales: string | null;
+    demographics: string | null;
+    demographicsAge: string | null;
+    demographicsGender: string | null;
+    demographicsEducation: string | null;
+    demographicsFamilyStatus: string | null;
+    overall_look: string;
+  };
+
+  async function handleSubmit(event: any): Promise<void> {
     event.preventDefault();
-    const formData = new FormData();
 
-    // Append each file to the form data
+    const data: FormData = {
+      fullname: String(event.target.fullname.value),
+      email: String(event.target.email.value),
+      company: String(event.target.company.value),
+      websiteType: selectedSubject,
+      other_website: String(event.target.other_website.value),
+      sales: selectedSales,
+      demographics: selectedDemographics,
+      demographicsAge: selectedDemographicsAge,
+      demographicsGender: selectedDemographicsGender,
+      demographicsEducation: selectedDemographicsEducation,
+      demographicsFamilyStatus: selectedDemographicsFamilyStatus,
+      overall_look: String(event.target.description.value),
+    };
+
+    const formDataObj = new FormData();
+
+    Object.entries(data).forEach(([key, value]) => {
+      if (value !== null) {
+        // Check if value is not null
+        formDataObj.append(key, value);
+      }
+    });
+
     uploadedFiles.forEach((file: string | Blob, index: any) => {
-      formData.append(`file${index}`, file);
+      formDataObj.append(`file${index}`, file);
     });
 
-    console.log(formData);
+    const formDataAsObject = Object.fromEntries(formDataObj.entries());
+    console.log(formDataAsObject);
 
-    // Send the form data to the server
-    await fetch("/api/submitSurvey", {
+    const response = await fetch("/api/submitSurvey", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: formData,
+      body: formDataObj,
     });
-  }
 
-  function addFiles() {
-    if (fileInputRef.current) {
-      fileInputRef.current.click();
+    if (response.ok) {
+      console.log("Message sent successfully");
+      toast.success("Message sent successfully");
+      // reset the form
+      // event.target.name.value = "";
+      // event.target.firstname.value = "";
+      // event.target.phone.value = "";
+      // event.target.company.value = "";
+      // event.target.country.value = "";
+    }
+    if (!response.ok) {
+      console.log(response.statusText);
+      toast.error("Error sending message");
     }
   }
 
+  const addFiles = () => {
+    if (fileInputRef.current) {
+      console.log("bite");
+      fileInputRef.current.click();
+    }
+  };
+
   const onFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newFiles = event.target.files;
-    if (newFiles && newFiles.length > 0) {
-      setUploadedFiles((prevFiles: any) => [
-        ...prevFiles,
-        ...Array.from(newFiles),
-      ]);
-
-      const formData = new FormData();
-
-      for (let i = 0; i < newFiles.length; i++) {
-        formData.append("files", newFiles[i]);
-      }
-      try {
-        const response = await fetch("/api/upload", {
-          method: "POST",
-          body: formData,
-        });
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error uploading files:", error);
-      }
-
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
+    if (event.target.files && event.target.files.length > 0) {
+      setUploadedFiles(Array.from(event.target.files));
     }
   };
 
@@ -104,6 +170,7 @@ const DesktopSurvey = () => {
     );
   };
 
+  const website_types = ["Showcase site", "Online shop"];
   const sales = ["0-10", "11-50", "51-100", "101-500", "500+"];
   const ages = ["18-24", "25-34", "35-44", "45-54", "54-65", "66+"];
   const genders = [
@@ -172,12 +239,30 @@ const DesktopSurvey = () => {
             </div>
             <p className="text-third">What kind of website do you need?</p>
             <div className="flex space-x-3">
-              <button className="appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary">
-                Showcase site
-              </button>
-              <button className="appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary">
-                Online shop
-              </button>
+              {website_types.map((name) => (
+                <button
+                  type="button"
+                  key={name}
+                  onClick={() => handleSelectionChangeSubject(name)}
+                  className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
+                >
+                  <div
+                    className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
+                      selectedSubject === name
+                        ? "bg-cinnabar text-white"
+                        : "bg-white text-third"
+                    }`}
+                  >
+                    {name}
+                  </div>
+                </button>
+              ))}
+              <input
+                id="other_website"
+                placeholder="Other"
+                type="text"
+                className="px-3 border border-cinnabar rounded-full"
+              />
             </div>
             <p className="text-third">
               If it&apos;s an online shop, how many products do you sell?
@@ -187,12 +272,12 @@ const DesktopSurvey = () => {
                 <button
                   type="button"
                   key={name}
-                  onClick={() => handleSelectionChange(name)}
+                  onClick={() => handleSelectionChangeSales(name)}
                   className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
                 >
                   <div
                     className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
-                      selectedSubject === name
+                      selectedSales === name
                         ? "bg-cinnabar text-white"
                         : "bg-white text-third"
                     }`}
@@ -212,7 +297,10 @@ const DesktopSurvey = () => {
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
                 }`}
-                onClick={() => setIsOpenSpecifications(true)}
+                onClick={() => {
+                  setIsOpenSpecifications(true);
+                  handleSelectionChangeDemographicsYN("Yes");
+                }}
               >
                 Yes
               </button>
@@ -222,7 +310,10 @@ const DesktopSurvey = () => {
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
                 }`}
-                onClick={() => setIsOpenSpecifications(false)}
+                onClick={() => {
+                  setIsOpenSpecifications(false);
+                  handleSelectionChangeDemographicsYN("No");
+                }}
               >
                 No
               </button>
@@ -233,22 +324,22 @@ const DesktopSurvey = () => {
                   <div className="flex space-x-3">
                     <Dropdown
                       options={ages}
-                      onSelect={handleSelectionChange}
+                      onSelect={handleSelectionChangeDemographicsAge}
                       placeholder="Age"
                     />
                     <Dropdown
                       options={genders}
-                      onSelect={handleSelectionChange}
+                      onSelect={handleSelectionChangeDemographicsGender}
                       placeholder="Gender"
                     />
                     <Dropdown
                       options={educations}
-                      onSelect={handleSelectionChange}
+                      onSelect={handleSelectionChangeDemographicsEducation}
                       placeholder="Education"
                     />
                     <Dropdown
                       options={family_status}
-                      onSelect={handleSelectionChange}
+                      onSelect={handleSelectionChangeDemographicsFamilyStatus}
                       placeholder="Family status"
                     />
                   </div>
@@ -260,7 +351,7 @@ const DesktopSurvey = () => {
                       ref={fileInputRef}
                       onChange={onFileChange}
                       accept=".pdf, image/png, image/jpeg, image/svg+xml"
-                      multiple // Remove this if you want to select only one file at a time
+                      multiple
                     />
                   </div>
                   {uploadedFiles.length > 0 && (
@@ -314,11 +405,11 @@ const DesktopSurvey = () => {
               website, you can describe or attach files.{" "}
             </p>
 
-            <input
+            <textarea
               className="text-sm placeholder-black appearance-none border border-cinnabar h-[56px] rounded-2xl w-full py-[6px] px-[18px] text-third dark:bg-secondary"
               id="description"
               name="description"
-              type="textarea"
+              rows={5}
             />
             <div className="flex items-center  text-cinnabar">
               <button onClick={addFiles}>+ Add files</button>
@@ -451,7 +542,7 @@ const DesktopSurvey = () => {
                     <button
                       type="button"
                       key={name}
-                      onClick={() => handleSelectionChange(name)}
+                      onClick={() => handleSelectionChangeSales(name)}
                       className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
                     >
                       <div
@@ -495,7 +586,7 @@ const DesktopSurvey = () => {
                 id="other_features"
                 placeholder="Others"
                 type="text"
-                className=" px-3 border border-cinnabar rounded-full"
+                className="px-3 border border-cinnabar rounded-full"
               />
             </div>
 
@@ -540,6 +631,23 @@ const DesktopSurvey = () => {
               />
             </div>
 
+            <p>Add any additional comments:</p>
+            <textarea
+              name="additional_comments"
+              rows={5}
+              className="h-14 px-3 py-3 border border-cinnabar rounded-2xl"
+            />
+
+            <p className="text-2xl font-semibold">Legal and Privacy:</p>
+            <p>
+              Include a section to address any legal or privacy requirements,
+              such as GDPR compliance or terms of service.
+            </p>
+            <p className="text-2xl font-semibold">Next Steps:</p>
+            <p>
+              Explain the next steps in the web development process, such as a
+              follow-up meeting to discuss the survey responses in detail.
+            </p>
             <div className="flex items-center justify-start space-x-2">
               <button
                 disabled={false}

@@ -1,84 +1,115 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import multer from "multer";
-import nodemailer from "nodemailer";
+import { IncomingForm } from "formidable";
+import * as nodemailer from "nodemailer";
 
-// Configure multer for memory storage
-const storage = multer.memoryStorage();
-const upload = multer({ storage: storage }).array("files");
+export const config = {
+  api: {
+    bodyParser: false, // Disabling Next.js' default body parser
+  },
+};
 
-interface MulterRequest extends NextApiRequest {
-  files: any[];
+interface FileDetail {
+  size: number;
+  filepath: string;
+  newFilename: string;
+  mimetype: string;
+  mtime: string;
+  originalFilename: string;
+}
+
+interface FilesObject {
+  [key: string]: FileDetail[];
 }
 
 export default async function submitFormHandler(
-  req: MulterRequest,
+  req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
-    upload(req as any, res as any, async (err) => {
-      if (err instanceof multer.MulterError) {
-        console.log("ERRR 1 ");
-        return res.status(500).send(err.message);
-      } else if (err) {
-        console.log("ERRR 2 ");
-        return res.status(500).send(err.message);
+    const form = new IncomingForm();
+    let emailContent = "";
+    let attachments: any[] = [];
+
+    form.parse(req, async (err, fields, files) => {
+      if (err) {
+        console.log("Error parsing the files");
+        return res.status(400).json({
+          status: "Fail",
+          message: "There was an error parsing the files",
+          error: err,
+        });
       }
 
-      // All files are available in req.files
-      // Other form data is available in req.body
+      console.log(JSON.stringify(files, null, 2));
 
-      const user = process.env.MAIL_USER;
-      const password = process.env.MAIL_PASSWORD;
-
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false,
-        auth: {
-          user: user,
-          pass: password,
-        },
-      });
-
-      await new Promise((resolve, reject) => {
-        // verify connection configuration
-        transporter.verify(function (error, success) {
-          if (error) {
-            console.log(error);
-            reject(error);
-          } else {
-            console.log("Server is ready to take our messages");
-            resolve(success);
-          }
+      for (let key in files) {
+        let file = files[key]?.[0];
+        attachments.push({
+          filename: file?.originalFilename,
+          path: file?.filepath,
         });
-      });
+      }
 
-      // Create email data with attachments
-      const mailOptions = {
-        from: user,
-        to: "uxmoca@gmail.com",
-        subject: "New form submission with attachments",
-        text: "Here are the attachments:",
-        attachments: req.files.map((file) => ({
-          filename: file.originalname,
-          content: file.buffer,
-        })),
-      };
+      console.log(attachments);
 
-      await new Promise((resolve, reject) => {
-        // send mail
-        transporter.sendMail(mailOptions, (err, info) => {
-          if (err) {
-            console.error(err);
-            reject(err);
-          } else {
-            console.log(info);
-            resolve(info);
-          }
-        });
+      emailContent = `
+      Full Name: ${fields.fullname}
+      Email: ${fields.email}
+      Company: ${fields.company}
+      Attachements: ${attachments.length}
+    `;
+    });
+
+    const user = process.env.MAIL_USER;
+    const password = process.env.MAIL_PASSWORD;
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: user,
+        pass: password,
+      },
+    });
+
+    await new Promise((resolve, reject) => {
+      // verify connection configuration
+      transporter.verify(function (error, success) {
+        if (error) {
+          console.log(error);
+          reject(error);
+        } else {
+          console.log("Server is ready to take our messages");
+          resolve(success);
+        }
       });
     });
+
+    // Create email data with attachments
+    const mailOptions = {
+      from: user,
+      to: "uxmoca@gmail.com",
+      subject: "New survey submission with attachments",
+      text: emailContent,
+      attachments: attachments,
+    };
+
+    await new Promise((resolve, reject) => {
+      // send mail
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      });
+    });
+
+    res.status(200).json({ status: "OK" });
   } catch (error) {
     console.error("Error sending email:", error);
     res.status(500).json({ status: "Error", message: "Internal Server Error" });

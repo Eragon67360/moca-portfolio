@@ -26,6 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   };
 
   const handleClickOutside = (event: MouseEvent) => {
+    event.preventDefault();
     if (
       dropdownRef.current &&
       !dropdownRef.current.contains(event.target as Node)
