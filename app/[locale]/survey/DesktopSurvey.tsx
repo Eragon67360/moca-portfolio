@@ -13,6 +13,8 @@ const DesktopSurvey = () => {
   const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
 
+  const [emailValue, setEmailValue] = useState("");
+
   const [isOpenSpecifications, setIsOpenSpecifications] = useState(false);
   const [isOpenLanguages, setIsOpenLanguages] = useState(false);
 
@@ -50,6 +52,10 @@ const DesktopSurvey = () => {
   const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
 
   const [startDate, setStartDate] = useState<Date>(new Date());
+
+  const handleChangeEmail = (event: any) => {
+    setEmailValue(event.target.value);
+  };
 
   const handleSelectionChangeLogo = (value: string) => {
     setSelectedLogo(value);
@@ -296,6 +302,7 @@ const DesktopSurvey = () => {
                 name="email"
                 type="text"
                 placeholder="E-Mail"
+                onChange={handleChangeEmail}
               />
             </div>
             <div className="w-full h-[32px]">
@@ -741,7 +748,7 @@ const DesktopSurvey = () => {
             </p>
             <div className="flex items-center justify-start space-x-2">
               <button
-                disabled={loading}
+                disabled={!emailValue || loading}
                 className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary"
                 type="submit"
               >
