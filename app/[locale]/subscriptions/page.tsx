@@ -9,7 +9,7 @@ function Subscriptions() {
   return (
     <>
       <div className="bg-linen dark:bg-blackbean px-40">
-        <div className="my-32 p-8 w-full flex flex-col justify-center bg-secondary dark:bg-falured rounded-2xl">
+        <div className="my-32 p-8 w-full flex flex-col justify-center bg-secondary dark:bg-falured rounded-2xl shadow-lg">
           <button type="button" onClick={() => router.back()}>
             <TiArrowBack size={32} />
           </button>
