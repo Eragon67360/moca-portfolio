@@ -379,7 +379,7 @@ const TabletSurvey = () => {
                 id="other_website"
                 placeholder="Other"
                 type="text"
-                className="px-3 border border-cinnabar rounded-full"
+                className="px-3 border border-cinnabar rounded-full dark:bg-secondary"
               />
             </div>
             <p className="text-third">
@@ -411,7 +411,7 @@ const TabletSurvey = () => {
             <div className="flex space-x-3">
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenSpecifications === true
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -425,7 +425,7 @@ const TabletSurvey = () => {
               </button>
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenSpecifications === false
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -525,7 +525,7 @@ const TabletSurvey = () => {
                 </div>
               )}
             </AnimatePresence>
-            <p>
+            <p className="text-third">
               If you already know the overall look and feel you want for the
               website, you can describe or attach files.{" "}
             </p>
@@ -596,7 +596,7 @@ const TabletSurvey = () => {
               </ul>
             )}
 
-            <p>You can provide examples of other websites you like.</p>
+            <p className="text-third">You can provide examples of other websites you like.</p>
 
             {selectedLinks.map((link, index) => (
               <div key={index} className="flex space-x-3">
@@ -652,7 +652,7 @@ const TabletSurvey = () => {
               </button>
             </div>
 
-            <p>
+            <p className="text-third">
               List and describe the main pages or sections you want on the
               website (e.g., Home, About Us, Services, Contact).
             </p>
@@ -712,12 +712,12 @@ const TabletSurvey = () => {
               </button>
             </div>
 
-            <p>Does the site have to be in several languages?</p>
+            <p className="text-third">Does the site have to be in several languages?</p>
 
             <div className="flex space-x-3">
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenLanguages === true
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -731,7 +731,7 @@ const TabletSurvey = () => {
               </button>
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenLanguages === false
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -770,9 +770,9 @@ const TabletSurvey = () => {
               )}
             </AnimatePresence>
 
-            <p>Describe any specific features or functionalities you want.</p>
-            <div className="flex space-x-2">
-              <div className="flex space-x-2">
+            <p className="text-third">Describe any specific features or functionalities you want.</p>
+            <div className="flex flex-col space-y-2">
+              <div className="flex flex-wrap gap-2">
                 {features.map((name) => (
                   <button
                     type="button"
@@ -796,17 +796,17 @@ const TabletSurvey = () => {
                 id="other_features"
                 placeholder="Others"
                 type="text"
-                className="px-3 border border-cinnabar rounded-full"
+                className="px-3 border border-cinnabar rounded-full dark:bg-secondary"
               />
             </div>
 
-            <p>Do you already have a logo?</p>
+            <p className="text-third">Do you already have a logo?</p>
 
             <div className="flex space-x-3">
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("Yes")}
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   selectedLogo === "Yes"
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -818,7 +818,7 @@ const TabletSurvey = () => {
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("No")}
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   selectedLogo === "No"
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -828,34 +828,34 @@ const TabletSurvey = () => {
               </button>
             </div>
 
-            <p>
+            <p className="text-third">
               Project timeline: When do they need the website to be completed?
             </p>
             <div>
               <DatePicker
                 selected={startDate}
-                className="px-3 border border-cinnabar rounded-full"
+                className="px-3 border border-cinnabar rounded-full dark:bg-secondary text-third "
                 onChange={(date: Date | [Date, Date] | null) =>
                   date && setStartDate(date as Date)
                 }
               />
             </div>
 
-            <p>Add any additional comments:</p>
+            <p className="text-third">Add any additional comments:</p>
             <textarea
               id="comments"
               name="additional_comments"
               rows={5}
-              className="h-14 px-3 py-3 border border-cinnabar rounded-2xl"
+              className="h-14 px-3 py-3 border border-cinnabar rounded-2xl dark:bg-secondary text-third"
             />
 
-            <p className="text-2xl font-semibold">Legal and Privacy:</p>
-            <p>
+            <p className="text-2xl font-semibold text-third">Legal and Privacy:</p>
+            <p className="text-third">
               Include a section to address any legal or privacy requirements,
               such as GDPR compliance or terms of service.
             </p>
-            <p className="text-2xl font-semibold">Next Steps:</p>
-            <p>
+            <p className="text-2xl font-semibold text-third">Next Steps:</p>
+            <p className="text-third">
               Explain the next steps in the web development process, such as a
               follow-up meeting to discuss the survey responses in detail.
             </p>

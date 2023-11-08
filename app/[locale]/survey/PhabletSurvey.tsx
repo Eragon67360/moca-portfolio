@@ -381,7 +381,7 @@ const PhabletSurvey = () => {
                 id="other_website"
                 placeholder="Other"
                 type="text"
-                className="border border-cinnabar rounded-full text-xs py-0.5 px-3"
+                className="border border-cinnabar dark:bg-secondary rounded-full text-xs py-0.5 px-3"
               />
             <p className="text-third text-sm">
               If it&apos;s an online shop, how many products do you sell?
@@ -412,7 +412,7 @@ const PhabletSurvey = () => {
             <div className="flex space-x-2 text-xs">
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenSpecifications === true
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -426,7 +426,7 @@ const PhabletSurvey = () => {
               </button>
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenSpecifications === false
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -526,7 +526,7 @@ const PhabletSurvey = () => {
                 </div>
               )}
             </AnimatePresence>
-            <p className="text-sm">
+            <p className="text-sm text-third">
               If you already know the overall look and feel you want for the
               website, you can describe or attach files.{" "}
             </p>
@@ -597,7 +597,7 @@ const PhabletSurvey = () => {
               </ul>
             )}
 
-            <p className="text-sm">You can provide examples of other websites you like.</p>
+            <p className="text-sm text-third">You can provide examples of other websites you like.</p>
 
             {selectedLinks.map((link, index) => (
               <div key={index} className="flex space-x-3">
@@ -653,7 +653,7 @@ const PhabletSurvey = () => {
               </button>
             </div>
 
-            <p className="text-sm">
+            <p className="text-sm text-third">
               List and describe the main pages or sections you want on the
               website (e.g., Home, About Us, Services, Contact).
             </p>
@@ -713,12 +713,12 @@ const PhabletSurvey = () => {
               </button>
             </div>
 
-            <p className="text-sm">Does the site have to be in several languages?</p>
+            <p className="text-sm text-third">Does the site have to be in several languages?</p>
 
             <div className="flex space-x-2 text-xs">
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenLanguages === true
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -732,7 +732,7 @@ const PhabletSurvey = () => {
               </button>
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   isOpenLanguages === false
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -771,7 +771,7 @@ const PhabletSurvey = () => {
               )}
             </AnimatePresence>
 
-            <p className="text-sm">Describe any specific features or functionalities you want.</p>
+            <p className="text-sm text-third">Describe any specific features or functionalities you want.</p>
             <div className="flex flex-col space-y-2">
               <div className="flex flex-wrap gap-2 text-xs">
                 {features.map((name) => (
@@ -797,17 +797,17 @@ const PhabletSurvey = () => {
                 id="other_features"
                 placeholder="Others"
                 type="text"
-                className="text-xs px-3 py-1 border border-cinnabar rounded-full"
+                className="text-xs px-3 py-1 border border-cinnabar rounded-full dark:bg-secondary"
               />
             </div>
 
-            <p className="text-sm">Do you already have a logo?</p>
+            <p className="text-sm text-third">Do you already have a logo?</p>
 
             <div className="flex space-x-2 text-xs">
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("Yes")}
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   selectedLogo === "Yes"
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -819,7 +819,7 @@ const PhabletSurvey = () => {
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("No")}
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
+                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
                   selectedLogo === "No"
                     ? "bg-cinnabar text-white"
                     : "bg-white text-third"
@@ -829,34 +829,34 @@ const PhabletSurvey = () => {
               </button>
             </div>
 
-            <p className="text-sm">
+            <p className="text-sm text-third">
               Project timeline: When do they need the website to be completed?
             </p>
             <div>
               <DatePicker
                 selected={startDate}
-                className="text-xs py-1 px-3 border border-cinnabar rounded-full"
+                className="text-xs py-1 px-3 border border-cinnabar rounded-full dark:bg-secondary text-third"
                 onChange={(date: Date | [Date, Date] | null) =>
                   date && setStartDate(date as Date)
                 }
               />
             </div>
 
-            <p className="text-sm">Add any additional comments:</p>
+            <p className="text-sm text-third">Add any additional comments:</p>
             <textarea
               id="comments"
               name="additional_comments"
               rows={5}
-              className="text-xs h-14 px-3 py-3 border border-cinnabar rounded-2xl"
+              className="text-xs h-14 px-3 py-3 border border-cinnabar rounded-2xl bg-secondary"
             />
 
-            <p className="text-xl font-semibold">Legal and Privacy:</p>
-            <p className="text-sm">
+            <p className="text-xl font-semibold text-third">Legal and Privacy:</p>
+            <p className="text-sm text-third">
               Include a section to address any legal or privacy requirements,
               such as GDPR compliance or terms of service.
             </p>
-            <p className="text-xl font-semibold">Next Steps:</p>
-            <p className="text-sm">
+            <p className="text-xl font-semibold text-third">Next Steps:</p>
+            <p className="text-sm text-third">
               Explain the next steps in the web development process, such as a
               follow-up meeting to discuss the survey responses in detail.
             </p>
