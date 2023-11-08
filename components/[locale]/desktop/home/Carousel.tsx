@@ -58,10 +58,12 @@ export const Carousel = () => {
   }, [page]);
 
   return (
-    <div className="relative h-[323px] mx-auto">
+    <div className="relative h-[500px] mx-auto">
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
+          width={574}
+          height={323}
           src={projectItems[page % projectItems.length].image}
           alt={`Project ${page}`}
           custom={direction}
