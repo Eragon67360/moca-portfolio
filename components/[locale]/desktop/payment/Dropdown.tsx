@@ -25,7 +25,7 @@ const Dropdown: React.FC = () => {
       <div>
         <button
           onClick={() => setIsOpenGeneral(!isOpenGeneral)}
-          className="text-2xl flex justify-between w-full font-semibold hover:text-black/50 "
+          className="text-2xl flex justify-between w-full font-semibold text-cinnabar hover:text-cinnabar/75 "
         >
           General
           <svg
@@ -244,7 +244,7 @@ const Dropdown: React.FC = () => {
         <div>
           <button
             onClick={() => setIsOpenPro(!isOpenPro)}
-            className="text-2xl flex justify-between w-full font-semibold hover:text-black/50 mt-4"
+            className="text-2xl flex justify-between w-full font-semibold text-cinnabar hover:text-cinnabar/75 mt-4"
           >
             Pro Subscription
             <svg
@@ -314,7 +314,7 @@ const Dropdown: React.FC = () => {
         <div>
           <button
             onClick={() => setIsOpenPerso(!isOpenPerso)}
-            className="text-2xl flex justify-between w-full font-semibold hover:text-black/50 mt-4"
+            className="text-2xl flex justify-between w-full font-semibold text-cinnabar hover:text-cinnabar/75 mt-4"
           >
             Personalized Subscription
             <svg
