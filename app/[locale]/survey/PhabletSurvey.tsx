@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const DesktopSurvey = () => {
+const PhabletSurvey = () => {
   const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
 
@@ -315,9 +315,9 @@ const DesktopSurvey = () => {
 
   return (
     <>
-      <div className="flex w-screen bg-linen py-[124px]  justify-center items-center">
-        <div className="w-[810px] h-full rounded-2xl bg-secondary p-8 shadow-lg space-y-4 ">
-          <p className="text-center text-5xl font-bold w-full text-third">
+      <div className="flex w-screen bg-linen py-[80px]  justify-center items-center">
+        <div className="w-[679px] h-full rounded-2xl bg-secondary p-8 shadow-lg space-y-3 ">
+          <p className="text-center text-[34px] font-bold w-full text-third">
             Website Survey
           </p>
 
@@ -325,11 +325,11 @@ const DesktopSurvey = () => {
             onSubmit={handleSubmit}
             ref={formRef}
             id="form"
-            className="flex flex-col space-y-4"
+            className="flex flex-col space-y-3"
           >
             <div className="w-full h-[32px]">
               <input
-                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[2px] px-[18px] text-third dark:bg-secondary"
                 id="fullname"
                 name="given-name"
                 type="text"
@@ -338,7 +338,7 @@ const DesktopSurvey = () => {
             </div>
             <div className="w-full h-[32px]">
               <input
-                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[2px] px-[18px] text-third dark:bg-secondary"
                 id="email"
                 name="email"
                 type="text"
@@ -348,15 +348,15 @@ const DesktopSurvey = () => {
             </div>
             <div className="w-full h-[32px]">
               <input
-                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[2px] px-[18px] text-third dark:bg-secondary"
                 id="company"
                 name="company"
                 type="text"
                 placeholder="Company"
               />
             </div>
-            <p className="text-third">What kind of website do you need?</p>
-            <div className="flex space-x-3">
+            <p className="text-third text-sm">What kind of website do you need?</p>
+            <div className="flex space-x-3 text-xs">
               {website_types.map((name) => (
                 <button
                   type="button"
@@ -375,17 +375,18 @@ const DesktopSurvey = () => {
                   </div>
                 </button>
               ))}
-              <input
+              
+            </div>
+            <input
                 id="other_website"
                 placeholder="Other"
                 type="text"
-                className="px-3 border border-cinnabar rounded-full"
+                className="border border-cinnabar rounded-full text-xs py-0.5 px-3"
               />
-            </div>
-            <p className="text-third">
+            <p className="text-third text-sm">
               If it&apos;s an online shop, how many products do you sell?
             </p>
-            <div className="flex space-x-3">
+            <div className="flex flex-wrap gap-2">
               {sales.map((name) => (
                 <button
                   type="button"
@@ -405,10 +406,10 @@ const DesktopSurvey = () => {
                 </button>
               ))}
             </div>
-            <p className="text-third">
+            <p className="text-third text-sm">
               Are there any specific demographics or user personas to consider?
             </p>
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 text-xs">
               <button
                 type="button"
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
@@ -440,8 +441,8 @@ const DesktopSurvey = () => {
             </div>
             <AnimatePresence>
               {isOpenSpecifications && (
-                <div className="flex flex-col space-y-4">
-                  <div className="flex space-x-3">
+                <div className="flex flex-col space-y-2 text-xs">
+                  <div className="flex flex-wrap gap-2">
                     <Dropdown
                       options={ages}
                       onSelect={handleSelectionChangeDemographicsAge}
@@ -525,7 +526,7 @@ const DesktopSurvey = () => {
                 </div>
               )}
             </AnimatePresence>
-            <p>
+            <p className="text-sm">
               If you already know the overall look and feel you want for the
               website, you can describe or attach files.{" "}
             </p>
@@ -596,7 +597,7 @@ const DesktopSurvey = () => {
               </ul>
             )}
 
-            <p>You can provide examples of other websites you like.</p>
+            <p className="text-sm">You can provide examples of other websites you like.</p>
 
             {selectedLinks.map((link, index) => (
               <div key={index} className="flex space-x-3">
@@ -604,7 +605,7 @@ const DesktopSurvey = () => {
                   key={index}
                   value={link}
                   onChange={(e) => handleInputChangeLink(e, index)}
-                  className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                  className="text-xs placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[5px] px-[18px] text-third dark:bg-secondary"
                   id={`link-${index}`}
                   placeholder={`Link ${index + 1}:`}
                   type="text"
@@ -646,13 +647,13 @@ const DesktopSurvey = () => {
               <button
                 type="button"
                 onClick={addLink}
-                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
+                className="text-xs px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
               >
                 Add link
               </button>
             </div>
 
-            <p>
+            <p className="text-sm">
               List and describe the main pages or sections you want on the
               website (e.g., Home, About Us, Services, Contact).
             </p>
@@ -663,7 +664,7 @@ const DesktopSurvey = () => {
                   key={index}
                   value={page}
                   onChange={(e) => handleInputChangePage(e, index)}
-                  className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                  className="text-xs placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[5px] px-[18px] text-third dark:bg-secondary"
                   id={`page-${index}`}
                   placeholder={`Page ${index + 1}:`}
                   type="text"
@@ -706,15 +707,15 @@ const DesktopSurvey = () => {
               <button
                 type="button"
                 onClick={addPage}
-                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
+                className="text-xs px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
               >
                 Add page
               </button>
             </div>
 
-            <p>Does the site have to be in several languages?</p>
+            <p className="text-sm">Does the site have to be in several languages?</p>
 
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 text-xs">
               <button
                 type="button"
                 className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third dark:bg-secondary ${
@@ -747,7 +748,7 @@ const DesktopSurvey = () => {
 
             <AnimatePresence>
               {isOpenLanguages && (
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 text-xs">
                   {languages.map((name) => (
                     <button
                       type="button"
@@ -770,9 +771,9 @@ const DesktopSurvey = () => {
               )}
             </AnimatePresence>
 
-            <p>Describe any specific features or functionalities you want.</p>
-            <div className="flex space-x-2">
-              <div className="flex space-x-2">
+            <p className="text-sm">Describe any specific features or functionalities you want.</p>
+            <div className="flex flex-col space-y-2">
+              <div className="flex flex-wrap gap-2 text-xs">
                 {features.map((name) => (
                   <button
                     type="button"
@@ -796,13 +797,13 @@ const DesktopSurvey = () => {
                 id="other_features"
                 placeholder="Others"
                 type="text"
-                className="px-3 border border-cinnabar rounded-full"
+                className="text-xs px-3 py-1 border border-cinnabar rounded-full"
               />
             </div>
 
-            <p>Do you already have a logo?</p>
+            <p className="text-sm">Do you already have a logo?</p>
 
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 text-xs">
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("Yes")}
@@ -828,34 +829,34 @@ const DesktopSurvey = () => {
               </button>
             </div>
 
-            <p>
+            <p className="text-sm">
               Project timeline: When do they need the website to be completed?
             </p>
             <div>
               <DatePicker
                 selected={startDate}
-                className="px-3 border border-cinnabar rounded-full"
+                className="text-xs py-1 px-3 border border-cinnabar rounded-full"
                 onChange={(date: Date | [Date, Date] | null) =>
                   date && setStartDate(date as Date)
                 }
               />
             </div>
 
-            <p>Add any additional comments:</p>
+            <p className="text-sm">Add any additional comments:</p>
             <textarea
               id="comments"
               name="additional_comments"
               rows={5}
-              className="h-14 px-3 py-3 border border-cinnabar rounded-2xl"
+              className="text-xs h-14 px-3 py-3 border border-cinnabar rounded-2xl"
             />
 
-            <p className="text-2xl font-semibold">Legal and Privacy:</p>
-            <p>
+            <p className="text-xl font-semibold">Legal and Privacy:</p>
+            <p className="text-sm">
               Include a section to address any legal or privacy requirements,
               such as GDPR compliance or terms of service.
             </p>
-            <p className="text-2xl font-semibold">Next Steps:</p>
-            <p>
+            <p className="text-xl font-semibold">Next Steps:</p>
+            <p className="text-sm">
               Explain the next steps in the web development process, such as a
               follow-up meeting to discuss the survey responses in detail.
             </p>
@@ -875,4 +876,4 @@ const DesktopSurvey = () => {
   );
 };
 
-export default DesktopSurvey;
+export default PhabletSurvey;

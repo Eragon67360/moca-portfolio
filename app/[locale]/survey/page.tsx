@@ -1,7 +1,9 @@
 import React from "react";
 import { Metadata } from "next";
 import DesktopSurvey from "./DesktopSurvey";
-
+import MobileSurvey from "./MobileSurvey";
+import PhabletSurvey from "./PhabletSurvey";
+import TabletSurvey from "./TabletSurvey";
 export const generateMetadata = (): Metadata => {
   return {
     title: "Home",
@@ -14,13 +16,13 @@ export default function Home() {
   return (
     <>
       <div className="mobile">
-        <DesktopSurvey />
+        <MobileSurvey />
       </div>
       <div className="phablet">
-        <DesktopSurvey />
+        <PhabletSurvey />
       </div>
       <div className="tablet">
-        <DesktopSurvey />
+        <TabletSurvey />
       </div>
       <div className="desktop">
         <DesktopSurvey />

@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const DesktopSurvey = () => {
+const TabletSurvey = () => {
   const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
 
@@ -316,7 +316,7 @@ const DesktopSurvey = () => {
   return (
     <>
       <div className="flex w-screen bg-linen py-[124px]  justify-center items-center">
-        <div className="w-[810px] h-full rounded-2xl bg-secondary p-8 shadow-lg space-y-4 ">
+        <div className="w-[736px] h-full rounded-2xl bg-secondary p-8 shadow-lg space-y-4 ">
           <p className="text-center text-5xl font-bold w-full text-third">
             Website Survey
           </p>
@@ -875,4 +875,4 @@ const DesktopSurvey = () => {
   );
 };
 
-export default DesktopSurvey;
+export default TabletSurvey;
