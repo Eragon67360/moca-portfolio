@@ -23,25 +23,26 @@ const DesktopNavbar = () => {
   ];
 
   const scrollY = useScrollPosition(60 /*fps*/);
-  const [visible, setVisible] = useState(true);
+  const [isShrunk, setIsShrunk] = useState(true);
   const lastScrollTop = useRef(0);
 
   useEffect(() => {
     const currentScrollTop = scrollY;
+
     // Scrolling down
     if (currentScrollTop > lastScrollTop.current) {
-      setVisible(false);
+      setIsShrunk(false);
     }
     // Scrolling up
     else {
-      setVisible(true);
+      setIsShrunk(true);
     }
 
     lastScrollTop.current = currentScrollTop;
   }, [scrollY]);
 
   const commonClasses =
-    "text-base lg:text-lg xl:text-xl uppercase hover:text-cinnabar dark:hover:text-cinnabar transform transition duration-300 hover:scale-110";
+    "lg:text-xl xl:text-2xl text-base uppercase hover:text-cinnabar dark:hover:text-cinnabar transform transition transition-all duration-300 hover:scale-110";
 
   return (
     <>
@@ -53,45 +54,49 @@ const DesktopNavbar = () => {
           <nav>
             <motion.div
               animate={{
-                y: visible ? 0 : -100,
+                y: isShrunk ? 0 : -100,
               }}
-              transition={{ ease: "linear", duration: 0.6 }}
-              exit={{ y: visible ? -100 : 0 }}
-              className="fixed top-0 left-0 w-full z-20 transition-all flex justify-between items-center px-10 py-4 bg-transparent dark:bg-blackbean"
+              transition={{ duration: 0.6 }}
+              exit={{ y: isShrunk ? -100 : 0 }}
+              className={`fixed top-0 left-0 w-full z-20 flex items-center px-10 dark:bg-blackbean border-b-2 border-x-2 rounded-b-xl transition-all border-cinnabar h-[72px] bg-linen`}
             >
-              <div className="w-full flex">
-                <div className="flex space-x-8 text-2xl font-bold">
-                  <div className="flex items-center space-x-[1.3vw]">
-                    {navLinks.map((link) => {
-                      const isActive = pathname === "/" + locale + link.href;
+              <div className="flex w-full justify-between items-center">
+                <div className="w-full flex">
+                  <div className={`flex space-x-8 font-bold `}>
+                    <div className="flex items-center space-x-[1.3vw]">
+                      {navLinks.map((link) => {
+                        const isActive = pathname === "/" + locale + link.href;
 
-                      return (
-                        <Link
-                          key={link.name}
-                          locale={locale}
-                          href={link.href}
-                          className={`${commonClasses} ${
-                            isActive
-                              ? "text-cinnabar"
-                              : "text-black dark:text-secondary"
-                          }`}
-                        >
-                          {link.name}
-                        </Link>
-                      );
-                    })}
+                        return (
+                          <Link
+                            key={link.name}
+                            locale={locale}
+                            href={link.href}
+                            className={`${commonClasses} ${
+                              isActive
+                                ? "text-cinnabar"
+                                : "text-black dark:text-secondary"
+                            }`}
+                          >
+                            {link.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="w-full flex justify-center">
-                <Logo />
-              </div>
-              <div className="flex space-x-4 w-full justify-end">
-                <Providers>
-                  <ThemeSwitcher />
-                </Providers>
-                <Language />
+                <div className="w-full flex justify-center">
+                  <Logo />
+                </div>
+                <div
+                  className={`flex space-x-4 w-full justify-end transition-all`}
+                >
+                  <Providers>
+                    <ThemeSwitcher />
+                  </Providers>
+                  <Language />
+                </div>
               </div>
             </motion.div>
           </nav>
