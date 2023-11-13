@@ -56,7 +56,7 @@ const DesktopNavbar = () => {
               animate={{
                 y: isShrunk ? 0 : -100,
               }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
               exit={{ y: isShrunk ? -100 : 0 }}
               className={`fixed top-0 left-0 w-full z-20 flex items-center px-10 dark:bg-blackbean border-b-2 border-x-2 rounded-b-xl transition-all border-cinnabar h-[72px] bg-linen`}
             >

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
 import CarouselComponent from "../Carousel";
@@ -16,6 +16,7 @@ const PhabletHomeScreen = () => {
   const text2 = t("HomeScreen.banner_2");
 
   const { resolvedTheme } = useTheme();
+  const [isClient, setIsClient] = useState(false);
 
   let color;
 
@@ -30,6 +31,17 @@ const PhabletHomeScreen = () => {
       color = "#231F20";
       break;
   }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsClient(true);
+    }
+  }, []);
+
+  if (!isClient) {
+    return null; // Or some placeholder content
+  }
+
 
   return (
     <>

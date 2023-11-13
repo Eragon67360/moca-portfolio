@@ -1,14 +1,15 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { Carousel } from "react-carousel3";
-import tablet_base from "@/public/tablets/tablet_base_transparent.png";
 
 function CarouselComponent({ items }: { items: any }) {
-  const images = [tablet_base, tablet_base, tablet_base];
-
   const style = {};
+
   return (
     <>
       <div className="relative left-12 flex justify-center items-center z-10">
-        <Carousel height={460} width={650} autoPlay={false}>
+        <Carousel height={460} width={650} autoPlay={true}>
           <div key={1} style={style} className="">
             {items[0]}
           </div>
