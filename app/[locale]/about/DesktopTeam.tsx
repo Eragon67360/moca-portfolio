@@ -103,11 +103,11 @@ function DesktopTeam() {
               pt={{
                 indicatorButton: ({ context }: any) => ({
                   className: classNames(
-                    "mt-2 w-8 h-2 transition duration-200 rounded-lg",
+                    "mt-6 w-3 h-3 transition duration-200 rounded-full",
                     {
-                      "bg-gray-400 hover:bg-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600":
+                      "bg-transparent border border-cinnabar dark:border-white hover:bg-cinnabar/75 hover:dark:bg-secondary/75":
                         !context.active,
-                      "bg-cinnabar hover:bg-cinnabar/75": context.active,
+                      "bg-cinnabar hover:bg-cinnabar/75 dark:bg-secondary hover:dark:bg-secondary/75": context.active,
                     }
                   ),
                 }),
