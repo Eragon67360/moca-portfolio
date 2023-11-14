@@ -33,8 +33,8 @@ function DesktopContact() {
             </motion.div>
 
             <div className="flex">
-              <div className="w-1/2 flex flex-col ml-[18.35vw] mt-[22.81vh] fixed space-y-12">
-                <div className="">
+              <div className="w-1/2 flex flex-col ml-[18.35vw] mt-[2vh] fixed space-y-8 z-0">
+                <div>
                   <DesktopVisitCard />
                 </div>
                 <div className="h-[25vh] w-[22.2vw] flex space-y-3 left-[18.35vw] text-xl justify-start">
