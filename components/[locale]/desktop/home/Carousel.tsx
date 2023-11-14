@@ -2,6 +2,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useWindowHeight from "@/hooks/useWindowHeight";
+import useWindowWidth from "@/hooks/useWindowWidth";
 
 const projectItems = [
   { image: "/carousel/pipas.png" },
@@ -42,6 +44,24 @@ const swipePower = (offset: number, velocity: number) => {
 
 export const Carousel = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const [windowHeight, setWindowHeight] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+
+  // Function to update the window width
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateWindowSize = () => {
+    setWindowHeight(window.innerHeight);
+    setWindowWidth(window.innerWidth);
+  };
+
+  // Effect to add the window resize event listener
+  useEffect(() => {
+    updateWindowSize();
+
+    window.addEventListener("resize", updateWindowSize);
+
+    return () => window.removeEventListener("resize", updateWindowSize);
+  }, [updateWindowSize]);
 
   // Function to move to next project item
   const paginate = (newDirection: number) => {
@@ -57,12 +77,24 @@ export const Carousel = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
+  const calculateImageHeight = (): number => {
+    return windowHeight / 2.5;
+  };
+
+  const calculateImageWidth = (): number => {
+    return windowHeight * 1.777;
+  };
+
   return (
-    <div className="relative w-[504px] h-[323px]">
+    <div className={`relative`}>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
-          width={504}
+          style={{
+            height: calculateImageHeight(),
+            width: calculateImageWidth(),
+            objectFit: "contain",
+          }}
           src={projectItems[page % projectItems.length].image}
           alt={`Project ${page}`}
           custom={direction}
