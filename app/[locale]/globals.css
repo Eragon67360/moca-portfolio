@@ -31,23 +31,10 @@ html {
   background: #742119;
 }
 
-.selectedIndicator {
-  @apply bg-red-500 border-red-500;
-}
-
-.p-carousel-indicator .p-highlight {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(255, 0, 0 / var(--tw-border-opacity)) !important; /* red border */
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255, 0, 0 / var(--tw-bg-opacity)) !important; /* red background */
-}
-
 .text-stroke{
   -webkit-text-stroke: white;
 }
-.normalIndicator {
-  @apply bg-gray-400 border-gray-400;
-}
+
 [class^="number-slide"],
 [class*=" number-slide"] {
   background: grey;

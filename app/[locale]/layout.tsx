@@ -18,6 +18,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import { PrimeReactProvider } from "primereact/api";
+import Tailwind from "primereact/passthrough/tailwind";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -58,50 +60,52 @@ export default async function RootLayout({
       <link rel="icon" href="/app/favicon.ico"></link>
       <body>
         <ClerkProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NextIntlClientProvider locale={locale} messages={messages}>
-              <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
-                <ProgressBar />
-                <div className="flex flex-col flex-grow font-sans">
-                  <>
-                    <div className="mobile">
-                      <MobileNavbar />
-                    </div>
-                    <div className="desktop">
-                      <DesktopNavbar />
-                    </div>
-                    <div className="tablet">
-                      <TabletNavbar />
-                    </div>
-                    <div className="phablet">
-                      <TabletNavbar />
-                    </div>
-                  </>
-                  {children}
+          <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <NextIntlClientProvider locale={locale} messages={messages}>
+                <div className="flex flex-col h-screen bg-white dark:bg-blackbean font-sans">
+                  <ProgressBar />
+                  <div className="flex flex-col flex-grow font-sans">
+                    <>
+                      <div className="mobile">
+                        <MobileNavbar />
+                      </div>
+                      <div className="desktop">
+                        <DesktopNavbar />
+                      </div>
+                      <div className="tablet">
+                        <TabletNavbar />
+                      </div>
+                      <div className="phablet">
+                        <TabletNavbar />
+                      </div>
+                    </>
+                    {children}
 
-                  <>
-                    <div className="mobile">
-                      <MobileFooter />
-                    </div>
-                    <div className="desktop">
-                      <DesktopFooter />
-                    </div>
-                    <div className="tablet">
-                      <TabletFooter />
-                    </div>
-                    <div className="phablet"></div>
-                  </>
-                  <Analytics />
-                  <ToastContainer />
+                    <>
+                      <div className="mobile">
+                        <MobileFooter />
+                      </div>
+                      <div className="desktop">
+                        <DesktopFooter />
+                      </div>
+                      <div className="tablet">
+                        <TabletFooter />
+                      </div>
+                      <div className="phablet"></div>
+                    </>
+                    <Analytics />
+                    <ToastContainer />
+                  </div>
                 </div>
-              </div>
-            </NextIntlClientProvider>
-          </ThemeProvider>
+              </NextIntlClientProvider>
+            </ThemeProvider>
+          </PrimeReactProvider>
         </ClerkProvider>
       </body>
     </html>

@@ -9,6 +9,13 @@ import { MemberService } from "./service/MemberService";
 import Image from "next/image";
 import { MembersDesktopSkeleton } from "./skeletons/MembersSkeleton";
 import Logos from "./logos";
+import { classNames } from "primereact/utils";
+
+type CustomCarouselPassThroughOptions = {
+  indicatorButton: ({ context }: { context: { active: boolean } }) => {
+    className: string;
+  };
+};
 
 interface Members {
   id: string;
@@ -29,7 +36,7 @@ const MemberTemplate = ({
 }: Members) => {
   return (
     <>
-      <div className="flex justify-start font-sans">
+      <div className="flex justify-center font-sans">
         <Image
           src={photo}
           alt="image"
@@ -92,11 +99,20 @@ function DesktopTeam() {
               numVisible={1}
               numScroll={1}
               itemTemplate={MemberTemplate}
-              indicatorsContentClassName="p-carousel-indicator p-highlight"
+              indicatorsContentClassName="mt-2 "
               pt={{
-                indicatorButton: { className: "normalIndicator mt-4 rounded-lg" },
+                indicatorButton: ({ context }: any) => ({
+                  className: classNames(
+                    "mt-2 w-8 h-2 transition duration-200 rounded-lg",
+                    {
+                      "bg-gray-400 hover:bg-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600":
+                        !context.active,
+                      "bg-cinnabar hover:bg-cinnabar/75": context.active,
+                    }
+                  ),
+                }),
               }}
-              className="h-full z-10"
+              className="h-full z-10 pt-4 "
             />
           ) : (
             <MembersDesktopSkeleton />
