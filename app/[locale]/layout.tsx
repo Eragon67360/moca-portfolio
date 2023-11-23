@@ -8,6 +8,7 @@ import MobileNavbar from "@/components/[locale]/mobile/navigation/navbar";
 import ProgressBar from "@/components/[locale]/ProgressBar";
 import DesktopFooter from "@/components/[locale]/desktop/footer";
 import TabletFooter from "@/components/[locale]/tablet/footer";
+import PhabletFooter from "@/components/[locale]/phablet/footer";
 import MobileFooter from "@/components/[locale]/mobile/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GoogleAnalyticsComponent } from "../utils/gtag";
@@ -97,7 +98,9 @@ export default async function RootLayout({
                       <div className="tablet">
                         <TabletFooter />
                       </div>
-                      <div className="phablet"></div>
+                      <div className="phablet">
+                        <PhabletFooter />
+                      </div>
                     </>
                     <Analytics />
                     <ToastContainer />
