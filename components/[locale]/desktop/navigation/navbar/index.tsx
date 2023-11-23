@@ -58,7 +58,7 @@ const DesktopNavbar = () => {
               }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
               exit={{ y: isShrunk ? -100 : 0 }}
-              className={`fixed top-0 left-0 w-screen z-40 flex items-center px-10 dark:bg-blackbean border-b-2 border-x-2 rounded-b-xl transition-all border-cinnabar h-[72px] bg-linen`}
+              className={`fixed top-0 left-0 w-full z-40 flex items-center px-10 dark:bg-blackbean border-b-2 border-x-2 rounded-b-xl transition-all border-cinnabar h-[72px] bg-linen`}
             >
               <div className="flex w-full justify-between items-center">
                 <div className="w-full flex">
