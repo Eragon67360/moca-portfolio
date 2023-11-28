@@ -32,7 +32,7 @@ const TabletHomeScreen = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured h-screen">
+      <div className="h-[80vh] flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
         <div className="text-3xl font-bold text-falured text-center px-32">
           {text1} {text2}
         </div>

@@ -11,7 +11,7 @@ const TabletVisitCard = () => {
     <>
       <div
         
-        className="h-56 w-full bg-none rounded-xl flex flex-col justify-start space-y-8 text-secondary"
+        className="h-56 w-full bg-falured shadow-lightBox rounded-xl flex flex-col justify-start space-y-8 text-secondary "
       >
         <div className="pt-4 pl-4 flex justify-start text-2xl ">
         {t('information')}

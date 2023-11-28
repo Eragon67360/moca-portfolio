@@ -105,7 +105,7 @@ const Plans = () => {
   return (
     <>
       <div className="relative">
-        <div className="absolute -top-8 left-24">
+        <div className="absolute -top-16 left-[10%]">
           <ArrowComponent color={color} />
         </div>
       </div>

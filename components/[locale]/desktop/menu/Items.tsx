@@ -10,7 +10,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <>
-      <div className="flex flex-col space-y-4 my-24 h-full text-black dark:text-secondary text-2xl font-bold justify-between">
+      <div className="flex flex-col space-y-4 mt-24 mb-8 h-full text-black dark:text-secondary text-lg font-bold justify-between">
         <div className="space-y-4 ">
           <Link
             href="/home"
@@ -19,7 +19,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           >
             {t("home")}
           </Link>
-          <hr className="w-full h-0.5 mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
+          <hr className="w-full h-[1px] mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
           <Link
             href="/about"
             className="block hover:text-cinnabar"
@@ -27,7 +27,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           >
             {t("team")}
           </Link>
-          <hr className="w-full h-0.5 mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
+          <hr className="w-full h-[1px] mx-auto bg-gray-800 dark:bg-secondary/80 border-0 rounded" />
 
           <Link
             href="/contact"
@@ -38,9 +38,8 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           </Link>
         </div>
 
-        <div className="flex flex-col pb-2 space-y-10 items-center">
-          <p className="font-semibold text-4xl">Social Media</p>
-          <div className="flex flex-wrap gap-4 px-8 w-full justify-center">
+        <div className="space-y-6">
+          <div className="w-full flex flex-col space-y-3 px-8 pb-2 items-center justify-center">
             <a
               className="space-y-3 items-center flex flex-col hover:bg-gradient-to-r hover:from-[#67C9D0] hover:via-black hover:to-[#EE1D52] hover:bg-clip-text hover:text-transparent"
               href="https://www.tiktok.com/@cristinaandresrr?lang=en"
@@ -63,11 +62,11 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
               <p className="uppercase">Linkedin</p>
             </a>
           </div>
-        </div>
-        <div className="flex justify-center items-center ">
-          <Providers>
-            <ThemeSwitcher />
-          </Providers>
+          <div className="flex justify-center items-center">
+            <Providers>
+              <ThemeSwitcher />
+            </Providers>
+          </div>
         </div>
       </div>
     </>

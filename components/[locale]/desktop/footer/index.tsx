@@ -16,14 +16,14 @@ const DesktopFooter = () => {
       {pathname !== `/${locale}` &&
         pathname !== `/${locale}/` &&
         pathname !== `/${locale}/admin` && (
-          <div className="flex flex-col bg-linen dark:bg-blackbean justify-between px-[129px] pt-12 pb-8 border-t-2 dark:border-secondary/50 border-third/50">
+          <div className="h-[180PX] flex flex-col bg-linen dark:bg-blackbean justify-between px-[129px] pt-11 pb-7 border-t-2 dark:border-secondary/50 border-third/50">
             <div className="flex justify-between">
               <div className="justify-start items-start flex">
-                <Image src={logo} alt="logo" width={160} />
+                <Image src={logo} alt="logo" width={115} />
               </div>
-              <div className="flex space-x-6">
+              <div className="flex space-x-6 pt-1">
                 <div className="flex space-x-6 text-xs">
-                  <Link href={"/home"} className="hover:text-cinnabar">
+                  <Link href={"/home"} className="hover:text-cinnabar text-xs">
                     Home
                   </Link>
                   <a
@@ -41,7 +41,7 @@ const DesktopFooter = () => {
                     Contact
                   </Link>
                 </div>
-                <div className="flex space-x-6">
+                <div className="flex space-x-6 text-xs">
                   <Link href={"/privacy"} className="hover:text-cinnabar">
                     Privacy Policy
                   </Link>
@@ -52,12 +52,14 @@ const DesktopFooter = () => {
               </div>
             </div>
 
-            <Image src={line} alt="separator" className="w-full mt-11 mb-5"/>
+            <Image src={line} alt="separator" className="w-full mt-9" />
             <div className="flex justify-between">
-              <p className="text-xs">
+              <p className="text-xs pt-4">
                 UX MOCA is headquartered in Strasbourg, France.
               </p>
-              <Logos />
+              <div className="pt-[10px]">
+                <Logos />
+              </div>
             </div>
           </div>
         )}

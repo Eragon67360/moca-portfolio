@@ -16,12 +16,12 @@ const TabletFooter = () => {
       {pathname !== `/${locale}` &&
         pathname !== `/${locale}/` &&
         pathname !== `/${locale}/admin` && (
-          <div className="flex flex-col bg-linen dark:bg-blackbean justify-between px-[32px] pt-11 pb-7 border-t-2 dark:border-secondary/50 border-third/50">
+          <div className="h-40 flex flex-col bg-linen dark:bg-blackbean justify-between px-[32px] pt-10 pb-7 border-t-2 dark:border-secondary/50 border-third/50">
             <div className="flex justify-between">
               <div className="justify-start items-start flex">
-                <Image src={logo} alt="logo" width={160} />
+                <Image src={logo} alt="logo" width={115} />
               </div>
-              <div className="flex space-x-6">
+              <div className="flex space-x-6 pt-1">
                 <div className="flex space-x-6 text-xs">
                   <Link href={"/home"} className="hover:text-cinnabar text-xs">
                     Home
@@ -52,12 +52,14 @@ const TabletFooter = () => {
               </div>
             </div>
 
-            <Image src={line} alt="separator" className="w-full mt-9 mb-4" />
+            <Image src={line} alt="separator" className="w-full mt-9" />
             <div className="flex justify-between">
-              <p className="text-xs">
+              <p className="text-xs pt-4">
                 UX MOCA is headquartered in Strasbourg, France.
               </p>
-              <Logos />
+              <div className="pt-[10px]">
+                <Logos />
+              </div>
             </div>
           </div>
         )}
