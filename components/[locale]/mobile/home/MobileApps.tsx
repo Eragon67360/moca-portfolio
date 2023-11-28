@@ -9,7 +9,7 @@ import { GrCloudSoftware } from "react-icons/gr";
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import panda from "@/public/doodles/panda.svg";
+import panda from "@/public/doodles/panda.png";
 import herb from "@/public/doodles/herb.svg";
 import herb2 from "@/public/doodles/herb2.svg";
 import ArrowComponent from "@/components/SVG/arrow3";
@@ -78,20 +78,21 @@ const MobileApps = () => {
         <Image
           src={herb}
           alt="herb"
-          className="absolute -bottom-36 right-24"
-          width={20}
+          className="absolute -bottom-32 right-20"
+          width={16}
         />
         <Image
           src={herb2}
           alt="herb"
-          className="absolute -bottom-36 right-24 transform translate-x-1"
-          width={16}
+          className="absolute -bottom-32 right-20 transform translate-x-1"
+          width={12}
         />
         <Image
           src={panda}
           alt="panda"
-          width={165}
-          className="-scale-x-100 absolute -top-0 -right-20"
+          width={112}
+          style={{ height: "auto" }}
+          className="-scale-x-100 absolute top-2 -right-0"
         />
       </div>
       <div className="pt-[52px] bg-secondary dark:bg-blackbean flex flex-col items-center">
