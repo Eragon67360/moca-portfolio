@@ -1,21 +1,49 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Menu from "@/components/[locale]/desktop/menu";
 import { usePathname } from "next/navigation";
 import { Language } from "@/components/[locale]/desktop/navigation/navbar/Language";
 import { Logo } from "./Logo";
 import { CgMenuGridO } from "react-icons/cg";
+import useScrollPosition from "@react-hook/window-scroll";
+import { motion } from "framer-motion";
 
 const TabletNavbar = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
+
+  const scrollY = useScrollPosition(60 /*fps*/);
+  const [isShrunk, setIsShrunk] = useState(true);
+  const lastScrollTop = useRef(0);
+
+  useEffect(() => {
+    const currentScrollTop = scrollY;
+
+    // Scrolling down
+    if (currentScrollTop > lastScrollTop.current) {
+      setIsShrunk(false);
+    }
+    // Scrolling up
+    else {
+      setIsShrunk(true);
+    }
+
+    lastScrollTop.current = currentScrollTop;
+  }, [scrollY]);
 
   return (
     <>
       {pathname !== "/" && (
         <nav>
           <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
-          <div className="flex justify-between items-center px-10 py-4 bg-secondary dark:bg-blackbean border border-b-2 border-cinnabar dark:border-falured rounded-b-lg ">
+          <motion.div
+            animate={{
+              y: isShrunk ? 0 : -100,
+            }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            exit={{ y: isShrunk ? -100 : 0 }}
+            className={`fixed top-0 left-0 w-full z-40 flex items-center px-10 dark:bg-blackbean border-b-2 border-x-2 rounded-b-xl transition-all border-cinnabar h-[72px] bg-linen`}
+          >
             <div className="w-full flex">
               <div className="flex space-x-8 text-2xl font-bold">
                 <button
@@ -36,7 +64,7 @@ const TabletNavbar = () => {
             <div className="flex space-x-4 w-full justify-end">
               <Language />
             </div>
-          </div>
+          </motion.div>
         </nav>
       )}
     </>

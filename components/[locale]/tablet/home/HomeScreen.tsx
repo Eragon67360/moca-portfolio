@@ -32,11 +32,11 @@ const TabletHomeScreen = () => {
 
   return (
     <>
-      <div className="h-[80vh] flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
-        <div className="text-3xl font-bold text-falured text-center px-32">
+      <div className="h-[80vh] flex flex-col w-full justify-center items-center bg-linen dark:bg-falured">
+        <div className="text-3xl font-bold text-falured text-center px-32 mt-[217px] ">
           {text1} {text2}
         </div>
-        <div className="flex h-full pb-24 mx-auto items-center justify-center">
+        <div className="flex h-full mx-auto items-center justify-center scale-75">
           <CarouselComponent
             key={0}
             items={[
@@ -44,7 +44,7 @@ const TabletHomeScreen = () => {
                 key={0}
                 src={tablet_base}
                 alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-cinnabar border border-black"
+                className="w-full h-full rounded-2xl object-cover bg-cinnabar"
               />,
               <Image
                 key={1}
