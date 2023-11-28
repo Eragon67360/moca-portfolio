@@ -4,6 +4,13 @@ import { Carousel } from "primereact/carousel";
 import { MemberService } from "./service/MemberService";
 import Image from "next/image";
 import { MembersMobileSkeleton } from "./skeletons/MembersSkeleton";
+import "primereact/resources/themes/arya-orange/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
+
+import { MembersTabletSkeleton } from "./skeletons/MembersSkeleton";
+import Logos from "./logos";
+import { classNames } from "primereact/utils";
 
 interface Members {
   id: string;
@@ -15,6 +22,7 @@ interface Members {
 }
 
 const MemberTemplate = ({
+  id,
   name,
   role,
   photo,
@@ -35,6 +43,16 @@ const MemberTemplate = ({
           <div className="flex flex-col">
             <h2 className="font-semibold text-2xl">{name}</h2>
             <h2 className="">{role}</h2>
+          </div>
+          <div className="border border-cinnabar rounded-2xl flex flex-col space-y-3 justify-center items-center py-3 mt-4 px-2 text-xs">
+            <div className="flex space-x-2">
+              <p className="text-center">Softwares</p>
+              <Logos activity="soft" id={id} />
+            </div>
+            <div className="flex space-x-2">
+              <p className="text-center">Leisure Activity</p>
+              <Logos activity="act" id={id} />
+            </div>
           </div>
           <div className="flex space-x-3 pt-4">
             <a
@@ -75,11 +93,23 @@ function MobileTeam() {
             {members ? (
               <Carousel
                 value={members}
-                unstyled={false}
-                showIndicators={true}
                 numVisible={1}
                 numScroll={1}
                 itemTemplate={MemberTemplate}
+                indicatorsContentClassName="mt-2 "
+                pt={{
+                  indicatorButton: ({ context }: any) => ({
+                    className: classNames(
+                      "mt-6 w-3 h-3 transition duration-200 rounded-full",
+                      {
+                        "bg-transparent border border-cinnabar dark:border-white hover:bg-cinnabar/75 hover:dark:bg-secondary/75":
+                          !context.active,
+                        "bg-cinnabar hover:bg-cinnabar/75 dark:bg-secondary hover:dark:bg-secondary/75":
+                          context.active,
+                      }
+                    ),
+                  }),
+                }}
               />
             ) : (
               <MembersMobileSkeleton />
