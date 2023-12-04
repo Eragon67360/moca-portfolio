@@ -9,9 +9,14 @@ import panda3 from "@/public/tablets/panda3.jpg";
 import { useTranslations } from "next-intl";
 import Arrow from "@/components/SVG/little_arrow_1";
 import { useTheme } from "next-themes";
-import { animate, motion } from "framer-motion";
+import { AnimatePresence, animate, motion } from "framer-motion";
 
 const colorPattern = ["bg-cinnabar dark:bg-falured", "bg-linen"];
+
+const fadeVariants = {
+  visible: { opacity: 1 },
+  hidden: { opacity: 0 },
+};
 
 const TabletHomeScreen = () => {
   const t = useTranslations("Home");
@@ -34,6 +39,27 @@ const TabletHomeScreen = () => {
       break;
   }
 
+  const [pandas, setPandas] = useState([panda1, panda2, panda3]);
+  const [keys, setKeys] = useState([1, 2, 3]);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false); // First step: trigger fade out
+      setTimeout(() => {
+        setPandas((prevPandas) => [
+          prevPandas[1],
+          prevPandas[2],
+          prevPandas[0],
+        ]);
+        setKeys((prevKeys) => [prevKeys[1], prevKeys[2], prevKeys[0]]);
+        setIsVisible(true); // Second step: change image and fade in
+      }, 1000); // Adjust timeout to match the fade-out duration
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <div className="h-[80vh] flex flex-col w-full justify-center items-center bg-linen dark:bg-falured">
@@ -51,9 +77,21 @@ const TabletHomeScreen = () => {
               <div className="relative z-10">
                 <Image src={tablet_base} alt="base tablet" width={376} />
               </div>
-              <div className="absolute top-10 left-0 z-0">
-                <Image src={panda1} alt="panda1" width={370} />
-              </div>
+              <AnimatePresence>
+                {isVisible && (
+                  <motion.div
+                    className="absolute top-10 left-0 z-0"
+                    key={keys[0]}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={fadeVariants}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image src={pandas[0]} alt="panda1" width={370} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             <motion.div
@@ -65,17 +103,41 @@ const TabletHomeScreen = () => {
               <div className="relative z-10">
                 <Image src={tablet_base} alt="base tablet" width={376} />
               </div>
-              <div className="absolute top-10 left-0 z-0">
-                <Image src={panda2} alt="panda1" width={370} />
-              </div>
+              <AnimatePresence>
+                {isVisible && (
+                  <motion.div
+                    className="absolute top-10 left-0 z-0"
+                    key={keys[1]}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={fadeVariants}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image src={pandas[1]} alt="panda1" width={370} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
             <div className="relative">
               <div className="relative z-10">
                 <Image src={tablet_base} alt="base tablet" width={376} />
               </div>
-              <div className="absolute top-10 left-0 z-0">
-                <Image src={panda3} alt="panda1" width={370} />
-              </div>
+              <AnimatePresence>
+                {isVisible && (
+                  <motion.div
+                    className="absolute top-10 left-0 z-0"
+                    key={keys[2]}
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={fadeVariants}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image src={pandas[2]} alt="panda1" width={370} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
