@@ -20,6 +20,7 @@ const config: Config = {
       xl: "1920px",
       //Large screen
       "2xl": "2560px",
+      'custom': '720px',
     },
     extend: {
       backgroundImage: {

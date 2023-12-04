@@ -133,7 +133,7 @@ const FeaturedProjects = () => {
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 justify-center mt-10">
+          <div className="grid custom:grid-cols-2 gap-4 grid-cols-1 justify-center mt-10 mx-4">
             <div
               key={0}
               className="bg-linen flex flex-col w-[332px] relative h-[332px]"
