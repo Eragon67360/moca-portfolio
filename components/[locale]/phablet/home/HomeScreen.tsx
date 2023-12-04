@@ -46,7 +46,7 @@ const Phablet = ({ initialPanda }: { initialPanda: any }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 0.4 }}
       >
         <Image
           src={pandaImages[currentPanda]}
@@ -61,7 +61,7 @@ const Phablet = ({ initialPanda }: { initialPanda: any }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.4 }}
       >
         <Image
           src={pandaImages[nextPanda]}
@@ -108,7 +108,7 @@ const PhabletHomeScreen = () => {
   return (
     <>
       <div className="flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
-        <div className="text-[34px] font-bold text-falured text-center mt-[196px] ">
+        <div className="text-[28px] px-8 font-bold text-falured text-center mt-[196px] ">
           {text1} {text2}
         </div>
         <div className="flex h-full items-center justify-center w-full scale-75">

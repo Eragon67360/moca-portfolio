@@ -37,7 +37,7 @@ const Tablet = ({ initialPanda }: { initialPanda: any }) => {
       transition={{ duration: 1 }}
     >
       <div className="z-10">
-        <Image src={tablet_base} alt="base tablet" width={376}/>
+        <Image src={tablet_base} alt="base tablet" width={376} />
       </div>
 
       <motion.div
@@ -46,7 +46,7 @@ const Tablet = ({ initialPanda }: { initialPanda: any }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 0.4 }}
       >
         <Image
           src={pandaImages[currentPanda]}
@@ -61,7 +61,7 @@ const Tablet = ({ initialPanda }: { initialPanda: any }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.4 }}
       >
         <Image
           src={pandaImages[nextPanda]}
