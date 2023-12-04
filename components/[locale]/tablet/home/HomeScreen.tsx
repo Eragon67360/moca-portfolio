@@ -1,11 +1,15 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
-import CarouselComponent from "../Carousel";
+import panda1 from "@/public/tablets/panda1.jpg";
+import panda2 from "@/public/tablets/panda2.jpg";
+import panda3 from "@/public/tablets/panda3.jpg";
+
 import { useTranslations } from "next-intl";
 import Arrow from "@/components/SVG/little_arrow_1";
 import { useTheme } from "next-themes";
+import { animate, motion } from "framer-motion";
 
 const colorPattern = ["bg-cinnabar dark:bg-falured", "bg-linen"];
 
@@ -36,42 +40,44 @@ const TabletHomeScreen = () => {
         <div className="text-3xl font-bold text-falured text-center px-32 mt-[217px] ">
           {text1} {text2}
         </div>
-        <div className="flex h-full mx-auto items-center justify-center scale-75">
-          <CarouselComponent
-            key={0}
-            items={[
-              <Image
-                key={0}
-                src={tablet_base}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-cinnabar"
-              />,
-              <Image
-                key={1}
-                src={tablet_base}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-lightblue"
-              />,
-              <Image
-                key={2}
-                src={tablet_base}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-darkorange"
-              />,
-              <Image
-                key={3}
-                src={tablet_base}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-falured"
-              />,
-              <Image
-                key={4}
-                src={tablet_base}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-linen"
-              />,
-            ]}
-          />
+        <div className="flex h-full items-center justify-center w-full scale-75">
+          <div className="flex justify-center items-center">
+            <motion.div
+              className="absolute"
+              initial={{ x: 0, scale: 1 }}
+              animate={{ x: -500, scale: 0.8 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
+              <div className="relative z-10">
+                <Image src={tablet_base} alt="base tablet" width={376} />
+              </div>
+              <div className="absolute top-10 left-0 z-0">
+                <Image src={panda1} alt="panda1" width={370} />
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="absolute"
+              initial={{ x: 0, scale: 1 }}
+              animate={{ x: 500, scale: 0.8 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
+              <div className="relative z-10">
+                <Image src={tablet_base} alt="base tablet" width={376} />
+              </div>
+              <div className="absolute top-10 left-0 z-0">
+                <Image src={panda2} alt="panda1" width={370} />
+              </div>
+            </motion.div>
+            <div className="relative">
+              <div className="relative z-10">
+                <Image src={tablet_base} alt="base tablet" width={376} />
+              </div>
+              <div className="absolute top-10 left-0 z-0">
+                <Image src={panda3} alt="panda1" width={370} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="relative">

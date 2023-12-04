@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/logo_cinna.svg";
+import logo from "@/public/logo.svg";
 import Logos from "./Logos";
 import { usePathname } from "next/navigation";
 import Link from "next/link";

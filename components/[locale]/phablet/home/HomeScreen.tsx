@@ -39,7 +39,7 @@ const PhabletHomeScreen = () => {
   }, []);
 
   if (!isClient) {
-    return null; // Or some placeholder content
+    return null;
   }
 
 
