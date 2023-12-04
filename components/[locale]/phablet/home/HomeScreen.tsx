@@ -2,13 +2,76 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
-import CarouselComponent from "../Carousel";
+import panda1 from "@/public/tablets/panda1.jpg";
+import panda2 from "@/public/tablets/panda2.jpg";
+import panda3 from "@/public/tablets/panda3.jpg";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 
 import Arrow from "@/components/SVG/little_arrow_1";
+import { motion } from "framer-motion";
 
 const colorPattern = ["bg-cinnabar dark:bg-falured", "bg-linen"];
+const pandaImages = [panda1, panda2, panda3];
+
+const Phablet = ({ initialPanda }: { initialPanda: any }) => {
+  const [currentPanda, setCurrentPanda] = useState(initialPanda);
+  const [nextPanda, setNextPanda] = useState(
+    (initialPanda + 1) % pandaImages.length
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPanda(nextPanda);
+      setNextPanda((nextPanda + 1) % pandaImages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [nextPanda]);
+
+  return (
+    <motion.div
+      className="relative"
+      initial={{ x: 0, scale: 1 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <div className="z-10">
+        <Image src={tablet_base} alt="base tablet" width={340} />
+      </div>
+
+      <motion.div
+        className="absolute top-10 left-0 -z-10"
+        key={currentPanda}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+      >
+        <Image
+          src={pandaImages[currentPanda]}
+          alt={`panda-${currentPanda}`}
+          width={336}
+        />
+      </motion.div>
+
+      <motion.div
+        className="absolute top-10 left-0 -z-10"
+        key={nextPanda}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <Image
+          src={pandaImages[nextPanda]}
+          alt={`panda-${nextPanda}`}
+          width={336}
+        />
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const PhabletHomeScreen = () => {
   const t = useTranslations("Home");
@@ -33,7 +96,7 @@ const PhabletHomeScreen = () => {
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setIsClient(true);
     }
   }, []);
@@ -42,54 +105,35 @@ const PhabletHomeScreen = () => {
     return null;
   }
 
-
   return (
     <>
       <div className="flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
-        <div className="text-3xl font-bold text-falured text-center px-32">
+        <div className="text-[34px] font-bold text-falured text-center mt-[196px] ">
           {text1} {text2}
         </div>
-        <div className="flex h-full pb-24 mx-auto items-center justify-center">
-          <CarouselComponent
-            key={0}
-            items={[
-              <Image
-                key={0}
-                src={tablet_base}
-                width={200}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-cinnabar border border-black"
-              />,
-              <Image
-                key={1}
-                src={tablet_base}
-                width={200}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-lightblue"
-              />,
-              <Image
-                key={2}
-                src={tablet_base}
-                width={200}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-darkorange"
-              />,
-              <Image
-                key={3}
-                src={tablet_base}
-                width={200}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-falured"
-              />,
-              <Image
-                key={4}
-                src={tablet_base}
-                width={200}
-                alt="Carousel image"
-                className="w-full h-full rounded-2xl object-cover bg-linen"
-              />,
-            ]}
-          />
+        <div className="flex h-full items-center justify-center w-full scale-75">
+          <div className="flex justify-center items-center">
+            <motion.div
+              className="absolute"
+              initial={{ x: 0, scale: 1 }}
+              animate={{ x: -420, scale: 0.8 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
+              <Phablet initialPanda={0} />
+            </motion.div>
+
+            <motion.div
+              className="absolute"
+              initial={{ x: 0, scale: 1 }}
+              animate={{ x: 420, scale: 0.8 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
+              <Phablet initialPanda={1} />
+            </motion.div>
+            <div className="relative">
+              <Phablet initialPanda={2} />
+            </div>
+          </div>
         </div>
       </div>
       <div className="relative">
