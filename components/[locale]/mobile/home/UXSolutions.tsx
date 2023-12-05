@@ -13,7 +13,7 @@ const UXSolutions = () => {
   return (
     <>
       <div className="">
-        <div className="bg-white dark:bg-blackbean flex flex-col h-full pt-[52px] pb-40 justify-start items-center text-center select-none space-y-12 px-8">
+        <div className="bg-white dark:bg-blackbean flex flex-col h-full py-[52px] justify-start items-center text-center select-none space-y-12 px-8">
           <p className="font-bold text-[34px] text-blackbean dark:text-secondary">
             {t("title")}
           </p>

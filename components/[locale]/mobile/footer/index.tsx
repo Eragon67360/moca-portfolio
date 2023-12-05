@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import logo from "@/public/logo_cinna.svg";
+import logo from "@/public/logo.svg";
 import Logos from "./Logos";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -19,7 +19,7 @@ const MobileFooter = () => {
             <div className="flex flex-col justify-between ">
               <div className="flex flex-col space-y-[10px]">
                 <div className="justify-start items-start flex">
-                  <Image src={logo} alt="logo" width={160} />
+                  <Image src={logo} alt="logo" width={141} />
                 </div>
                 <p className="text-xs w-[184px]">
                   UX MOCA is headquartered in Strasbourg, France.
@@ -30,7 +30,7 @@ const MobileFooter = () => {
             </div>
 
             <div className="flex justify-between">
-              <div className="flex flex-col space-y-2 text-xs">
+              <div className="flex flex-col space-y-2 text-[11px]">
                 <Link href={"/home"} className="hover:text-cinnabar">
                   Home
                 </Link>

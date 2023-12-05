@@ -35,8 +35,8 @@ const MemberTemplate = ({
         <Image
           src={photo}
           alt="image"
-          width={180}
-          height={180}
+          width={240}
+          height={240}
           className="rounded-xl"
         />
         <div className="flex flex-col pt-9 justify-between">
@@ -54,7 +54,7 @@ const MemberTemplate = ({
               <Logos activity="act" id={id} />
             </div>
           </div>
-          <div className="flex space-x-3 pt-4">
+          <div className="flex space-x-3 py-4 justify-center items-center">
             <a
               href={linkedin}
               target="_blank"

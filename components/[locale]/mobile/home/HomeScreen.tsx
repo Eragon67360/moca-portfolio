@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import Image from "next/image";
 import phone_white from "@/public/phones/phone_white.png";
@@ -22,7 +22,12 @@ const HomeScreen = () => {
 
   const t = useTranslations("Home");
   const text1 = t("HomeScreen.banner_1");
+  const doubledText1 = `${text1} ${text1}`;
   const text2 = t("HomeScreen.banner_2");
+  const doubledText2 = `${text2} ${text2}`;
+
+  const sentenceRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
 
   const { resolvedTheme } = useTheme();
 
@@ -59,84 +64,54 @@ const HomeScreen = () => {
     },
   };
 
-  const textVariants = {
-    initial: {
-      x: 560,
-      opacity: 0,
+  const scrollVariants = {
+    animate: {
+      x: [-560, window.innerWidth], // Start outside the screen and end fully inside
       transition: {
-        duration: 6,
+        x: {
+          repeat: Infinity, // Infinite loop
+          duration: 10, // Duration for one loop
+          ease: "linear", // Linear animation for smooth scrolling
+        },
       },
     },
-    animated: {
-      x: -560,
+  };
+  const scrollVariants2 = {
+    animate: {
+      x: [-560 - 200, window.innerWidth - 200], // Start outside the screen and end fully inside
+      transition: {
+        x: {
+          repeat: Infinity, // Infinite loop
+          duration: 10, // Duration for one loop
+          ease: "linear", // Linear animation for smooth scrolling
+        },
+      },
+    },
+  };
 
-      opacity: 1,
+  const scrollVariantsInverse = {
+    animate: {
+      x: [window.innerWidth, 560], // Start outside the screen and end fully inside
       transition: {
-        duration: 6,
+        x: {
+          repeat: Infinity, // Infinite loop
+          duration: 10, // Duration for one loop
+          ease: "linear", // Linear animation for smooth scrolling
+        },
       },
     },
   };
-  const textVariantsStroke = {
-    initial: {
-      x: 560,
-      opacity: 1,
-      transition: {
-        duration: 6,
-      },
-    },
-    animated: {
-      x: -560,
-      opacity: 0,
-      transition: {
-        duration: 6,
-      },
-    },
-  };
-  const textVariants2 = {
-    initial: {
-      x: -500,
-      opacity: 0,
-      transition: {
-        duration: 6,
-      },
-    },
-    animated: {
-      x: 560,
-      opacity: 1,
-      transition: {
-        duration: 6,
-      },
-    },
-  };
-  const textVariants2Stroke = {
-    initial: {
-      x: -500,
-      opacity: 1,
-      transition: {
-        duration: 6,
-      },
-    },
-    animated: {
-      x: 560,
-      opacity: 0,
-      transition: {
-        duration: 6,
-      },
-    },
-  };
+
+  useEffect(() => {
+    if (sentenceRef.current) {
+      setWidth(sentenceRef.current.offsetWidth);
+    }
+  }, []);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   function nextImage() {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   }
-  const handleImageClick = () => {
-    if (!isAutoSwitching) {
-      setIsAutoSwitching(true);
-    }
-    nextImage();
-    setIsTextAnimated(!isTextAnimated);
-    setIsFront(false);
-  };
 
   useEffect(() => {
     if (isAutoSwitching) {
@@ -149,13 +124,27 @@ const HomeScreen = () => {
     }
   }, [currentImageIndex, isAutoSwitching, isTextAnimated, nextImage]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!isAutoSwitching) {
+        setIsAutoSwitching(true);
+      }
+      nextImage();
+      setIsTextAnimated(!isTextAnimated);
+      setIsFront(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [currentImageIndex, isAutoSwitching, isTextAnimated, nextImage]); // Re-run the effect if currentImageIndex or handleImageClick changes
+
   return (
     <>
-      <div className="flex relative w-full justify-center items-center my-12 overflow-x-hidden h-[72vh]">
+      <div className="h-[80vh] flex relative w-full justify-center items-center my-12 overflow-x-hidden">
         <div className="relative w-[187px] h-[377px] z-10">
           <Image
             src={phone_base}
             alt="Phone Placeholder"
+            priority={true}
             className="absolute w-full h-full top-0 left-0"
           />
           <AnimatePresence>
@@ -165,14 +154,14 @@ const HomeScreen = () => {
               animate="visible"
               exit="hidden"
               variants={fadeInOut}
-              transition={{ duration: 2 }}
+              transition={{ duration: 2, delay: 2 }}
               className="absolute w-full h-full top-0 left-0 right-0 bottom-0 scale-x-[92%] scale-y-[96.4%] cursor-pointer"
-              onClick={handleImageClick}
             >
               <Image
                 src={images[currentImageIndex]}
                 alt="Phone Content"
                 fill={true}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="absolute w-full h-full top-0 left-0"
               />
             </motion.div>
@@ -187,10 +176,36 @@ const HomeScreen = () => {
         >
           <motion.div className="relative">
             <motion.div
+              className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold"
+              ref={sentenceRef}
+              initial="initial"
+              animate="animate"
+              variants={scrollVariants}
+            >
+              {doubledText1} {doubledText2}
+            </motion.div>
+
+            <motion.div
+              className={
+                isFront
+                  ? "fill-text whitespace-nowrap text-5xl font-bold"
+                  : "whitespace-nowrap text-5xl font-bold text-transparent bg-none"
+              }
+              ref={sentenceRef}
+              initial="initial"
+              animate="animate"
+              variants={scrollVariants}
+            >
+              {doubledText1} {doubledText2}
+            </motion.div>
+          </motion.div>
+
+          <motion.div className="relative">
+            <motion.div
               className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-falured"
               initial="initial"
-              animate={isTextAnimated ? "animated" : "initial"}
-              variants={textVariants}
+              animate="animate"
+              variants={scrollVariantsInverse}
             >
               {text1} {text2}
             </motion.div>
@@ -198,8 +213,8 @@ const HomeScreen = () => {
             <motion.div
               className="fill-text whitespace-nowrap text-5xl font-bold text-falured"
               initial="initial"
-              animate={isTextAnimated ? "animated" : "initial"}
-              variants={textVariantsStroke}
+              animate="animate"
+              variants={scrollVariantsInverse}
             >
               {text1} {text2}
             </motion.div>
@@ -208,40 +223,26 @@ const HomeScreen = () => {
           <motion.div className="relative">
             <motion.div
               className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-falured"
+              ref={sentenceRef}
               initial="initial"
-              animate={isTextAnimated ? "animated" : "initial"}
-              variants={textVariants2}
+              animate="animate"
+              variants={scrollVariants2}
             >
-              {text1} {text2}
+              {doubledText1} {doubledText2}
             </motion.div>
 
             <motion.div
-              className="fill-text whitespace-nowrap text-5xl font-bold text-falured"
+              className={
+                isFront
+                  ? "fill-text whitespace-nowrap text-5xl font-bold"
+                  : "whitespace-nowrap text-5xl font-bold text-transparent bg-none"
+              }
+              ref={sentenceRef}
               initial="initial"
-              animate={isTextAnimated ? "animated" : "initial"}
-              variants={textVariants2Stroke}
+              animate="animate"
+              variants={scrollVariants2}
             >
-              {text1} {text2}
-            </motion.div>
-          </motion.div>
-
-          <motion.div className="relative">
-            <motion.div
-              className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-falured"
-              initial="initial"
-              animate={isTextAnimated ? "animated" : "initial"}
-              variants={textVariants}
-            >
-              {text1} {text2}
-            </motion.div>
-
-            <motion.div
-              className="fill-text whitespace-nowrap text-5xl font-bold text-falured"
-              initial="initial"
-              animate={isTextAnimated ? "animated" : "initial"}
-              variants={textVariantsStroke}
-            >
-              {text1} {text2}
+              {doubledText1} {doubledText2}
             </motion.div>
           </motion.div>
         </motion.div>

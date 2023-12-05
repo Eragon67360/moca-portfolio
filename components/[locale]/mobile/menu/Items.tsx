@@ -9,7 +9,7 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <>
-      <div className="flex flex-col space-y-2 my-24 h-full text-black dark:text-secondary text-lg font-bold justify-between">
+      <div className="flex flex-col space-y-2 mt-24 mb-36 h-full text-black dark:text-secondary text-lg font-bold justify-between">
         <div className="space-y-4 ">
           <Link
             href="/home"
@@ -58,11 +58,12 @@ export const Items = ({ onClose }: { onClose: () => void }) => {
           >
             <p className="uppercase">Linkedin</p>
           </a>
-        </div>
-        <div className="flex justify-center items-center ">
-          <Providers>
-            <ThemeSwitcher />
-          </Providers>
+
+          <div className="flex justify-center items-center ">
+            <Providers>
+              <ThemeSwitcher />
+            </Providers>
+          </div>
         </div>
       </div>
     </>

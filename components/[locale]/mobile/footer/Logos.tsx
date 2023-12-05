@@ -6,7 +6,7 @@ import { IoLogoTiktok } from "react-icons/io5";
 const Logos = () => {
   return (
     <>
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-2">
         <div className="rounded-full bg-transparent hover:bg-secondary transition-all p-2 text-falured">
           <a
             href="https://www.linkedin.com/in/thomas-moser67"

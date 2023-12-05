@@ -6,7 +6,7 @@ import MobileContactForm from "@/components/[locale]/mobile/MobileContactForm";
 function MobileContact() {
   return (
     <>
-      <div className="flex flex-col space-y-10 bg-bg-mobile-light dark:bg-bg-mobile-dark bg-no-repeat bg-cover bg-center bg-fixed overflow-y-hidden">
+      <div className="h-full flex flex-col mb-8 space-y-10 bg-bg-mobile-light dark:bg-bg-mobile-dark bg-no-repeat bg-cover bg-center bg-fixed overflow-y-hidden">
         <MobileContactForm />
         <MobileVisitCard />
       </div>

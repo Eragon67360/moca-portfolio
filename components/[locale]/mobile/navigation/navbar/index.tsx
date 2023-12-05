@@ -30,7 +30,7 @@ const MobileNavbar = () => {
             <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
           )}
           <div className="flex justify-between p-6 items-center">
-            <Logo/>
+            <Logo />
             <Language />
           </div>
           <button

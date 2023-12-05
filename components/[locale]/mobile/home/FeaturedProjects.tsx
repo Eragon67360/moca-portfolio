@@ -109,7 +109,7 @@ const FeaturedProjects = () => {
       </div>
       <div
         id="featuredprojects"
-        className="bg-lightblue dark:bg-darkblue flex flex-col items-center justify-center space-y-24 px-8"
+        className="bg-lightblue dark:bg-darkblue flex flex-col items-center justify-center space-y-24 px-8 pb-20"
       >
         <div className="flex flex-col text-secondary text-center pt-16">
           <h2 className="font-semibold text-2xl">{t("title")}</h2>
@@ -243,6 +243,7 @@ const FeaturedProjects = () => {
               width={images[3].width1}
               priority={true}
               style={{
+                width: "auto",
                 height: "auto",
                 position: "absolute",
                 top: images[3].top,
@@ -293,8 +294,6 @@ const FeaturedProjects = () => {
             />
           </div>
         </div>
-
-        <div className="h-24"></div>
       </div>
     </>
   );

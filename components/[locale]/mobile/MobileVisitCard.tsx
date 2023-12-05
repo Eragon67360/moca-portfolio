@@ -14,7 +14,7 @@ const MobileVisitCard = () => {
           {t('information')}
         </div>
 
-        <div className="flex flex-col py-4 text-lg space-y-4 dark:text-white">
+        <div className="flex flex-col py-4 text-sm space-y-2 dark:text-white">
           <div className="flex space-x-4 pl-4 ">
             <div className="flex items-center">
               <FiMail style={{ fontSize: iconSize }} />

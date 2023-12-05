@@ -88,7 +88,7 @@ const MobileContactForm: React.FC = () => {
             <div className="select-none flex flex-col items-center px-4">
               <div>
                 <div className="flex items-center justify-start space-x-2">
-                  <h2 className="text-3xl font-bold text-falured dark:text-secondary ">
+                  <h2 className="text-3xl font-bold text-secondary">
                     {t("title")}
                   </h2>
 
@@ -100,7 +100,7 @@ const MobileContactForm: React.FC = () => {
                   />
                 </div>
 
-                <p className="text-black text-end text-base dark:text-secondary w-full">
+                <p className="text-end text-base text-secondary w-full">
                   {t("subtitle")}{" "}
                   <span className="text-base text-falured dark:text-secondary font-bold">
                     {";)"}

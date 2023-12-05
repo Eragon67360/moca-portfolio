@@ -78,21 +78,21 @@ const MobileApps = () => {
         <Image
           src={herb}
           alt="herb"
-          className="absolute -bottom-32 right-20"
+          className="absolute -bottom-12 right-20"
           width={16}
         />
         <Image
           src={herb2}
           alt="herb"
-          className="absolute -bottom-32 right-20 transform translate-x-1"
+          className="absolute -bottom-12 right-20 transform translate-x-1"
           width={12}
         />
         <Image
           src={panda}
           alt="panda"
           width={112}
-          style={{ height: "auto" }}
-          className="-scale-x-100 absolute top-2 -right-0"
+          style={{width: "auto", height: "auto" }}
+          className="-scale-x-100 absolute -bottom-12 -right-0"
         />
       </div>
       <div className="pt-[52px] bg-secondary dark:bg-blackbean flex flex-col items-center">
