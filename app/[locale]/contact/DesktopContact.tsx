@@ -16,14 +16,14 @@ function DesktopContact() {
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
         <AnimatePresence>
-          <div className="flex flex-col h-[200vh] space-y-20">
+          <div className="flex flex-col h-[160vh] space-y-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
               className="flex justify-center items-center mt-24"
             >
-              <div className="text-[2vw] font-bold text-center absolute z-10 mt-[7.81vh] ml-2">
+              <div className="text-[2vw] font-bold text-center absolute z-10 mt-[150px] ml-2">
                 {t('title1')}{" "}
                 <span className="uppercase text-cinnabar">{t('title2')}</span>
                 <br />
@@ -33,7 +33,7 @@ function DesktopContact() {
             </motion.div>
 
             <div className="flex">
-              <div className="w-1/2 flex flex-col ml-[18.35vw] mt-[2vh] fixed space-y-8 z-0">
+              <div className="w-1/2 flex flex-col ml-[235px] mt-[235px] fixed space-y-8 z-0">
                 <div>
                   <DesktopVisitCard />
                 </div>
@@ -67,7 +67,7 @@ function DesktopContact() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full mr-20 lg:mr-52 items-end justify-end">
+              <div className="flex w-full h-full mr-20 lg:mr-52 items-end justify-end">
                 <DesktopContactForm />
               </div>
             </div>

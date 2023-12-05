@@ -12,6 +12,9 @@ import { sectionVariants } from "@/components/motionVariants";
 import { useTheme } from "next-themes";
 import ArrowComponent from "@/components/SVG/arrow4";
 import panda from "@/public/doodles/panda.svg";
+import herb from "@/public/doodles/herb.svg";
+import herb2 from "@/public/doodles/herb2.svg";
+
 import { useTranslations } from "next-intl";
 
 const DesktopApps = () => {
@@ -75,6 +78,18 @@ const DesktopApps = () => {
             alt="panda"
             width={194}
             className="-scale-x-100 absolute top-8 -right-12"
+          />
+          <Image
+            src={herb}
+            alt="herb"
+            className="absolute -bottom-52 right-40"
+            width={25}
+          />
+          <Image
+            src={herb2}
+            alt="herb"
+            className="absolute -bottom-52 right-40 transform translate-x-2"
+            width={25}
           />
         </div>
         <div className="pt-32 bg-secondary dark:bg-blackbean flex flex-col">

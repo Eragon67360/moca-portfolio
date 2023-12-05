@@ -48,7 +48,7 @@ const Dropdown: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="mt-4 w-full"
+            className="mt-4 w-full border-b border-cinnabar"
           >
             <div
               className="py-1"
@@ -262,7 +262,7 @@ const Dropdown: React.FC = () => {
         </div>
 
         {isOpenPro && (
-          <div className="w-full">
+          <div className="w-full border-b border-cinnabar">
             <div>
               <button
                 onClick={() => setIsOpenGraphics(!isOpenGraphics)}

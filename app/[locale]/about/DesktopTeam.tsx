@@ -90,7 +90,7 @@ function DesktopTeam() {
 
   return (
     <>
-      <div className="font-sans h-screen w-full flex flex-col justify-center items-center">
+      <div className="font-sans h-full w-full flex flex-col justify-center items-center">
         <div className="flex flex-col rounded-3xl p-8 bg-linen dark:bg-falured select-none h-[488px] w-[808px] my-[140px]">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           {members ? (

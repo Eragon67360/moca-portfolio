@@ -11,7 +11,7 @@ const DesktopHomeScreen = () => {
             <AnimatedTextCharacter />
           </div>
 
-          <div className="relative mt-16 w-[504px]">
+          <div className="relative mt-24 w-[504px]">
             <Carousel />
 
             <div className="absolute -top-10 -left-14 z-10 w-24 h-24 rounded-full bg-cinnabar" />

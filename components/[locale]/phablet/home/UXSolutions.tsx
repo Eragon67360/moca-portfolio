@@ -15,7 +15,7 @@ const UXSolutions = () => {
     {
       icon: <AiOutlineFundProjectionScreen size={50} />,
       title: t("new_title"),
-      content: [t("new_content")],
+      content: [t("new_content1"),t("new_content2"),],
     },
     {
       icon: <SlMagicWand size={50} />,

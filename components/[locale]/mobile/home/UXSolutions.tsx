@@ -21,7 +21,7 @@ const UXSolutions = () => {
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <AiOutlineFundProjectionScreen size={50} />
               <h2 className="font-semibold text-2xl">{t("new_title")}</h2>
-              <p>{t("new_content")}</p>
+              <p>{t("new_content2")} <br /> <br />{t("new_content2")}</p>
             </div>
             <div className="flex flex-col text-center justify-start items-center space-y-4 px-8">
               <SlMagicWand size={50} />

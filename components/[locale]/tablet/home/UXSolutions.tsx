@@ -16,7 +16,7 @@ const UXSolutions = () => {
     {
       icon: <AiOutlineFundProjectionScreen size={50} />,
       title: t("new_title"),
-      content: [t("new_content")],
+      content: [t("new_content1"), t("new_content2")],
     },
     {
       icon: <SlMagicWand size={50} />,
@@ -70,7 +70,12 @@ const UXSolutions = () => {
           </div>
 
           <div className="w-full relative">
-            <Image src={tail} alt="tail" width={210} className="absolute -top-24 -left-6"/>
+            <Image
+              src={tail}
+              alt="tail"
+              width={210}
+              className="absolute -top-24 -left-6"
+            />
           </div>
 
           <div className="text-blackbean dark:text-white mt-12 mx-32 flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">
