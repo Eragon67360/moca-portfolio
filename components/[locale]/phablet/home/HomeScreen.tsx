@@ -107,9 +107,10 @@ const PhabletHomeScreen = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
+      <div className="h-[88vh] flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
         <div className="text-[28px] px-8 font-bold text-falured text-center mt-[196px] ">
-          {text1} {text2}
+          {text1} <br />
+          {text2}
         </div>
         <div className="flex h-full items-center justify-center w-full scale-75">
           <div className="flex justify-center items-center">

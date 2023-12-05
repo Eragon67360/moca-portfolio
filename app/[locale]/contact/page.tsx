@@ -3,6 +3,7 @@ import React from "react";
 import MobileContact from "./MobileContact";
 import DesktopContact from "./DesktopContact";
 import TabletContact from "./TabletContact";
+import PhabletContact from "./PhabletContact";
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -20,7 +21,7 @@ function Contact(): React.JSX.Element {
         <MobileContact />
       </div>
       <div className="phablet">
-        <TabletContact />
+        <PhabletContact />
       </div>
       <div className="tablet">
         <TabletContact />

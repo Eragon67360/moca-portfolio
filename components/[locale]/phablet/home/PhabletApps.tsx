@@ -77,20 +77,20 @@ const PhabletApps = () => {
         <Image
           src={herb}
           alt="herb"
-          className="absolute -bottom-28 right-32"
+          className="absolute -bottom-20 right-32"
           width={20}
         />
         <Image
           src={herb2}
           alt="herb"
-          className="absolute -bottom-28 right-32 transform translate-x-1"
+          className="absolute -bottom-20 right-32 transform translate-x-1"
           width={16}
         />
         <Image
           src={panda}
           alt="panda"
           width={165}
-          className="-scale-x-100 absolute -top-8 -right-11"
+          className="-scale-x-100 absolute -top-16 -right-11"
         />
       </div>
       <div className="pt-[78px] bg-secondary dark:bg-blackbean flex flex-col items-center">
