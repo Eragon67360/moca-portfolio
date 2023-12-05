@@ -81,7 +81,7 @@ function TabletTeam() {
 
   return (
     <>
-      <div className="h-screen flex flex-col justify-center items-center mx-32">
+      <div className="h-full flex flex-col justify-start mt-[140px] mb-12 items-center mx-32">
         <div className="w-full flex flex-col justify-center items-center rounded-3xl p-8 bg-linen dark:bg-falured select-none">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           <div className="w-full h-full">

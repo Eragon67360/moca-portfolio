@@ -24,7 +24,7 @@ function TabletContact() {
   return (
     <>
       <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
-        <div className=" flex flex-col items-center py-[67px]">
+        <div className=" flex flex-col items-center pt-[99px] pb-[67px]">
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0, scale: 0.2 }}

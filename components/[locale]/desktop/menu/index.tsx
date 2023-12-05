@@ -52,7 +52,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
       <div
         className={
           isOpen
-            ? "flex fixed z-30 top-0 left-0 w-full h-full bg-[#999999]/80 text-white"
+            ? "flex fixed z-50 top-0 left-0 w-full h-full bg-[#999999]/80 text-white"
             : "hidden"
         }
       >

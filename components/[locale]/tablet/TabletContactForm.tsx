@@ -105,8 +105,8 @@ const TabletContactForm: React.FC = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex space-x-[2.52vw] justify-around">
-                <div className="py-2 w-full h-full">
+              <div className="flex space-x-[32px] justify-around">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="firstname"
@@ -115,7 +115,7 @@ const TabletContactForm: React.FC = () => {
                     placeholder={t("firstname")}
                   />
                 </div>
-                <div className="py-2 w-full h-full">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     name="family-name"
@@ -125,8 +125,8 @@ const TabletContactForm: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex space-x-[2.52vw] justify-around ">
-                <div className="py-2 w-full h-full">
+              <div className="flex space-x-[32px] justify-around ">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="email"
@@ -136,7 +136,7 @@ const TabletContactForm: React.FC = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="py-2 w-full h-full">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="phone"
@@ -146,8 +146,8 @@ const TabletContactForm: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex space-x-[2.52vw] justify-around ">
-                <div className="py-2 w-full h-full">
+              <div className="flex space-x-[32px] justify-around ">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="company"
@@ -155,7 +155,7 @@ const TabletContactForm: React.FC = () => {
                     placeholder={t("company")}
                   />
                 </div>
-                <div className="py-2 w-full h-full">
+                <div className="w-full h-full">
                   <input
                     className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
                     id="country"
@@ -166,8 +166,8 @@ const TabletContactForm: React.FC = () => {
                 </div>
               </div>
 
-              <div className="">
-                <div className="py-2">
+              <div>
+                <div>
                   <Dropdown
                     onSelectionChange={handleSelectionChange}
                     selectedSubject={selectedSubject}

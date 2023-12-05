@@ -98,7 +98,7 @@ const TabletHomeScreen = () => {
     <>
       <div className="h-[80vh] flex flex-col w-full justify-center items-center bg-linen dark:bg-falured">
         <div className="text-3xl font-bold text-falured text-center px-32 mt-[217px] ">
-          {text1} {text2}
+          {text1} <br /> {text2}
         </div>
         <div className="flex h-full items-center justify-center w-full scale-75">
           <div className="flex justify-center items-center">
