@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import tablet_base from "@/public/tablets/tablet_base_transparent.png";
-import panda1 from "@/public/tablets/panda1.jpg";
-import panda2 from "@/public/tablets/panda2.jpg";
-import panda3 from "@/public/tablets/panda3.jpg";
+import carousel1 from "@/public/tablets/portfolio_tablet.png";
+import carousel2 from "@/public/tablets/stopviolence_tablet.png";
+import carousel3 from "@/public/tablets/moca_tablet.png";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 
@@ -12,18 +12,18 @@ import Arrow from "@/components/SVG/little_arrow_1";
 import { motion } from "framer-motion";
 
 const colorPattern = ["bg-cinnabar dark:bg-falured", "bg-linen"];
-const pandaImages = [panda1, panda2, panda3];
+const carouselImages = [carousel1, carousel2, carousel3];
 
 const Phablet = ({ initialPanda }: { initialPanda: any }) => {
   const [currentPanda, setCurrentPanda] = useState(initialPanda);
   const [nextPanda, setNextPanda] = useState(
-    (initialPanda + 1) % pandaImages.length
+    (initialPanda + 1) % carouselImages.length
   );
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPanda(nextPanda);
-      setNextPanda((nextPanda + 1) % pandaImages.length);
+      setNextPanda((nextPanda + 1) % carouselImages.length);
     }, 3000);
 
     return () => clearInterval(interval);
@@ -41,7 +41,7 @@ const Phablet = ({ initialPanda }: { initialPanda: any }) => {
       </div>
 
       <motion.div
-        className="absolute top-10 left-0 -z-10"
+        className="absolute top-0 left-0 -z-10 scale-[.97]"
         key={currentPanda}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,14 +49,14 @@ const Phablet = ({ initialPanda }: { initialPanda: any }) => {
         transition={{ duration: 0.4 }}
       >
         <Image
-          src={pandaImages[currentPanda]}
+          src={carouselImages[currentPanda]}
           alt={`panda-${currentPanda}`}
           width={336}
         />
       </motion.div>
 
       <motion.div
-        className="absolute top-10 left-0 -z-10"
+        className="absolute top-0 left-0 -z-10 scale-[.97]"
         key={nextPanda}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -64,7 +64,7 @@ const Phablet = ({ initialPanda }: { initialPanda: any }) => {
         transition={{ duration: 0.4 }}
       >
         <Image
-          src={pandaImages[nextPanda]}
+          src={carouselImages[nextPanda]}
           alt={`panda-${nextPanda}`}
           width={336}
         />
