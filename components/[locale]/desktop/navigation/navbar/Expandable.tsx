@@ -7,7 +7,7 @@ const switchLocaleInPathname = (
   currentPathname: string,
   newLocale: string
 ): string => {
-  const locales = ["en", "fr", "de", "es"];
+  const locales = ["en", "fr", "de"];//, "es"
   const defaultLocale = "en";
 
   const replaced = currentPathname.replace(
@@ -45,7 +45,7 @@ function Expandable({ language }: { language: any }) {
     { code: "de", name: language("de") },
     { code: "en", name: language("en") },
     { code: "fr", name: language("fr") },
-    { code: "es", name: language("es") },
+    // { code: "es", name: language("es") },
   ];
 
   return (
