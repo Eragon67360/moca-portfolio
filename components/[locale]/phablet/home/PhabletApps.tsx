@@ -93,7 +93,7 @@ const PhabletApps = () => {
           className="-scale-x-100 absolute -top-16 -right-11"
         />
       </div>
-      <div className="pt-[78px] bg-secondary dark:bg-blackbean flex flex-col items-center">
+      <div className="pt-[78px] bg-light_background dark:bg-dark_background flex flex-col items-center">
         <motion.div
           className="flex flex-col"
           initial="offscreen"
@@ -101,13 +101,13 @@ const PhabletApps = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="text-[34px] text-blackbean dark:text-secondary font-bold text-center z-10">
+          <div className="text-[34px] text-light_ink dark:text-dark_ink font-bold text-center z-10">
             {t("title")}
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-[73px] text-blackbean dark:text-secondary">
+          <div className="grid grid-cols-2 gap-4 mt-[73px] text-light_ink dark:text-dark_ink">
             {cardData.map((card, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-full p-4">
+                <div className="bg-light_surface dark:bg-dark_surface rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[256px] h-full p-4">
                   <card.Icon size={40} />
                   <h3 className="text-xl font-semibold">{card.title}</h3>
                   <p className="text-sm">{card.subtitle}</p>

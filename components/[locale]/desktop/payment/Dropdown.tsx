@@ -25,7 +25,7 @@ const Dropdown: React.FC = () => {
       <div>
         <button
           onClick={() => setIsOpenGeneral(!isOpenGeneral)}
-          className="text-2xl flex justify-between w-full font-semibold text-cinnabar hover:text-cinnabar/75 "
+          className="text-2xl flex justify-between w-full font-semibold text-light_primary hover:text-light_primary/75 "
         >
           General
           <svg
@@ -48,7 +48,7 @@ const Dropdown: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="mt-4 w-full border-b border-cinnabar"
+            className="mt-4 w-full border-b border-light_primary"
           >
             <div
               className="py-1"
@@ -60,7 +60,7 @@ const Dropdown: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setIsOpenTeam(!isOpenTeam)}
-                    className="text-base flex justify-between w-full font-bold hover:text-black/50 "
+                    className="text-base flex justify-between w-full font-bold hover:text-light_ink/50 "
                   >
                     {t("sec1")}
                     <svg
@@ -81,7 +81,7 @@ const Dropdown: React.FC = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 pb-4 border-b border-third"
+                    className="mt-4 pb-4 border-b border-light_ink"
                   >
                     <p className="text-base">{t("exp1")}</p>
                   </motion.div>
@@ -90,7 +90,7 @@ const Dropdown: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setIsOpenRequest(!isOpenRequest)}
-                    className="text-base flex justify-between w-full font-bold hover:text-black/50 mt-4"
+                    className="text-base flex justify-between w-full font-bold hover:text-light_ink/50 mt-4"
                   >
                     {t("sec2")}
                     <svg
@@ -111,7 +111,7 @@ const Dropdown: React.FC = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 pb-4 border-b border-third"
+                    className="mt-4 pb-4 border-b border-light_ink"
                   >
                     <p className="text-base">{t("exp2")}</p>
                   </motion.div>
@@ -120,7 +120,7 @@ const Dropdown: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setIsOpenDelivery(!isOpenDelivery)}
-                    className="text-base flex justify-between  w-full font-bold hover:text-black/50 mt-4"
+                    className="text-base flex justify-between  w-full font-bold hover:text-light_ink/50 mt-4"
                   >
                     {t("sec3")}
                     <svg
@@ -141,7 +141,7 @@ const Dropdown: React.FC = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 pb-4 border-b border-third"
+                    className="mt-4 pb-4 border-b border-light_ink"
                   >
                     <p className="text-base">{t("exp3")}</p>
                   </motion.div>
@@ -150,7 +150,7 @@ const Dropdown: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setIsOpenPayments(!isOpenPayments)}
-                    className="text-base flex justify-between  w-full font-bold hover:text-black/50 mt-4"
+                    className="text-base flex justify-between  w-full font-bold hover:text-light_ink/50 mt-4"
                   >
                     {t("sec4")}
                     <svg
@@ -171,7 +171,7 @@ const Dropdown: React.FC = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 pb-4 border-b border-third"
+                    className="mt-4 pb-4 border-b border-light_ink"
                   >
                     <p className="text-base">{t("exp4")}</p>
                   </motion.div>
@@ -180,7 +180,7 @@ const Dropdown: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setIsOpenPause(!isOpenPause)}
-                    className="text-base flex justify-between  w-full font-bold hover:text-black/50 mt-4"
+                    className="text-base flex justify-between  w-full font-bold hover:text-light_ink/50 mt-4"
                   >
                     {t("sec5")}
                     <svg
@@ -201,7 +201,7 @@ const Dropdown: React.FC = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 pb-4 border-b border-third"
+                    className="mt-4 pb-4 border-b border-light_ink"
                   >
                     <p className="text-base">{t("exp5")}</p>
                   </motion.div>
@@ -210,7 +210,7 @@ const Dropdown: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setIsOpenPolicy(!isOpenPolicy)}
-                    className="text-base flex justify-between  w-full font-bold hover:text-black/50 mt-4"
+                    className="text-base flex justify-between  w-full font-bold hover:text-light_ink/50 mt-4"
                   >
                     {t("sec6")}
                     <svg
@@ -231,7 +231,7 @@ const Dropdown: React.FC = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="mt-4 pb-4 border-b border-third"
+                    className="mt-4 pb-4 border-b border-light_ink"
                   >
                     <p className="text-base">{t("exp6")}</p>
                   </motion.div>
@@ -244,7 +244,7 @@ const Dropdown: React.FC = () => {
         <div>
           <button
             onClick={() => setIsOpenPro(!isOpenPro)}
-            className="text-2xl flex justify-between w-full font-semibold text-cinnabar hover:text-cinnabar/75 mt-4"
+            className="text-2xl flex justify-between w-full font-semibold text-light_primary hover:text-light_primary/75 mt-4"
           >
             Pro Subscription
             <svg
@@ -262,11 +262,11 @@ const Dropdown: React.FC = () => {
         </div>
 
         {isOpenPro && (
-          <div className="w-full border-b border-cinnabar">
+          <div className="w-full border-b border-light_primary">
             <div>
               <button
                 onClick={() => setIsOpenGraphics(!isOpenGraphics)}
-                className="text-base flex justify-between w-full font-bold hover:text-black/50 mt-4"
+                className="text-base flex justify-between w-full font-bold hover:text-light_ink/50 mt-4"
               >
                 {t("graph_title")}
                 <svg
@@ -287,7 +287,7 @@ const Dropdown: React.FC = () => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="mt-4 pb-4 border-b border-third"
+                className="mt-4 pb-4 border-b border-light_ink"
               >
                 <ul className="text-base list-disc ml-6">
                   <li>{t("graph1")}</li>
@@ -314,7 +314,7 @@ const Dropdown: React.FC = () => {
         <div>
           <button
             onClick={() => setIsOpenPerso(!isOpenPerso)}
-            className="text-2xl flex justify-between w-full font-semibold text-cinnabar hover:text-cinnabar/75 mt-4"
+            className="text-2xl flex justify-between w-full font-semibold text-light_primary hover:text-light_primary/75 mt-4"
           >
             Personalized Subscription
             <svg
@@ -336,7 +336,7 @@ const Dropdown: React.FC = () => {
             <div>
               <button
                 onClick={() => setIsOpenAdvantages(!isOpenAdvantages)}
-                className="text-base flex justify-between w-full font-bold hover:text-black/50 mt-4"
+                className="text-base flex justify-between w-full font-bold hover:text-light_ink/50 mt-4"
               >
                 Advantages
                 <svg

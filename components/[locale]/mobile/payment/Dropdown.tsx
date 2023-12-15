@@ -15,7 +15,7 @@ const Dropdown: React.FC<DropdownProps> = ({ plan }) => {
       <div>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="inline-flex justify-center w-full px-4 py-2 bg-white text-sm font-medium text-black hover:text-black/50 "
+          className="inline-flex justify-center w-full px-4 py-2 bg-white text-sm font-medium text-light_ink hover:text-light_ink/50 "
         >
           {t('read_more')}
           <svg

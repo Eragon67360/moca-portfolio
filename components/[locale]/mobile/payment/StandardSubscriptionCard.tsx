@@ -46,7 +46,7 @@ const StandardSubscriptionCard = ({ price }: SubscriptionCardProps) => {
         <p className="text-gray-400">{price}€ {t('month')}</p>
         <button
           onClick={() => handleClick()}
-          className="border border-cinnabar text-cinnabar rounded-md px-4 py-2 w-full hover:bg-cinnabar hover:text-secondary transition-colors"
+          className="border border-light_primary text-light_primary rounded-md px-4 py-2 w-full hover:bg-light_primary hover:text-dark_ink transition-colors"
         >
           {t('subscribe')}
         </button>

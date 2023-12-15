@@ -54,7 +54,7 @@ export default function PaymentForm() {
           <button
             type="submit"
             disabled={!stripe}
-            className="bg-[#0570de] mt-4 rounded-lg px-4 py-2 text-secondary w-full hover:bg-[#0570de]/40"
+            className="bg-[#0570de] mt-4 rounded-lg px-4 py-2 text-dark_ink w-full hover:bg-[#0570de]/40"
           >
             Pay
           </button>

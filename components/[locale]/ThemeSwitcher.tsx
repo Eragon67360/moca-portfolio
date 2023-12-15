@@ -19,12 +19,12 @@ const ThemeSwitcher = () => {
           >
             {theme === "light" ? (
               <BsMoon
-                className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
+                className="text-light_ink hover:text-light_ink hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-dark_ink dark:hover:text-dark_ink"
                 size={24}
               />
             ) : (
               <BsSun
-                className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
+                className="text-light_ink hover:text-light_ink hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-dark_ink dark:hover:text-dark_ink"
                 size={24}
               />
             )}

@@ -31,7 +31,7 @@ const UXSolutions = () => {
 
   return (
     <>
-      <div className="bg-white dark:bg-blackbean pt-24 pb-[55px] justify-start select-none">
+      <div className="bg-white dark:bg-dark_background pt-24 pb-[55px] justify-start select-none">
         <motion.div
           className="flex flex-col h-full select-none"
           initial="offscreen"
@@ -39,7 +39,7 @@ const UXSolutions = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <p className="font-bold text-3xl text-blackbean dark:text-secondary text-center">
+          <p className="font-bold text-3xl text-light_ink dark:text-dark_ink text-center">
             {t("title")}
           </p>
 
@@ -72,7 +72,7 @@ const UXSolutions = () => {
           </div>
 
           <div className="w-full px-28 mt-[86px]">
-            <div className="text-blackbean dark:text-white flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured text-center">
+            <div className="text-light_ink dark:text-dark_ink flex flex-col rounded-2xl border-4 border-light_primary dark:border-light_primary p-8 space-y-8 bg-light_surface dark:bg-dark_surface text-center">
               <h2 className="text-2xl font-semibold">
                 Design is not just what it looks like;
                 <br /> design is how it works

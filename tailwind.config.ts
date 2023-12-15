@@ -20,7 +20,7 @@ const config: Config = {
       xl: "1920px",
       //Large screen
       "2xl": "2560px",
-      'custom': '720px',
+      custom: "720px",
     },
     extend: {
       backgroundImage: {
@@ -28,21 +28,32 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "contact-background": "url('/contact_background.png')",
+        "contact-background_dark": "url('/contact_background_dark.png')",
         "bg-mobile-dark": "url('/bg_mobile_dark.png')",
         "bg-mobile-light": "url('/bg_mobile_light.png')",
         "landing-page": "url('/panda.jpg')",
         "landing-page-mobile": "url('/panda_mobile.jpg')",
       },
       colors: {
-        secondary: "#FFFFFF",
-        third: "#000000",
-        linen: "#F2EBE3",
-        falured: "#742119",
-        lightblue: "#5C9CB1",
-        darkblue: "#00232F",
-        blackbean: "#310F0D",
-        cinnabar: "#DF482B",
-        darkorange: "#F1A453",
+        //Light theme
+        light_background: "#FFFFFF",
+        light_surface: "#F2EBE3",
+        light_primary: "#DF482B",
+        light_secondary: "#742119",
+        light_tertiary: "#310F0D",
+
+        //Dark theme
+        dark_background: "#310F0D",
+        dark_surface: "#742119",
+        dark_primary: "#F2EBE3",
+        dark_secondary: "#310F0D",
+        dark_tertiary: "#F2EBE3",
+
+        //Ink
+        light_headings: "#742119",
+        dark_headings: "#F2EBE3",
+        light_ink: "#000000",
+        dark_ink: "#FFFFFF",
       },
       fontFamily: {
         sans: ["var(--font-poppins)", ...defaultTheme.fontFamily.sans],

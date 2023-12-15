@@ -16,36 +16,36 @@ const TabletFooter = () => {
       {pathname !== `/${locale}` &&
         pathname !== `/${locale}/` &&
         pathname !== `/${locale}/admin` && (
-          <div className="h-40 flex flex-col bg-linen dark:bg-blackbean justify-between px-[32px] pt-10 pb-7 border-t-2 dark:border-secondary/50 border-third/50">
+          <div className="h-40 flex flex-col bg-light_surface dark:bg-dark_background justify-between px-[32px] pt-10 pb-7 border-t-2 dark:border-dark_ink/50 border-light_ink/50">
             <div className="flex justify-between">
               <div className="justify-start items-start flex">
                 <Image src={logo} alt="logo" width={115} />
               </div>
               <div className="flex space-x-6 pt-1">
                 <div className="flex space-x-6 text-xs">
-                  <Link href={"/home"} className="hover:text-cinnabar text-xs">
+                  <Link href={"/home"} className="hover:text-light_primary text-xs">
                     Home
                   </Link>
                   <a
                     href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
                     target="_blank"
-                    className="hover:text-cinnabar"
+                    className="hover:text-light_primary"
                   >
                     Featured work
                   </a>
-                  <Link href={"/about"} className="hover:text-cinnabar">
+                  <Link href={"/about"} className="hover:text-light_primary">
                     Team
                   </Link>
 
-                  <Link href={"/contact"} className="hover:text-cinnabar">
+                  <Link href={"/contact"} className="hover:text-light_primary">
                     Contact
                   </Link>
                 </div>
                 <div className="flex space-x-6 text-xs">
-                  <Link href={"/privacy"} className="hover:text-cinnabar">
+                  <Link href={"/privacy"} className="hover:text-light_primary">
                     Privacy Policy
                   </Link>
-                  <Link href={"/"} className="hover:text-cinnabar">
+                  <Link href={"/"} className="hover:text-light_primary">
                     Terms of Service
                   </Link>
                 </div>

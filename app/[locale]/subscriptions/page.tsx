@@ -8,8 +8,8 @@ function Subscriptions() {
   const router = useRouter();
   return (
     <>
-      <div className="bg-linen dark:bg-blackbean px-40 h-full">
-        <div className="my-32 p-8 w-full flex flex-col justify-center bg-secondary dark:bg-falured rounded-2xl shadow-lg">
+      <div className="bg-light_surface dark:bg-dark_background px-40 h-full">
+        <div className="my-32 p-8 w-full flex flex-col justify-center bg-light_background dark:bg-dark_surface rounded-2xl shadow-lg">
           <button type="button" onClick={() => router.back()}>
             <TiArrowBack size={32} />
           </button>

@@ -117,7 +117,7 @@ const FeaturedProjects = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col text-secondary text-center pt-16">
+          <div className="flex flex-col text-dark_ink text-center pt-16">
             <h2 className="font-bold text-4xl">{t("title")}</h2>
             <h3 className="font-bold text-6xl mt-4">{t("subtitle")}</h3>
             <div className="mt-12">
@@ -125,7 +125,7 @@ const FeaturedProjects = () => {
                 href="https://www.figma.com/proto/YEy2gUHLOPlRRQBLUwXjP5/Sample-Work?type=design&node-id=1-3&t=17PjClufX2rFEgxL-1&scaling=min-zoom&page-id=0%3A1&mode=design"
                 aria-label="See projects"
                 target="_blank"
-                className="bg-secondary text-falured text-2xl font-bold uppercase px-8 py-3 rounded-full"
+                className="bg-light_background text-light_secondary text-2xl font-bold uppercase px-8 py-3 rounded-full"
               >
                 {t("button")}
               </a>
@@ -135,7 +135,7 @@ const FeaturedProjects = () => {
           <div className="grid grid-cols-2 gap-8 justify-center mt-10">
             <div
               key={0}
-              className="bg-linen flex flex-col w-[352px] relative h-[352px]"
+              className="bg-light_surface flex flex-col w-[352px] relative h-[352px]"
             >
               <Image
                 src={images[0].src1}
@@ -169,7 +169,7 @@ const FeaturedProjects = () => {
 
             <div
               key={1}
-              className="bg-linen flex flex-col w-[352px] relative h-[352px]"
+              className="bg-light_surface flex flex-col w-[352px] relative h-[352px]"
             >
               <Image
                 src={images[1].src1}
@@ -203,7 +203,7 @@ const FeaturedProjects = () => {
 
             <div
               key={2}
-              className="bg-linen flex w-[352px] relative h-[352px]"
+              className="bg-light_surface flex w-[352px] relative h-[352px]"
             >
               <div className="flex flex-col w-full items-center py-4">
                 <Image
@@ -240,7 +240,7 @@ const FeaturedProjects = () => {
 
             <div
               key={3}
-              className="bg-linen flex flex-col w-[352px] relative h-[352px]"
+              className="bg-light_surface flex flex-col w-[352px] relative h-[352px]"
             >
               <Image
                 src={images[3].src1}

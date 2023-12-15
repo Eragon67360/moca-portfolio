@@ -86,7 +86,7 @@ const Plans = () => {
 
   return (
     <>
-      <div id="pricings" className="pt-28 bg-linen dark:bg-falured">
+      <div id="pricings" className="pt-28 bg-light_surface dark:bg-dark_surface">
         <motion.div
           className="flex flex-col items-center"
           initial="offscreen"
@@ -95,7 +95,7 @@ const Plans = () => {
           viewport={{ once: true }}
         >
           <div className="flex space-x-2 justify-center items-center">
-            <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+            <div className="text-5xl text-light_ink dark:text-dark_ink font-bold text-center">
               {t("title")}
             </div>
             <Image
@@ -105,11 +105,11 @@ const Plans = () => {
               className="transform rotate-[35deg]"
             />
           </div>
-          <div className="mt-24 flex text-blackbean dark:text-secondary space-x-8">
+          <div className="mt-24 flex text-light_ink dark:text-dark_ink space-x-8">
             {planData.map((plan, index) => (
               <div
                 key={index}
-                className="bg-secondary dark:bg-blackbean flex flex-col p-8 rounded-2xl shadow-cards h-[480px] w-[260px]"
+                className="bg-light_background dark:bg-dark_background flex flex-col p-8 rounded-2xl shadow-cards h-[480px] w-[260px]"
               >
                 <div className="flex flex-col justify-between">
                   <div className="flex flex-col">
@@ -124,7 +124,7 @@ const Plans = () => {
                     <div className="flex mt-[23px]">
                       <button
                         onClick={() => handleClick(plan.amount)}
-                        className="h-8 flex items-center uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
+                        className="h-8 flex items-center uppercase font-bold py-2 px-4 rounded-full bg-light_primary dark:bg-light_surface text-dark_ink dark:text-light_ink hover:bg-light_surface hover:text-light_ink hover:dark:bg-dark_surface hover:dark:text-dark_ink"
                       >
                         {plan.buttonText}
                       </button>
@@ -138,7 +138,7 @@ const Plans = () => {
                   </div>
                 </div>
                 <div className="flex flex-col mt-[23px]">
-                  <hr className=" border-1 border-linen" />
+                  <hr className=" border-1 border-light_surface" />
                   <div className="flex flex-col mt-[23px] text-xs">
                     <p>{t("included")}</p>
 
@@ -158,8 +158,8 @@ const Plans = () => {
             ))}
 
             <div className="flex flex-col space-y-4 h-[480px]">
-              <div className="p-8 border border-cinnabar rounded-2xl shadow-cards w-[260px] h-full">
-                <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
+              <div className="p-8 border border-light_primary rounded-2xl shadow-cards w-[260px] h-full">
+                <div className="flex flex-col space-y-4 text-light_ink dark:text-dark_ink">
                   <div className=" text-center">{t("book_call")}</div>
                   <div className="flex justify-center">
                     <svg
@@ -231,7 +231,7 @@ const Plans = () => {
 
                 <div className="flex justify-center mt-8">
                   <a
-                    className="px-4 py-2 rounded-full space-x-2 border border-cinnabar bg-transparent hover:bg-cinnabar text-third hover:text-secondary dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean justify-center items-center"
+                    className="px-4 py-2 rounded-full space-x-2 border border-light_primary bg-transparent hover:bg-light_primary text-light_ink hover:text-dark_ink dark:text-light_ink dark:bg-light_surface hover:dark:text-dark_ink hover:dark:bg-dark_background justify-center items-center"
                     href={"https://calendly.com/uxmoca/30min?month=2023-11"}
                     target="_blank"
                   >
@@ -242,8 +242,8 @@ const Plans = () => {
                 </div>
               </div>
 
-              <div className="p-12 border rounded-2xl border-cinnabar shadow-cards w-[260px] h-full">
-                <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
+              <div className="p-12 border rounded-2xl border-light_primary shadow-cards w-[260px] h-full">
+                <div className="flex flex-col space-y-4 text-light_ink dark:text-dark_ink">
                   <div className="text-center text-xs font-bold">
                     FAQ about our subscription plans
                   </div>
@@ -251,7 +251,7 @@ const Plans = () => {
 
                 <div className="flex justify-center mx-auto mt-8 items-center">
                   <Link
-                    className="px-4 py-2 rounded-full space-x-2 border border-cinnabar bg-transparent hover:bg-cinnabar text-third hover:text-secondary dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean justify-center items-center"
+                    className="px-4 py-2 rounded-full space-x-2 border border-light_primary bg-transparent hover:bg-light_primary text-light_ink hover:text-dark_ink dark:text-light_ink dark:bg-light_surface hover:dark:text-dark_ink hover:dark:bg-dark_background justify-center items-center"
                     href={`/${locale}/subscriptions`}
                   >
                     <span className="font-bold text-center md:text-xs lg:text-base">

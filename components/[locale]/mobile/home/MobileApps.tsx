@@ -95,14 +95,14 @@ const MobileApps = () => {
           className="-scale-x-100 absolute -bottom-12 -right-0"
         />
       </div>
-      <div className="pt-[52px] bg-secondary dark:bg-blackbean flex flex-col items-center">
-        <div className="text-[34px] px-[70px] text-blackbean dark:text-secondary font-bold text-center">
+      <div className="pt-[52px] bg-light_background dark:bg-dark_background flex flex-col items-center">
+        <div className="text-[34px] px-[70px] text-light_ink dark:text-dark_ink font-bold text-center">
           {t("title")}
         </div>
-        <div className="grid grid-cols-1 gap-8 justify-center mt-9 text-blackbean dark:text-secondary">
+        <div className="grid grid-cols-1 gap-8 justify-center mt-9 text-light_ink dark:text-dark_ink">
           {cardData.map((card, index) => (
             <div key={index} className="flex justify-center">
-              <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center p-4 space-y-2 w-[256px] h-full">
+              <div className="bg-light_surface dark:bg-dark_surface rounded-xl flex flex-col text-center justify-center items-center p-4 space-y-2 w-[256px] h-full">
                 <card.Icon size={32} />
                 <h1 className="text-2xl font-semibold">{card.title}</h1>
                 <h2>{card.subtitle}</h2>

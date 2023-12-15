@@ -49,7 +49,7 @@ const AnimatedTextCharacter = () => {
           display: "flex",
           paddingBottom: 8,
         }}
-        className="text-blackbean dark:text-white"
+        className="text-light_ink dark:text-dark_ink"
         variants={container}
         initial="hidden"
         animate="visible"
@@ -66,7 +66,7 @@ const AnimatedTextCharacter = () => {
           display: "flex",
           paddingBottom: 8,
         }}
-        className="text-falured dark:text-white"
+        className="text-light_secondary dark:text-dark_ink"
         variants={container}
         initial="hidden"
         animate="visible"

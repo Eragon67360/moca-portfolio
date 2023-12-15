@@ -7,7 +7,7 @@ const Logos = () => {
   return (
     <>
       <div className="flex items-center space-x-3">
-        <div className="rounded-full bg-transparent hover:bg-secondary transition-all p-2 text-falured">
+        <div className="rounded-full bg-transparent hover:bg-light_background transition-all p-2 text-light_secondary dark:text-dark_ink dark:hover:text-light_secondary">
           <a
             href="https://www.linkedin.com/in/thomas-moser67"
             target="_blank"
@@ -16,7 +16,7 @@ const Logos = () => {
             <TfiLinkedin size={18} />
           </a>
         </div>
-        <div className="rounded-full bg-transparent hover:bg-secondary transition-all p-2 text-falured">
+        <div className="rounded-full bg-transparent hover:bg-light_background transition-all p-2 text-light_secondary dark:text-dark_ink dark:hover:text-light_secondary">
           <a
             href="https://instagram.com/thomas_msr_67?igshid=OGQ5ZDc2ODk2ZA=="
             target="_blank"
@@ -25,7 +25,7 @@ const Logos = () => {
             <AiOutlineInstagram size={18} />
           </a>
         </div>
-        <div className="rounded-full bg-transparent hover:bg-secondary transition-all p-2 text-falured">
+        <div className="rounded-full bg-transparent hover:bg-light_background transition-all p-2 text-light_secondary dark:text-dark_ink dark:hover:text-light_secondary">
           <a
             href="https://www.tiktok.com/@cristinaandresrr?lang=en"
             target="_blank"

@@ -51,14 +51,14 @@ export default function Carousel({
           <div className="flex space-x-8 justify-center">
             <Link
               href={dataArray[currentSlide].linkPage}
-              className="border p-2 dark:hover:bg-secondary dark:hover:text-third rounded-full hover:bg-falured hover:text-secondary"
+              className="border p-2 dark:hover:bg-light_background dark:hover:text-light_ink rounded-full hover:bg-dark_surface hover:text-dark_ink"
             >
               Learn more
             </Link>
             <a
               href={dataArray[currentSlide].linkOnline}
               target="_blank"
-              className="border p-2 dark:hover:bg-secondary dark:hover:text-third rounded-full hover:bg-falured hover:text-secondary"
+              className="border p-2 dark:hover:bg-light_background dark:hover:text-light_ink rounded-full hover:bg-dark_surface hover:text-dark_ink"
             >
               Link to Project
             </a>

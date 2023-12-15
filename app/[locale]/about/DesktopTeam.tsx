@@ -51,7 +51,7 @@ const MemberTemplate = ({
             <h2 className="">{role}</h2>
           </div>
 
-          <div className="border border-cinnabar rounded-2xl flex flex-col space-y-3 justify-center items-center  py-3">
+          <div className="border border-light_primary rounded-2xl flex flex-col space-y-3 justify-center items-center  py-3">
             <p className="text-center">Softwares</p>
             <Logos activity="soft" id={id} />
             <p className="text-center">Leisure Activity</p>
@@ -62,7 +62,7 @@ const MemberTemplate = ({
             <a
               href={linkedin}
               target="_blank"
-              className="rounded-full font-bold border border-cinnabar text-cinnabar dark:border-secondary dark:text-secondary hover:text-secondary hover:bg-cinnabar dark:hover:text-secondary/75 dark:hover:bg-transparent dark:hover:border-secondary/75 uppercase px-3 py-1 cursor-pointer"
+              className="rounded-full font-bold border border-light_primary text-light_primary dark:border-dark_ink dark:text-dark_ink hover:text-dark_ink hover:bg-light_primary dark:hover:text-dark_ink/75 dark:hover:bg-transparent dark:hover:border-dark_ink/75 uppercase px-3 py-1 cursor-pointer"
             >
               Linkedin
             </a>
@@ -70,7 +70,7 @@ const MemberTemplate = ({
             <a
               href={portfolio}
               target="_blank"
-              className="rounded-full font-bold border border-cinnabar text-cinnabar dark:border-secondary dark:text-secondary hover:text-secondary hover:bg-cinnabar dark:hover:text-secondary/75 dark:hover:bg-transparent dark:hover:border-secondary/75 uppercase px-3 py-1 cursor-pointer"
+              className="rounded-full font-bold border border-light_primary text-light_primary dark:border-dark_ink dark:text-dark_ink hover:text-dark_ink hover:bg-light_primary dark:hover:text-dark_ink/75 dark:hover:bg-transparent dark:hover:border-dark_ink/75 uppercase px-3 py-1 cursor-pointer"
             >
               Portfolio
             </a>
@@ -91,7 +91,7 @@ function DesktopTeam() {
   return (
     <>
       <div className="font-sans h-full w-full flex flex-col justify-center items-center">
-        <div className="flex flex-col rounded-3xl p-8 bg-linen dark:bg-falured select-none h-[488px] w-[808px] my-[140px]">
+        <div className="flex flex-col rounded-3xl p-8 bg-light_surface dark:bg-dark_surface select-none h-[488px] w-[808px] my-[140px]">
           <p className="font-bold text-5xl text-center mb-4 ">Our team</p>
           {members ? (
             <Carousel
@@ -105,9 +105,9 @@ function DesktopTeam() {
                   className: classNames(
                     "mt-6 w-3 h-3 transition duration-200 rounded-full",
                     {
-                      "bg-transparent border border-cinnabar dark:border-white hover:bg-cinnabar/75 hover:dark:bg-secondary/75":
+                      "bg-transparent border border-light_primary dark:border-white hover:bg-light_primary/75 hover:dark:bg-light_background/75":
                         !context.active,
-                      "bg-cinnabar hover:bg-cinnabar/75 dark:bg-secondary hover:dark:bg-secondary/75": context.active,
+                      "bg-light_primary hover:bg-light_primary/75 dark:bg-light_background hover:dark:bg-light_background/75": context.active,
                     }
                   ),
                 }),

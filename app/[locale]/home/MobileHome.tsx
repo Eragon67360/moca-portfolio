@@ -8,7 +8,7 @@ import Plans from "@/components/[locale]/mobile/home/Plans";
 function MobileHome() {
   return (
     <>
-      <div className="flex flex-col bg-linen dark:bg-blackbean">
+      <div className="flex flex-col bg-light_surface dark:bg-dark_background">
         <HomeScreen />
         <UXSolutions />
         <FeaturedProjects />

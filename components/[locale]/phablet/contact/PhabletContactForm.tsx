@@ -83,21 +83,21 @@ const PhabletContactForm: React.FC = () => {
   return (
     <>
       <div className="z-10">
-        <div className="flex justify-evenly bg-secondary dark:bg-blackbean px-8 py-8 shadow-lightBox rounded-2xl">
-          <div className="bg-secondary dark:bg-blackbean w-full flex flex-col space-y-[1.92vh]">
+        <div className="flex justify-evenly bg-light_background dark:bg-dark_background px-8 py-8 shadow-lightBox rounded-2xl">
+          <div className="bg-light_background dark:bg-dark_background w-full flex flex-col space-y-[1.92vh]">
             <div className="select-none flex flex-col items-center px-8">
               <div>
                 <div className="flex items-center justify-start space-x-2">
-                  <h2 className="text-[34px] font-bold text-falured dark:text-secondary ">
+                  <h2 className="text-[34px] font-bold text-light_secondary dark:text-dark_ink ">
                     {t("title")}
                   </h2>
 
                   <Image src={logo} alt="logo" />
                 </div>
 
-                <p className="text-black text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-secondary w-full">
+                <p className="text-light_ink text-end text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl dark:text-dark_ink w-full">
                   {t("subtitle")}{" "}
-                  <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-falured dark:text-secondary font-bold">
+                  <span className="text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-light_secondary dark:text-dark_ink font-bold">
                     {";)"}
                   </span>
                 </p>
@@ -108,7 +108,7 @@ const PhabletContactForm: React.FC = () => {
               <div className="flex space-x-[32px] justify-around ">
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-full w-full py-0.5 px-3 text-light_ink dark:bg-light_background"
                     id="firstname"
                     name="given-name"
                     type="text"
@@ -117,7 +117,7 @@ const PhabletContactForm: React.FC = () => {
                 </div>
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-full w-full py-0.5 px-3 text-light_ink dark:bg-light_background"
                     name="family-name"
                     id="name"
                     type="text"
@@ -128,7 +128,7 @@ const PhabletContactForm: React.FC = () => {
               <div className="flex space-x-[32px] justify-around ">
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-full w-full py-0.5 px-3 text-light_ink dark:bg-light_background"
                     id="email"
                     type="email"
                     placeholder={t("email")}
@@ -138,7 +138,7 @@ const PhabletContactForm: React.FC = () => {
                 </div>
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-full w-full py-0.5 px-3 text-light_ink dark:bg-light_background"
                     id="phone"
                     type="phone"
                     placeholder={t("phone")}
@@ -149,7 +149,7 @@ const PhabletContactForm: React.FC = () => {
               <div className="flex space-x-[32px] justify-around ">
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-full w-full py-0.5 px-3 text-light_ink dark:bg-light_background"
                     id="company"
                     type="text"
                     placeholder={t("company")}
@@ -157,7 +157,7 @@ const PhabletContactForm: React.FC = () => {
                 </div>
                 <div className="w-full h-full">
                   <input
-                    className="placeholder-black appearance-none border border-falured rounded-full w-full py-0.5 px-3 text-third dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-full w-full py-0.5 px-3 text-light_ink dark:bg-light_background"
                     id="country"
                     name="country"
                     type="text"
@@ -180,7 +180,7 @@ const PhabletContactForm: React.FC = () => {
               <div className="">
                 <div className="py-2">
                   <textarea
-                    className="placeholder-black appearance-none border border-falured rounded-xl w-full py-0.5 px-3 text-third h-[22vh] dark:bg-secondary"
+                    className="placeholder-black appearance-none border border-light_secondary rounded-xl w-full py-0.5 px-3 text-light_ink h-[22vh] dark:bg-light_background"
                     id="message"
                     value={message}
                     onChange={handleChangeMessage}
@@ -191,7 +191,7 @@ const PhabletContactForm: React.FC = () => {
               <div className="flex items-center justify-start space-x-2">
                 <button
                   disabled={!emailValue || loading || !message}
-                  className="bg-white border border-falured uppercase disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary hover:enabled:bg-falured text-black font-bold py-0.5 px-2 rounded-full"
+                  className="bg-white border border-light_secondary uppercase disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-dark_ink hover:enabled:bg-dark_surface text-light_ink font-bold py-0.5 px-2 rounded-full"
                   type="submit"
                 >
                   {t("send")}

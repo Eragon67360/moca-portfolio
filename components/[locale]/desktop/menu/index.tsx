@@ -52,7 +52,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
       <div
         className={
           isOpen
-            ? "flex fixed z-50 top-0 left-0 w-full h-full bg-[#999999]/80 text-white"
+            ? "flex fixed z-50 top-0 left-0 w-full h-full bg-[#999999]/80 text-dark_ink"
             : "hidden"
         }
       >
@@ -60,7 +60,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           variants={menuVariants}
-          className="flex flex-col py-4 px-8 w-[360px] bg-white dark:bg-blackbean"
+          className="flex flex-col py-4 px-8 w-[360px] bg-white dark:bg-dark_background"
         >
           <button
             className="absolute top-8 left-8 rounded-full bg-gray-700 hover:bg-gray-600"

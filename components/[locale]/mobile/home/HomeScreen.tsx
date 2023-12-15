@@ -47,8 +47,8 @@ const HomeScreen = () => {
 
   const images = [phone_white, phone_yellow, phone_blue, phone_red];
   const colorPattern = [
-    "bg-cinnabar dark:bg-linen",
-    "bg-linen dark:bg-falured",
+    "bg-light_primary dark:bg-light_surface",
+    "bg-light_surface dark:bg-dark_surface",
   ];
 
   const fadeInOut = {
@@ -202,7 +202,7 @@ const HomeScreen = () => {
 
           <motion.div className="relative">
             <motion.div
-              className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-falured"
+              className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-light_secondary"
               initial="initial"
               animate="animate"
               variants={scrollVariantsInverse}
@@ -211,7 +211,7 @@ const HomeScreen = () => {
             </motion.div>
 
             <motion.div
-              className="fill-text whitespace-nowrap text-5xl font-bold text-falured"
+              className="fill-text whitespace-nowrap text-5xl font-bold text-light_secondary"
               initial="initial"
               animate="animate"
               variants={scrollVariantsInverse}
@@ -222,7 +222,7 @@ const HomeScreen = () => {
 
           <motion.div className="relative">
             <motion.div
-              className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-falured"
+              className="absolute inset-0 z-10 text-transparent text-stroke whitespace-nowrap text-5xl font-bold text-light_secondary"
               ref={sentenceRef}
               initial="initial"
               animate="animate"
@@ -258,7 +258,7 @@ const HomeScreen = () => {
             .map((color, index) => (
               <div key={index} className={`${color} w-[10%]`}></div>
             ))}
-          <div className="bg-cinnabar dark:bg-linen w-[10%]"></div>
+          <div className="bg-light_primary dark:bg-light_surface w-[10%]"></div>
         </div>
       </div>
     </>

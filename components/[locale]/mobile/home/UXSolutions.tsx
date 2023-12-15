@@ -13,8 +13,8 @@ const UXSolutions = () => {
   return (
     <>
       <div className="">
-        <div className="bg-white dark:bg-blackbean flex flex-col h-full py-[52px] justify-start items-center text-center select-none space-y-12 px-8">
-          <p className="font-bold text-[34px] text-blackbean dark:text-secondary">
+        <div className="bg-white dark:bg-dark_background flex flex-col h-full py-[52px] justify-start items-center text-center select-none space-y-12 px-8">
+          <p className="font-bold text-[34px] text-light_ink dark:text-dark_ink">
             {t("title")}
           </p>
           <div className="flex flex-col justify-evenly pt-9 space-y-8">
@@ -45,7 +45,7 @@ const UXSolutions = () => {
             <Image src={tail} alt="tail" width={140} className="absolute -left-20 -bottom-12" />
           </div>
 
-          <div className="text-blackbean dark:text-white mt-12 flex flex-col rounded-2xl border-4 border-cinnabar dark:border-cinnabar p-8 space-y-8 bg-linen dark:bg-falured">
+          <div className="text-light_ink dark:text-dark_ink mt-12 flex flex-col rounded-2xl border-4 border-light_primary dark:border-light_primary p-8 space-y-8 bg-light_surface dark:bg-dark_surface">
             <h2 className="text-2xl font-bold">
               Design is not just what it looks like;
               <br /> design is how it works

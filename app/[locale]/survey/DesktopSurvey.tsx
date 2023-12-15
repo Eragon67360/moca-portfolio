@@ -315,9 +315,9 @@ const DesktopSurvey = () => {
 
   return (
     <>
-      <div className="flex w-screen bg-linen py-[124px]  justify-center items-center">
-        <div className="w-[810px] h-full rounded-2xl bg-secondary p-8 shadow-lg space-y-4 ">
-          <p className="text-center text-5xl font-bold w-full text-third">
+      <div className="flex w-screen bg-light_surface py-[124px]  justify-center items-center">
+        <div className="w-[810px] h-full rounded-2xl bg-light_background p-8 shadow-lg space-y-4 ">
+          <p className="text-center text-5xl font-bold w-full text-light_ink">
             Website Survey
           </p>
 
@@ -329,7 +329,7 @@ const DesktopSurvey = () => {
           >
             <div className="w-full h-[32px]">
               <input
-                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                className="text-sm placeholder-black appearance-none border border-light_primary rounded-full w-full py-[6px] px-[18px] text-light_ink dark:bg-light_background"
                 id="fullname"
                 name="given-name"
                 type="text"
@@ -338,7 +338,7 @@ const DesktopSurvey = () => {
             </div>
             <div className="w-full h-[32px]">
               <input
-                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                className="text-sm placeholder-black appearance-none border border-light_primary rounded-full w-full py-[6px] px-[18px] text-light_ink dark:bg-light_background"
                 id="email"
                 name="email"
                 type="text"
@@ -348,27 +348,27 @@ const DesktopSurvey = () => {
             </div>
             <div className="w-full h-[32px]">
               <input
-                className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                className="text-sm placeholder-black appearance-none border border-light_primary rounded-full w-full py-[6px] px-[18px] text-light_ink dark:bg-light_background"
                 id="company"
                 name="company"
                 type="text"
                 placeholder="Company"
               />
             </div>
-            <p className="text-third">What kind of website do you need?</p>
+            <p className="text-light_ink">What kind of website do you need?</p>
             <div className="flex space-x-3">
               {website_types.map((name) => (
                 <button
                   type="button"
                   key={name}
                   onClick={() => handleSelectionChangeSubject(name)}
-                  className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
+                  className="border border-light_primary rounded-full transform transition duration-500 hover:scale-110"
                 >
                   <div
-                    className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
+                    className={`appearance-none hover:bg-light_primary hover:text-dark_ink rounded-full w-full py-0.5 px-3  ${
                       selectedSubject === name
-                        ? "bg-cinnabar text-white"
-                        : "bg-white text-third"
+                        ? "bg-light_primary text-dark_ink"
+                        : "bg-white text-light_ink"
                     }`}
                   >
                     {name}
@@ -379,10 +379,10 @@ const DesktopSurvey = () => {
                 id="other_website"
                 placeholder="Other"
                 type="text"
-                className="px-3 border border-cinnabar rounded-full text-sm placeholder-black appearance-none text-third dark:bg-secondary"
+                className="px-3 border border-light_primary rounded-full text-sm placeholder-black appearance-none text-light_ink dark:bg-light_background"
                 />
             </div>
-            <p className="text-third">
+            <p className="text-light_ink">
               If it&apos;s an online shop, how many products do you sell?
             </p>
             <div className="flex space-x-3">
@@ -391,13 +391,13 @@ const DesktopSurvey = () => {
                   type="button"
                   key={name}
                   onClick={() => handleSelectionChangeSales(name)}
-                  className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
+                  className="border border-light_primary rounded-full transform transition duration-500 hover:scale-110"
                 >
                   <div
-                    className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
+                    className={`appearance-none hover:bg-light_primary hover:text-dark_ink rounded-full w-full py-0.5 px-3  ${
                       selectedSales === name
-                        ? "bg-cinnabar text-white"
-                        : "bg-white text-third"
+                        ? "bg-light_primary text-dark_ink"
+                        : "bg-white text-light_ink"
                     }`}
                   >
                     {name}
@@ -405,16 +405,16 @@ const DesktopSurvey = () => {
                 </button>
               ))}
             </div>
-            <p className="text-third">
+            <p className="text-light_ink">
               Are there any specific demographics or user personas to consider?
             </p>
             <div className="flex space-x-3">
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
+                className={`appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink ${
                   isOpenSpecifications === true
-                    ? "bg-cinnabar text-white"
-                    : "bg-white text-third"
+                    ? "bg-light_primary text-dark_ink"
+                    : "bg-white text-light_ink"
                 }`}
                 onClick={() => {
                   setIsOpenSpecifications(true);
@@ -425,10 +425,10 @@ const DesktopSurvey = () => {
               </button>
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
+                className={`appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink ${
                   isOpenSpecifications === false
-                    ? "bg-cinnabar text-white"
-                    : "bg-white text-third"
+                    ? "bg-light_primary text-dark_ink"
+                    : "bg-white text-light_ink"
                 }`}
                 onClick={() => {
                   setIsOpenSpecifications(false);
@@ -463,7 +463,7 @@ const DesktopSurvey = () => {
                       placeholder="Family status"
                     />
                   </div>
-                  <div className="flex items-center  text-cinnabar">
+                  <div className="flex items-center  text-light_primary">
                     <button type="button" onClick={addFiles}>
                       + Add files
                     </button>
@@ -481,7 +481,7 @@ const DesktopSurvey = () => {
                       {uploadedFiles.map((file, index) => (
                         <li
                           key={index}
-                          className="text-cinnabar text-xs flex items-center space-x-2"
+                          className="text-light_primary text-xs flex items-center space-x-2"
                         >
                           <span>{file.name}</span>
                           <button
@@ -525,18 +525,18 @@ const DesktopSurvey = () => {
                 </div>
               )}
             </AnimatePresence>
-            <p className="text-third">
+            <p className="text-light_ink">
               If you already know the overall look and feel you want for the
               website, you can describe or attach files.{" "}
             </p>
 
             <textarea
-              className="text-sm placeholder-black appearance-none border border-cinnabar h-[56px] rounded-2xl w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+              className="text-sm placeholder-black appearance-none border border-light_primary h-[56px] rounded-2xl w-full py-[6px] px-[18px] text-light_ink dark:bg-light_background"
               id="description"
               name="description"
               rows={5}
             />
-            <div className="flex items-center  text-cinnabar">
+            <div className="flex items-center  text-light_primary">
               <button type="button" onClick={addFilesDesign}>
                 + Add files
               </button>
@@ -554,7 +554,7 @@ const DesktopSurvey = () => {
                 {uploadedFilesDesign.map((file, index) => (
                   <li
                     key={index}
-                    className="text-cinnabar text-xs flex items-center space-x-2"
+                    className="text-light_primary text-xs flex items-center space-x-2"
                   >
                     <span>{file.name}</span>
                     <button
@@ -596,7 +596,7 @@ const DesktopSurvey = () => {
               </ul>
             )}
 
-            <p className="text-third">You can provide examples of other websites you like.</p>
+            <p className="text-light_ink">You can provide examples of other websites you like.</p>
 
             {selectedLinks.map((link, index) => (
               <div key={index} className="flex space-x-3">
@@ -604,7 +604,7 @@ const DesktopSurvey = () => {
                   key={index}
                   value={link}
                   onChange={(e) => handleInputChangeLink(e, index)}
-                  className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                  className="text-sm placeholder-black appearance-none border border-light_primary rounded-full w-full py-[6px] px-[18px] text-light_ink dark:bg-light_background"
                   id={`link-${index}`}
                   placeholder={`Link ${index + 1}:`}
                   type="text"
@@ -646,13 +646,13 @@ const DesktopSurvey = () => {
               <button
                 type="button"
                 onClick={addLink}
-                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
+                className="px-3 border border-light_primary rounded-full transform transition duration-500 hover:scale-110 uppercase text-light_primary font-bold hover:bg-light_primary hover:text-dark_ink"
               >
                 Add link
               </button>
             </div>
 
-            <p className="text-third">
+            <p className="text-light_ink">
               List and describe the main pages or sections you want on the
               website (e.g., Home, About Us, Services, Contact).
             </p>
@@ -663,7 +663,7 @@ const DesktopSurvey = () => {
                   key={index}
                   value={page}
                   onChange={(e) => handleInputChangePage(e, index)}
-                  className="text-sm placeholder-black appearance-none border border-cinnabar rounded-full w-full py-[6px] px-[18px] text-third dark:bg-secondary"
+                  className="text-sm placeholder-black appearance-none border border-light_primary rounded-full w-full py-[6px] px-[18px] text-light_ink dark:bg-light_background"
                   id={`page-${index}`}
                   placeholder={`Page ${index + 1}:`}
                   type="text"
@@ -706,21 +706,21 @@ const DesktopSurvey = () => {
               <button
                 type="button"
                 onClick={addPage}
-                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:scale-110 uppercase text-cinnabar font-bold hover:bg-cinnabar hover:text-secondary"
+                className="px-3 border border-light_primary rounded-full transform transition duration-500 hover:scale-110 uppercase text-light_primary font-bold hover:bg-light_primary hover:text-dark_ink"
               >
                 Add page
               </button>
             </div>
 
-            <p className="text-third">Does the site have to be in several languages?</p>
+            <p className="text-light_ink">Does the site have to be in several languages?</p>
 
             <div className="flex space-x-3">
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
+                className={`appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink ${
                   isOpenLanguages === true
-                    ? "bg-cinnabar text-white"
-                    : "bg-white text-third"
+                    ? "bg-light_primary text-dark_ink"
+                    : "bg-white text-light_ink"
                 }`}
                 onClick={() => {
                   setIsOpenLanguages(true);
@@ -731,10 +731,10 @@ const DesktopSurvey = () => {
               </button>
               <button
                 type="button"
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
+                className={`appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink ${
                   isOpenLanguages === false
-                    ? "bg-cinnabar text-white"
-                    : "bg-white text-third"
+                    ? "bg-light_primary text-dark_ink"
+                    : "bg-white text-light_ink"
                 }`}
                 onClick={() => {
                   setIsOpenLanguages(false);
@@ -753,13 +753,13 @@ const DesktopSurvey = () => {
                       type="button"
                       key={name}
                       onClick={() => handleSelectionChangeLanguage(name)}
-                      className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
+                      className="border border-light_primary rounded-full transform transition duration-500 hover:scale-110"
                     >
                       <div
-                        className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
+                        className={`appearance-none hover:bg-light_primary hover:text-dark_ink rounded-full w-full py-0.5 px-3  ${
                           selectedLanguage === name
-                            ? "bg-cinnabar text-white"
-                            : "bg-white text-third"
+                            ? "bg-light_primary text-dark_ink"
+                            : "bg-white text-light_ink"
                         }`}
                       >
                         {name}
@@ -770,7 +770,7 @@ const DesktopSurvey = () => {
               )}
             </AnimatePresence>
 
-            <p className="text-third">Describe any specific features or functionalities you want.</p>
+            <p className="text-light_ink">Describe any specific features or functionalities you want.</p>
             <div className="flex space-x-2">
               <div className="flex space-x-2">
                 {features.map((name) => (
@@ -778,13 +778,13 @@ const DesktopSurvey = () => {
                     type="button"
                     key={name}
                     onClick={() => handleMultiSelectionChange(name)}
-                    className="border border-cinnabar rounded-full transform transition duration-500 hover:scale-110"
+                    className="border border-light_primary rounded-full transform transition duration-500 hover:scale-110"
                   >
                     <div
-                      className={`appearance-none hover:bg-cinnabar hover:text-white rounded-full w-full py-0.5 px-3  ${
+                      className={`appearance-none hover:bg-light_primary hover:text-dark_ink rounded-full w-full py-0.5 px-3  ${
                         selectedFeatures.includes(name)
-                          ? "bg-cinnabar text-white"
-                          : "bg-white text-third"
+                          ? "bg-light_primary text-dark_ink"
+                          : "bg-white text-light_ink"
                       }`}
                     >
                       {name}
@@ -796,20 +796,20 @@ const DesktopSurvey = () => {
                 id="other_features"
                 placeholder="Others"
                 type="text"
-                className="px-3 border border-cinnabar rounded-full text-sm placeholder-black appearance-none text-third dark:bg-secondary"
+                className="px-3 border border-light_primary rounded-full text-sm placeholder-black appearance-none text-light_ink dark:bg-light_background"
                 />
             </div>
 
-            <p className="text-third">Do you already have a logo?</p>
+            <p className="text-light_ink">Do you already have a logo?</p>
 
             <div className="flex space-x-3">
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("Yes")}
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third  ${
+                className={`appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink  ${
                   selectedLogo === "Yes"
-                    ? "bg-cinnabar text-white"
-                    : "bg-white text-third"
+                    ? "bg-light_primary text-dark_ink"
+                    : "bg-white text-light_ink"
                 }`}
               >
                 Yes
@@ -818,51 +818,51 @@ const DesktopSurvey = () => {
               <button
                 type="button"
                 onClick={() => handleSelectionChangeLogo("No")}
-                className={`appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third ${
+                className={`appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink ${
                   selectedLogo === "No"
-                    ? "bg-cinnabar text-white"
-                    : "bg-white text-third"
+                    ? "bg-light_primary text-dark_ink"
+                    : "bg-white text-light_ink"
                 }`}
               >
                 No
               </button>
             </div>
 
-            <p className="text-third">
+            <p className="text-light_ink">
               Project timeline: When do they need the website to be completed?
             </p>
             <div>
               <DatePicker
                 selected={startDate}
-                className="px-3 border border-cinnabar rounded-full text-sm appearance-none text-third dark:bg-secondary"
+                className="px-3 border border-light_primary rounded-full text-sm appearance-none text-light_ink dark:bg-light_background"
                 onChange={(date: Date | [Date, Date] | null) =>
                   date && setStartDate(date as Date)
                 }
               />
             </div>
 
-            <p className="text-third">Add any additional comments:</p>
+            <p className="text-light_ink">Add any additional comments:</p>
             <textarea
               id="comments"
               name="additional_comments"
               rows={5}
-              className="h-14 px-3 py-3 border border-cinnabar rounded-2xl appearance-none text-third dark:bg-secondary"
+              className="h-14 px-3 py-3 border border-light_primary rounded-2xl appearance-none text-light_ink dark:bg-light_background"
             />
 
-            <p className="text-2xl font-semibold text-third">Legal and Privacy:</p>
-            <p className="text-third">
+            <p className="text-2xl font-semibold text-light_ink">Legal and Privacy:</p>
+            <p className="text-light_ink">
               Include a section to address any legal or privacy requirements,
               such as GDPR compliance or terms of service.
             </p>
-            <p className="text-2xl font-semibold text-third">Next Steps:</p>
-            <p className="text-third">
+            <p className="text-2xl font-semibold text-light_ink">Next Steps:</p>
+            <p className="text-light_ink">
               Explain the next steps in the web development process, such as a
               follow-up meeting to discuss the survey responses in detail.
             </p>
             <div className="flex items-center justify-start space-x-2">
               <button
                 disabled={!emailValue || loading}
-                className="px-3 border border-cinnabar rounded-full transform transition duration-500 hover:enabled:scale-110 uppercase text-cinnabar font-bold hover:enabled:bg-cinnabar hover:disabled:bg-none hover:text-secondary disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-secondary"
+                className="px-3 border border-light_primary rounded-full transform transition duration-500 hover:enabled:scale-110 uppercase text-light_primary font-bold hover:enabled:bg-light_primary hover:disabled:bg-none hover:text-dark_ink disabled:border-gray-400 disabled:text-gray-400 hover:disabled:text-gray-400 hover:disabled:border-gray-400 hover:enabled:text-dark_ink"
                 type="submit"
               >
                 Send

@@ -14,7 +14,7 @@ function DesktopContact() {
   const t = useTranslations("Contact.MainPage")
   return (
     <>
-      <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
+      <div className="bg-contact-background dark:bg-contact-background_dark bg-no-repeat bg-cover bg-center bg-fixed">
         <AnimatePresence>
           <div className="flex flex-col h-[160vh] space-y-20">
             <motion.div
@@ -25,10 +25,10 @@ function DesktopContact() {
             >
               <div className="text-[2vw] font-bold text-center absolute z-10 mt-[150px] ml-2">
                 {t('title1')}{" "}
-                <span className="uppercase text-cinnabar">{t('title2')}</span>
+                <span className="uppercase text-light_primary">{t('title2')}</span>
                 <br />
                 {t('title3')}{" "}
-                <span className="uppercase text-cinnabar">{t('title4')}</span>
+                <span className="uppercase text-light_primary">{t('title4')}</span>
               </div>
             </motion.div>
 

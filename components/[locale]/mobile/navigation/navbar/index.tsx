@@ -35,7 +35,7 @@ const MobileNavbar = () => {
           </div>
           <button
             aria-label="menu"
-            className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-secondary text-falured py-2 px-2 rounded-full shadow-lg hover:text-opacity-75 z-40"
+            className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-light_background text-light_secondary py-2 px-2 rounded-full shadow-lg hover:text-opacity-75 z-40"
             onClick={toggleMenu}
           >
             {menuOpen ? (

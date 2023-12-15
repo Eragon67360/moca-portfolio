@@ -47,7 +47,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       <button
       type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="appearance-none border border-cinnabar rounded-full py-[5px] px-[12px] text-third bg-secondary flex items-center"
+        className="appearance-none border border-light_primary rounded-full py-[5px] px-[12px] text-light_ink bg-light_background flex items-center"
       >
         {selectedOption || placeholder}{" "}
         <svg
@@ -64,7 +64,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       </button>
 
       {isOpen && (
-        <ul className="absolute mt-2 w-56 rounded-md shadow-lg bg-white text-third">
+        <ul className="absolute mt-2 w-56 rounded-md shadow-lg bg-white text-light_ink">
           {options.map((option, index) => (
             <li
               key={index}

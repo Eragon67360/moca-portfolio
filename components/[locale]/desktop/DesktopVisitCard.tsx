@@ -17,11 +17,11 @@ const DesktopVisitCard = () => {
         transition={{ duration: 1, delay: 1 }}
         className="h-[188px] w-[284px] px-5 py-4 rounded-xl flex flex-col justify-between space-y-8 contact-shadow"
       >
-        <div className="flex justify-center text-center text-2xl dark:text-white">
+        <div className="flex justify-center text-center text-2xl dark:text-dark_ink">
         {t('information')}
         </div>
 
-        <div className="flex flex-col text-base space-y-2 dark:text-white">
+        <div className="flex flex-col text-base space-y-2 dark:text-dark_ink">
           <div className="flex space-x-4">
             <div className="flex items-start">
               <FiMail style={{ fontSize: 20 }} />

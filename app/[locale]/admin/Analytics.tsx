@@ -21,7 +21,7 @@ export const Analytics = () => {
     <>
       <div className="w-full flex flex-col">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2 text-secondary">
+          <div className="flex items-center space-x-2 text-dark_ink">
             <FiGlobe />
             <Link
               href="/"
@@ -50,17 +50,17 @@ export const Analytics = () => {
         </div>
 
         <div className="flex mt-8 h-full w-full border border-gray-500 rounded-xl">
-          <div className="h-full w-36 p-4 flex flex-col rounded-s-xl border-r border-gray-800 border-secondary/30">
+          <div className="h-full w-36 p-4 flex flex-col rounded-s-xl border-r border-gray-800 border-dark_ink/30">
             <p className="text-lg font-semibold text-gray-500">Visitors</p>
-            <div className="text-2xl text-secondary my-4">
+            <div className="text-2xl text-dark_ink my-4">
               {visitors?.totalVisitors ?? (
                 <div className="w-10 h-3 bg-gray-300 rounded-full dark:bg-darkPrimary animate-pulse"></div>
               )}{" "}
             </div>
           </div>
-          <div className="h-full w-36 p-4 flex flex-col rounded-s-xl border-r border-secondary/30">
+          <div className="h-full w-36 p-4 flex flex-col rounded-s-xl border-r border-dark_ink/30">
             <p className="text-lg font-semibold text-gray-500">Page Views</p>
-            <div className="text-2xl text-secondary my-4">
+            <div className="text-2xl text-dark_ink my-4">
               {visitors?.totalPageViews ?? (
                 <div className="w-10 h-3 bg-gray-300 rounded-full dark:bg-darkPrimary animate-pulse"></div>
               )}{" "}

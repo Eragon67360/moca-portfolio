@@ -30,7 +30,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
       <div
         className={
           isOpen
-            ? "flex fixed z-30 top-0 left-0 w-full h-full text-white"
+            ? "flex fixed z-30 top-0 left-0 w-full h-full text-dark_ink"
             : "hidden"
         }
       >
@@ -38,7 +38,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
           initial="closed"
           animate={isOpen ? "open" : "closed"}
           variants={menuVariants}
-          className="flex flex-col py-4 px-8 w-full bg-white dark:bg-blackbean"
+          className="flex flex-col py-4 px-8 w-full bg-white dark:bg-dark_background"
         >
           <div className="flex flex-col items-center">
             <Image src={logo} alt="logo" />

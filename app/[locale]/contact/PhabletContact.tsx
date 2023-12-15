@@ -23,7 +23,7 @@ function PhabletContact() {
 
   return (
     <>
-      <div className="bg-contact-background bg-no-repeat bg-cover bg-center bg-fixed">
+      <div className="bg-contact-background dark:bg-contact-background_dark bg-no-repeat bg-cover bg-center bg-fixed">
         <div className=" flex flex-col items-center mt-[138px] pb-[67px]">
           <AnimatePresence>
             <motion.div
@@ -36,12 +36,12 @@ function PhabletContact() {
               className="text-2xl font-bold text-center"
             >
               {t("title1")}{" "}
-              <span className="uppercase text-falured dark:text-cinnabar">
+              <span className="uppercase text-light_secondary dark:text-light_primary">
                 {t("title2")}
               </span>
               <br />
               {t("title3")}{" "}
-              <span className="uppercase text-falured dark:text-cinnabar">
+              <span className="uppercase text-light_secondary dark:text-light_primary">
                 {t("title4")}
               </span>
             </motion.div>
@@ -56,7 +56,7 @@ function PhabletContact() {
             >
               <PhabletContactForm />
               <PhabletVisitCard />
-              <div className="py-4 w-full flex flex-col text-center bg-secondary dark:bg-falured space-y-3 text-xl shadow-lightBox rounded-2xl">
+              <div className="py-4 w-full flex flex-col text-center bg-light_background dark:bg-dark_surface space-y-3 text-xl shadow-lightBox rounded-2xl">
                 <p>{t("find")}</p>
                 <div className="flex justify-center space-x-4">
                   <a

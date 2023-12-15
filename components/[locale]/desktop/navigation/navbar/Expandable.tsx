@@ -58,16 +58,16 @@ function Expandable({ language }: { language: any }) {
         className="p-2 rounded-full focus:outline-none"
       >
         <FiGlobe
-          className="text-black hover:text-black hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-secondary dark:hover:text-secondary"
+          className="text-light_ink hover:text-light_ink hover:opacity-60 transform transition duration-300 hover:scale-110 dark:text-dark_ink dark:hover:text-dark_ink"
           size={24}
         />
       </button>
       {isDropdownOpen && (
-        <div className="absolute z-10 text-gray-800 dark:text-secondary right-0 mt-0 py-2 w-48 bg-secondary dark:bg-falured  rounded-lg shadow-lightBox dark:shadow-darkBox ">
+        <div className="absolute z-10 text-gray-800 dark:text-dark_ink right-0 mt-0 py-2 w-48 bg-light_background dark:bg-dark_surface  rounded-lg shadow-lightBox dark:shadow-darkBox ">
           {locales.map((locale) => (
             <button
               key={locale.code}
-              className="block px-4 py-2 hover:bg-primary hover:text-falured dark:hover:text-cinnabar"
+              className="block px-4 py-2 hover:bg-primary hover:text-light_secondary dark:hover:text-light_primary"
               onClick={() => {
                 updateLocale(locale.code);
                 setIsDropdownOpen(false);

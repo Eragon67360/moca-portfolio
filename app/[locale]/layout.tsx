@@ -69,7 +69,7 @@ export default async function RootLayout({
               disableTransitionOnChange
             >
               <NextIntlClientProvider locale={locale} messages={messages}>
-                <div className="flex flex-col h-screen bg-transparent dark:bg-blackbean font-sans w-full">
+                <div className="flex flex-col h-screen bg-transparent dark:bg-dark_background font-sans w-full">
                   <ProgressBar />
                   <div className="flex flex-col flex-grow font-sans">
                     <>

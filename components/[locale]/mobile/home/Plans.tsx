@@ -109,10 +109,10 @@ const Plans = () => {
       </div>
       <div
         id="pricings"
-        className="pt-24 bg-linen dark:bg-falured flex flex-col items-center"
+        className="pt-24 bg-light_surface dark:bg-dark_surface flex flex-col items-center"
       >
         <div className="flex justify-center items-center">
-          <p className="text-4xl text-blackbean dark:text-secondary text-center font-bold flex-wrap flex space-x-2">
+          <p className="text-4xl text-light_ink dark:text-dark_ink text-center font-bold flex-wrap flex space-x-2">
             <span className="text-center w-full">Subscriptions</span>
             <span className="flex items-center space-x-1 w-full justify-center">
               <span className="text-center">plans</span>
@@ -125,11 +125,11 @@ const Plans = () => {
             </span>
           </p>
         </div>
-        <div className="mt-8 flex flex-col space-y-4 text-blackbean dark:text-secondary items-center">
+        <div className="mt-8 flex flex-col space-y-4 text-light_ink dark:text-dark_ink items-center">
           {planData.map((plan, index) => (
             <div
               key={index}
-              className="bg-secondary dark:bg-blackbean flex flex-col p-8 rounded-2xl shadow-cards h-full w-[240px]"
+              className="bg-light_background dark:bg-dark_background flex flex-col p-8 rounded-2xl shadow-cards h-full w-[240px]"
             >
               <div className="flex flex-col justify-between h-[57%]">
                 <div className="flex flex-col">
@@ -144,7 +144,7 @@ const Plans = () => {
                   <div className="flex mt-4">
                     <button
                       onClick={() => handleClick(plan.amount)}
-                      className="uppercase font-bold py-2 px-4 rounded-full bg-cinnabar dark:bg-linen text-secondary dark:text-blackbean hover:bg-linen hover:text-blackbean hover:dark:bg-falured hover:dark:text-secondary"
+                      className="uppercase font-bold py-2 px-4 rounded-full bg-light_primary dark:bg-light_surface text-dark_ink dark:text-light_ink hover:bg-light_surface hover:text-light_ink hover:dark:bg-dark_surface hover:dark:text-dark_ink"
                     >
                       {plan.buttonText}
                     </button>
@@ -158,7 +158,7 @@ const Plans = () => {
                 </div>
               </div>
               <div className="flex flex-col mt-6 h-full">
-                <hr className=" border-2 border-linen mt-4" />
+                <hr className=" border-2 border-light_surface mt-4" />
                 <div className="flex flex-col mt-4 text-xs">
                   <p>{t("included")}</p>
                   <br />
@@ -177,8 +177,8 @@ const Plans = () => {
           ))}
 
           <div className="flex flex-col space-y-4 h-full">
-            <div className="p-8 border border-cinnabar rounded-2xl shadow-cards w-[240px] h-full">
-              <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
+            <div className="p-8 border border-light_primary rounded-2xl shadow-cards w-[240px] h-full">
+              <div className="flex flex-col space-y-4 text-light_ink dark:text-dark_ink">
                 <div className=" text-center">{t("book_call")}</div>
                 <div className="flex justify-center">
                   <svg
@@ -250,7 +250,7 @@ const Plans = () => {
 
               <div className="flex justify-center mt-8">
                 <a
-                  className="px-4 py-2 rounded-full space-x-2 border border-cinnabar bg-transparent hover:bg-cinnabar text-third hover:text-secondary dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean justify-center items-center"
+                  className="px-4 py-2 rounded-full space-x-2 border border-light_primary bg-transparent hover:bg-light_primary text-light_ink hover:text-dark_ink dark:text-light_ink dark:bg-light_surface hover:dark:text-dark_ink hover:dark:bg-dark_background justify-center items-center"
                   href={"https://calendly.com/uxmoca/30min?month=2023-11"}
                   target="_blank"
                 >
@@ -261,8 +261,8 @@ const Plans = () => {
               </div>
             </div>
 
-            <div className="p-12 border rounded-2xl border-cinnabar shadow-cards w-[240px] h-full">
-              <div className="flex flex-col space-y-4 text-blackbean dark:text-secondary">
+            <div className="p-12 border rounded-2xl border-light_primary shadow-cards w-[240px] h-full">
+              <div className="flex flex-col space-y-4 text-light_ink dark:text-dark_ink">
                 <div className="text-center text-xs font-bold">
                   FAQ about our subscription plans
                 </div>
@@ -270,7 +270,7 @@ const Plans = () => {
 
               <div className="flex justify-center mx-auto mt-8 items-center">
                 <Link
-                  className="px-4 py-2 rounded-full space-x-2 border border-cinnabar bg-transparent hover:bg-cinnabar text-third hover:text-secondary dark:text-blackbean dark:bg-linen hover:dark:text-secondary hover:dark:bg-blackbean justify-center items-center"
+                  className="px-4 py-2 rounded-full space-x-2 border border-light_primary bg-transparent hover:bg-light_primary text-light_ink hover:text-dark_ink dark:text-light_ink dark:bg-light_surface hover:dark:text-dark_ink hover:dark:bg-dark_background justify-center items-center"
                   href={`/${locale}/subscriptions`}
                 >
                   <span className="font-bold text-center md:text-xs lg:text-base">

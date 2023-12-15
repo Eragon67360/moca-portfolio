@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 import Arrow from "@/components/SVG/little_arrow_1";
 import { motion } from "framer-motion";
 
-const colorPattern = ["bg-cinnabar dark:bg-falured", "bg-linen"];
+const colorPattern = ["bg-light_primary dark:bg-dark_surface", "bg-light_surface"];
 const carouselImages = [carousel1, carousel2, carousel3];
 
 const Phablet = ({ initialPanda }: { initialPanda: any }) => {
@@ -107,8 +107,8 @@ const PhabletHomeScreen = () => {
 
   return (
     <>
-      <div className="h-[88vh] flex flex-col w-full justify-center items-center py-12 space-y-24 bg-linen dark:bg-falured">
-        <div className="text-[28px] px-8 font-bold text-falured text-center mt-[196px] ">
+      <div className="h-[88vh] flex flex-col w-full justify-center items-center py-12 space-y-24 bg-light_surface dark:bg-dark_surface">
+        <div className="text-[28px] px-8 font-bold text-light_secondary text-center mt-[196px] ">
           {text1} <br />
           {text2}
         </div>
@@ -141,14 +141,14 @@ const PhabletHomeScreen = () => {
         <div className="absolute top-8 left-1/2 transform translate-x-[-50%] scale-[.8]">
           <Arrow color={color} />
         </div>
-        <div className="h-40 flex justify-evenly items pt-24 bg-linen dark:bg-falured">
+        <div className="h-40 flex justify-evenly items pt-24 bg-light_surface dark:bg-dark_surface">
           {Array(8)
             .fill(colorPattern)
             .flat()
             .map((color, index) => (
               <div key={index} className={`${color} w-[6.25%]`}></div>
             ))}
-          <div className={`bg-cinnabar dark:bg-falured w-[6.25%]`}></div>
+          <div className={`bg-light_primary dark:bg-dark_surface w-[6.25%]`}></div>
         </div>
       </div>
     </>

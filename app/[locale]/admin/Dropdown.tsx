@@ -67,7 +67,7 @@ const Dropdown: React.FC<DropdownProps> = ({ onChange }) => {
             {dropdownItems.map((item) => (
               <div
                 key={item.key}
-                className="cursor-pointer bg-[#0a0a0a] text-secondary hover:bg-blackbean p-2"
+                className="cursor-pointer bg-[#0a0a0a] text-dark_ink hover:bg-dark_background p-2"
                 onClick={() => {
                     setSelectedValue(item.key);
                     setIsOpen(false);

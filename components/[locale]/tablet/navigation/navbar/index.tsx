@@ -42,7 +42,7 @@ const TabletNavbar = () => {
             }}
             transition={{ duration: 0.6, ease: "easeInOut" }}
             exit={{ y: isShrunk ? -100 : 0 }}
-            className={`fixed top-0 left-0 w-full z-40 flex items-center px-10 dark:bg-blackbean border-b-2 border-x-2 rounded-b-xl transition-all border-cinnabar h-[72px] bg-linen`}
+            className={`fixed top-0 left-0 w-full z-40 flex items-center px-10 dark:bg-dark_background border-b-2 border-x-2 rounded-b-xl transition-all border-light_primary h-[72px] bg-light_surface`}
           >
             <div className="w-full flex">
               <div className="flex space-x-8 text-2xl font-bold">
@@ -52,7 +52,7 @@ const TabletNavbar = () => {
                 >
                   <CgMenuGridO
                     size={30}
-                    className="hover:text-cinnabar text-third dark:text-secondary"
+                    className="hover:text-light_primary text-light_ink dark:text-dark_ink"
                   />
                 </button>
               </div>

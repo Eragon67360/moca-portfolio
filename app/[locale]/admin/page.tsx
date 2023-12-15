@@ -11,31 +11,31 @@ function Admin() {
 
   return (
     <>
-      <div className="flex h-screen bg-third">
+      <div className="flex h-screen bg-dark_background">
         {/* Sidebar */}
-        <div className="bg-blackbean  w-1/5 py-4">
+        <div className="bg-dark_background  w-1/5 py-4">
           <div className="flex items-center space-x-4 mx-4">
             {" "}
             <Image src={logo} alt="logo" width={60} />{" "}
-            <p className="font-bold text-xl text-secondary">UX MOCA</p>
+            <p className="font-bold text-xl text-dark_ink">UX MOCA</p>
           </div>
 
           <ul className="mt-8">
             <li
-              className={`mb-2 p-2 w-fullrounded cursor-pointer select-none text-secondary ${
+              className={`mb-2 p-2 w-fullrounded cursor-pointer select-none text-dark_ink ${
                 activeSection === "bookings"
                   ? "bg-amber-900"
-                  : "hover:text-secondary/75"
+                  : "hover:text-dark_ink/75"
               }`}
               onClick={() => setActiveSection("bookings")}
             >
               Bookings
             </li>
             <li
-              className={`mb-2 p-2 rounded cursor-pointer select-none text-secondary ${
+              className={`mb-2 p-2 rounded cursor-pointer select-none text-dark_ink ${
                 activeSection === "analytics"
                   ? "bg-amber-900"
-                  : "hover:text-secondary/75"
+                  : "hover:text-dark_ink/75"
               }`}
               onClick={() => setActiveSection("analytics")}
             >

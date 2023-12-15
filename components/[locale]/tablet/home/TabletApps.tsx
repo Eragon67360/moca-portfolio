@@ -93,7 +93,7 @@ const TabletApps = () => {
           className="-scale-x-100 absolute -top-24 -right-10"
         />
       </div>
-      <div className="pt-[134px] bg-secondary dark:bg-blackbean flex flex-col items-center">
+      <div className="pt-[134px] bg-light_background dark:bg-dark_background flex flex-col items-center">
         <motion.div
           className="flex flex-col"
           initial="offscreen"
@@ -101,13 +101,13 @@ const TabletApps = () => {
           variants={sectionVariants}
           viewport={{ once: true }}
         >
-          <div className="text-5xl text-blackbean dark:text-secondary font-bold text-center">
+          <div className="text-5xl text-light_ink dark:text-dark_ink font-bold text-center">
             Apps, websites & more
           </div>
-          <div className="grid grid-cols-2 gap-8 mt-24 text-blackbean dark:text-secondary">
+          <div className="grid grid-cols-2 gap-8 mt-24 text-light_ink dark:text-dark_ink">
             {cardData.map((card, index) => (
               <div key={index} className="flex justify-center">
-                <div className="bg-linen dark:bg-falured rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[352px] h-full py-9">
+                <div className="bg-light_surface dark:bg-dark_surface rounded-xl flex flex-col text-center justify-center items-center space-y-2 w-[352px] h-full py-9">
                   <card.Icon size={45} />
                   <h3 className="text-2xl font-semibold">{card.title}</h3>
                   <p>{card.subtitle}</p>

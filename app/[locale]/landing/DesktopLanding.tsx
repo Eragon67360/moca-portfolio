@@ -16,7 +16,7 @@ function DesktopLanding() {
   return (
     <>
       <section className="h-screen w-full overflow-x-hidden flex select-none">
-        <div className="w-full h-full bg-linen dark:bg-blackbean flex flex-col justify-center items-center">
+        <div className="w-full h-full bg-light_surface dark:bg-dark_background flex flex-col justify-center items-center">
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -79,7 +79,7 @@ function DesktopLanding() {
           >
             <Link
               href="/home"
-              className="bg-cinnabar hover:bg-cinnabar/60 items-center justify-center px-5 py-3 mr-3 text-base text-center text-white rounded-full uppercase font-bold"
+              className="bg-light_primary hover:bg-light_primary/60 items-center justify-center px-5 py-3 mr-3 text-base text-center text-dark_ink rounded-full uppercase font-bold"
             >
               Get started
             </Link>
